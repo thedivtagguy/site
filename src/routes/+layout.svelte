@@ -1,6 +1,6 @@
 <script>
 	import '$lib/styles.css';
-	import Header from '$lib/components/primary/Header.svelte';
+	import Header from '$lib/components/Primary/Header.svelte';
 
 	import { onNavigate } from '$app/navigation';
 

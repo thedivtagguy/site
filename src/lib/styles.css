@@ -25,3 +25,31 @@ html {
     background-repeat: repeat;
     background-size: 400px;
 }
+
+@layer utilities {
+    .green-glow-100 {
+        text-shadow:
+			0 0 3px #92de8618,
+			0 0 3px #92de8618,
+			0 0 3px #92de8618,
+			0 0 3px #92de8618,
+			0 0 2px #57785218,
+			0 0 2px #92de8618,
+			0 0 2px #465e4218;
+    }
+
+    .green-glow-200 {
+        text-shadow:
+        0 0 3px #92de8641,
+        0 0 3px #92de8641,
+        0 0 3px #92de8641,
+        0 0 3px #92de8641,
+        0 0 2px #57785241,
+        0 0 2px #92de8641,
+        0 0 2px #465e4241;
+    }
+
+    .black-bento {
+       @apply  rounded-2xl bg-neutral p-4; 
+    }
+}

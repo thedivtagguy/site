@@ -1,5 +1,5 @@
 <div
-	class="my-4 w-1/4 relative text-left outline outline-1 outline-base-300 outline-offset-8 bg-base-200 px-6 py-20 rounded-xl border-[1px] border-base-300"
+	class="relative basis-1/4 text-left outline outline-1 outline-base-300 outline-offset-8 bg-base-200 p-12 rounded-xl border-[1px] border-base-300"
 >
 	<h3 class="text-7xl text-center font-libre-caslon font-black">tl;dr</h3>
 	<article class="text-effect text-left">
@@ -14,7 +14,7 @@
 
 <style>
 	:root {
-		--multiplier: 1.4;
+		--multiplier: 1.2;
 	}
 
 	h3 {
@@ -42,7 +42,6 @@
 	}
 	.text-effect .line {
 		display: block;
-		text-align: center;
 	}
 
 	.text-effect .line:nth-child(1) {
@@ -61,6 +60,7 @@
 		font-size: calc(1em * var(--multiplier));
 	}
 	.text-effect .line:nth-child(6) {
+		width: 80%;
 		font-size: calc(0.8em * var(--multiplier));
 	}
 </style>
