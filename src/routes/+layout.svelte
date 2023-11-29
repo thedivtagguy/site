@@ -3,6 +3,7 @@
 	import Header from '$lib/components/Primary/Header.svelte';
 
 	import { onNavigate } from '$app/navigation';
+	import Footer from '$lib/components/Primary/Footer.svelte';
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -21,3 +22,5 @@
 <body class="mx-auto flex flex-col max-w-[85rem] justify-center items-center">
 	<slot />
 </body>
+
+<Footer />
