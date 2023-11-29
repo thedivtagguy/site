@@ -7,17 +7,17 @@
 		},
 		{
 			name: 'Work',
-			href: '/work',
+			href: '/',
 			color: 'bg-purple'
 		},
 		{
 			name: 'Blog',
-			href: '/blog',
+			href: '/',
 			color: 'bg-sage'
 		},
 		{
 			name: 'Contact',
-			href: '/contact',
+			href: '/',
 			color: 'bg-blue',
 			highlight: true
 		}
