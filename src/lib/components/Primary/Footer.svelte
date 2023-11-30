@@ -1,9 +1,9 @@
 <script>
 	import Video from '$lib/assets/output.mp4';
+	import VideoPoster from '$lib/assets/images/common/poster-footer.webp';
 	import Logo from '$lib/assets/svg/Logo.svelte';
 	import License from '$lib/assets/images/common/license.png';
 	import NotAI from '$lib/assets/images/common/notai.png';
-	import { lazyLoadVideo } from '$lib/utils';
 </script>
 
 <footer class="relative rounded-lg w-full my-4">
@@ -15,7 +15,8 @@
 		muted
 		loop
 		playsinline
-		use:lazyLoadVideo
+		preload="none"
+		poster={VideoPoster}
 	></video>
 	<div class="relative flex justify-between px-12 py-10 items-center h-full z-10">
 		<div class="flex flex-col text-white">
@@ -37,8 +38,12 @@
 	}
 
 	.bg-noise {
-		background-image: url('../../assets/images/common/noise.png');
-		background-repeat: repeat;
-		background-size: 400px;
+		width: 100%;
+		height: 100%;
+		filter: contrast(170%) brightness(3000%);
+		background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+			url("data:image/svg+xml,%3Csvg viewBox='0 0 245 245' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='8.51' numOctaves='10' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+		mix-blend-mode: soft-light;
+		opacity: 0.4;
 	}
 </style>
