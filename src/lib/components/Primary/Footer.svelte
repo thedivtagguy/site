@@ -3,7 +3,7 @@
 	import VideoPoster from '$lib/assets/images/common/poster-footer.webp';
 	import Logo from '$lib/assets/svg/Logo.svelte';
 	import License from '$lib/assets/images/common/license.png';
-	import NotAI from '$lib/assets/images/common/notai.png';
+	import NotAi from '$lib/assets/svg/NotAi.svelte';
 </script>
 
 <footer class="relative rounded-lg w-full my-4">
@@ -22,7 +22,7 @@
 		<div class="flex flex-col text-white">
 			<Logo width={70} height={120} />
 			<img src={License} alt="CC-BY license" class="w-24 mt-4" />
-			<img src={NotAI} alt="Made by human, not AI" class="w-24 mt-4" />
+			<NotAi scale={0.8} />
 		</div>
 	</div>
 	<div class="absolute top-0 left-0 w-full h-full bg-noise bg-cover z-5"></div>

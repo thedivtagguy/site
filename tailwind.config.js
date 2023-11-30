@@ -6,7 +6,12 @@ export default {
 			fontFamily: {
 				'libre-caslon': ['LibreCaslonCondensed', 'sans-serif'],
 				fira: ['Fira Code Variable', 'monospace'],
-				'open-sans': ['Open Sans Variable', 'sans-serif']
+				'open-sans': [
+					'"Open Sans Variable", sans-serif',
+					{
+						fontVariationSettings: '"wdth" 20'
+					}
+				]
 			},
 			colors: {
 				yellow: '#E8C85A',
