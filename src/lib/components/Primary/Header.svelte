@@ -10,7 +10,7 @@
 	const subtitle = 'The definite, Illustrated & annotated anthology of my varied pastimes';
 </script>
 
-<header class="flex max-w-[85rem] flex-col justify-center items-center mt-4">
+<header class="flex max-w-[85rem] w-full flex-col justify-center items-center mt-4">
 	<div class="divide" />
 
 	<div

@@ -1,29 +1,22 @@
 <script>
 	import slide1 from '$lib/assets/images/common/eymen-1.webp';
 	import slide2 from '$lib/assets/images/common/eymen-2.webp';
-	import { onMount } from 'svelte';
-	let currentImage = slide1;
-	let images = [slide1, slide2];
-	let currentIndex = 0;
-	let imageSize = '500'; // Set size for square images
-
-	const switchImage = () => {
-		currentIndex = (currentIndex + 1) % images.length;
-		currentImage = images[currentIndex];
-	};
-
-	onMount(() => {
-		const interval = setInterval(switchImage, 2000);
-		return () => clearInterval(interval);
-	});
+	import Eymen from '$lib/assets/eymen.webm';
 </script>
 
-<figure class="basis-2/4 -mt-2 h-full">
-	<img
-		src={currentImage}
-		alt="Slideshow"
-		width={imageSize}
-		height={imageSize}
-		class="h-full w-auto"
-	/>
-</figure>
+<div class="relative">
+	<video src={Eymen} autoplay muted loop playsinline preload="none" poster={slide1}></video>
+	<div class="absolute top-0 left-0 w-full h-full bg-noise bg-cover z-5"></div>
+</div>
+
+<style>
+	.bg-noise {
+		width: 100%;
+		height: 100%;
+		filter: contrast(170%) brightness(3000%);
+		background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+			url("data:image/svg+xml,%3Csvg viewBox='0 0 245 245' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='8.51' numOctaves='10' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+		mix-blend-mode: soft-light;
+		opacity: 0.4;
+	}
+</style>

@@ -7,7 +7,7 @@
 		},
 		{
 			name: 'Work',
-			href: '/',
+			href: '/work',
 			color: 'bg-purple'
 		},
 		{
