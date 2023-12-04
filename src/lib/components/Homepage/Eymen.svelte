@@ -1,11 +1,71 @@
 <script>
 	import slide1 from '$lib/assets/images/common/eymen-1.webp';
-	import slide2 from '$lib/assets/images/common/eymen-2.webp';
 	import Eymen from '$lib/assets/eymen.webm';
+	import { onMount } from 'svelte';
+	import { localStorageStore } from 'fractils';
+
+	const lastVisitStore = localStorageStore('lastVisit', null);
+	const twelveHours = 12 * 60 * 60 * 1000;
+
+	let lastVisit = $lastVisitStore;
+	let greeting = '';
+	const greetings = {
+		new: [
+			'Oh crap, you found me.',
+			"Hey, you're here!",
+			'Why hello there lil fella',
+			'Are you lost?',
+			'What brings you here?',
+			"Well, well, well, look who's here",
+			'A wild visitor appears',
+			'You? Here? On purpose?',
+			'Look what the cat dragged in'
+		],
+		returning: [
+			'Welcome back!',
+			"Hey, you're back!",
+			'Omg you came back!',
+			"It's been a while!",
+			"Oh, it's you again",
+			'Yeah, I remember you',
+			'Good to see you again',
+			'Round two, huh?',
+			'Back for more?',
+			'Oh, not tired of me yet?',
+			'You again? Huh. That is new.',
+			"I'm glad you're back"
+		]
+	};
+	onMount(() => {
+		const now = new Date().getTime();
+		let isNewUser = false;
+
+		if (!lastVisit || now - lastVisit > twelveHours) {
+			isNewUser = true;
+			lastVisitStore.set(now);
+		}
+
+		const greetingType = isNewUser ? 'new' : 'returning';
+		greeting = greetings[greetingType][Math.floor(Math.random() * greetings[greetingType].length)];
+	});
 </script>
 
 <div class="relative">
-	<video src={Eymen} autoplay muted loop playsinline preload="none" poster={slide1}></video>
+	<video
+		src={Eymen}
+		style="width: 100%; max-width: 600px;"
+		autoplay
+		muted
+		loop
+		playsinline
+		preload="none"
+		poster={slide1}
+	></video>
+	<aside
+		class="absolute top-[1.9rem] w-[6.5rem] h-60 px-4 text-xs leading-snug left-[6rem] text-center font-bold text-base-300 -skew-y-[17deg]"
+	>
+		<p class="uppercase tracking-tighter font-bold font-fira">{greeting}</p>
+	</aside>
 	<div class="absolute top-0 left-0 w-full h-full bg-noise bg-cover z-5"></div>
 </div>
 
