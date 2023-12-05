@@ -22,5 +22,6 @@ githubLink: >-
 week: '47'
 social:
   twitter: 'https://twitter.com/thedivtagguy/status/1728861091244204369'
+slug: r-ladies
 ---
 

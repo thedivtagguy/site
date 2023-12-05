@@ -55,6 +55,7 @@ export const publication = {
             name: 'thumbnail',
             label: 'Thumbnail',
             type: 'image',
-        }
+        },
+        
     ],
 }

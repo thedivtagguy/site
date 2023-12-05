@@ -61,7 +61,13 @@ export const assorted = {
             ui: {
               component: 'tags',
             },
-        }
+        },
+        {
+            type: "string",
+            name: "slug",
+            label: "Slug",
+            required: true,
+        },
 
     ],
 }

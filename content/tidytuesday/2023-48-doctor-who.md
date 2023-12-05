@@ -15,4 +15,6 @@ week: '48'
 social:
   twitter: 'https://twitter.com/thedivtagguy/status/1731323379171447048'
   mastodon: 'https://fosstodon.org/@amnbh/111520518899144860'
+slug: doctor-who
 ---
+

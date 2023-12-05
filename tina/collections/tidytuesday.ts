@@ -96,6 +96,12 @@ export const tidytuesday = {
             }
         ]
     },
+    {
+        type: "string",
+        name: "slug",
+        label: "Slug",
+        required: true,
+    },
 
     ]
 }

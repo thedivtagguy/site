@@ -14,5 +14,6 @@ githubLink: 'https://aman.bh/ttweek46'
 week: '46'
 social:
   twitter: 'https://twitter.com/thedivtagguy/status/1726120823361319344'
+slug: diwali-sales
 ---
 

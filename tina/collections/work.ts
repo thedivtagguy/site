@@ -89,6 +89,12 @@ export const work = {
             label: 'Thumbnail',
             type: 'image',
         },
+        {
+            type: "string",
+            name: "slug",
+            label: "Slug",
+            required: true,
+        },
 
     ],
 }
