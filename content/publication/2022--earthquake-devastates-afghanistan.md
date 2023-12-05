@@ -5,7 +5,7 @@ tags:
   - reuters
   - news
 projectLink: 'https://www.reuters.com/graphics/AFGHANISTAN-QUAKE/akvezlnropr/'
-Platform: Reuters
+platform: content/clients/reuters.mdx
 thumbnail: /publication/afghanistan-earthquake.jpg
 ---
 

@@ -7,7 +7,7 @@ tags:
   - gis
   - news
 projectLink: 'https://unearthed.greenpeace.org/2023/07/31/sewage-uk-water-pollution/'
-Platform: Unearthed (Greenpeace)
+platform: content/clients/unearthed.mdx
 thumbnail: /publication/greenpeace-spills.png
 ---
 

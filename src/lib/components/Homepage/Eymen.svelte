@@ -53,6 +53,7 @@
 
 <div class="relative">
 	<video
+		tabindex="-1"
 		src={Eymen}
 		style="width: 100%; max-width: 800px;"
 		autoplay

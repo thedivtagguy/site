@@ -9,7 +9,7 @@
 @tailwind utilities;
 
 .divide {
-    @apply border-base-300 border-t-[1px] w-full my-2;
+    @apply border-base-300 border-t-[1px] w-full my-2 z-0;
 }
 
 h1, h2 {
@@ -21,7 +21,7 @@ a:focus {
 }
 
 a:hover {
-    @apply opacity-80;
+    @apply opacity-90;
 }
 html {
     background-image: url('../lib/assets/images/common/noise.webp');

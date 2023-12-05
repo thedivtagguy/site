@@ -18,6 +18,16 @@ export const publication = {
       },
     fields: [
         {
+            name: 'featured',
+            component: 'toggle',
+            label: 'Feature this post',
+            toggleLabels: {
+              true: 'On',
+              false: 'Off',
+            },
+            type: 'boolean',
+          },
+        {
             type: "string",
             name: "title",
             label: "Title",
@@ -46,16 +56,19 @@ export const publication = {
             label: 'Project link',
             type: 'string',
         },
+ 
         {
-            name: 'Platform',
             label: 'Platform',
-            type: 'string',
-        },
+            name: 'platform',
+            type: 'reference',
+            collections: ['clients'],
+          },
         {
             name: 'thumbnail',
             label: 'Thumbnail',
             type: 'image',
         },
+        
         
     ],
 }

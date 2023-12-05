@@ -1,4 +1,5 @@
 ---
+featured: true
 title: Europe's driest summer
 date: 2022-08-21T18:30:00.000Z
 tags:
@@ -6,7 +7,7 @@ tags:
   - gis
   - news
 projectLink: 'https://www.reuters.com/graphics/EUROPE-WEATHER/DROUGHT/jnvwenznyvw/'
-Platform: Reuters
+platform: content/clients/reuters.mdx
 thumbnail: /publication/europe-drought.jpg
 ---
 

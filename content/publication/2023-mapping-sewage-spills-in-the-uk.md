@@ -1,4 +1,5 @@
 ---
+featured: true
 title: Mapping sewage spills in the UK
 date: 2023-08-03T18:30:00.000Z
 tags:
@@ -9,7 +10,7 @@ tags:
   - gis
 projectLink: >-
   https://unearthed.greenpeace.org/2023/08/04/interactive-map-sewage-spills-pollution-protected-areas/
-Platform: Unearthed (Greenpeace)
+platform: content/clients/unearthed.mdx
 thumbnail: /publication/uk-spills.png
 ---
 

@@ -13,6 +13,7 @@
 		src={Video}
 		autoplay
 		muted
+		tabindex="-1"
 		loop
 		playsinline
 		preload="none"

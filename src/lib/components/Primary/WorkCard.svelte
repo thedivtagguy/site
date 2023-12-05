@@ -1,18 +1,17 @@
 <script>
 	export let data;
 
-	$: cardType = data.showCard ? 'cover' : 'card';
+	$: cardType = data.hasCover ? 'cover' : 'card';
 </script>
 
-<div class="card w-96 bg-base-100 shadow-xl">
-	<figure>
-		<img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-	</figure>
-	<div class="card-body">
-		<h2 class="card-title">Shoes!</h2>
-		<p>If a dog chews shoes whose shoes does he choose?</p>
-		<div class="card-actions justify-end">
-			<button class="btn btn-primary">Buy Now</button>
+{#if cardType === 'cover'}
+	<a href="/work/{data.slug}">
+		<div
+			class="card-cover border-neutral border-2 hover:outline-dashed outline-3 outline-offset-4 outline-neutral rounded-3xl"
+		>
+			<figure class="self-stretch">
+				<img width={450} src={data.thumbnail} alt={data.title} />
+			</figure>
 		</div>
-	</div>
-</div>
+	</a>
+{/if}

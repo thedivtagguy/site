@@ -5,7 +5,7 @@ tags:
   - reuters
   - news
 projectLink: 'https://www.reuters.com/graphics/PAKISTAN-WEATHER/FLOODS/akpezbzxgvr/'
-Platform: Reuters
+platform: content/clients/reuters.mdx
 thumbnail: /publication/floods-in-pakistan.jpg
 ---
 
