@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import Logo from '$lib/assets/svg/Logo.svelte';
 	import Menu from './Menu.svelte';
-	const buildTime = process.env.BUILD_TIME;
+	const issueTime = process.env.BUILD_TIME;
 
 	$: isHome = $page.url.pathname === '/';
 
@@ -18,7 +18,7 @@
 		class:row={!isHome}
 	>
 		<p class="uppercase" class:notHome={!isHome}>
-			issue dated {buildTime}, <i>Bangalore, India</i>
+			issue dated {issueTime} / <i>Bangalore, India</i>
 		</p>
 		{#if isHome}
 			<h1 class="lg:text-7xl text-5xl uppercase relative text-center font-bold">

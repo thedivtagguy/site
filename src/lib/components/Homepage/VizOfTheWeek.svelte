@@ -13,6 +13,10 @@
 		position: relative;
 	}
 
+	img {
+		filter: saturate(0.4);
+	}
+
 	.image-container::after {
 		content: '';
 		position: absolute;

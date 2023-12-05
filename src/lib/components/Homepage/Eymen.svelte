@@ -3,6 +3,7 @@
 	import Eymen from '$lib/assets/eymen.webm';
 	import { onMount } from 'svelte';
 	import { localStorageStore } from 'fractils';
+	import { fade } from 'svelte/transition';
 
 	const lastVisitStore = localStorageStore('lastVisit', null);
 	const twelveHours = 12 * 60 * 60 * 1000;
@@ -53,7 +54,7 @@
 <div class="relative">
 	<video
 		src={Eymen}
-		style="width: 100%; max-width: 600px;"
+		style="width: 100%; max-width: 800px;"
 		autoplay
 		muted
 		loop
@@ -62,6 +63,7 @@
 		poster={slide1}
 	></video>
 	<aside
+		in:fade={{ duration: 1000 }}
 		class="absolute top-[1.9rem] w-[6.5rem] h-60 px-4 text-xs leading-snug left-[6rem] text-center font-bold text-base-300 -skew-y-[17deg]"
 	>
 		<p class="uppercase tracking-tighter font-bold font-fira">{greeting}</p>

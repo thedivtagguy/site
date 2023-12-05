@@ -59,10 +59,4 @@
 	li {
 		box-shadow: 0px 2px 0px 0px #2b2b2b;
 	}
-
-	li.highlight {
-		box-shadow: none;
-		outline: #2b2b2b solid 2px;
-		outline-offset: 3px;
-	}
 </style>

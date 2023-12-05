@@ -1,8 +1,8 @@
 import { getYearAndWeek } from "./utils"
-export const work = {
-    name: "work",
-    label: "Work",
-    path: "content/work",
+export const blog = {
+    name: "Blog",
+    label: "Blog",
+    path: "content/blog",
     format: 'mdx',
     ui: {
         filename: {
@@ -11,7 +11,7 @@ export const work = {
             return `${
                 getYearAndWeek(values?.date, false)
                 
-            }-${values?.title
+            }-${values?.slug
               ?.toLowerCase()
               .replace(/ /g, '-')}`
           },
@@ -19,32 +19,11 @@ export const work = {
       },
     fields: [
         {
-            name: 'hasCover',
-            component: 'toggle',
-            label: 'Show only cover',
-            toggleLabels: {
-              true: 'On',
-              false: 'Off',
-            },
-            type: 'boolean',
-          },
-        {
             type: "string",
             name: "title",
             label: "Title",
             isTitle: true,
             required: true,
-        },
-        {
-            type: "string",
-            name: "description",
-            label: "Description",
-
-        },
-        {
-            type: "string",
-            name: "category",
-            label: "Category",
         },
         {
             name: "date",
@@ -64,9 +43,14 @@ export const work = {
             }
         },
         {
+            type: "string",
+            name: "label",
+            label: "Label",
+        },
+        {
             component: 'tags',
-            name: 'tools',
-            label: 'Tools',
+            name: 'category',
+            label: 'Category',
             type: 'string',
             list: true,
             ui: {
@@ -74,21 +58,16 @@ export const work = {
             }
         },
         {
-            name: 'projectLink',
-            label: 'Project link',
-            type: 'string',
-        },
-        {
             type: 'rich-text',
-            label: 'Write about the work',
-            name: 'body',
-            isBody: true,
-          },
-        {
-            name: 'thumbnail',
-            label: 'Thumbnail',
-            type: 'image',
+            name: 'content',
+            label: 'Content',
+            isBody: true,    
         },
-
+        {
+            type: "string",
+            name: "slug",
+            label: "Slug",
+            required: true,
+        },
     ],
 }

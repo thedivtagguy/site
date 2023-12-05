@@ -4,7 +4,7 @@
 	import TLDR from './TLDR.svelte';
 </script>
 
-<div class="flex justify-between my-4 flex-auto flex-col lg:flex-row">
+<div class="flex justify-between my-4 flex-auto flex-col gap-8 lg:flex-row">
 	<TLDR />
 	<Eymen />
 	<BlogNote />
