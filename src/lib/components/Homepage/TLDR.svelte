@@ -1,5 +1,5 @@
 <div
-	class="relative basis-1/4 text-left outline outline-1 outline-base-300 outline-offset-8 bg-base-200 p-12 rounded-xl border-[1px] border-base-300"
+	class="relative basis-1/4 text-left flex flex-col justify-around outline outline-1 outline-base-300 outline-offset-8 bg-base-200 p-12 rounded-xl border-[1px] border-base-300"
 >
 	<h3 class="text-7xl text-center font-libre-caslon font-black">tl;dr</h3>
 	<article class="text-effect text-left">
@@ -14,7 +14,7 @@
 
 <style>
 	:root {
-		--multiplier: 1.2;
+		--multiplier: 1.45;
 	}
 
 	h3 {
@@ -24,7 +24,7 @@
 	h3::before {
 		content: '';
 		display: block;
-		width: 30%;
+		width: 80%;
 		height: 40px;
 		position: absolute;
 		transform: translate(-50%, -50%) rotate(-2deg);
@@ -35,9 +35,9 @@
 	}
 
 	.line {
-		font-family: 'Open Sans Variable', sans-serif;
+		font-family: 'Roboto Condensed', sans-serif;
 		font-weight: 700;
-		font-stretch: 20%;
+		line-height: 1.2;
 		text-align: left;
 	}
 	.text-effect .line {

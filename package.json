@@ -42,6 +42,7 @@
 	"dependencies": {
 		"@fontsource-variable/fira-code": "^5.0.15",
 		"@fontsource-variable/open-sans": "^5.0.18",
+		"@fontsource/roboto-condensed": "^5.0.13",
 		"tinacms": "^1.5.26"
 	}
 }

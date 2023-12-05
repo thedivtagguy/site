@@ -11,6 +11,9 @@ dependencies:
   '@fontsource-variable/open-sans':
     specifier: ^5.0.18
     version: 5.0.18
+  '@fontsource/roboto-condensed':
+    specifier: ^5.0.13
+    version: 5.0.13
   tinacms:
     specifier: ^1.5.26
     version: 1.5.26(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
@@ -1045,6 +1048,10 @@ packages:
 
   /@fontsource-variable/open-sans@5.0.18:
     resolution: {integrity: sha512-i75EKP87vin0hBaXNblJrqi7bMgcSStFUbqLVZlPTm+ahlrlSky2IxPZ+S/sj/3N7TIibhrTbokfbkiUPT11QA==}
+    dev: false
+
+  /@fontsource/roboto-condensed@5.0.13:
+    resolution: {integrity: sha512-ULmjcNq/DMNswAEgOsWLsjvjxxovuiLJSXPaMHE2FNYvjKiD2Gh5Hzh0QujuBdTxMK6Jn/iCKgfCAtWq5mGXrg==}
     dev: false
 
   /@formatjs/ecma402-abstract@1.18.0:

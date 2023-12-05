@@ -1,6 +1,9 @@
 @import url('./fonts.css');
 @import '@fontsource-variable/fira-code';
-@import '@fontsource-variable/open-sans';
+
+@import '@fontsource/roboto-condensed/300.css';
+@import '@fontsource/roboto-condensed/400.css';
+@import '@fontsource/roboto-condensed/700.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

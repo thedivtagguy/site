@@ -14,7 +14,12 @@
 				</h3>
 				<p class="m-2 uppercase font-fira tracking-tighter text-left">13 nov, 2023</p>
 			</div>
-			<img src={note} alt="background" class=" pointer-events-none" />
+			<img
+				src={note}
+				style="width: 100%; max-width: 400px;"
+				alt="background"
+				class=" pointer-events-none"
+			/>
 		</figure>
 	</div>
 

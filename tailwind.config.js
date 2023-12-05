@@ -11,7 +11,8 @@ export default {
 					{
 						fontVariationSettings: '"wdth" 20'
 					}
-				]
+				],
+				roboto: ['Roboto Condensed', 'sans-serif']
 			},
 			colors: {
 				yellow: '#E8C85A',
