@@ -10,7 +10,7 @@
 	const subtitle = 'The definite, Illustrated & annotated anthology of my varied pastimes';
 </script>
 
-<header class="flex max-w-[85rem] w-full flex-col justify-center items-center mt-4">
+<header class="flex max-w-[85rem] w-full px-4 flex-col justify-center items-center mt-4">
 	<div class="divide" />
 
 	<div
@@ -35,7 +35,9 @@
 	<div class="divide" />
 </header>
 <Menu />
-<div class="divide" />
+<div class="px-4 w-full">
+	<div class="divide" />
+</div>
 
 <style>
 	p {

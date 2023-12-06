@@ -1,5 +1,6 @@
 <script>
 	import NewsImage from '$lib/assets/images/news.webp';
+	import ExternalLinkIcon from '$lib/assets/svg/External.svelte';
 	export let data;
 
 	function groupByClient(posts) {
@@ -18,24 +19,49 @@
 	const groupedPosts = groupByClient(data);
 </script>
 
-<section class="grid grid-cols-5 my-8 w-full gap-4 justify-between">
+<section class="flex flex-col-reverse md:flex-row my-4 w-full gap-4 justify-between">
 	{#each Object.entries(groupedPosts) as [clientName, { posts, logo }]}
-		<div class="col-span-2 flex-container">
-			<ul class="w-full flex flex-col gap-2">
+		<div class="basis-2/5 flex-container">
+			<div class="h-10 flex justify-start">
+				<img src={logo} alt={clientName} height={20} width={150} />
+			</div>
+			<ul class="w-full basis-2/5 flex flex-col gap-2">
 				{#each posts as post, index}
 					<li
-						class="font-libre-caslon font-bold text-3xl text-neutral w-full {index % 2 === 0
-							? 'bg-base-200'
-							: 'bg-transparent'} py-8 flex justify-start items-center px-10 rounded-xl {posts.length <
-						3
-							? ' flex-1'
-							: ''}"
+						class="hover:outline-2 group/item outline-offset-4 outline-neutral focus:outline-dashed hover:outline-dashed hover:cursor-pointer rounded-2xl"
 					>
-						{post.title}
+						<a
+							href={post.projectLink}
+							target="_blank"
+							class="font-libre-caslon text-neutral w-full {index % 2 === 0
+								? 'bg-base-200 '
+								: 'bg-transparent'}  flex flex-col justify-start rounded-xl {posts.length === 1
+								? ' items-start flex-1'
+								: 'items-start'}
+					
+					"
+						>
+							{#if posts.length <= 1 && index === 0}
+								<figure class="flex justify-center w-full">
+									<img
+										src={post.thumbnail}
+										alt={post.title}
+										class="rounded-tr-xl rounded-tl-xl w-full object-cover h-[180px]"
+									/>
+								</figure>
+							{/if}
+							<span class="px-6 py-6 font-bold text-3xl flex justify-between gap-4 items-center"
+								>{post.title}
+								<span
+									class="group/edit invisible group-hover/item:visible group-focus/item:visible"
+								>
+									<ExternalLinkIcon class="  w-6 h-6 mx-auto text-neutral" />
+								</span></span
+							>
+						</a>
 					</li>
 				{/each}
 			</ul>
-			<img src={logo} alt={clientName} height={20} width={150} class="mt-auto" />
 		</div>
 	{/each}
 	<div class="col-span-1 mx-auto">

@@ -3,6 +3,7 @@
 	import WorkCard from '$lib/components/Primary/WorkCard.svelte';
 	import TextDivider from '$lib/components/Primary/TextDivider.svelte';
 	import InTheNews from '$lib/components/Homepage/InTheNews.svelte';
+	import VizOfTheWeek from '$lib/components/Homepage/VizOfTheWeek.svelte';
 	export let data;
 
 	let works = data.data.works;
@@ -13,7 +14,7 @@
 <TextDivider>Heard and seen, here and there</TextDivider>
 
 <!-- Works -->
-<section class="flex justify-between w-full md:flex-row gap-4 py-2 flex-col">
+<section class="flex justify-between items-center w-full md:flex-row gap-4 py-2 flex-col">
 	{#each works.slice(0, 3) as work}
 		<WorkCard data={work} />
 	{/each}
@@ -38,3 +39,4 @@
 
 <InTheNews data={data.data?.publications} />
 <TextDivider>More recently</TextDivider>
+<VizOfTheWeek data={data.data?.tidytuesday} />

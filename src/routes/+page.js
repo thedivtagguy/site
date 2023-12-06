@@ -15,7 +15,7 @@ export async function load({ fetch }) {
 		]);
 
 		const data = {
-			tidytuesday: tidytuesday.content,
+			tidytuesday: tidytuesday,
 			publications: publications.content,
 			works: works.content
 		};

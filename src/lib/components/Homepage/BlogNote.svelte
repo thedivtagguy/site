@@ -21,15 +21,15 @@
 	</div>
 
 	<div class="flex basis-1/2">
-		<div class="black-bento text-sm flex flex-col gap-4 justify-center">
-			<div class="text-white font-bold uppercase">
-				<p>Web dev?</p>
-				<p>Data viz?</p>
-				<p>Pen pal?</p>
+		<div class="black-bento text-sm flex flex-col gap-2 justify-center">
+			<div>
+				<p class="font-roboto text-white font-bold uppercase">Web dev?</p>
+				<p class="font-roboto text-white font-bold uppercase">Data viz?</p>
+				<p class="font-roboto text-white font-bold uppercase">Pen pal?</p>
 			</div>
 			<div class="flex justify-between items-center">
-				<p class="text-green green-glow-100 font-bold uppercase basis-3/5 font-fira">
-					I am Available for freelance work
+				<p class="text-green green-glow-100 font-bold uppercase font-fira">
+					I am Available for freelance work from Jan 2024
 				</p>
 				<div class="text-green green-glow-200 animate-pulse text-xs">⬤</div>
 			</div>

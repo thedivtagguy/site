@@ -6,7 +6,7 @@
 	import NotAi from '$lib/assets/svg/NotAi.svelte';
 </script>
 
-<footer class="relative rounded-lg w-full my-4">
+<div class="relative footer rounded-lg w-full my-4">
 	<video
 		style="object-position: center 55%;"
 		class="absolute rounded-lg w-full h-full object object-cover"
@@ -19,7 +19,7 @@
 		preload="none"
 		poster={VideoPoster}
 	></video>
-	<div class="relative flex justify-between px-12 py-10 items-center h-full z-10">
+	<div class="relative flex justify-between px-12 py-10 items-start h-full z-10">
 		<div class="flex flex-col text-white">
 			<Logo width={70} height={120} />
 			<img src={License} alt="CC-BY license" class="w-24 mt-4" />
@@ -27,14 +27,14 @@
 		</div>
 	</div>
 	<div class="absolute top-0 left-0 w-full h-full bg-noise bg-cover z-5"></div>
-</footer>
+</div>
 
 <aside class="font-fira tracking-tighter italic text-xs pb-4">
 	If you have been, thanks for reading.
 </aside>
 
 <style>
-	footer {
+	.footer {
 		min-height: 600px;
 	}
 

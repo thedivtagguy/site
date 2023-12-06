@@ -1,5 +1,7 @@
 @import url('./fonts.css');
 @import '@fontsource-variable/fira-code';
+@import '@fontsource/libre-caslon-text/400.css';
+@import '@fontsource/libre-caslon-text/700.css';
 
 @import '@fontsource/roboto-condensed/300.css';
 @import '@fontsource/roboto-condensed/400.css';
@@ -55,4 +57,14 @@ html {
     .black-bento {
        @apply  rounded-2xl bg-neutral p-4; 
     }
+}
+
+p {
+    color: #000;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-family: 'Libre Caslon Text', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    line-height: 1.8;
 }

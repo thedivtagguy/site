@@ -2,7 +2,6 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { formatDate } from './src/lib/utils';
-import { ttplugin } from './src/lib/scripts/tidytuesdayCalendar';
 
 export default defineConfig({
 	define: {
@@ -11,6 +10,6 @@ export default defineConfig({
 	plugins: [
 		enhancedImages(),
 		sveltekit(),
-		ttplugin()
+		
 	]
 });

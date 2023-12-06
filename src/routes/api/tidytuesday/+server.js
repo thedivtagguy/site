@@ -16,15 +16,40 @@ async function getSortedPosts(paths) {
 
 		if (file && typeof file === 'object' && 'metadata' in file) {
 			const { metadata } = file;
-			const post = { ...metadata };
+			const post = { ...metadata, week: parseInt(metadata.week) };
 			categoryPosts.push(post);
 		}
 	}
 
-	return categoryPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	return categoryPosts.sort((a, b) => b.week - a.week);
+}
+
+async function calculateMetadata(posts) {
+	const completedWeeks = new Set();
+	let longestStreak = 0;
+	let currentStreak = 0;
+
+	posts.forEach((post) => {
+		completedWeeks.add(post.week);
+	});
+
+	for (let week = 1; week <= 52; week++) {
+		if (completedWeeks.has(week)) {
+			currentStreak++;
+			longestStreak = Math.max(longestStreak, currentStreak);
+		} else {
+			currentStreak = 0;
+		}
+	}
+
+	return {
+		longestStreak,
+		weeksDone: Array.from(completedWeeks).sort((a, b) => a - b)
+	};
 }
 
 export async function GET() {
-	const content = await getPosts();
-	return json({ content });
+	const posts = await getPosts();
+	const meta = await calculateMetadata(posts);
+	return json({ content: posts, meta });
 }

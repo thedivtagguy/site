@@ -19,8 +19,10 @@
 
 <Header />
 
-<body class="mx-auto flex flex-col max-w-[85rem] justify-center items-center">
+<body class="mx-auto flex px-4 flex-col max-w-[85rem] justify-center items-center">
 	<slot />
 </body>
 
-<Footer />
+<footer class="px-4 w-full">
+	<Footer />
+</footer>

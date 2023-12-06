@@ -12,7 +12,8 @@ export default {
 						fontVariationSettings: '"wdth" 20'
 					}
 				],
-				roboto: ['Roboto Condensed', 'sans-serif']
+				roboto: ['Roboto Condensed', 'sans-serif'],
+				'libre-caslon-text': ['Libre Caslon Text', 'serif']
 			},
 			colors: {
 				yellow: '#E8C85A',
