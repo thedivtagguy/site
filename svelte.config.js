@@ -14,6 +14,9 @@ const config = {
 	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 
 	kit: {
+		prerender: {
+			handleHttpError: 'ignore'
+		},
 		adapter: adapter({
 			// default options are shown. On some platforms
 			// these options are set automatically — see below
