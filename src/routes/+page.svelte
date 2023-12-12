@@ -29,7 +29,7 @@
 			<a
 				style="box-shadow: 0px 2px 0px 0px #2b2b2b;"
 				href="/work"
-				class="text-xl font-bold bg-purple font-fira tracking-normal uppercase px-6 py-1 rounded-md text-white border-2 border-neutral"
+				class="text-xl font-bold bg-purple font-fira tracking-normal uppercase px-6 py-2 rounded-md text-white border-2 border-neutral"
 			>
 				See more
 			</a>
@@ -38,5 +38,5 @@
 </div>
 
 <InTheNews data={data.data?.publications} />
-<TextDivider>More recently</TextDivider>
+<TextDivider>Just for fun</TextDivider>
 <VizOfTheWeek data={data.data?.tidytuesday} />

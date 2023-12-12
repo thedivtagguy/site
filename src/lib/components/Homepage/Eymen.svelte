@@ -67,7 +67,7 @@
 		in:fade={{ duration: 1000 }}
 		class="absolute top-[1.9rem] w-[6.5rem] h-60 px-4 text-xs leading-snug left-[6rem] text-center font-bold text-base-300 -skew-y-[17deg]"
 	>
-		<p class="uppercase tracking-tighter font-bold font-fira">{greeting}</p>
+		<p class="uppercase tracking-tighter text-base-300 p-0 m-0 font-bold font-fira">{greeting}</p>
 	</aside>
 	<div class="absolute top-0 left-0 w-full h-full bg-noise bg-cover z-5"></div>
 </div>

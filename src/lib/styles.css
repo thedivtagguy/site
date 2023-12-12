@@ -55,7 +55,7 @@ html {
     }
 
     .black-bento {
-       @apply  rounded-2xl bg-neutral p-4; 
+       @apply  rounded-2xl bg-neutral py-1 px-4; 
     }
 }
 
