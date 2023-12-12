@@ -5,7 +5,6 @@
 	import InTheNews from '$lib/components/Homepage/InTheNews.svelte';
 	import VizOfTheWeek from '$lib/components/Homepage/VizOfTheWeek.svelte';
 	export let data;
-
 	let works = data.data.works;
 </script>
 

@@ -15,9 +15,12 @@
 			});
 		});
 	});
+
+	export let data;
+	let gpsInfo = data.data;
 </script>
 
-<Header />
+<Header {gpsInfo} />
 
 <body class="mx-auto flex px-4 flex-col max-w-[85rem] justify-center items-center">
 	<slot />

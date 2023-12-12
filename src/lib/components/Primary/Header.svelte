@@ -1,8 +1,11 @@
 <script>
 	import { page } from '$app/stores';
+	import BatteryPercentage from '$lib/assets/svg/BatteryPercentage.svelte';
 	import Logo from '$lib/assets/svg/Logo.svelte';
 	import Menu from './Menu.svelte';
+	import { getISTTime } from '$lib/utils';
 	const issueTime = process.env.BUILD_TIME;
+	export let gpsInfo;
 
 	$: isHome = $page.url.pathname === '/';
 
@@ -13,21 +16,27 @@
 <header class="flex max-w-[85rem] w-full px-4 flex-col justify-center items-center mt-4">
 	<div class="divide" />
 
-	<div
-		class="flex flex-col justify-between items-center text-center w-full px-12"
-		class:row={!isHome}
-	>
-		<p class="uppercase" class:notHome={!isHome}>
-			issue dated {issueTime} / <i>Bangalore, India</i>
-		</p>
+	<div class="flex flex-col justify-between items-center text-center w-full" class:row={!isHome}>
+		{#if !isHome}
+			<p class="uppercase flex justify-end items-center w-full" class:notHome={!isHome}>
+				<span>issue dated {issueTime} <i class="block">Bangalore, India</i></span>
+			</p>
+		{/if}
 		{#if isHome}
+			<p class="uppercase flex justify-between items-center w-full" class:notHome={!isHome}>
+				<span class="text-xs">{getISTTime()}</span>
+				<span>issue dated {issueTime} <i>Bangalore, India</i></span>
+				<BatteryPercentage percentage={gpsInfo?.batt} width="1.3em" class="hover:cursor-pointer" />
+			</p>
 			<h1 class="lg:text-7xl text-5xl uppercase relative text-center font-bold">
 				{@html headline}
 			</h1>
 		{:else}
-			<Logo />
+			<a href="/">
+				<Logo />
+			</a>
 		{/if}
-		<p class="uppercase" class:notHome={!isHome}>
+		<p class="uppercase w-full" class:notHome={!isHome}>
 			{subtitle}
 		</p>
 	</div>
