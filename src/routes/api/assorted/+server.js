@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-
+export const prerender = true;
 async function getPosts() {
 	const assorteds = await getSortedPosts(
 		import.meta.glob('/content/assorted/*.mdx', { eager: true })
