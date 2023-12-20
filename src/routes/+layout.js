@@ -1,16 +1,12 @@
 export const prerender = true;
-import { dev } from '$app/environment';
 
-const apiURL = dev
-	? 'http://localhost:8888/.netlify/functions/fetchGPS'
-	: './.netlify/functions/fetchGPS';
 export async function load({ fetch }) {
+	const apiURL = `${__API_BASE_URL__}/fetchGPS`;
 	console.log(apiURL);
+
 	try {
 		const gpsData = await fetch(apiURL);
-		// Get response
 		const data = await gpsData.json();
-		// Return response
 		console.log(data);
 		return { data };
 	} catch (error) {
