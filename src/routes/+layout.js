@@ -3,7 +3,7 @@ import { dev } from '$app/environment';
 
 const apiURL = dev
 	? 'http://localhost:8888/.netlify/functions/fetchGPS'
-	: '/.netlify/functions/fetchGPS';
+	: './.netlify/functions/fetchGPS';
 export async function load({ fetch }) {
 	console.log(apiURL);
 	try {
