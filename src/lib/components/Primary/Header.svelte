@@ -24,7 +24,7 @@
 		{/if}
 		{#if isHome}
 			<p class="uppercase flex justify-between items-center w-full" class:notHome={!isHome}>
-				<span class="text-xs">{getISTTime()}</span>
+				<span class="text-xs">&nbsp;</span>
 				<span>issue dated {issueTime} <i>Bangalore, India</i></span>
 				<BatteryPercentage percentage={gpsInfo?.batt} width="1.3em" class="hover:cursor-pointer" />
 			</p>

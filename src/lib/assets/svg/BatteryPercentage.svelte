@@ -24,6 +24,7 @@
 	viewBox="0 0 256 256"
 	{...$$props}
 >
+	<title>{percentage}%</title>
 	{#if batteryLevel === 'green'}
 		<path
 			class="fill-{batteryLevel}"

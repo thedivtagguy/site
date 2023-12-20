@@ -1,5 +1,5 @@
 <script>
-	import note from '$lib/assets/images/common/orange-note.webp';
+	import note from '$lib/assets/images/common/orange-note.webp?enhanced';
 </script>
 
 <div class="flex lg:flex-col basis-1/4 flex-row gap-2">
@@ -16,7 +16,7 @@
 					13 nov, 2023
 				</p>
 			</div>
-			<img src={note} width="335" alt="background" class=" pointer-events-none" />
+			<enhanced:img src={note} alt="background" class=" pointer-events-none" />
 		</figure>
 	</div>
 

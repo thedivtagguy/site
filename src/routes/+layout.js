@@ -10,7 +10,7 @@ export async function load({ fetch }) {
 		// Get response
 		const data = await gpsData.json();
 		// Return response
-
+		console.log(data);
 		return { data };
 	} catch (error) {
 		console.error('Error fetching data:', error);
