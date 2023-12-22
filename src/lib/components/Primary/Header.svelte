@@ -3,7 +3,6 @@
 	import BatteryPercentage from '$lib/assets/svg/BatteryPercentage.svelte';
 	import Logo from '$lib/assets/svg/Logo.svelte';
 	import Menu from './Menu.svelte';
-	import { getISTTime } from '$lib/utils';
 	const issueTime = process.env.BUILD_TIME;
 	export let gpsInfo;
 
@@ -14,9 +13,12 @@
 </script>
 
 <header class="flex max-w-[85rem] w-full px-4 flex-col justify-center items-center mt-4">
-	<div class="divide" />
+	<hr class="divide" />
 
-	<div class="flex flex-col justify-between items-center text-center w-full" class:row={!isHome}>
+	<div
+		class="flex flex-col justify-between my-2 items-center text-center w-full"
+		class:row={!isHome}
+	>
 		{#if !isHome}
 			<p class="uppercase flex justify-end items-center w-full" class:notHome={!isHome}>
 				<span>issue dated {issueTime} <i class="block">Bangalore, India</i></span>
@@ -41,11 +43,11 @@
 		</p>
 	</div>
 
-	<div class="divide" />
+	<hr class="divide" />
 </header>
 <Menu />
 <div class="px-4 w-full">
-	<div class="divide" />
+	<hr class="divide" />
 </div>
 
 <style>

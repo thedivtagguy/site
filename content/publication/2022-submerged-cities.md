@@ -1,5 +1,7 @@
 ---
 featured: true
+favorite: true
+label: Lead
 title: Submerged Cities
 date: 2022-09-18T18:30:00.000Z
 tags:

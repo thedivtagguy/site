@@ -15,6 +15,8 @@
 		"postbuild": "npx svelte-sitemap --domain https://myawesomedomain.com"
 	},
 	"devDependencies": {
+		"@melt-ui/pp": "^0.2.0",
+		"@melt-ui/svelte": "^0.66.2",
 		"@netlify/functions": "^2.4.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-static": "^2.0.3",
@@ -28,6 +30,7 @@
 		"@typescript-eslint/parser": "^6.0.0",
 		"autoprefixer": "^10.4.16",
 		"chokidar": "^3.5.3",
+		"clsx": "^2.0.0",
 		"d3": "^7.8.5",
 		"daisyui": "^4.4.12",
 		"eslint": "^8.28.0",
@@ -56,6 +59,7 @@
 		"@fontsource-variable/open-sans": "^5.0.18",
 		"@fontsource/libre-caslon-text": "^5.0.17",
 		"@fontsource/roboto-condensed": "^5.0.13",
+		"tailwind-merge": "^2.1.0",
 		"tinacms": "^1.5.26"
 	}
 }

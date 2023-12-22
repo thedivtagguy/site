@@ -51,7 +51,7 @@
 	});
 </script>
 
-<div class="relative">
+<div class="relative col-span-4">
 	<video
 		tabindex="-1"
 		src={Eymen}

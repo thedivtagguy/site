@@ -20,6 +20,21 @@ export const tidytuesday = {
       },
     fields: [
         {
+			name: 'favorite',
+			component: 'toggle',
+			label: 'Favorite this post',
+			toggleLabels: {
+				true: 'On',
+				false: 'Off'
+			},
+			type: 'boolean'
+		},
+		{
+			type: 'string',
+			name: 'label',
+			label: 'Label'
+		},
+        {
             type: "string",
             name: "title",
             label: "Title",

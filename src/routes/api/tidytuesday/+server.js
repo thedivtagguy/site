@@ -1,11 +1,24 @@
 import { json } from '@sveltejs/kit';
 
 async function getPosts() {
-	const tidytuesday = await getSortedPosts(
+	const allPosts = await getSortedPosts(
 		import.meta.glob('/content/tidytuesday/*.md|mdx', { eager: true })
 	);
 
-	return tidytuesday;
+	// Group posts by year and calculate metadata for each year
+	const postsByYear = allPosts.reduce((acc, post) => {
+		const year = post.date.getFullYear(); // Assuming 'date' is a Date object
+		acc[year] = acc[year] || { content: [], meta: null };
+		acc[year].content.push(post);
+		return acc;
+	}, {});
+
+	// Calculate metadata for each year
+	for (const year in postsByYear) {
+		postsByYear[year].meta = await calculateMetadata(postsByYear[year].content);
+	}
+
+	return postsByYear;
 }
 
 async function getSortedPosts(paths) {
@@ -16,7 +29,7 @@ async function getSortedPosts(paths) {
 
 		if (file && typeof file === 'object' && 'metadata' in file) {
 			const { metadata } = file;
-			const post = { ...metadata, week: parseInt(metadata.week) };
+			const post = { ...metadata, week: parseInt(metadata.week), date: new Date(metadata.date) };
 			categoryPosts.push(post);
 		}
 	}
@@ -49,7 +62,6 @@ async function calculateMetadata(posts) {
 }
 
 export async function GET() {
-	const posts = await getPosts();
-	const meta = await calculateMetadata(posts);
-	return json({ content: posts, meta });
+	const postsByYear = await getPosts();
+	return json(postsByYear);
 }

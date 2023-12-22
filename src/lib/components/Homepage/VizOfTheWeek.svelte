@@ -4,9 +4,13 @@
 	import { marked } from 'marked';
 	import TidyTuesdayCalendar from './TidyTuesdayCalendar.svelte';
 	export let data;
+	export let year = new Date().getFullYear();
 
-	const { thumbnail, title, description, githubLink, projectLink, social } = data.content[0];
-	const { longestStreak, weeksDone } = data.meta;
+	const yearData = data[year] || { content: [], meta: {} };
+	const { content, meta } = yearData;
+	const { thumbnail, title, description, githubLink, projectLink, social } =
+		content.length > 0 ? content[0] : {};
+	const { longestStreak, weeksDone } = meta;
 </script>
 
 <article class="flex w-full flex-col md:flex-row justify-center gap-4 items-center py-4">

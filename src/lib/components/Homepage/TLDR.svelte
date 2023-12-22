@@ -1,5 +1,5 @@
 <div
-	class="relative basis-1/4 text-left flex flex-col justify-around outline my-2 outline-1 outline-base-300 outline-offset-8 bg-base-200 p-12 rounded-xl border-[1px] border-base-300"
+	class="relative mx-2 col-span-2 text-left flex flex-col justify-around outline my-2 outline-1 outline-base-300 outline-offset-8 bg-base-200 p-8 rounded-xl border-[1px] border-base-300"
 >
 	<h3 class="text-7xl text-center font-libre-caslon font-black">tl;dr</h3>
 	<article class="text-effect text-left">

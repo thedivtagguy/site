@@ -1,18 +1,16 @@
+import { preprocessMeltUI, sequence } from '@melt-ui/pp';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
-
 const mdsvexOptions = {
 	extensions: ['.md', '.svx', '.mdx']
 };
-
-/** @type {import('@sveltejs/kit').Config} */
+/** @type {import('@sveltejs/kit').Config}*/
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	extensions: ['.svelte', '.md', '.svx', '.mdx'],
-	preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
-
+	preprocess: sequence([vitePreprocess(), mdsvex(mdsvexOptions), preprocessMeltUI()]),
 	kit: {
 		prerender: {
 			handleHttpError: 'ignore'
@@ -28,5 +26,4 @@ const config = {
 		})
 	}
 };
-
 export default config;

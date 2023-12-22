@@ -1,5 +1,6 @@
 ---
 featured: true
+favorite: true
 title: Mapping sewage spills in the UK
 date: 2023-08-03T18:30:00.000Z
 tags:

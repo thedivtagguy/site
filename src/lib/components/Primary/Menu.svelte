@@ -24,13 +24,12 @@
 	];
 </script>
 
-<nav class="flex justify-center my-1 items-center w-full px-6">
+<nav class="flex justify-center items-center w-full my-3 px-6">
 	<ul class="md:flex justify-around items-center md:w-1/3 w-full md:flex-row flex-col gap-4 hidden">
 		{#each menuItems as item}
 			<a href={item.href}>
 				<li
 					class="text-xl font-bold {item.color} font-fira tracking-normal uppercase px-6 py-1 rounded-md text-white border-2 border-neutral"
-					class:highlight={item.highlight}
 				>
 					{item.name}
 				</li>
@@ -45,7 +44,6 @@
 				<a href={item.href}>
 					<li
 						class="text-xl text-center list-none font-bold {item.color} font-fira tracking-normal uppercase px-6 py-1 rounded-md text-white border-2 border-neutral"
-						class:highlight={item.highlight}
 					>
 						{item.name}
 					</li>

@@ -10,7 +10,7 @@
 
 <Hero />
 
-<TextDivider>Heard and seen, here and there</TextDivider>
+<TextDivider text="Heard and seen, here and there" />
 
 <!-- Works -->
 <section class="flex justify-between items-center w-full md:flex-row gap-4 py-2 flex-col">
@@ -37,5 +37,5 @@
 </div>
 
 <InTheNews data={data.data?.publications} />
-<TextDivider>Just for fun</TextDivider>
+<TextDivider text="Just for fun" />
 <VizOfTheWeek data={data.data?.tidytuesday} />

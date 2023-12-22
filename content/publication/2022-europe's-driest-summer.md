@@ -1,5 +1,6 @@
 ---
 featured: true
+favorite: false
 title: Europe's driest summer
 date: 2022-08-21T18:30:00.000Z
 tags:
