@@ -22,7 +22,7 @@
 </script>
 
 <div class={cn('mx-auto w-full', className)} {...$root}>
-	{#each data as { title, description, projectLink, type, client, favorite, label, date, thumbnail }, i (i)}
+	{#each data as { title, description, projectLink, type, client, favorite, label, date, thumbnail, tools }, i (i)}
 		<div
 			in:fade
 			animate:flip={{ duration: 200 }}
@@ -44,8 +44,8 @@
 					<span class="inline-flex gap-2 items-center leading-normal">
 						<Plus
 							class={$isSelected(title)
-								? 'rotate-45 transition-all duration-600'
-								: 'transition-all duration-600'}
+								? 'rotate-45 transition-transform duration-600'
+								: 'transition-transform duration-600'}
 						/>
 						{title}
 					</span>
@@ -94,14 +94,28 @@
 						</figure>
 					{/if}
 					<!-- Content card -->
-					<div class="basis-4/6 flex flex-col justify-between gap-2 min-h-[300px] h-full">
-						<div>
+					<div class="basis-4/6 relative flex flex-col justify-between gap-2 min-h-[300px] h-full">
+						<div class=" h-full">
 							<!-- Date -->
 							<span class="date text-sm font-fira text-gray-600">{formatDate(date)}</span>
 							<hr class="border-gray-500 pb-2" />
 							<!-- Description -->
 							<p class="font-roboto text-xl">{description}</p>
 							<!-- Client project? -->
+
+							<div class="mt-6 grid grid-cols-4 divide-x-[1px] divide-neutral gap-4">
+								{#if (type === 'bylines' && client.title) || (type === 'Client' && client.title)}
+									<div class="col-span-1">
+										<p class="font-roboto uppercase">Made for</p>
+										<img
+											width="80"
+											class="h-8 inline-block object-contain"
+											src={client.logo}
+											alt="{client.title} logo"
+										/>
+									</div>
+								{/if}
+							</div>
 						</div>
 						<div class="cta">
 							<a href={projectLink} class="btn-primary w-80 bg-blue">

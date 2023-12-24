@@ -2,9 +2,25 @@
 	export let background = '';
 	export let text = '';
 	export let number = 0;
+	export let active = false;
+	export let isAnythingSelected = false;
+
+	$: console.log(active, text);
 </script>
 
-<div class="stamp h-full">
+<button
+	class="stamp h-full {isAnythingSelected
+		? active
+			? 'active-outline'
+			: 'inactive'
+		: 'default-state'}"
+	on:click
+	on:focus
+	on:mouseover
+	on:mouseout
+	on:blur
+	on:keydown
+>
 	<div
 		style="background-image: url({background});"
 		class="stamp-container relative border-[1px] noise-image flex justify-center items-end font-libre-caslon capitalize mx-2 my-1 border-base-300 w-full h-28"
@@ -14,7 +30,7 @@
 		</p>
 		<p class="text-neutral font-bold absolute bottom-0">{text}</p>
 	</div>
-</div>
+</button>
 
 <style>
 	:root {
@@ -26,6 +42,7 @@
 
 	.stamp-container {
 		background-size: contain;
+
 		background-position: 50% -50%;
 	}
 
@@ -34,14 +51,19 @@
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	}
 
-	.stamp:focus {
-		outline: 2px solid #b2986b;
-		outline-offset: 2px;
+	.active-outline {
+		outline: 2px dashed;
+		outline-offset: 8px;
+		border-radius: 4px;
 	}
 
-	.stamp:focus-within {
-		outline: 2px solid #b2986b;
-		outline-offset: 2px;
+	.default-state {
+		opacity: 1;
+	}
+
+	.inactive {
+		filter: saturate(0);
+		opacity: 0.5;
 	}
 
 	.stamp {
@@ -51,11 +73,10 @@
 		font-family: 'Libre Caslon Text', serif;
 		width: 100%;
 		max-width: 225px;
+
 		margin-bottom: 30px;
 		position: relative;
-		transition:
-			transform 0.1s ease,
-			box-shadow 0.1s ease;
+		transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		min-height: var(--stamp-min-height);
 		background: var(--stamp-background-color);
 		transform: rotate(calc(var(--rotation) * 1deg));

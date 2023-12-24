@@ -22,7 +22,9 @@
 
 <Header {gpsInfo} />
 
-<body class="mx-auto flex px-4 flex-col max-w-[85rem] justify-center items-center">
+<body
+	class="mx-auto selection:bg-yellow flex px-4 flex-col max-w-[85rem] justify-center items-center"
+>
 	<slot />
 </body>
 
