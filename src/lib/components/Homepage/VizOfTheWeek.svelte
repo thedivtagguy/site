@@ -15,12 +15,12 @@
 
 <article class="flex w-full flex-col md:flex-row justify-center gap-4 items-center py-4">
 	<div class="image-container hidden md:block basis-1/6 self-end">
-		<img src={Label} alt="Viz of the Week" width="150" height="320" />
+		<img src={Label} alt="Viz of the Week label" width="150" height="320" />
 	</div>
 	<figure class="image-container w-full h-full items-stretch basis-3/6">
 		<img
 			src={thumbnail}
-			alt="Thumbnail which shows my Viz of the Week, this week is on {title}"
+			alt={`Thumbnail for Viz of the Week: ${title}`}
 			class="object-cover w-full h-full"
 		/>
 	</figure>
@@ -34,6 +34,7 @@
 				style="box-shadow: 0px 2px 0px 0px #2b2b2b;"
 				href={githubLink}
 				target="_blank"
+				rel="noopener noreferrer"
 				class="text-x font-bold bg-base-200 font-fira tracking-normal uppercase px-8 py-2 rounded-md text-neutral border-2 border-neutral"
 			>
 				Github
@@ -42,6 +43,7 @@
 				style="box-shadow: 0px 2px 0px 0px #2b2b2b;"
 				href={projectLink}
 				target="_blank"
+				rel="noopener noreferrer"
 				class="text-x font-bold bg-purple font-fira tracking-normal uppercase px-8 py-2 rounded-md text-white border-2 border-neutral"
 			>
 				Project
@@ -53,7 +55,6 @@
 				{/each}
 			</div>
 		</aside>
-
 		<hr class="divide py-1" />
 		<footer class="meta">
 			<TidyTuesdayCalendar longestStreakThisYear={longestStreak} weeksCompleted={weeksDone} />

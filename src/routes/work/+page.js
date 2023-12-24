@@ -1,5 +1,5 @@
 export async function load({ fetch }) {
-	const endpoints = ['publications', 'works', 'assorted'];
+	const endpoints = ['bylines', 'works', 'random'];
 
 	async function fetchData(endpoint) {
 		const response = await fetch(`api/${endpoint}`);

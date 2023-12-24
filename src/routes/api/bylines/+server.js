@@ -2,11 +2,11 @@ import { json } from '@sveltejs/kit';
 
 async function getPosts() {
 	const clients = await getClients();
-	const publications = await getSortedPosts(
-		import.meta.glob('/content/publication/*.md', { eager: true }),
+	const bylines = await getSortedPosts(
+		import.meta.glob('/content/bylines/*.md', { eager: true }),
 		clients
 	);
-	return publications;
+	return bylines;
 }
 
 async function getClients() {

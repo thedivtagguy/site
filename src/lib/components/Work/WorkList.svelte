@@ -5,8 +5,9 @@
 	import { ExternalLink } from 'lucide-svelte';
 	import { cn } from '$lib/utils';
 	import { createAccordion, melt } from '@melt-ui/svelte';
-	import { slide } from 'svelte/transition';
+	import { fade, slide } from 'svelte/transition';
 	import { formatDate } from '$lib/utils';
+	import { flip } from 'svelte/animate';
 
 	let className = '';
 	export { className as class };
@@ -21,8 +22,13 @@
 </script>
 
 <div class={cn('mx-auto w-full', className)} {...$root}>
-	{#each data as { title, description, projectLink, type, client, favorite, label, date, thumbnail }, i}
-		<div use:melt={$item(title)} class="overflow-hidden transition-colors">
+	{#each data as { title, description, projectLink, type, client, favorite, label, date, thumbnail }, i (i)}
+		<div
+			in:fade
+			animate:flip={{ duration: 200 }}
+			use:melt={$item(title)}
+			class="overflow-hidden transition-colors"
+		>
 			<h2 class="flex text-2xl">
 				<button
 					use:melt={$trigger(title)}
@@ -44,14 +50,21 @@
 						{title}
 					</span>
 
-					{#if type === 'publications'}
-						<Badge>
-							<img
-								class="me-1.5 inline-block w-20 h-5 rounded-full"
-								src={client.logo}
-								alt="{client.title} logo"
-							/>
-						</Badge>
+					{#if (type === 'bylines' && client.title) || (type === 'Client' && client.title)}
+						{#if !$isSelected(title)}
+							<!-- Hide client logo if active -->
+							<div out:fade={{ duration: 200 }} in:fade>
+								<Badge>
+									<img
+										height="12"
+										width="80"
+										class="me-1.5 h-6 inline-block object-contain"
+										src={client.logo}
+										alt="{client.title} logo"
+									/>
+								</Badge>
+							</div>
+						{/if}
 					{:else if favorite}
 						<Badge class="px-1">
 							<Heart class="text-red" />
@@ -69,6 +82,7 @@
 					use:melt={$content(title)}
 					transition:slide
 				>
+					<!-- Thumbnail -->
 					{#if thumbnail}
 						<figure class="basis-2/6">
 							<img
@@ -79,11 +93,15 @@
 							/>
 						</figure>
 					{/if}
+					<!-- Content card -->
 					<div class="basis-4/6 flex flex-col justify-between gap-2 min-h-[300px] h-full">
 						<div>
+							<!-- Date -->
 							<span class="date text-sm font-fira text-gray-600">{formatDate(date)}</span>
 							<hr class="border-gray-500 pb-2" />
+							<!-- Description -->
 							<p class="font-roboto text-xl">{description}</p>
+							<!-- Client project? -->
 						</div>
 						<div class="cta">
 							<a href={projectLink} class="btn-primary w-80 bg-blue">

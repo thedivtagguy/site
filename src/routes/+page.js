@@ -2,21 +2,21 @@ export const prerender = true;
 
 export async function load({ fetch }) {
 	try {
-		const [tidytuesdayRes, publicationsRes, worksRes] = await Promise.all([
+		const [tidytuesdayRes, bylinesRes, worksRes] = await Promise.all([
 			fetch('api/tidytuesday'),
-			fetch('api/publications'),
+			fetch('api/bylines'),
 			fetch('api/works')
 		]);
 
-		const [tidytuesday, publications, works] = await Promise.all([
+		const [tidytuesday, bylines, works] = await Promise.all([
 			tidytuesdayRes.json(),
-			publicationsRes.json(),
+			bylinesRes.json(),
 			worksRes.json()
 		]);
 
 		const data = {
 			tidytuesday: tidytuesday,
-			publications: publications.content,
+			bylines: bylines.content,
 			works: works.content
 		};
 

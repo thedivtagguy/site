@@ -1,7 +1,7 @@
-import { publication } from "./publication";
+import { bylines } from "./bylines";
 import { tidytuesday } from "./tidytuesday";
 import { work } from "./work";
-import { assorted } from "./assorted";
+import { random } from "./random";
 import { blog } from "./blogpost";
 import { clients } from "./clients";
-export const collections = [tidytuesday, publication, work, assorted, blog, clients];
+export const collections = [tidytuesday, bylines, work, random, blog, clients];

@@ -18,16 +18,7 @@ export const work = {
         },
       },
     fields: [
-        {
-            name: 'hasCover',
-            component: 'toggle',
-            label: 'Show only cover',
-            toggleLabels: {
-              true: 'On',
-              false: 'Off',
-            },
-            type: 'boolean',
-          },
+       
           {
 			name: 'favorite',
 			component: 'toggle',
@@ -58,9 +49,17 @@ export const work = {
         },
         {
             type: "string",
+            component: 'select',
             name: "category",
             label: "Category",
+            options: ['Personal', 'Client'],
         },
+        {
+			label: 'Client deets (if this is a client project)',
+			name: 'clientWork',
+			type: 'reference',
+			collections: ['clients']
+		},
         {
             name: "date",
             label: "Date",

@@ -1,8 +1,8 @@
 import { getYearAndWeek } from "./utils"
-export const publication = {
-	name: 'Publication',
-	label: 'Publication',
-	path: 'content/publication',
+export const bylines = {
+	name: 'bylines',
+	label: 'Bylines',
+	path: 'content/bylines',
 	ui: {
 		filename: {
 			readonly: true,

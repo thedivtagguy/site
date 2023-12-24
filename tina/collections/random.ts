@@ -1,8 +1,8 @@
 import { getYearAndWeek } from "./utils"
-export const assorted = {
-    name: "assorted",
-    label: "Assorted",
-    path: "content/assorted",
+export const random = {
+    name: "random",
+    label: "Random",
+    path: "content/random",
     format: 'mdx',
     ui: {
         filename: {
