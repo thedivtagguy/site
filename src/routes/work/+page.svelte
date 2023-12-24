@@ -7,7 +7,6 @@
 	import { filterData, toggleItem, workFilters } from '$lib/components/Work/filterUtils.js';
 	import ToggleFormatting from '$lib/components/Primary/Toggle.svelte';
 	import { X } from 'lucide-svelte';
-	import TagsList from '$lib/components/Work/TagsList.svelte';
 
 	export let data;
 
@@ -34,8 +33,6 @@
 	$: filteredTags = tagsByType($workFilters.type, works);
 
 	$: selectedTags = $workFilters.tags;
-
-	$: console.log(selectedTags);
 </script>
 
 <header
@@ -95,12 +92,12 @@
 
 			<ul>
 				{#each Object.entries(tags).sort((a, b) => b[1] - a[1]) as [tag, count]}
-					<li class="py-1">
+					<li class="py-1.5 h-6">
 						<button
 							class:active={filteredTags.has(tag)}
 							on:click={() => filterWork('tags', tag)}
 							disabled={!filteredTags.has(tag)}
-							class="hover:underline flex w-full justify-between items-center uppercase text-xs text-neutral font-medium transition-opacity duration-300
+							class="hover:underline flex w-full justify-between hover:bg-base-200 items-center uppercase text-xs text-neutral font-medium transition-opacity duration-300
 							{!selectedTags.has(tag) && selectedTags.size === 0 ? '' : 'opacity-20'} {selectedTags.has(tag) &&
 							(selectedTags.size > 0 || filteredTags.has(tag))
 								? 'underline opacity-100'
@@ -111,7 +108,7 @@
 								<span class="font-light">({count}) </span>
 							</span>
 							{#if selectedTags.has(tag) && (selectedTags.size > 0 || filteredTags.has(tag))}
-								<X class="w-4" />
+								<X class="w-4 h-4 hover:stroke-2  mx-2" />
 							{/if}
 						</button>
 					</li>

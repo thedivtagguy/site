@@ -55,6 +55,7 @@
 	<video
 		tabindex="-1"
 		src={Eymen}
+		width="800"
 		style="width: 100%; max-width: 800px;"
 		autoplay
 		muted
