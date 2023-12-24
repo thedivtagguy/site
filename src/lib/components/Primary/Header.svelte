@@ -15,10 +15,7 @@
 <header class="flex max-w-[85rem] w-full px-4 flex-col justify-center items-center mt-4">
 	<hr class="divide" />
 
-	<div
-		class="flex flex-col justify-between my-2 items-center text-center w-full"
-		class:row={!isHome}
-	>
+	<div class="flex flex-col justify-start my-2 items-center text-center w-full" class:row={!isHome}>
 		{#if !isHome}
 			<p class="uppercase flex justify-end items-center w-full" class:notHome={!isHome}>
 				<span>issue dated {issueTime} <i class="block">Bangalore, India</i></span>
@@ -34,6 +31,8 @@
 				{@html headline}
 			</h1>
 		{:else}
+			<!-- <MobileMenu /> -->
+
 			<a href="/">
 				<Logo />
 			</a>

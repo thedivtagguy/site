@@ -8,6 +8,6 @@ tags:
   - news
 projectLink: 'https://unearthed.greenpeace.org/2023/07/31/sewage-uk-water-pollution/'
 platform: content/clients/unearthed.mdx
-thumbnail: /publication/greenpeace-spills.png
+thumbnail: /publication/sewage.webp
 ---
 

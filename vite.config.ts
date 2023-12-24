@@ -14,6 +14,9 @@ export default defineConfig(({ mode }) => {
                           ? JSON.stringify(`${netlifyURL}/.netlify/functions`)
                           : JSON.stringify('http://localhost:8888/.netlify/functions'),
     },
+    ssr: {
+      noExternal: ['three']
+    },
     plugins: [
       enhancedImages(),
       sveltekit(),

@@ -11,6 +11,9 @@ const config = {
 	// for more information about preprocessors
 	extensions: ['.svelte', '.md', '.svx', '.mdx'],
 	preprocess: sequence([vitePreprocess(), mdsvex(mdsvexOptions), preprocessMeltUI()]),
+	vitePlugin: {
+		inspector: true
+	},
 	kit: {
 		prerender: {
 			handleHttpError: 'ignore'

@@ -27,6 +27,9 @@ export default {
 				'base-100': '#F8FBF8',
 				'base-200': '#EDEDED',
 				'base-300': '#A3A3A2'
+			},
+			boxShadow: {
+				'btn-drop-shadow': '0 2px 0 0 #2b2b2b'
 			}
 		}
 	},

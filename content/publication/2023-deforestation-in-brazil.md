@@ -10,5 +10,6 @@ tags:
 projectLink: >-
   https://unearthed.greenpeace.org/2023/10/17/ubs-santander-green-bonds-deforesters-slave-labour-brazil/
 platform: content/clients/unearthed.mdx
+thumbnail: /publication/Brazil Deforestation.webp
 ---
 

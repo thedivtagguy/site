@@ -10,6 +10,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .btn-drop-shadow {
+      box-shadow: 0 2px 0 0 #2b2b2b; 
+    }
+  }
+  
+
 .divide {
     @apply border-base-300 border-t-[1px] w-full z-0;
 }
@@ -22,9 +29,7 @@ a:focus {
     @apply outline-dashed outline-offset-4 rounded-sm outline-zinc-800;
 }
 
-a:hover {
-    @apply opacity-90;
-}
+
 html {
     background-image: url('../lib/assets/images/common/noise.webp');
     background-repeat: repeat;
@@ -101,4 +106,20 @@ p {
     left: 50%;
     z-index: -1;
     @apply bg-yellow;
+}
+
+.btn-primary {
+    @apply w-fit flex justify-center items-center gap-2 text-xl font-bold  font-roboto tracking-normal uppercase px-4 py-1 rounded-md text-white border-2 border-neutral ;
+    box-shadow: 0 2px 0 0 #2b2b2b; 
+    
+    
+ }
+ 
+ .btn-primary:hover,
+ .btn-primary:focus {
+        box-shadow: none !important;
+ }
+
+ .btn-primary:focus {
+    @apply outline-dashed outline-2 outline-offset-2 outline-neutral; 
 }

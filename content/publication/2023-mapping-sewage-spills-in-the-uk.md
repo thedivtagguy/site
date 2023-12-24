@@ -12,6 +12,6 @@ tags:
 projectLink: >-
   https://unearthed.greenpeace.org/2023/08/04/interactive-map-sewage-spills-pollution-protected-areas/
 platform: content/clients/unearthed.mdx
-thumbnail: /publication/uk-spills.png
+thumbnail: /publication/mapspills.webp
 ---
 

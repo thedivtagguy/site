@@ -1,6 +1,8 @@
 <script>
 	import headerImage from '$lib/assets/images/MIMICRY.webp';
 	import hits from '$lib/assets/images/hits.webp';
+	import Categories from '$lib/components/Work/Categories.svelte';
+	// import TvScene from '$lib/components/Work/TVScene.svelte';
 	import WorkList from '$lib/components/Work/WorkList.svelte';
 
 	export let data;
@@ -8,8 +10,6 @@
 	let works = data.data;
 	let types = data?.meta?.types;
 	let tags = data?.meta.tags;
-
-	console.log(works);
 </script>
 
 <div
@@ -57,6 +57,7 @@
 				</li>
 			{/each}
 		</ul>
+		<Categories />
 	</div>
 	<section class="col-span-3">
 		<WorkList data={works} />

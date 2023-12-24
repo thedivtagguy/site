@@ -25,32 +25,17 @@
 </script>
 
 <nav class="flex justify-center items-center w-full my-3 px-6">
-	<ul class="md:flex justify-around items-center md:w-1/3 w-full md:flex-row flex-col gap-4 hidden">
+	<ul
+		class="md:flex justify-normal md:justify-around items-center max-w-lg w-full flex-row flex-nowrap sm:flex-wrap gap-2 md:gap-4 flex"
+	>
 		{#each menuItems as item}
 			<a href={item.href}>
-				<li
-					class="text-xl font-bold {item.color} font-fira tracking-normal uppercase px-6 py-1 rounded-md text-white border-2 border-neutral"
-				>
+				<li class="btn-primary {item.color} ">
 					{item.name}
 				</li>
 			</a>
 		{/each}
 	</ul>
-	<div class="collapse md:hidden bg-base-200 rounded-lg w-4/5">
-		<input type="checkbox" />
-		<div class="collapse-title text-xl font-medium">Click me to show/hide content</div>
-		<div class="collapse-content flex flex-wrap gap-4 justify-center">
-			{#each menuItems as item}
-				<a href={item.href}>
-					<li
-						class="text-xl text-center list-none font-bold {item.color} font-fira tracking-normal uppercase px-6 py-1 rounded-md text-white border-2 border-neutral"
-					>
-						{item.name}
-					</li>
-				</a>
-			{/each}
-		</div>
-	</div>
 </nav>
 
 <style>

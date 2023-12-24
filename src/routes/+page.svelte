@@ -24,15 +24,7 @@
 		<div class="w-full border-b-2 border-neutral"></div>
 	</div>
 	<div class="relative flex justify-center">
-		<span class="bg-purple text-sm text-gray-500">
-			<a
-				style="box-shadow: 0px 2px 0px 0px #2b2b2b;"
-				href="/work"
-				class="text-xl font-bold bg-purple font-fira tracking-normal uppercase px-6 py-2 rounded-md text-white border-2 border-neutral"
-			>
-				See more
-			</a>
-		</span>
+		<a href="/work" class="btn-primary bg-purple"> See more </a>
 	</div>
 </div>
 
