@@ -59,7 +59,7 @@
 		</h1>
 	</div>
 
-	<div class="justify-end hidden lg:flex items-end">
+	<div class="justify-end bg-white hidden lg:flex items-end">
 		<figure class=" noise-image">
 			<img width="150" class="mx-auto h-full" src={hits} alt="All the hits" />
 			<caption class="text-xs w-full font-fira italic">(and misses)</caption>

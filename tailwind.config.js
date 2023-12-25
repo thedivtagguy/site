@@ -31,14 +31,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require('@tailwindcss/typography'), require('daisyui'), require('flowbite/plugin')],
-	daisyui: {
-		themes: ['cmyk'],
-		darkTheme: 'dark',
-		base: true,
-		styled: true,
-		utils: true,
-		prefix: '',
-		themeRoot: ':root'
-	}
+	plugins: [require('@tailwindcss/typography'), require('flowbite/plugin')]
 };
