@@ -1,17 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: [
+		'./src/**/*.{html,js,svelte,ts}',
+		'./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'
+	],
 	theme: {
 		extend: {
 			fontFamily: {
-				'libre-caslon': ['LibreCaslonCondensed', 'sans-serif'],
+				'libre-caslon': ['LibreCaslonCondensed', 'serif'],
 				fira: ['Fira Code Variable', 'monospace'],
-				'open-sans': [
-					'"Open Sans Variable", sans-serif',
-					{
-						fontVariationSettings: '"wdth" 20'
-					}
-				],
+
 				roboto: ['Roboto Condensed', 'sans-serif'],
 				'libre-caslon-text': ['Libre Caslon Text', 'serif']
 			},
@@ -33,7 +31,7 @@ export default {
 			}
 		}
 	},
-	plugins: [require('@tailwindcss/typography'), require('daisyui')],
+	plugins: [require('@tailwindcss/typography'), require('daisyui'), require('flowbite/plugin')],
 	daisyui: {
 		themes: ['cmyk'],
 		darkTheme: 'dark',

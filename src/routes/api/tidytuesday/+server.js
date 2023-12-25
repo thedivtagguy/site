@@ -2,7 +2,7 @@ import { json } from '@sveltejs/kit';
 
 async function getPosts() {
 	const allPosts = await getSortedPosts(
-		import.meta.glob('/content/tidytuesday/*.md|mdx', { eager: true })
+		import.meta.glob('../../../content/tidytuesday/*.md|mdx', { eager: true })
 	);
 
 	// Group posts by year and calculate metadata for each year

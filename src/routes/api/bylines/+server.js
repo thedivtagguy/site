@@ -3,7 +3,7 @@ import { json } from '@sveltejs/kit';
 async function getPosts() {
 	const clients = await getClients();
 	const bylines = await getSortedPosts(
-		import.meta.glob('/content/bylines/*.md', { eager: true }),
+		import.meta.glob('../../../content/bylines/*.md', { eager: true }),
 		clients
 	);
 	return bylines;
@@ -12,7 +12,7 @@ async function getPosts() {
 async function getClients() {
 	try {
 		const clients = await getSortedPosts(
-			import.meta.glob('/content/clients/*.mdx', { eager: true })
+			import.meta.glob('../../../content/clients/*.mdx', { eager: true })
 		);
 		return clients || [];
 	} catch (error) {

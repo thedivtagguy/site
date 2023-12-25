@@ -23,25 +23,20 @@
 
 <div class={cn('mx-auto w-full', className)} {...$root}>
 	{#each data as { title, description, projectLink, type, client, favorite, label, date, thumbnail, tools }, i (i)}
-		<div
-			in:fade
-			animate:flip={{ duration: 200 }}
-			use:melt={$item(title)}
-			class="overflow-hidden transition-colors"
-		>
-			<h2 class="flex text-2xl">
+		<article in:fade use:melt={$item(title)} class="overflow-hidden transition-colors">
+			<header class="flex text-2xl">
 				<button
 					use:melt={$trigger(title)}
 					class={cn(
 						'flex flex-1 cursor-pointer text-left text-2xl md:text-3xl items-start md:items-center justify-between ',
-						`px-5 py-4  gap-4 font-medium leading-none`,
+						'px-5 py-4 gap-4 font-medium leading-none',
 						'text-black transition-colors focus:!ring-0',
 						'focus-visible:text-magnum-800',
 						i !== 0 && 'border-t border-t-neutral-300',
 						$isSelected(title) ? 'bg-base-200' : ''
 					)}
 				>
-					<span class="inline-flex gap-2 items-center leading-normal">
+					<span class="inline-flex gap-2 font-libre-caslon items-center leading-normal">
 						<Plus
 							class={$isSelected(title)
 								? 'rotate-45 transition-transform duration-600'
@@ -49,10 +44,8 @@
 						/>
 						{title}
 					</span>
-
 					{#if (type === 'bylines' && client.title) || (type === 'Client' && client.title)}
 						{#if !$isSelected(title)}
-							<!-- Hide client logo if active -->
 							<div out:fade={{ duration: 200 }} in:fade>
 								<Badge>
 									<img
@@ -60,7 +53,7 @@
 										width="80"
 										class="me-1.5 h-6 inline-block object-contain"
 										src={client.logo}
-										alt="{client.title} logo"
+										alt={`${client.title} logo`}
 									/>
 								</Badge>
 							</div>
@@ -75,50 +68,65 @@
 						</Badge>
 					{/if}
 				</button>
-			</h2>
+			</header>
 			{#if $isSelected(title)}
 				<div
 					class="content bg-base-200 flex flex-col md:flex-row gap-4 pr-6 pl-12 md:pl-12 pb-6"
 					use:melt={$content(title)}
 					transition:slide
 				>
-					<!-- Thumbnail -->
 					{#if thumbnail}
 						<figure class="basis-2/6">
 							<img
 								class="w-[230px] h-[300px] rounded-xl border-neutral border-[1px] object-cover noise-image"
 								loading="lazy"
 								src={thumbnail}
-								alt="cover"
+								alt={`Thumbnail for ${title}`}
 							/>
 						</figure>
 					{/if}
-					<!-- Content card -->
 					<div class="basis-4/6 relative flex flex-col justify-between gap-2 min-h-[300px] h-full">
-						<div class=" h-full">
-							<!-- Date -->
+						<div>
 							<span class="date text-sm font-fira text-gray-600">{formatDate(date)}</span>
-							<hr class="border-gray-500 pb-2" />
-							<!-- Description -->
-							<p class="font-roboto text-xl">{description}</p>
-							<!-- Client project? -->
-
-							<div class="mt-6 grid grid-cols-4 divide-x-[1px] divide-neutral gap-4">
+							<hr class="border-base-300 pb-2" />
+							<p class="font-roboto text-xl pb-2">{description}</p>
+							<div
+								class="grid border-b-[1px] border-t-[1px] border-base-300 md:grid-cols-4 w-full md:divide-x-[1px] divide-base-300 py-4 gap-6"
+							>
 								{#if (type === 'bylines' && client.title) || (type === 'Client' && client.title)}
 									<div class="col-span-1">
-										<p class="font-roboto uppercase">Made for</p>
+										<p class="font-fira text-xs font-medium tracking-widest pb-2 uppercase">
+											Made for
+										</p>
 										<img
 											width="80"
-											class="h-8 inline-block object-contain"
+											height="20"
+											class="inline-block object-contain"
 											src={client.logo}
-											alt="{client.title} logo"
+											alt={`${client.title} logo`}
 										/>
+									</div>
+								{/if}
+
+								{#if tools}
+									<div class="col-span-1 first:px-0 md:pl-8">
+										<p class="font-fira text-xs font-medium tracking-widest pb-2 uppercase">
+											Tools
+										</p>
+										<p class="font-roboto leading-tight w-full">
+											{tools.join(', ')}
+										</p>
 									</div>
 								{/if}
 							</div>
 						</div>
 						<div class="cta">
-							<a href={projectLink} class="btn-primary w-80 bg-blue">
+							<a
+								href={projectLink}
+								class="btn-primary w-80 bg-blue"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								Read more
 								<ExternalLink size={20} />
 							</a>
@@ -126,6 +134,6 @@
 					</div>
 				</div>
 			{/if}
-		</div>
+		</article>
 	{/each}
 </div>

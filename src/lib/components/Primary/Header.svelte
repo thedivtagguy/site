@@ -3,6 +3,7 @@
 	import BatteryPercentage from '$lib/assets/svg/BatteryPercentage.svelte';
 	import Logo from '$lib/assets/svg/Logo.svelte';
 	import Menu from './Menu.svelte';
+	import MobileMenu from './MobileMenu.svelte';
 	const issueTime = process.env.BUILD_TIME;
 	export let gpsInfo;
 
@@ -46,7 +47,7 @@
 
 	<hr class="divide" />
 </header>
-<Menu />
+<MobileMenu />
 <div class="px-4 w-full">
 	<hr class="divide" />
 </div>

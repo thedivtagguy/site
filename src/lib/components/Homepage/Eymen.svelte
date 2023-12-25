@@ -51,29 +51,28 @@
 	});
 </script>
 
-<div class="relative col-span-4">
-	<video
-		tabindex="-1"
-		src={Eymen}
-		width="800"
-		style="width: 100%; max-width: 800px;"
-		autoplay
-		muted
-		loop
-		playsinline
-		preload="none"
-		poster={slide1}
-	></video>
+<div class="relative col-span-4 md:ml-4">
+	<video tabindex="-1" autoplay muted loop playsinline preload="none" poster={slide1}>
+		<source src={Eymen} type="video/webm" />
+	</video>
 	<aside
 		in:fade={{ duration: 1000 }}
 		class="absolute top-[1.9rem] w-[6.5rem] h-60 px-4 text-xs leading-snug left-[6rem] text-center font-bold text-base-300 -skew-y-[17deg]"
 	>
-		<p class="uppercase tracking-tighter text-base-300 p-0 m-0 font-bold font-fira">{greeting}</p>
+		<p class="uppercase tracking-tighter text-base-300 font-bold font-fira">{greeting}</p>
 	</aside>
 	<div class="absolute top-0 left-0 w-full h-full bg-noise bg-cover z-5"></div>
 </div>
 
 <style>
+	video {
+		--video-width: 500;
+		--video-height: 500;
+		aspect-ratio: var(--video-width) / var(--video-height);
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
 	.bg-noise {
 		width: 100%;
 		height: 100%;

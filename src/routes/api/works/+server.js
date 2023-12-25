@@ -4,7 +4,7 @@ async function getPosts() {
 	const clients = await getClients();
 
 	const works = await getSortedPosts(
-		import.meta.glob('/content/work/*.mdx', { eager: true }),
+		import.meta.glob('../../../content/work/*.mdx', { eager: true }),
 		clients
 	);
 
@@ -14,7 +14,7 @@ async function getPosts() {
 async function getClients() {
 	try {
 		const clients = await getSortedPosts(
-			import.meta.glob('/content/clients/*.mdx', { eager: true })
+			import.meta.glob('../../../content/clients/*.mdx', { eager: true })
 		);
 
 		return clients || [];

@@ -2,7 +2,7 @@
 	import note from '$lib/assets/images/common/orange-note.webp';
 </script>
 
-<div class="flex lg:flex-col col-span-2 flex-row gap-2">
+<div class="flex w-full lg:flex-col md:col-span-2 col-span-4 flex-row gap-2">
 	<div class="note basis-1/2">
 		<figure class="relative">
 			<div
@@ -20,7 +20,7 @@
 		</figure>
 	</div>
 
-	<div class="flex basis-1/2">
+	<div class="flex basis-1/2 w-full">
 		<div class="black-bento text-sm flex flex-col gap-2 justify-center">
 			<div>
 				<p class="font-roboto text-white font-bold uppercase">Web dev?</p>

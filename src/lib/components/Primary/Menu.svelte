@@ -12,7 +12,7 @@
 		},
 		{
 			name: 'Blog',
-			href: '/',
+			href: '/blog',
 			color: 'bg-sage'
 		},
 		{
@@ -37,9 +37,3 @@
 		{/each}
 	</ul>
 </nav>
-
-<style>
-	li {
-		box-shadow: 0px 2px 0px 0px #2b2b2b;
-	}
-</style>

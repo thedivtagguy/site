@@ -36,6 +36,8 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-svelte": "^2.30.0",
+		"flowbite": "^2.2.1",
+		"flowbite-svelte": "^0.44.21",
 		"fractils": "^3.1.2",
 		"functions\n": "link:@netlify/functions\n",
 		"gray-matter": "^4.0.3",

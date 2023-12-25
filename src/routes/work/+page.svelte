@@ -33,19 +33,22 @@
 	$: filteredTags = tagsByType($workFilters.type, works);
 
 	$: selectedTags = $workFilters.tags;
-
-	$: console.log(selectedTags, selectedTags.size);
 </script>
+
+<svelte:head>
+	<title>Works | aman.bh</title>
+	<meta property="og:title" content="Works | aman.bh" />
+</svelte:head>
 
 <header
 	class="grid-cols-1 grid w-full justify-center items-center md:px-6 md:grid-cols-1 lg:grid-cols-5 border-b-[1px] border-base-300"
 >
-	<figure class=" noise-image hidden lg:block">
+	<figure class="hidden lg:block p-1 mr-8">
 		<img
 			width="400"
 			class="rounded-xl"
 			src={headerImage}
-			alt="Artistic interpretation of an ecosystem"
+			alt="My chaotic step-by-step, brick by brick mimicry of the entire ecosystem"
 		/>
 	</figure>
 	<div
@@ -58,7 +61,8 @@
 
 	<div class="justify-end hidden lg:flex items-end">
 		<figure class=" noise-image">
-			<img width="150" class="mx-auto h-full" src={hits} alt="Collection of popular works" />
+			<img width="150" class="mx-auto h-full" src={hits} alt="All the hits" />
+			<caption class="text-xs w-full font-fira italic">(and misses)</caption>
 		</figure>
 		<ToggleFormatting
 			onToggle={() => {
@@ -79,12 +83,6 @@
 		</nav>
 	</aside>
 	<section class="col-span-3 min-h-screen border-l-[1px] border-r-[1px] border-base-300 md:mx-4">
-		<!-- <aside
-			class:filters={!showFilters}
-			class="bg-base-100 hidden lg:flex justify-between px-4 max-w-3xl border-b-[1px] h-full border-base-300 z-10 w-full sticky top-0 py-2"
-		>
-			<TagsList />
-		</aside> -->
 		<WorkList data={$filteredWorks} />
 	</section>
 	<aside class="h-full col-span-1 hidden lg:block">
@@ -99,8 +97,8 @@
 							on:click={() => filterWork('tags', tag)}
 							disabled={!filteredTags.has(tag)}
 							class="hover:underline flex w-full justify-between items-center uppercase text-xs text-neutral font-medium transition-opacity duration-300
-    {selectedTags.size > 0 && selectedTags.has(tag) ? 'bg-gray-200 opacity-100' : ''}
-    {selectedTags.size > 0 && !selectedTags.has(tag) ? 'opacity-20' : ''}"
+							{selectedTags.size > 0 && selectedTags.has(tag) ? 'bg-gray-200 opacity-100' : ''}
+							{selectedTags.size > 0 && !selectedTags.has(tag) ? 'opacity-20' : ''}"
 						>
 							<span>
 								{tag}

@@ -1,8 +1,8 @@
-import { getYearAndWeek } from "./utils"
+import { getYearAndWeek } from './utils';
 export const bylines = {
 	name: 'bylines',
 	label: 'Bylines',
-	path: 'content/bylines',
+	path: 'src/content/bylines',
 	ui: {
 		filename: {
 			readonly: true,
@@ -45,6 +45,11 @@ export const bylines = {
 			label: 'Title',
 			isTitle: true,
 			required: true
+		},
+		{
+			type: 'string',
+			name: 'description',
+			label: 'Description'
 		},
 		{
 			name: 'date',
