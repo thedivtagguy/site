@@ -33,6 +33,8 @@
 	$: filteredTags = tagsByType($workFilters.type, works);
 
 	$: selectedTags = $workFilters.tags;
+
+	$: console.log(selectedTags, selectedTags.size);
 </script>
 
 <header
@@ -94,18 +96,15 @@
 				{#each Object.entries(tags).sort((a, b) => b[1] - a[1]) as [tag, count]}
 					<li class="py-1.5 h-6">
 						<button
-							class:active={filteredTags.has(tag)}
 							on:click={() => filterWork('tags', tag)}
 							disabled={!filteredTags.has(tag)}
-							class="hover:underline flex w-full justify-between hover:bg-base-200 items-center uppercase text-xs text-neutral font-medium transition-opacity duration-300
-							{!selectedTags.has(tag) && selectedTags.size === 0 ? '' : 'opacity-20'} {selectedTags.has(tag) &&
-							(selectedTags.size > 0 || filteredTags.has(tag))
-								? 'underline opacity-100'
-								: ''}"
+							class="hover:underline flex w-full justify-between items-center uppercase text-xs text-neutral font-medium transition-opacity duration-300
+    {selectedTags.size > 0 && selectedTags.has(tag) ? 'bg-gray-200 opacity-100' : ''}
+    {selectedTags.size > 0 && !selectedTags.has(tag) ? 'opacity-20' : ''}"
 						>
 							<span>
 								{tag}
-								<span class="font-light">({count}) </span>
+								<span class="font-light">({count})</span>
 							</span>
 							{#if selectedTags.has(tag) && (selectedTags.size > 0 || filteredTags.has(tag))}
 								<X class="w-4 h-4 hover:stroke-2  mx-2" />
@@ -120,18 +119,18 @@
 
 <style>
 	nav {
-		transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition: all 0.1s ease-in-out;
 	}
 	.filters {
 		opacity: 0;
 		visibility: hidden;
 	}
 
-	button:not(.active) {
-		opacity: 0.2;
-	}
-
 	button:not(.active):hover {
 		text-decoration: none;
+	}
+
+	button:disabled {
+		opacity: 0.2;
 	}
 </style>

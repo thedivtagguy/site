@@ -4,8 +4,6 @@
 	export let number = 0;
 	export let active = false;
 	export let isAnythingSelected = false;
-
-	$: console.log(active, text);
 </script>
 
 <button
