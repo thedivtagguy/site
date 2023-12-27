@@ -2,22 +2,30 @@ export const prerender = true;
 
 export async function load({ fetch }) {
 	try {
-		const [tidytuesdayRes, bylinesRes, worksRes] = await Promise.all([
+		const [tidytuesdayRes, bylinesRes, worksRes, blogRes] = await Promise.all([
 			fetch('api/tidytuesday'),
 			fetch('api/bylines'),
-			fetch('api/works')
+			fetch('api/works'),
+			fetch('api/blogposts')
 		]);
 
-		const [tidytuesday, bylines, works] = await Promise.all([
+		const [tidytuesday, bylines, works, blogsResponse] = await Promise.all([
 			tidytuesdayRes.json(),
 			bylinesRes.json(),
-			worksRes.json()
+			worksRes.json(),
+			blogRes.json()
 		]);
+
+		const blogs = blogsResponse.content;
+
+		// Sort blogs by date in descending order
+		blogs.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 
 		const data = {
 			tidytuesday: tidytuesday,
 			bylines: bylines.content,
-			works: works.content
+			works: works.content,
+			latestBlog: blogs[0]
 		};
 
 		return { data };

@@ -43,7 +43,7 @@
 <header
 	class="grid-cols-1 grid w-full justify-center items-center md:px-6 md:grid-cols-1 lg:grid-cols-5 border-b-[1px] border-base-300"
 >
-	<figure class="hidden lg:block p-1 mr-8">
+	<figure class="hidden p-1 mr-8 lg:block">
 		<img
 			width="400"
 			class="rounded-xl"
@@ -54,15 +54,15 @@
 	<div
 		class="flex items-center justify-center col-span-3 h-full lg:border-r-[1px] lg:border-l-[1px] border-base-300"
 	>
-		<h1 class="text-4xl md:text-4xl lg:text-7xl text-center py-6 text-neutral leading-tight">
-			Things I've made for<span class="highlight inline-block italic"> myself and others</span>
+		<h1 class="py-6 text-4xl leading-tight text-center md:text-4xl lg:text-7xl text-neutral">
+			Things I've made for<span class="inline-block italic highlight"> myself and others</span>
 		</h1>
 	</div>
 
-	<div class="justify-end bg-white hidden lg:flex items-end">
-		<figure class=" noise-image">
-			<img width="150" class="mx-auto h-full" src={hits} alt="All the hits" />
-			<caption class="text-xs w-full font-fira italic">(and misses)</caption>
+	<div class="items-end justify-end hidden bg-white lg:flex">
+		<figure class="font-fira noise-image">
+			<img width="150" class="h-full mx-auto" src={hits} alt="All the hits" />
+			<caption class=" text-xs italic text-center w-[9rem] font-fira">(and misses)</caption>
 		</figure>
 		<ToggleFormatting
 			onToggle={() => {
@@ -73,22 +73,22 @@
 </header>
 
 <main
-	class="grid grid-cols-1 h-full justify-center items-start md:grid-cols-1 lg:grid-cols-5 w-full lg:py-2"
+	class="grid items-start justify-center w-full h-full grid-cols-1 md:grid-cols-1 lg:grid-cols-5 lg:py-2"
 >
-	<aside class="col-span-1 h-full hidden lg:flex flex-col items-center w-full">
-		<nav class="sticky top-2 w-full mt-2" class:filters={!showFilters}>
-			<h3 class="font-semibold text-sm text-center uppercase font-fira pb-2">~ by type ~</h3>
-			<hr class="divide py-2" />
+	<aside class="flex-col items-center hidden w-full h-full col-span-1 lg:flex">
+		<nav class="sticky w-full mt-2 top-2" class:filters={!showFilters}>
+			<h3 class="pb-2 text-sm font-semibold text-center uppercase font-fira">~ by type ~</h3>
+			<hr class="py-2 divide" />
 			<Categories {types} />
 		</nav>
 	</aside>
 	<section class="col-span-3 min-h-screen border-l-[1px] border-r-[1px] border-base-300 md:mx-4">
 		<WorkList data={$filteredWorks} />
 	</section>
-	<aside class="h-full col-span-1 hidden lg:block">
-		<nav class=" flex flex-col sticky top-2 font-fira w-full mt-2" class:filters={!showFilters}>
-			<h3 class="font-semibold text-sm text-center uppercase font-fira pb-2">~ by tag ~</h3>
-			<hr class="divide pb-2" />
+	<aside class="hidden h-full col-span-1 lg:block">
+		<nav class="sticky flex flex-col w-full mt-2 top-2 font-fira" class:filters={!showFilters}>
+			<h3 class="pb-2 text-sm font-semibold text-center uppercase font-fira">~ by tag ~</h3>
+			<hr class="pb-2 divide" />
 
 			<ul>
 				{#each Object.entries(tags).sort((a, b) => b[1] - a[1]) as [tag, count]}
@@ -96,7 +96,7 @@
 						<button
 							on:click={() => filterWork('tags', tag)}
 							disabled={!filteredTags.has(tag)}
-							class="hover:underline flex w-full justify-between items-center uppercase text-xs text-neutral font-medium transition-opacity duration-300
+							class="hover:underline font-fira flex w-full justify-between items-center uppercase text-xs text-neutral font-medium transition-opacity duration-300
 							{selectedTags.size > 0 && selectedTags.has(tag) ? 'bg-gray-200 opacity-100' : ''}
 							{selectedTags.size > 0 && !selectedTags.has(tag) ? 'opacity-20' : ''}"
 						>
@@ -105,7 +105,7 @@
 								<span class="font-light">({count})</span>
 							</span>
 							{#if selectedTags.has(tag) && (selectedTags.size > 0 || filteredTags.has(tag))}
-								<X class="w-4 h-4 hover:stroke-2  mx-2" />
+								<X class="w-4 h-4 mx-2 hover:stroke-2" />
 							{/if}
 						</button>
 					</li>

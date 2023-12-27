@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@fontsource-variable/archivo':
+    specifier: ^5.0.17
+    version: 5.0.17
   '@fontsource-variable/fira-code':
     specifier: ^5.0.15
     version: 5.0.15
@@ -57,7 +60,7 @@ devDependencies:
     version: 1.27.4(svelte@4.2.7)(vite@4.4.2)
   '@tailwindcss/typography':
     specifier: ^0.5.10
-    version: 0.5.10(tailwindcss@3.3.5)
+    version: 0.5.10(tailwindcss@3.4.0)
   '@tinacms/cli':
     specifier: ^1.5.36
     version: 1.5.36(@babel/core@7.23.3)(@types/node@20.10.0)(react-dom@18.2.0)(react@18.2.0)
@@ -148,8 +151,8 @@ devDependencies:
     specifier: ^4.4.1
     version: 4.4.1
   tailwindcss:
-    specifier: ^3.3.5
-    version: 3.3.5
+    specifier: ^3.4.0
+    version: 3.4.0
   tslib:
     specifier: ^2.4.1
     version: 2.4.1
@@ -1123,6 +1126,10 @@ packages:
 
   /@floating-ui/utils@0.1.6:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
+
+  /@fontsource-variable/archivo@5.0.17:
+    resolution: {integrity: sha512-BfQqjW0/lGMEuwtq3K6P5GIukotcLXksQGbeIxbgFK0+8g61kxgQGkI/Wr08omCBNsASfBjCNKAQAE5XVjRujA==}
+    dev: false
 
   /@fontsource-variable/fira-code@5.0.15:
     resolution: {integrity: sha512-tp56A54PjfH1RBJQ3Jdqh5cvrEHd4n302z3v6sGAnTKW9+oQgU0dK4WAMIXgDhFY35BrhpoIElowfkAT7NYJfA==}
@@ -3480,23 +3487,23 @@ packages:
     dependencies:
       tslib: 2.4.1
 
-  /@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.3.5):
+  /@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.4.0):
     resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.3.5
+      tailwindcss: 3.4.0
     dev: true
 
-  /@tailwindcss/line-clamp@0.3.1(tailwindcss@3.3.5):
+  /@tailwindcss/line-clamp@0.3.1(tailwindcss@3.4.0):
     resolution: {integrity: sha512-pNr0T8LAc3TUx/gxCfQZRe9NB2dPEo/cedPHzUGIPxqDMhgjwNm6jYxww4W5l0zAsAddxr+XfZcqttGiFDgrGg==}
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.3.5
+      tailwindcss: 3.4.0
     dev: true
 
-  /@tailwindcss/typography@0.5.10(tailwindcss@3.3.5):
+  /@tailwindcss/typography@0.5.10(tailwindcss@3.4.0):
     resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
@@ -3505,7 +3512,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.3.5
+      tailwindcss: 3.4.0
     dev: true
 
   /@threlte/core@7.0.12(svelte@4.2.7)(three@0.160.0):
@@ -3548,7 +3555,7 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
       react-router-dom: 6.3.0(react-dom@17.0.2)(react@17.0.2)
-      tailwindcss: 3.3.5
+      tailwindcss: 3.4.0
       tinacms: 1.5.26(@babel/core@7.23.3)(react-dom@17.0.2)(react@17.0.2)
       typescript: 4.9.5
       zod: 3.22.4
@@ -3591,9 +3598,9 @@ packages:
       '@graphql-tools/load': 7.8.14(graphql@15.8.0)
       '@rollup/pluginutils': 5.0.5
       '@svgr/core': 6.3.1
-      '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.3.5)
-      '@tailwindcss/line-clamp': 0.3.1(tailwindcss@3.3.5)
-      '@tailwindcss/typography': 0.5.10(tailwindcss@3.3.5)
+      '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.0)
+      '@tailwindcss/line-clamp': 0.3.1(tailwindcss@3.4.0)
+      '@tailwindcss/typography': 0.5.10(tailwindcss@3.4.0)
       '@tinacms/app': 1.2.33(@babel/core@7.23.3)(@types/node@20.10.0)(yup@0.32.11)
       '@tinacms/datalayer': 1.2.30(react@18.2.0)
       '@tinacms/graphql': 1.4.30(react@18.2.0)
@@ -3638,7 +3645,7 @@ packages:
       prompts: 2.4.2
       readable-stream: 4.4.2
       rollup-plugin-visualizer: 5.9.3
-      tailwindcss: 3.3.5
+      tailwindcss: 3.4.0
       tinacms: 1.5.26(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
       typanion: 3.13.0
       typescript: 4.3.5
@@ -12925,8 +12932,8 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
 
-  /tailwindcss@3.3.5:
-    resolution: {integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==}
+  /tailwindcss@3.4.0:
+    resolution: {integrity: sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:

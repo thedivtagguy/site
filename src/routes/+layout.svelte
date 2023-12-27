@@ -22,12 +22,12 @@
 
 <Header {gpsInfo} />
 
-<body
-	class="mx-auto selection:bg-yellow flex px-4 flex-col max-w-[85rem] justify-center items-center"
+<main
+	class="mx-auto scroll-smooth selection:bg-yellow flex px-4 flex-col max-w-[85rem] justify-center items-center"
 >
 	<slot />
-</body>
+</main>
 
-<footer class="px-4 w-full">
+<footer class="w-full px-4">
 	<Footer />
 </footer>

@@ -1,11 +1,14 @@
 @import url('./fonts.css');
 @import '@fontsource-variable/fira-code';
-@import '@fontsource/libre-caslon-text/400.css';
-@import '@fontsource/libre-caslon-text/700.css';
+
 
 @import '@fontsource/roboto-condensed/300.css';
 @import '@fontsource/roboto-condensed/400.css';
 @import '@fontsource/roboto-condensed/700.css';
+
+@import '@fontsource-variable/archivo/wdth-italic.css';
+@import '@fontsource-variable/archivo';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +18,25 @@
       box-shadow: 0 2px 0 0 #2b2b2b; 
     }
   }
-  
+
+  caption {
+    @apply font-fira;
+  }
+
+  caption > p{
+    @apply font-semibold font-fira;
+  }
+
+h1, h2, h3 {
+    font-family: 'Libre Caslon Text', serif;
+}
+
+
+p, li {
+    @apply font-archivo;
+}
+
+
 
 .divide {
     @apply border-base-300 border-t-[1px] w-full z-0;
@@ -26,7 +47,7 @@ h1, h2 {
 }
 
 a:focus {
-    @apply outline-dashed outline-offset-4 rounded-sm outline-zinc-800;
+    @apply rounded-sm outline-dashed outline-offset-4 outline-zinc-800;
 }
 
 
@@ -63,19 +84,10 @@ html {
     }
 
     .black-bento {
-       @apply  rounded-2xl bg-neutral py-1 px-4; 
+       @apply  px-4 py-1 rounded-2xl bg-neutral; 
     }
 }
 
-p {
-    color: #000;
-    font-variant-numeric: lining-nums tabular-nums;
-    font-family: 'Libre Caslon Text', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    line-height: 1.8;
-}
 
 .noise-image {
     position: relative;
@@ -115,7 +127,7 @@ p {
 }
 
 .btn-primary {
-    @apply w-fit flex justify-center items-center gap-2 text-xl font-bold  font-roboto tracking-normal uppercase px-4 py-1 rounded-md text-white border-2 border-neutral ;
+    @apply flex items-center justify-center gap-2 px-4 py-1 text-xl font-bold tracking-normal text-white uppercase border-2 rounded-md w-fit font-roboto border-neutral ;
     box-shadow: 0 2px 0 0 #2b2b2b; 
     
     

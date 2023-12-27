@@ -1,8 +1,7 @@
-import { getYearAndWeek } from './utils';
-export const now = {
-	name: 'now',
-	label: 'Now',
-	path: 'src/content/now',
+export const about = {
+	name: 'about',
+	label: 'About',
+	path: 'src/content/about',
 	format: 'mdx',
 	ui: {
 		allowedActions: {
@@ -33,83 +32,72 @@ export const now = {
 			component: 'date'
 		},
 		{
-			type: 'string',
-			name: 'location',
-			label: 'Location'
-		},
-		{
 			type: 'rich-text',
-			name: 'job',
-			label: 'Job'
-		},
-		{
-			type: 'rich-text',
-			name: 'reading',
-			label: 'Reading'
-		},
-		{
-			type: 'rich-text',
-			name: 'extracurricular',
-			label: 'Rxtracurricular'
-		},
-		{
-			type: 'rich-text',
-			name: 'content',
-			label: 'Content',
+			name: 'about',
+			label: 'About',
 			isBody: true
 		},
 		{
+			type: 'rich-text',
+			name: 'thanks',
+			label: 'Thanks'
+		},
+		{
 			type: 'object',
-			name: 'years',
-			label: 'Year highlight',
+			name: 'people',
+			label: 'People to thank',
 			list: true,
 			component: 'group-list',
 			itemProps: (item) => ({
 				key: item.id,
-				label: item.year
+				label: item.name
 			}),
 			defaultItem: () => ({
-				name: 'New year highlight',
+				name: 'New person',
 				id: Math.random().toString(36).substr(2, 9)
 			}),
 			fields: [
 				{
-					label: 'Year',
-					name: 'year',
-					type: 'number',
-					component: 'number'
+					label: 'Name',
+					name: 'name',
+					type: 'string'
 				},
 				{
-					type: 'rich-text',
-					name: 'content',
-					label: 'Content'
+					label: 'Link',
+					name: 'link',
+					type: 'string'
 				}
 			]
 		},
 		{
 			type: 'object',
-			name: 'links',
-			label: 'Links',
+			name: 'online',
+			label: 'Online people/resources to thank',
 			list: true,
 			component: 'group-list',
 			itemProps: (item) => ({
 				key: item.id,
-				label: item.title
+				label: item.name
 			}),
 			defaultItem: () => ({
-				name: 'New link',
+				name: 'New person',
 				id: Math.random().toString(36).substr(2, 9)
 			}),
 			fields: [
 				{
-					label: 'Title',
-					name: 'title',
+					label: 'Name',
+					name: 'name',
 					type: 'string'
 				},
 				{
-					type: 'string',
-					name: 'url',
-					label: 'URL'
+					label: 'Description',
+					name: 'description',
+					type: 'string'
+				},
+				{
+					label: 'Link',
+					name: 'link',
+					type: 'string'
 				}
 			]
 		}

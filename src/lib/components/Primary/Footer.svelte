@@ -6,10 +6,10 @@
 	import NotAi from '$lib/assets/svg/NotAi.svelte';
 </script>
 
-<div class="relative footer rounded-lg w-full my-4">
+<div class="relative w-full my-4 border-[1px] rounded-sm border-neutral footer">
 	<video
 		style="object-position: center 55%;"
-		class="absolute rounded-lg w-full h-full object object-cover"
+		class="absolute object-cover w-full h-full object"
 		src={Video}
 		autoplay
 		muted
@@ -19,18 +19,18 @@
 		preload="none"
 		poster={VideoPoster}
 	></video>
-	<div class="relative flex justify-between px-12 py-10 items-start h-full z-10">
+	<div class="relative z-10 flex items-start justify-between h-full px-12 py-10">
 		<div class="flex flex-col text-white">
 			<Logo width={70} height={120} />
 			<img src={License} alt="CC-BY license" class="w-24 mt-4" />
 			<NotAi scale={0.8} />
 		</div>
 	</div>
-	<div class="absolute top-0 left-0 w-full h-full bg-noise bg-cover z-5"></div>
+	<div class="absolute top-0 left-0 w-full h-full bg-cover bg-noise z-5"></div>
 </div>
 
-<aside class="font-fira tracking-tighter italic text-xs pb-4">
-	If you have been, thanks for reading.
+<aside class="pb-4 text-xs italic tracking-tighter text-center font-fira">
+	~~ If you have been, thanks for reading.~~
 </aside>
 
 <style>

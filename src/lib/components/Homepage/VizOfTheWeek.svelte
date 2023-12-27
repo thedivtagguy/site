@@ -13,11 +13,11 @@
 	const { longestStreak, weeksDone } = meta;
 </script>
 
-<article class="flex w-full flex-col md:flex-row justify-center gap-4 items-center py-4">
-	<div class="image-container hidden md:block basis-1/6 self-end">
+<article class="flex flex-col items-center justify-center w-full gap-4 py-4 md:flex-row">
+	<div class="self-end hidden image-container md:block basis-1/6">
 		<img src={Label} alt="Viz of the Week label" width="150" height="320" />
 	</div>
-	<figure class="image-container w-full h-full items-stretch basis-3/6">
+	<figure class="items-stretch w-full h-full image-container basis-3/6">
 		<img
 			src={thumbnail}
 			alt={`Thumbnail for Viz of the Week: ${title}`}
@@ -25,17 +25,17 @@
 		/>
 	</figure>
 	<div class="content">
-		<main class="flex flex-col m-0 prose justify-start h-full items-start basis-2/6">
-			<h2 class="text-4xl m-0 p-0 font-roboto uppercase">{title}</h2>
-			<p class="text-neutral text-md p-0 m-0">{@html marked.parse(description)}</p>
+		<main class="flex flex-col items-start justify-start h-full m-0 prose basis-2/6">
+			<h2 class="p-0 m-0 text-4xl font-bold capitalize font-libre-caslon">{title}</h2>
+			<p class="p-0 m-0 text-neutral text-md">{@html marked.parse(description)}</p>
 		</main>
-		<aside class="flex flex-col md:flex-row justify-start gap-4 pb-2">
+		<aside class="flex flex-col justify-start gap-4 pb-2 md:flex-row">
 			<a
 				style="box-shadow: 0px 2px 0px 0px #2b2b2b;"
 				href={githubLink}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-x font-bold bg-base-200 font-fira tracking-normal uppercase px-8 py-2 rounded-md text-neutral border-2 border-neutral"
+				class="px-8 py-2 font-bold tracking-normal uppercase border-2 rounded-md text-x bg-base-200 font-fira text-neutral border-neutral"
 			>
 				Github
 			</a>
@@ -44,18 +44,18 @@
 				href={projectLink}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-x font-bold bg-purple font-fira tracking-normal uppercase px-8 py-2 rounded-md text-white border-2 border-neutral"
+				class="px-8 py-2 font-bold tracking-normal text-white uppercase border-2 rounded-md text-x bg-purple font-fira border-neutral"
 			>
 				Project
 			</a>
-			<div class="social-links flex justify-start items-center gap-4">
-				<span class="font-fira tracking-tighter text-xs font-bold">Also shared on</span>
+			<div class="flex items-center justify-start gap-4 social-links">
+				<span class="text-xs font-bold tracking-tighter font-fira">Also shared on</span>
 				{#each Object.entries(social) as [type, link]}
 					<SocialIcons {type} {link} class="w-6 h-6 text-neutral hover:text-purple" />
 				{/each}
 			</div>
 		</aside>
-		<hr class="divide py-1" />
+		<hr class="py-1 divide" />
 		<footer class="meta">
 			<TidyTuesdayCalendar longestStreakThisYear={longestStreak} weeksCompleted={weeksDone} />
 		</footer>

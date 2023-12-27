@@ -36,7 +36,7 @@
 						$isSelected(title) ? 'bg-base-200' : ''
 					)}
 				>
-					<span class="inline-flex gap-2 font-libre-caslon items-center leading-normal">
+					<span class="inline-flex items-center gap-2 leading-normal font-libre-caslon">
 						<Plus
 							class={$isSelected(title)
 								? 'rotate-45 transition-transform duration-600'
@@ -71,7 +71,7 @@
 			</header>
 			{#if $isSelected(title)}
 				<div
-					class="content bg-base-200 flex flex-col md:flex-row gap-4 pr-6 pl-12 md:pl-12 pb-6"
+					class="flex flex-col gap-4 pb-6 pl-12 pr-6 content bg-base-200 md:flex-row md:pl-12"
 					use:melt={$content(title)}
 					transition:slide
 				>
@@ -87,15 +87,15 @@
 					{/if}
 					<div class="basis-4/6 relative flex flex-col justify-between gap-2 min-h-[300px] h-full">
 						<div>
-							<span class="date text-sm font-fira text-gray-600">{formatDate(date)}</span>
-							<hr class="border-base-300 pb-2" />
-							<p class="font-roboto text-xl pb-2">{description}</p>
+							<span class="text-sm text-gray-600 date font-fira">{formatDate(date)}</span>
+							<hr class="pb-2 border-base-300" />
+							<p class="pb-2 text-xl not-italic font-archivo">{description}</p>
 							<div
 								class="grid border-b-[1px] border-t-[1px] border-base-300 md:grid-cols-4 w-full md:divide-x-[1px] divide-base-300 py-4 gap-6"
 							>
 								{#if (type === 'bylines' && client.title) || (type === 'Client' && client.title)}
 									<div class="col-span-1">
-										<p class="font-fira text-xs font-medium tracking-widest pb-2 uppercase">
+										<p class="pb-2 text-xs font-medium tracking-widest uppercase font-fira">
 											Made for
 										</p>
 										<img
@@ -110,10 +110,10 @@
 
 								{#if tools}
 									<div class="col-span-1 first:px-0 md:pl-8">
-										<p class="font-fira text-xs font-medium tracking-widest pb-2 uppercase">
+										<p class="pb-2 text-xs font-medium tracking-widest uppercase font-fira">
 											Tools
 										</p>
-										<p class="font-roboto leading-tight w-full">
+										<p class="w-full leading-tight font-archivo">
 											{tools.join(', ')}
 										</p>
 									</div>

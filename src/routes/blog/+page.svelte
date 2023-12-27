@@ -19,9 +19,9 @@
 	<header
 		class="col-span-5 w-full grid max-h-md grid-cols-1 md:grid-cols-5 border-b-[1px] border-base-300"
 	>
-		<div class="flex items-center justify-center col-span-4 h-full border-base-300">
-			<h1 class="text-2xl md:text-4xl lg:text-6xl text-center text-neutral leading-tight">
-				════╡<span class="highlight inline-block md:px-8"> Blog</span>╞════
+		<div class="flex items-center justify-center h-full col-span-4 border-base-300">
+			<h1 class="text-2xl leading-tight text-center md:text-4xl lg:text-6xl text-neutral">
+				════╡<span class="inline-block highlight md:px-8"> Blog</span>╞════
 			</h1>
 		</div>
 
@@ -35,28 +35,30 @@
 			/>
 		</figure>
 	</header>
-	<main class="listing col-span-full min-h-screen">
+	<main class="min-h-screen listing col-span-full">
 		<ul class="divide-y-[1px] divide-neutral/40 divide-dashed flex flex-col">
 			{#each posts as post (post)}
 				{@const year = new Date(post.date).getFullYear()}
 
 				<li
-					class="py-4 px-4 sm:py-8 sm:px-8 outline-2 hover:outline-dashed outline-neutral/30 -outline-offset-8 even:bg-gray-200 group"
+					class="px-4 py-4 sm:py-8 sm:px-8 outline-2 hover:outline-dashed outline-neutral/30 -outline-offset-8 even:bg-gray-200 group"
 				>
 					<a
 						href="/blog/{year}/{post.slug}"
-						class="flex flex-col sm:flex-row justify-between items-center focus:outline-none focus:border-none"
+						class="flex flex-col items-center justify-between sm:flex-row focus:outline-none focus:border-none"
 					>
 						<article>
 							<h3
-								class="font-libre-caslon font-bold pb-2 text-xl sm:text-3xl text-neutral tracking-wide"
+								class="pb-2 text-xl font-bold tracking-wide font-libre-caslon sm:text-3xl text-neutral"
 							>
 								{post.title}
 							</h3>
-							<p class=" font-roboto font-normal text-md">{post.excerpt}</p>
+							<p class="font-normal leading-relaxed text-gray-600 saturate-0 text-md">
+								{post.excerpt}
+							</p>
 						</article>
-						<aside class="flex w-full sm:w-40 flex-col justify-end items-end">
-							<p class="w-full sm:w-3/5 text-left text-neutral/80 font-semibold font-fira text-xs">
+						<aside class="flex flex-col items-end justify-end w-full sm:w-40">
+							<p class="w-full text-xs font-semibold text-left sm:w-3/5 text-neutral/80 font-fira">
 								{formatDate(post.date)}
 							</p>
 						</aside>

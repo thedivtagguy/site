@@ -5,4 +5,5 @@ import { random } from './random';
 import { blog } from './blogpost';
 import { clients } from './clients';
 import { now } from './now';
-export const collections = [tidytuesday, bylines, work, random, blog, now, clients];
+import { about } from './about';
+export const collections = [now, tidytuesday, blog, bylines, work, random, clients, about];

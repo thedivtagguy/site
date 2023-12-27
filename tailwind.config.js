@@ -9,9 +9,8 @@ export default {
 			fontFamily: {
 				'libre-caslon': ['LibreCaslonCondensed', 'serif'],
 				fira: ['Fira Code Variable', 'monospace'],
-
-				roboto: ['Roboto Condensed', 'sans-serif'],
-				'libre-caslon-text': ['Libre Caslon Text', 'serif']
+				archivo: ['Archivo Variable', 'sans-serif'],
+				roboto: ['Roboto Condensed', 'sans-serif']
 			},
 			colors: {
 				yellow: '#E8C85A',
