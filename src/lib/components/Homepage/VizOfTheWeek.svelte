@@ -14,22 +14,22 @@
 </script>
 
 <article class="flex flex-col items-center justify-center w-full gap-4 py-4 md:flex-row">
-	<div class="self-end hidden image-container md:block basis-1/6">
+	<div class="self-end hidden image-container md:block basis-1/7">
 		<img src={Label} alt="Viz of the Week label" width="150" height="320" />
 	</div>
 	<figure class="items-stretch w-full h-full image-container basis-3/6">
 		<img
 			src={thumbnail}
 			alt={`Thumbnail for Viz of the Week: ${title}`}
-			class="object-cover w-full h-full"
+			class="object-cover max-h-[24rem] w-full h-full"
 		/>
 	</figure>
-	<div class="content">
+	<div class="flex flex-col justify-between h-full content">
 		<main class="flex flex-col items-start justify-start h-full m-0 prose basis-2/6">
 			<h2 class="p-0 m-0 text-4xl font-bold capitalize font-libre-caslon">{title}</h2>
 			<p class="p-0 m-0 text-neutral text-md">{@html marked.parse(description)}</p>
 		</main>
-		<aside class="flex flex-col justify-start gap-4 pb-2 md:flex-row">
+		<aside class="flex flex-col justify-start gap-4 pb-12 md:flex-row">
 			<a
 				style="box-shadow: 0px 2px 0px 0px #2b2b2b;"
 				href={githubLink}

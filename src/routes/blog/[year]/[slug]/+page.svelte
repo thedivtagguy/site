@@ -26,7 +26,7 @@
 		<p class="py-4 text-sm font-fira">Published on {formatDate(data.meta.date)}</p>
 	</hgroup>
 
-	<div class="text-2xl leading-relaxed prose blog prose-p:font-archivo">
+	<div class="text-lg leading-relaxed prose blog prose-p:font-archivo">
 		<svelte:component this={data.content} />
 	</div>
 	<div class="flex gap-3 pt-4 tags">
@@ -34,5 +34,5 @@
 			<span class="px-2 py-1 rounded-lg bg-base-200">{tag}</span>
 		{/each}
 	</div>
-	<hr class="my-12 divide" />
 </article>
+<hr class="my-12 divide" />

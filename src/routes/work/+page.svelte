@@ -73,7 +73,7 @@
 </header>
 
 <main
-	class="grid items-start justify-center w-full h-full grid-cols-1 md:grid-cols-1 lg:grid-cols-5 lg:py-2"
+	class="grid items-start justify-center w-full h-full grid-cols-1 md:grid-cols-1 lg:grid-cols-5"
 >
 	<aside class="flex-col items-center hidden w-full h-full col-span-1 lg:flex">
 		<nav class="sticky w-full mt-2 top-2" class:filters={!showFilters}>
@@ -82,7 +82,9 @@
 			<Categories {types} />
 		</nav>
 	</aside>
-	<section class="col-span-3 min-h-screen border-l-[1px] border-r-[1px] border-base-300 md:mx-4">
+	<section
+		class="col-span-3 min-h-screen border-l-[1px] border-r-[1px] border-base-300 lg:mx-[0.9rem]"
+	>
 		<WorkList data={$filteredWorks} />
 	</section>
 	<aside class="hidden h-full col-span-1 lg:block">

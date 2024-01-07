@@ -17,7 +17,7 @@
 	$: isAnythingSelected = $workFilters.type.size > 0;
 </script>
 
-<div class="categories ml-4 mt-4">
+<div class="mt-4 ml-4 categories">
 	<!-- bylines -->
 	<Stamp
 		--rotation={2}

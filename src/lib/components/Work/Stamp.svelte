@@ -4,6 +4,7 @@
 	export let number = 0;
 	export let active = false;
 	export let isAnythingSelected = false;
+	export let disabled = false;
 </script>
 
 <button
@@ -18,15 +19,18 @@
 	on:mouseout
 	on:blur
 	on:keydown
+	{disabled}
 >
 	<div
 		style="background-image: url({background});"
 		class="stamp-container relative border-[1px] noise-image flex justify-center items-end font-libre-caslon capitalize mx-2 my-1 border-base-300 w-full h-28"
 	>
-		<p class="absolute italic top-0 left-2 text-3xl font-bold text-rose-900">
-			{number} <sup class="lowercase italic text-sm p-0 m-0">no.</sup>
-		</p>
-		<p class="text-neutral font-bold absolute bottom-0">{text}</p>
+		{#if number > 0}
+			<p class="absolute top-0 text-3xl italic font-bold left-2 text-rose-900">
+				{number} <sup class="p-0 m-0 text-sm italic lowercase">№</sup>
+			</p>
+		{/if}
+		<p class="absolute bottom-0 font-bold text-neutral">{text}</p>
 	</div>
 </button>
 
@@ -40,7 +44,6 @@
 
 	.stamp-container {
 		background-size: contain;
-
 		background-position: 50% -50%;
 	}
 
@@ -71,7 +74,6 @@
 		font-family: 'Libre Caslon Text', serif;
 		width: 100%;
 		max-width: 225px;
-
 		margin-bottom: 30px;
 		position: relative;
 		transition: all 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275);

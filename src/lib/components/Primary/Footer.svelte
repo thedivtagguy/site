@@ -6,32 +6,35 @@
 	import NotAi from '$lib/assets/svg/NotAi.svelte';
 </script>
 
-<div class="relative w-full my-4 border-[1px] rounded-sm border-neutral footer">
-	<video
-		style="object-position: center 55%;"
-		class="absolute object-cover w-full h-full object"
-		src={Video}
-		autoplay
-		muted
-		tabindex="-1"
-		loop
-		playsinline
-		preload="none"
-		poster={VideoPoster}
-	></video>
-	<div class="relative z-10 flex items-start justify-between h-full px-12 py-10">
-		<div class="flex flex-col text-white">
-			<Logo width={70} height={120} />
-			<img src={License} alt="CC-BY license" class="w-24 mt-4" />
-			<NotAi scale={0.8} />
+<footer
+	class="mx-auto w-full p-2 max-w-[83rem] border-[1px] rounded-lg rounded-br-none rounded-bl-none border-b-0 border-base-300"
+>
+	<div class="relative border-none footer">
+		<video
+			style="object-position: center 55%;"
+			class="absolute object-cover border-none w-full h-full rounded-[0.25rem] object"
+			src={Video}
+			autoplay
+			muted
+			tabindex="-1"
+			loop
+			playsinline
+			preload="none"
+			poster={VideoPoster}
+		></video>
+		<div class="relative z-10 flex items-start justify-between h-full px-12 py-10">
+			<div class="flex flex-col text-white">
+				<Logo width={70} height={120} />
+				<img src={License} alt="CC-BY license" class="w-24 mt-4" />
+			</div>
 		</div>
+		<div class="absolute top-0 left-0 w-full h-full bg-cover bg-noise z-5"></div>
 	</div>
-	<div class="absolute top-0 left-0 w-full h-full bg-cover bg-noise z-5"></div>
-</div>
 
-<aside class="pb-4 text-xs italic tracking-tighter text-center font-fira">
-	~~ If you have been, thanks for reading.~~
-</aside>
+	<aside class="py-2 -mb-2 text-xs italic tracking-tighter text-center font-fira">
+		· ✤ ٠ —– ٠ If you have been, thanks for reading —– ✤ ٠ ·
+	</aside>
+</footer>
 
 <style>
 	.footer {

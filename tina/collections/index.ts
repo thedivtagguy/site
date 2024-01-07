@@ -6,4 +6,15 @@ import { blog } from './blogpost';
 import { clients } from './clients';
 import { now } from './now';
 import { about } from './about';
-export const collections = [now, tidytuesday, blog, bylines, work, random, clients, about];
+import { colophone } from './colophone';
+export const collections = [
+	now,
+	tidytuesday,
+	blog,
+	bylines,
+	work,
+	random,
+	clients,
+	about,
+	colophone
+];

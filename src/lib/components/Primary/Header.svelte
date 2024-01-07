@@ -13,18 +13,20 @@
 </script>
 
 <header
-	class="flex selection:bg-yellow max-w-[85rem] mx-auto w-full px-4 flex-col justify-center items-center mt-4"
+	class="flex selection:bg-yellow max-w-[85rem] mx-auto w-full px-4 flex-col justify-center items-center mt-1"
 >
-	<hr class="divide" />
-
-	<div class="flex flex-col items-center justify-start w-full my-2 text-center" class:row={!isHome}>
+	<div
+		class="flex border-b-[1px] border-t-[1px] border-base-300 flex-col items-center justify-start w-full mt-2 text-center"
+		class:row={!isHome}
+	>
 		{#if !isHome}
-			<p class="flex items-center justify-end w-full uppercase" class:notHome={!isHome}>
-				<span>issue dated {issueTime} <i class="block">Bangalore, India</i></span>
+			<p class="w-full max-w-md text-[0.7rem] uppercase" class:notHome={!isHome}>
+				issue dated <span class="inline-block">{issueTime}</span>
+				<i class="block">Bangalore, India</i>
 			</p>
 		{/if}
 		{#if isHome}
-			<p class="flex items-center justify-between w-full uppercase" class:notHome={!isHome}>
+			<p class="flex items-center justify-between w-full text-xs uppercase" class:notHome={!isHome}>
 				<span class="text-xs">&nbsp;</span>
 				<span>issue dated {issueTime} <i>Bangalore, India</i></span>
 				<BatteryPercentage percentage={gpsInfo?.batt} width="1.3em" class="hover:cursor-pointer" />
@@ -33,25 +35,31 @@
 				{@html headline}
 			</h1>
 		{:else}
-			<!-- <MobileMenu /> -->
-
-			<a href="/">
-				<Logo />
-			</a>
+			<div class="w-full">
+				<Menu showBorders={false} />
+			</div>
 		{/if}
-		<p class="w-full uppercase" class:notHome={!isHome}>
+
+		<p
+			class="w-full {isHome ? 'text-center text-xs' : 'text-left text-[0.7rem]'} uppercase"
+			class:notHome={!isHome}
+		>
 			{subtitle}
 		</p>
+		{#if !isHome}
+			<Logo class="hidden mx-4 size-12 md:block" />
+		{/if}
 	</div>
-
-	<hr class="divide" />
+	{#if isHome}
+		<div class="w-full -mt-2">
+			<Menu />
+		</div>
+	{/if}
 </header>
-<Menu />
-<hr class="divide max-w-[83rem] mx-auto px-4" />
 
 <style>
 	p {
-		@apply text-sm font-bold font-fira my-2;
+		@apply font-bold text-neutral font-fira my-1;
 	}
 
 	.row {
@@ -59,8 +67,7 @@
 	}
 
 	p.notHome {
-		@apply text-xs;
-		width: 24%;
+		width: 34%;
 	}
 
 	p.notHome:first-child {
@@ -70,10 +77,6 @@
 
 	p.notHome:last-child {
 		text-align: left;
-	}
-
-	.notHome > i {
-		display: block;
 	}
 
 	@media (max-width: 968px) {

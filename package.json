@@ -41,6 +41,7 @@
 		"fractils": "^3.1.2",
 		"functions\n": "link:@netlify/functions\n",
 		"gray-matter": "^4.0.3",
+		"leaflet": "^1.9.4",
 		"lodash": "^4.17.21",
 		"lucide-svelte": "^0.300.0",
 		"marked": "^11.0.0",

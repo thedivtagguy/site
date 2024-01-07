@@ -33,16 +33,16 @@
 		</figure>
 		<p class="py-4 text-center text-md font-fira">Updated on {formatDate(now.lastUpdated)}</p>
 	</hgroup>
-
+	<div class="px-8 pt-12 pb-[9rem] md:pb-2 md:overflow-hidden overflow-y-hidden md:w-fit w-dvw">
+		<PostCard {content} />
+	</div>
 	<div
-		class="py-12 mx-auto text-xl prose prose-h2:font-libre-caslon prose-h3:font-libre-caslon prose-p:text-neutral blog"
+		class="px-4 py-12 mx-auto text-xl prose text-wrap prose-h2:font-libre-caslon prose-h3:font-libre-caslon prose-p:text-neutral"
 	>
 		{@html marked(now.job)}
 		<h3>Where you at?</h3>
 		{@html marked(now.location)}
-	</div>
-	<PostCard {content} />
-	<div class="py-12 mx-auto text-xl prose blog">
+
 		<h2>Highlights</h2>
 		{#each now.years as year}
 			<h3>{year.year}</h3>

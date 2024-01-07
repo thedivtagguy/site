@@ -4,10 +4,14 @@
 	import TextDivider from '$lib/components/Primary/TextDivider.svelte';
 	import InTheNews from '$lib/components/Homepage/InTheNews.svelte';
 	import VizOfTheWeek from '$lib/components/Homepage/VizOfTheWeek.svelte';
+	import MapContainer from '$lib/components/Homepage/MapContainer.svelte';
 	export let data;
 	let works = data.data.works;
 </script>
 
+<svelte:head>
+	<title>Aman's Website</title>
+</svelte:head>
 <header>
 	<Hero liveData={data.data?.latestBlog} />
 
@@ -34,4 +38,7 @@
 	<InTheNews data={data.data?.bylines} />
 	<TextDivider text="Just for fun" />
 	<VizOfTheWeek data={data.data?.tidytuesday} />
+	<hr class="py-[0.1rem] mt-4 divide" />
+	<hr class="mb-10 divide" />
+	<MapContainer />
 </main>

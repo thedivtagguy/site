@@ -1,5 +1,6 @@
 <script>
 	import BlogImage from '$lib/assets/images/disjoined.webp';
+	import TypeWriter from '$lib/assets/images/blog/typewriter.webp';
 	import Dunce from '$lib/assets/images/dunce.webp';
 	import { formatDate } from '$lib/utils.ts';
 
@@ -14,18 +15,16 @@
 </svelte:head>
 
 <div
-	class="grid-cols-1 grid w-full gap-2 justify-center items-center md:grid-cols-1 lg:grid-cols-5 lg:border-l-[1px] border-r-[1px] border-base-300"
+	class="grid items-center justify-center w-full grid-cols-1 gap-0 lg:grid-cols-5 border-base-300"
 >
-	<header
-		class="col-span-5 w-full grid max-h-md grid-cols-1 md:grid-cols-5 border-b-[1px] border-base-300"
-	>
-		<div class="flex items-center justify-center h-full col-span-4 border-base-300">
-			<h1 class="text-2xl leading-tight text-center md:text-4xl lg:text-6xl text-neutral">
+	<header class="col-span-5 w-full grid grid-cols-1 md:grid-cols-5 border-b-[1px] border-base-300">
+		<div class="flex items-center justify-center h-full col-span-4 py-6 border-base-300">
+			<h1 class="text-5xl leading-tight text-center lg:text-6xl text-neutral">
 				════╡<span class="inline-block highlight md:px-8"> Blog</span>╞════
 			</h1>
 		</div>
 
-		<figure class="hidden lg:block lg:border-l-[1px] border-base-300 p-1 mr-8">
+		<figure class="hidden lg:block lg:border-l-[1px] border-base-300 p-2">
 			<img
 				width="220"
 				height="250"
@@ -35,13 +34,13 @@
 			/>
 		</figure>
 	</header>
-	<main class="min-h-screen listing col-span-full">
-		<ul class="divide-y-[1px] divide-neutral/40 divide-dashed flex flex-col">
+	<main class="min-h-screen col-span-4 listing md:border-r-[1px] -mr-[0.06rem] border-base-300">
+		<ul class="divide-y-[1px] w-full divide-neutral/40 divide-dashed flex flex-col">
 			{#each posts as post (post)}
 				{@const year = new Date(post.date).getFullYear()}
 
 				<li
-					class="px-4 py-4 sm:py-8 sm:px-8 outline-2 hover:outline-dashed outline-neutral/30 -outline-offset-8 even:bg-gray-200 group"
+					class="w-full px-4 py-4 sm:py-8 sm:px-8 outline-2 hover:outline-dashed outline-neutral/30 -outline-offset-8 group"
 				>
 					<a
 						href="/blog/{year}/{post.slug}"
@@ -67,6 +66,27 @@
 			{/each}
 		</ul>
 	</main>
+	<aside
+		class="flex-col items-center justify-start hidden min-h-screen col-span-1 pt-24 md:flex listing"
+	>
+		<div class="w-[56%] leading-3 border-[1px] border-base-300 border-b-0 px-3 pt-4 text-gray-700">
+			<p class="pb-2 text-lg font-bold text-center uppercase font-libre-caslon">
+				This is a sidebar
+			</p>
+			<p class="mx-auto font-mono text-xs font-bold tracking-tighter text-left">
+				Normally, this has a bunch of links that help you sort through all the many posts that the
+				blog has. But as you can see I don't have that many things here right now. I will soon. And
+				then this sidebar will be nice and packed with clicky stuff. Soon. You'll see.
+			</p>
+		</div>
+		<img
+			width="420"
+			height="250"
+			class="opacity-90 mix-blend-multiply rounded-xl saturate-0"
+			src={TypeWriter}
+			alt="Multiple interests, all disjointed and poorly run"
+		/>
+	</aside>
 </div>
 
 <style>
