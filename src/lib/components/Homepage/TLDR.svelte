@@ -1,8 +1,8 @@
 <div
-	class="relative col-span-3 mx-2 md:col-span-2 w-full text-left flex flex-col justify-around outline my-2 outline-1 outline-base-300 outline-offset-8 bg-base-200 p-8 rounded-xl border-[1px] border-base-300"
+	class="relative col-span-full md:col-span-2 w-full text-left flex flex-col justify-around outline my-2 outline-1 outline-base-300 outline-offset-8 bg-base-200 p-8 rounded-xl border-[1px] border-base-300"
 >
-	<h3 class="text-7xl text-center font-libre-caslon font-black">tl;dr</h3>
-	<article class="text-effect text-left">
+	<h3 class="font-black text-center text-7xl font-libre-caslon">tl;dr</h3>
+	<article class="text-left text-effect">
 		<p class="line">Nifty clicky-click stuff,</p>
 		<p class="line">map-alicious eye-candy stuff,</p>
 		<p class="line">snazzy chart-y-chart doodads,</p>

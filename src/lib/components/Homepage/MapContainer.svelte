@@ -18,11 +18,11 @@
 		</div>
 		<Banner />
 		<div class="absolute left-[35%] top-[30%]">
-			<p class="text-3xl italic font-libre-caslon">as I know it</p>
+			<p class="text-3xl font-libre-caslon">as I know it</p>
 			<hr class="divide" />
 		</div>
-		<p class="w-2/3 mx-auto -mt-10 text-center text-md font-archivo">
-			A map of everywhere I've travelled in Bangalore, updated weekly.
+		<p class="w-3/5 mx-auto -mt-8 italic text-center text-md font-archivo">
+			A map of everywhere I've travelled in the city, updated weekly.
 		</p>
 	</header>
 </div>

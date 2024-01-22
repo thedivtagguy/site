@@ -1,0 +1,2432 @@
+{
+    "units": "kilometers",
+    "osm_changeset": 11495543576,
+    "shape": "gdgzWoa~smCzNbBnYjD`k@`Nbj@vQ|InElLvCl_@bKbWvDtc@lDrRfAl[tBtXxC|YdEtEz@dn@fLvUbFjUfDnJbAdLd@hGd@tEC~EUtX{@dTeCd^uIpe@sLxH_C`f@qNzaAkXrxzFa`jCpOyHczX|cAiNxTef@ty@{BjDsJkKaJmLwPkSgC}CiTqXmMmQu@_AwMoP_IuLyHeLqFaKkC}EgCoGcCoG}C{HwB_F}BeEmEkEcFkEgM{JoNuKka@oY{PeLu\\sWsUoRbBwBfE_KbCqF|@}AnBq@bCGlBc@pAgEbBcGxNsc@`CaJbHyWfpa@vcHfEuB",
+    "confidence_score": 1.0,
+    "raw_score": 800000192.0,
+    "admins": [
+        {
+            "country_code": "IN",
+            "country_text": "India",
+            "state_code": "KA",
+            "state_text": "Karnataka"
+        }
+    ],
+    "edges": [
+        {
+            "truck_route": false,
+            "density": 3,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 4,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 332925050,
+            "id": 1038778124360,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "forward",
+            "end_shape_index": 5,
+            "begin_shape_index": 0,
+            "end_heading": 210,
+            "begin_heading": 191,
+            "road_class": "trunk",
+            "speed": 90,
+            "length": 0.265,
+            "source_percent_along": 0.189,
+            "names": [
+                "NH66"
+            ],
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": false,
+                        "to_edge_name_consistency": false,
+                        "begin_heading": 55,
+                        "use": "road",
+                        "road_class": "secondary"
+                    }
+                ],
+                "elapsed_time": 10.634,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.014
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 3,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 4,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 332925050,
+            "id": 1037838600264,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "forward",
+            "end_shape_index": 14,
+            "begin_shape_index": 5,
+            "end_heading": 194,
+            "begin_heading": 199,
+            "road_class": "trunk",
+            "speed": 90,
+            "length": 0.391,
+            "names": [
+                "NH66"
+            ],
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": false,
+                        "to_edge_name_consistency": false,
+                        "begin_heading": 94,
+                        "use": "road",
+                        "road_class": "residential"
+                    }
+                ],
+                "elapsed_time": 26.289,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.02
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 3,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 4,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 332925050,
+            "id": 1075889326152,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "forward",
+            "end_shape_index": 16,
+            "begin_shape_index": 14,
+            "end_heading": 197,
+            "begin_heading": 195,
+            "road_class": "trunk",
+            "speed": 90,
+            "length": 0.129,
+            "names": [
+                "NH66"
+            ],
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": false,
+                        "to_edge_name_consistency": false,
+                        "begin_heading": 275,
+                        "use": "road",
+                        "road_class": "secondary"
+                    }
+                ],
+                "elapsed_time": 31.47,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.009
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 3,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 4,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 332925050,
+            "id": 1036764858440,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "forward",
+            "end_shape_index": 18,
+            "begin_shape_index": 16,
+            "end_heading": 191,
+            "begin_heading": 193,
+            "road_class": "trunk",
+            "speed": 90,
+            "length": 0.062,
+            "names": [
+                "NH66"
+            ],
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": false,
+                        "to_edge_name_consistency": false,
+                        "begin_heading": 97,
+                        "use": "service_road",
+                        "road_class": "service_other"
+                    }
+                ],
+                "elapsed_time": 33.959,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.011
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 3,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 4,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 332925050,
+            "id": 1036831967304,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "forward",
+            "end_shape_index": 28,
+            "begin_shape_index": 18,
+            "end_heading": 159,
+            "begin_heading": 185,
+            "road_class": "trunk",
+            "speed": 90,
+            "length": 0.372,
+            "names": [
+                "NH66"
+            ],
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": false,
+                        "to_edge_name_consistency": false,
+                        "begin_heading": 93,
+                        "use": "road",
+                        "road_class": "unclassified"
+                    }
+                ],
+                "elapsed_time": 48.85,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.019
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 4,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 4,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 332925050,
+            "id": 1041663805512,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "forward",
+            "end_shape_index": 29,
+            "begin_shape_index": 28,
+            "end_heading": 160,
+            "begin_heading": 160,
+            "road_class": "trunk",
+            "speed": 90,
+            "length": 0.127,
+            "names": [
+                "NH66"
+            ],
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "forward",
+                        "driveability": "forward",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 160,
+                        "use": "road",
+                        "road_class": "trunk"
+                    }
+                ],
+                "elapsed_time": 51.418,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.0
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 9,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 1050019351,
+            "id": 267232239322,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "both",
+            "end_shape_index": 31,
+            "begin_shape_index": 29,
+            "end_heading": 150,
+            "begin_heading": 152,
+            "road_class": "residential",
+            "speed": 30,
+            "length": 0.055,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 234,
+                        "use": "road",
+                        "road_class": "residential"
+                    }
+                ],
+                "elapsed_time": 1.437,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.0
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 8,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 1090070997,
+            "id": 786487074522,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "both",
+            "end_shape_index": 34,
+            "begin_shape_index": 31,
+            "end_heading": 304,
+            "begin_heading": 355,
+            "road_class": "residential",
+            "speed": 35,
+            "length": 0.254,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "forward",
+                        "driveability": "forward",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 221,
+                        "use": "road",
+                        "road_class": "tertiary"
+                    },
+                    {
+                        "walkability": "both",
+                        "cyclability": "backward",
+                        "driveability": "backward",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 46,
+                        "use": "road",
+                        "road_class": "tertiary"
+                    }
+                ],
+                "elapsed_time": 15.841,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.02
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 8,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 1090071000,
+            "id": 786621292250,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "both",
+            "end_shape_index": 35,
+            "begin_shape_index": 34,
+            "end_heading": 306,
+            "begin_heading": 306,
+            "road_class": "residential",
+            "speed": 35,
+            "length": 0.012,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "backward",
+                        "driveability": "backward",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 224,
+                        "use": "ramp",
+                        "road_class": "tertiary"
+                    }
+                ],
+                "elapsed_time": 17.096,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 6.431
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 8,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 1053935172,
+            "id": 35668657009,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "turn_channel",
+            "traversability": "forward",
+            "end_shape_index": 38,
+            "begin_shape_index": 35,
+            "end_heading": 48,
+            "begin_heading": 46,
+            "road_class": "tertiary",
+            "speed": 63,
+            "length": 0.108,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 314,
+                        "use": "road",
+                        "road_class": "residential"
+                    }
+                ],
+                "elapsed_time": 29.699,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.019
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 8,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 1053935172,
+            "id": 191797429105,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "turn_channel",
+            "traversability": "forward",
+            "end_shape_index": 42,
+            "begin_shape_index": 38,
+            "end_heading": 51,
+            "begin_heading": 49,
+            "road_class": "tertiary",
+            "speed": 63,
+            "length": 0.115,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 321,
+                        "use": "road",
+                        "road_class": "residential"
+                    }
+                ],
+                "elapsed_time": 36.29,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.007
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 8,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 1053935172,
+            "id": 210319475569,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "turn_channel",
+            "traversability": "forward",
+            "end_shape_index": 46,
+            "begin_shape_index": 42,
+            "end_heading": 57,
+            "begin_heading": 49,
+            "road_class": "tertiary",
+            "speed": 63,
+            "length": 0.124,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 311,
+                        "use": "road",
+                        "road_class": "residential"
+                    }
+                ],
+                "elapsed_time": 43.383,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.007
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 8,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 1053935172,
+            "id": 210386584433,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "turn_channel",
+            "traversability": "forward",
+            "end_shape_index": 47,
+            "begin_shape_index": 46,
+            "end_heading": 57,
+            "begin_heading": 57,
+            "road_class": "tertiary",
+            "speed": 63,
+            "length": 0.014,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 14,
+                        "use": "road",
+                        "road_class": "tertiary"
+                    },
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 134,
+                        "use": "ramp",
+                        "road_class": "tertiary"
+                    }
+                ],
+                "elapsed_time": 44.191,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.028
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 7,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 184753827,
+            "id": 190690132849,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "ramp",
+            "traversability": "forward",
+            "end_shape_index": 60,
+            "begin_shape_index": 47,
+            "end_heading": 40,
+            "begin_heading": 63,
+            "road_class": "tertiary",
+            "speed": 43,
+            "length": 0.416,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "forward",
+                        "driveability": "forward",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 38,
+                        "use": "ramp",
+                        "road_class": "tertiary"
+                    }
+                ],
+                "elapsed_time": 79.047,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": true,
+                "transition_time": 5.51
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 7,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 1053935181,
+            "id": 112877405041,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "ramp",
+            "traversability": "both",
+            "end_shape_index": 61,
+            "begin_shape_index": 60,
+            "end_heading": 131,
+            "begin_heading": 131,
+            "road_class": "tertiary",
+            "speed": 43,
+            "length": 0.009,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "forward",
+                        "driveability": "forward",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 218,
+                        "use": "road",
+                        "road_class": "tertiary"
+                    },
+                    {
+                        "walkability": "both",
+                        "cyclability": "backward",
+                        "driveability": "backward",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 38,
+                        "use": "road",
+                        "road_class": "tertiary"
+                    }
+                ],
+                "elapsed_time": 85.31,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.016
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 7,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 355212056,
+            "id": 672838213338,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "both",
+            "end_shape_index": 69,
+            "begin_shape_index": 61,
+            "end_heading": 112,
+            "begin_heading": 118,
+            "road_class": "unclassified",
+            "speed": 40,
+            "length": 0.092,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 156,
+                        "use": "road",
+                        "road_class": "residential"
+                    }
+                ],
+                "elapsed_time": 93.607,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.022
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 7,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 355212056,
+            "id": 185560751834,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "both",
+            "end_shape_index": 71,
+            "begin_shape_index": 69,
+            "end_heading": 111,
+            "begin_heading": 114,
+            "road_class": "unclassified",
+            "speed": 40,
+            "length": 0.09,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 162,
+                        "use": "road",
+                        "road_class": "residential"
+                    }
+                ],
+                "elapsed_time": 101.729,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.017
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 7,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 355212056,
+            "id": 1017811328730,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "both",
+            "end_shape_index": 72,
+            "begin_shape_index": 71,
+            "end_heading": 111,
+            "begin_heading": 111,
+            "road_class": "unclassified",
+            "speed": 40,
+            "length": 0.046,
+            "end_node": {
+                "intersecting_edges": [
+                    {
+                        "walkability": "both",
+                        "cyclability": "both",
+                        "driveability": "both",
+                        "from_edge_name_consistency": true,
+                        "to_edge_name_consistency": true,
+                        "begin_heading": 163,
+                        "use": "road",
+                        "road_class": "residential"
+                    }
+                ],
+                "elapsed_time": 102.796,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.0
+            }
+        },
+        {
+            "truck_route": false,
+            "density": 9,
+            "sac_scale": 0,
+            "shoulder": false,
+            "sidewalk": "none",
+            "bicycle_network": 0,
+            "cycle_lane": "none",
+            "lane_count": 1,
+            "max_downward_grade": -500,
+            "max_upward_grade": -500,
+            "weighted_grade": 0.0,
+            "way_id": 1050019351,
+            "id": 267232239322,
+            "travel_mode": "drive",
+            "vehicle_type": "car",
+            "surface": "paved_smooth",
+            "drive_on_right": false,
+            "internal_intersection": false,
+            "roundabout": false,
+            "bridge": false,
+            "tunnel": false,
+            "unpaved": false,
+            "toll": false,
+            "use": "road",
+            "traversability": "both",
+            "end_shape_index": 74,
+            "begin_shape_index": 72,
+            "end_heading": 156,
+            "begin_heading": 194,
+            "road_class": "residential",
+            "speed": 30,
+            "length": 0.033,
+            "target_percent_along": 0.614,
+            "end_node": {
+                "elapsed_time": 0.177,
+                "admin_index": 0,
+                "type": "street_intersection",
+                "fork": false,
+                "transition_time": 0.0
+            }
+        }
+    ],
+    "matched_points": [
+        {
+            "lon": 74.792488,
+            "lat": 13.02946,
+            "type": "matched",
+            "edge_index": 0,
+            "distance_along_edge": 0.189406,
+            "distance_from_trace_point": 9.338116
+        },
+        {
+            "lon": 74.79149,
+            "lat": 13.018378,
+            "type": "matched",
+            "edge_index": 5,
+            "distance_along_edge": 0.501863,
+            "distance_from_trace_point": 1.373203
+        },
+        {
+            "lon": 74.821652,
+            "lat": 12.933947,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.821652,
+            "lat": 12.933947,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862884,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862843,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862843,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862845,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888793,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862848,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862848,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.867343,
+            "lat": 12.906916,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862925,
+            "lat": 12.888842,
+            "type": "matched",
+            "edge_index": 6,
+            "distance_along_edge": 0.570072,
+            "distance_from_trace_point": 10.510522
+        },
+        {
+            "lon": 74.862925,
+            "lat": 12.888842,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.570072,
+            "distance_from_trace_point": 10.510522
+        },
+        {
+            "lon": 74.862925,
+            "lat": 12.888842,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.570072,
+            "distance_from_trace_point": 10.510522
+        },
+        {
+            "lon": 74.862925,
+            "lat": 12.888842,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.570072,
+            "distance_from_trace_point": 10.510522
+        },
+        {
+            "lon": 74.862925,
+            "lat": 12.888842,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.570072,
+            "distance_from_trace_point": 10.510522
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862928,
+            "lat": 12.888838,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.579009,
+            "distance_from_trace_point": 10.282681
+        },
+        {
+            "lon": 74.862933,
+            "lat": 12.88883,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.598522,
+            "distance_from_trace_point": 7.240057
+        },
+        {
+            "lon": 74.862933,
+            "lat": 12.88883,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.598522,
+            "distance_from_trace_point": 7.240057
+        },
+        {
+            "lon": 74.862933,
+            "lat": 12.88883,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.598522,
+            "distance_from_trace_point": 7.240057
+        },
+        {
+            "lon": 74.862933,
+            "lat": 12.88883,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.598522,
+            "distance_from_trace_point": 7.240057
+        },
+        {
+            "lon": 74.862933,
+            "lat": 12.88883,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.598522,
+            "distance_from_trace_point": 7.240057
+        },
+        {
+            "lon": 74.862933,
+            "lat": 12.88883,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.598522,
+            "distance_from_trace_point": 7.240057
+        },
+        {
+            "lon": 74.862933,
+            "lat": 12.88883,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.598522,
+            "distance_from_trace_point": 11.191709
+        },
+        {
+            "lon": 74.862933,
+            "lat": 12.88883,
+            "type": "interpolated",
+            "edge_index": 6,
+            "distance_along_edge": 0.598522,
+            "distance_from_trace_point": 11.191709
+        },
+        {
+            "lon": 74.862981,
+            "lat": 12.888748,
+            "type": "matched",
+            "edge_index": 6,
+            "distance_along_edge": 0.787844,
+            "distance_from_trace_point": 4.845983
+        },
+        {
+            "lon": 74.861809,
+            "lat": 12.901977,
+            "type": "matched",
+            "edge_index": 7,
+            "distance_along_edge": 0.39364,
+            "distance_from_trace_point": 9.44648
+        },
+        {
+            "lon": 74.867265,
+            "lat": 12.906715,
+            "type": "matched",
+            "edge_index": 17,
+            "distance_along_edge": 0.253476,
+            "distance_from_trace_point": 23.683043
+        },
+        {
+            "lon": 74.867343,
+            "lat": 12.906916,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862851,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862851,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862868,
+            "lat": 12.888791,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86285,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862837,
+            "lat": 12.888786,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862837,
+            "lat": 12.888786,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862837,
+            "lat": 12.888786,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862837,
+            "lat": 12.888786,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862838,
+            "lat": 12.888785,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888783,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862842,
+            "lat": 12.888792,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862841,
+            "lat": 12.888788,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.862846,
+            "lat": 12.888787,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.867343,
+            "lat": 12.906916,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.867343,
+            "lat": 12.906916,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.867343,
+            "lat": 12.906916,
+            "type": "unmatched"
+        },
+        {
+            "lon": 74.86293,
+            "lat": 12.888834,
+            "type": "matched",
+            "edge_index": 18,
+            "distance_along_edge": 0.587667,
+            "distance_from_trace_point": 9.971192
+        },
+        {
+            "lon": 74.86293,
+            "lat": 12.888834,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.587667,
+            "distance_from_trace_point": 9.971192
+        },
+        {
+            "lon": 74.86293,
+            "lat": 12.888834,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.587667,
+            "distance_from_trace_point": 9.971192
+        },
+        {
+            "lon": 74.86293,
+            "lat": 12.888834,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.587667,
+            "distance_from_trace_point": 9.971192
+        },
+        {
+            "lon": 74.86293,
+            "lat": 12.888834,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.587667,
+            "distance_from_trace_point": 9.971192
+        },
+        {
+            "lon": 74.86293,
+            "lat": 12.888834,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.587667,
+            "distance_from_trace_point": 9.971192
+        },
+        {
+            "lon": 74.86293,
+            "lat": 12.888834,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.587667,
+            "distance_from_trace_point": 9.971192
+        },
+        {
+            "lon": 74.86293,
+            "lat": 12.888834,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.587667,
+            "distance_from_trace_point": 9.971192
+        },
+        {
+            "lon": 74.86293,
+            "lat": 12.888834,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.587667,
+            "distance_from_trace_point": 9.971192
+        },
+        {
+            "lon": 74.86293,
+            "lat": 12.888834,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.587667,
+            "distance_from_trace_point": 9.971192
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862931,
+            "lat": 12.888832,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.593512,
+            "distance_from_trace_point": 8.886472
+        },
+        {
+            "lon": 74.862937,
+            "lat": 12.888823,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.61449,
+            "distance_from_trace_point": 7.89396
+        },
+        {
+            "lon": 74.862937,
+            "lat": 12.888823,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.61449,
+            "distance_from_trace_point": 7.89396
+        },
+        {
+            "lon": 74.862937,
+            "lat": 12.888823,
+            "type": "interpolated",
+            "edge_index": 18,
+            "distance_along_edge": 0.61449,
+            "distance_from_trace_point": 7.89396
+        },
+        {
+            "lon": 74.862937,
+            "lat": 12.888823,
+            "type": "matched",
+            "edge_index": 18,
+            "distance_along_edge": 0.61449,
+            "distance_from_trace_point": 7.89396
+        }
+    ],
+    "alternate_paths": []
+}

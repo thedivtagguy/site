@@ -27,7 +27,9 @@
 	<div class="flex flex-col justify-between h-full content">
 		<main class="flex flex-col items-start justify-start h-full m-0 prose basis-2/6">
 			<h2 class="p-0 m-0 text-4xl font-bold capitalize font-libre-caslon">{title}</h2>
-			<p class="p-0 m-0 text-neutral text-md">{@html marked.parse(description)}</p>
+			<p class="p-0 m-0 text-neutral week-description text-md">
+				{@html marked.parse(description)}
+			</p>
 		</main>
 		<aside class="flex flex-col justify-start gap-4 pb-12 md:flex-row">
 			<a
@@ -63,6 +65,13 @@
 </article>
 
 <style>
+	:global(.week-description > p:first-child::before) {
+		content: 'This week // ';
+		font-style: normal;
+		font-weight: 600;
+		font-family: 'Roboto Condensed', sans-serif;
+	}
+
 	.image-container {
 		position: relative;
 	}

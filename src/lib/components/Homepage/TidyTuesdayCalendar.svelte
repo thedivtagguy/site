@@ -20,7 +20,7 @@
 	}
 </script>
 
-<div class="flex flex-col justify-between w-full gap-4 md:flex-row">
+<div class="flex flex-col justify-between w-full gap-4 mt-4 md:flex-row">
 	<div class="calendar">
 		<h3 class="pb-2 text-sm font-bold uppercase font-roboto">
 			<a

@@ -41,7 +41,7 @@
 		{/if}
 
 		<p
-			class="w-full {isHome ? 'text-center text-xs' : 'text-left text-[0.7rem]'} uppercase"
+			class="md:w-full w-2/3 {isHome ? 'text-center text-xs' : 'text-left text-[0.7rem]'} uppercase"
 			class:notHome={!isHome}
 		>
 			{subtitle}

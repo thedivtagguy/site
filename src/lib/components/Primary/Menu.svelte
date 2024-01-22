@@ -21,7 +21,9 @@
 		let:toggle
 		let:NavContainer
 	>
-		<NavContainer class="flex justify-between max-w-sm mx-auto md:justify-center md:w-auto bg-none">
+		<NavContainer
+			class="flex justify-between max-w-sm mx-auto mt-2 md:justify-center md:w-auto bg-none"
+		>
 			<NavBrand class="block md:hidden" href="/">
 				<Logo class="p-1" />
 			</NavBrand>
@@ -29,7 +31,7 @@
 			<NavUl
 				divClass="w-full md:block md:w-auto z-[100]"
 				{hidden}
-				nonActiveClass="text-gray-700 z-[100] border-2 border-neutral md:border-2 md:mb-0 my-2 bg-orange  px-10 h-10 flex justify-center items-center uppercase text-white font-roboto font-bold text-lg"
+				nonActiveClass="text-gray-700 z-[100] border-2 border-neutral md:border-2 md:mb-0  bg-orange  px-10 h-10 flex justify-center items-center uppercase text-white font-roboto font-bold text-lg"
 			>
 				<NavLi class="w-full md:w-24" href="/">Home</NavLi>
 				<NavLi class="w-full bg-purple md:w-24" href="/work">Work</NavLi>

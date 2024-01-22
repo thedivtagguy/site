@@ -7,18 +7,18 @@
 	console.log(year);
 </script>
 
-<div class="flex flex-row w-full col-span-4 gap-2 lg:flex-col md:col-span-2">
+<div class="flex flex-row flex-col w-full col-span-1 gap-2 md:col-span-2">
 	<div class="note basis-1/2">
 		<figure class="relative max-w-sm">
 			<div
-				class="absolute max-w-[10rem] md:max-w-[12rem] top-8 md:top-20 flex flex-col justify-between left-8 md:left-16 -rotate-[16deg] w-full"
+				class="absolute w-[15rem] lg:max-w-[14rem] lg:w-full top-[15%] lg:top-[16%] flex flex-col justify-between left-[16%] -rotate-[16deg]"
 			>
 				<a href="/blog/{year}/{latest.slug}">
 					<p class="my-2 text-sm tracking-tighter uppercase md:text-md font-fira">Blog /</p>
-					<h3 class="font-libre-caslon text-[16px] md:text-2xl uppercase break-words">
+					<h3 class="text-3xl uppercase break-words font-libre-caslon">
 						{latest.title}
 					</h3>
-					<p class="my-2 text-sm tracking-tighter text-left uppercase md:m-2 md:text-md font-fira">
+					<p class="my-2 text-xs tracking-tighter text-left uppercase md:m-2 md:text-md font-fira">
 						{formatDate(latest.date)}
 					</p>
 				</a>

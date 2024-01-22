@@ -51,7 +51,7 @@
 	});
 </script>
 
-<div class="relative col-span-4 md:ml-4">
+<div class="relative col-span-1 md:col-span-4 lg:ml-2">
 	<video tabindex="-1" autoplay muted loop playsinline preload="none" poster={slide1}>
 		<source src={Eymen} type="video/webm" />
 	</video>
@@ -59,9 +59,9 @@
 		in:fade={{ duration: 1000 }}
 		class="absolute top-[1.9rem] w-[6.5rem] h-60 px-4 text-xs leading-snug left-[6rem] text-center font-bold text-base-300 -skew-y-[17deg]"
 	>
-		<p class="uppercase tracking-tighter text-base-300 font-bold font-fira">{greeting}</p>
+		<p class="font-bold tracking-tighter uppercase text-base-300 font-fira">{greeting}</p>
 	</aside>
-	<div class="absolute top-0 left-0 w-full h-full bg-noise bg-cover z-5"></div>
+	<div class="absolute top-0 left-0 w-full h-full bg-cover bg-noise z-5"></div>
 </div>
 
 <style>
