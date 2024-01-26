@@ -1,4 +1,7 @@
 import { json } from '@sveltejs/kit';
+import fs from 'fs';
+import path from 'path';
+const thumbnailDataFolder = path.join(process.cwd(), 'src', 'data');
 
 async function getPosts() {
 	const allPosts = await getSortedPosts(
@@ -29,12 +32,29 @@ async function getSortedPosts(paths) {
 
 		if (file && typeof file === 'object' && 'metadata' in file) {
 			const { metadata } = file;
-			const post = { ...metadata, week: parseInt(metadata.week), date: new Date(metadata.date) };
+			const post = {
+				...metadata,
+				week: parseInt(metadata.week),
+				date: new Date(metadata.date),
+				thumbnailColors: await getThumbnailData(metadata.thumbnail)
+			};
 			categoryPosts.push(post);
 		}
 	}
 
 	return categoryPosts.sort((a, b) => b.week - a.week);
+}
+async function getThumbnailData(thumbnailPath) {
+	if (!thumbnailPath) return null;
+	const fileName = path.basename(thumbnailPath, path.extname(thumbnailPath));
+	const jsonPath = path.join(thumbnailDataFolder, `${fileName}.json`);
+	console.log(jsonPath);
+	console.log(fs.existsSync(jsonPath));
+	if (fs.existsSync(jsonPath)) {
+		return JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
+	}
+
+	return null;
 }
 
 async function calculateMetadata(posts) {

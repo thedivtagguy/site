@@ -12,6 +12,7 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"ttupdate": "node ./src/lib/scripts/tidytuesdayCalendar.cjs",
+		"generate-thumbnails": "node src/lib/scripts/thumbnail-color.js",
 		"postbuild": "npx svelte-sitemap --domain https://myawesomedomain.com"
 	},
 	"devDependencies": {
@@ -32,6 +33,7 @@
 		"autoprefixer": "^10.4.16",
 		"chokidar": "^3.5.3",
 		"clsx": "^2.0.0",
+		"color": "^4.2.3",
 		"d3": "^7.8.5",
 		"daisyui": "^4.4.12",
 		"eslint": "^8.28.0",
@@ -47,9 +49,11 @@
 		"lucide-svelte": "^0.300.0",
 		"marked": "^11.0.0",
 		"mdsvex": "^0.11.0",
+		"node-vibrant": "3.2.1-alpha.1",
 		"postcss": "^8.4.31",
 		"prettier": "^3.0.0",
 		"prettier-plugin-svelte": "^3.0.0",
+		"sharp": "^0.33.2",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
 		"svelte-sitemap": "^2.6.0",
