@@ -51,15 +51,17 @@
 			<div class="pt-14">
 				{#each Object.keys(tidytuesday).reverse() as year}
 					<div class="relative -mt-12 tilt">
-						<div style="--bg-tab: #2b2b2b; left: 10%" class="tab bg-neutral max-w-fit">
-							<h3 class="text-lg font-bold font-fira">{year}</h3>
+						<div style="--bg-tab: #2b2b2b; " class="tab bg-neutral max-w-fit">
+							<h3 class="font-bold text-md md:text-lg font-fira">{year}</h3>
 						</div>
 						<div class="border-[1px] h-16 bg-neutral border-neutral/50"></div>
 					</div>
 
-					{#each tidytuesday[year].content as listing, index}
-						<TabListing {listing} />
-					{/each}
+					<ul class="list-none">
+						{#each tidytuesday[year].content as listing, index}
+							<TabListing {listing} />
+						{/each}
+					</ul>
 				{/each}
 			</div>
 		</div>
@@ -114,27 +116,6 @@
 		-webkit-transform-style: preserve-3d;
 	}
 
-	.tab-container {
-		position: relative;
-	}
-
-	.tab-container::after {
-		content: '';
-		pointer-events: none;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(
-			to top,
-			rgb(255, 255, 255) 0%,
-			rgb(255, 255, 255) 4%,
-			transparent 90%,
-			transparent 100%
-		);
-		z-index: 2;
-	}
 	.tab,
 	.tab:after,
 	.tab:before {
@@ -146,10 +127,11 @@
 
 	.tab {
 		border-radius: 8px 8px 0 0;
-		cursor: pointer;
+
 		padding: 10px 24px 8px;
 		position: absolute;
 		top: -46%;
+		left: 10%;
 		z-index: 3;
 	}
 
@@ -174,5 +156,17 @@
 		border-radius: 0 8px 0 0;
 		right: -24px;
 		transform: skew(30deg);
+	}
+
+	@media only screen and (max-width: 600px) {
+		.tab {
+			border-radius: 8px 8px 0 0;
+			cursor: pointer;
+			padding: 2px 20px 8px;
+			position: absolute;
+			top: -52%;
+			left: 11%;
+			z-index: 3;
+		}
 	}
 </style>

@@ -7,6 +7,7 @@
 
 		// { name: 'Links', href: '/' },
 		// { name: 'RSS', href: '/' },
+		{ name: '📆⠀ Tidytuesday', href: '/tidytuesday' },
 		{ name: '🆎⠀ About me', href: '/about' },
 		{ name: '👇🏽⠀ Now', href: '/now' }
 	];

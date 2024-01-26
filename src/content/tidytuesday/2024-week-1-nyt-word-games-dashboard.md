@@ -4,7 +4,7 @@ date: 2024-01-01T18:30:00.000Z
 tags:
   - word games
   - dashboard
-thumbnail: /tidytuesday/GC72v9KWcAAFXwn.jpeg
+thumbnail: /tidytuesday/GC72v9KWcAAFXwn.jpg
 description: >
   My friend and I are hyper-competitive with our NYT word games, this year we
   want to see who is \*actually\* better. Using this week's
@@ -18,4 +18,3 @@ social:
   twitter: 'https://twitter.com/thedivtagguy/status/1742603781328544024'
 slug: nyt-games
 ---
-
