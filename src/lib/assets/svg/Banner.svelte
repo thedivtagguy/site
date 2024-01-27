@@ -6,7 +6,7 @@
 
 <svg
 	fill="currentColor"
-	class={cn('w-full ', className)}
+	class={cn('w-full z-20', className)}
 	id="Graphic_Elements"
 	data-name="Graphic Elements"
 	xmlns="http://www.w3.org/2000/svg"

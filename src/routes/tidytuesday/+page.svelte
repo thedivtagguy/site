@@ -1,6 +1,6 @@
 <script>
 	import TabListing from '$lib/components/TidyTuesday/TabListing.svelte';
-	import headerImage from '$lib/assets/images/MIMICRY.webp';
+	// import headerImage from '$lib/components/TidyTuesday/traveller.webp';
 	import hits from '$lib/assets/images/hits.webp';
 	import handle from '$lib/assets/images/tidytuesday/handle.png';
 	export let data;
@@ -15,19 +15,25 @@
 <header
 	class="grid-cols-1 grid w-full justify-center items-center md:px-6 md:grid-cols-1 lg:grid-cols-5 border-b-[1px] border-base-300"
 >
-	<figure class="hidden p-1 mr-8 lg:block">
-		<img
-			width="400"
-			class="rounded-xl"
-			src={headerImage}
-			alt="My chaotic step-by-step, brick by brick mimicry of the entire ecosystem"
-		/>
-	</figure>
+	<!-- <figure class="hidden p-1 mr-8 lg:block">
+		<img width="400" class="rounded-xl" src={headerImage} alt="" />
+	</figure> -->
+	<pre class="text-xs">
+ _____________________
+/ its not much,        \
+\ but its honest work /
+ ---------------------
+	\   ^__^
+     \ (oo)\_______
+	   (__)\       )\/\
+			||----w |
+			||     ||
+	</pre>
 	<div
 		class="flex items-center justify-center col-span-3 h-full lg:border-r-[1px] lg:border-l-[1px] border-base-300"
 	>
 		<h1 class="py-6 text-4xl leading-tight text-center md:text-4xl lg:text-7xl text-neutral">
-			Tidytuesday and<span class="inline-block italic highlight"> other weekly stories</span>
+			Tidytuesday and<span class="inline-block italic highlight"> other stories</span>
 		</h1>
 	</div>
 
@@ -42,8 +48,23 @@
 <main
 	class="grid items-start justify-center w-full h-full grid-cols-1 md:grid-cols-1 lg:grid-cols-5"
 >
-	<aside class="flex-col items-center hidden w-full h-full col-span-1 lg:flex">
-		<nav class="sticky w-full mt-2 top-2"></nav>
+	<aside class="flex-col hidden w-full h-full col-span-1 items-star lg:flex">
+		<h3 class="py-2 text-sm font-semibold text-center uppercase font-fira">
+			~ What is Tidytuesday? ~
+		</h3>
+		<hr class="py-2 divide" />
+		<p class="text-md font-archivo text-neutral">
+			TidyTuesday is a weekly social data project from the R4DS online learning community where we
+			all crunch the same dataset. I'm usually on it every week, sometimes just noodling around,
+			sometimes dropping stuff for everyone to see. I've been trying to get better at data analysis
+			and this helps so much! This is my public catalogue of things I thought were good enough to
+			share.
+			<br />
+		</p>
+		<hr class="my-2 divide" />
+		<p class="text-xs font-archivo text-neutral">
+			Each entry has the code attached to it too, for you to peruse or roast mercilessly.
+		</p>
 	</aside>
 
 	<section class="col-span-3 min-h-[50dvh] pb-8 border-base-300 lg:mr-[0.9rem] lg:ml-[0.91rem]">

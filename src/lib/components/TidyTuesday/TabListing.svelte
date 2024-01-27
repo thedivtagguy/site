@@ -6,29 +6,44 @@
 	import { extractDateTimeComponents } from './date';
 	import { unlink } from './removeLinks';
 	import { createDialog, melt } from '@melt-ui/svelte';
-
 	import { flyAndScale } from './transitions';
 	import { X } from 'lucide-svelte';
 	import { fade } from 'svelte/transition';
+	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
+	import { slugify } from '$lib/utils';
+	import { page } from '$app/stores';
+	export let listing = {};
+
+	const handleOpen = (id) => () => {
+		if (browser) goto(`/tidytuesday/?tt=${slugify(id)}`, { noScroll: true });
+	};
+
+	const { month, date, day } = extractDateTimeComponents(listing.date);
 
 	const {
 		elements: { trigger, overlay, content, title, description, close, portalled },
 		states: { open }
 	} = createDialog({
-		forceVisible: true,
-		openFocus: undefined
+		forceVisible: true
 	});
 
-	export let listing = {};
-	const { month, date, day } = extractDateTimeComponents(listing.date);
+	$: if (!$open) {
+		if (browser) goto(`/tidytuesday/`, { noScroll: true });
+	}
+
+	$: if ($page.url.searchParams.get('tt') === listing.slug) {
+		open.set(true);
+	}
 
 	$: isMobile = mediaQuery('(max-width: 600px)');
 </script>
 
-<li class="-mt-12 transition-all group hover:cursor-pointer tilt">
-	<div class="relative my-10">
+<li class="-mt-12 group hover:cursor-pointer tilt">
+	<div class="relative my-10 transition-all group-hover:active-card group-hover:-translate-y-2">
 		<button
 			use:melt={$trigger}
+			on:m-click={handleOpen(listing.slug)}
 			style="--bg-tab: {listing?.thumbnailColors?.dark ? listing.thumbnailColors.dark : '#2B2B2B'};
                 {$isMobile ? 'left: 14%;' : listing.tabStyle};"
 			class="tab max-w-fit"
@@ -37,17 +52,19 @@
 		</button>
 		<div
 			use:melt={$trigger}
-			class="border-[1px] h-20 tab-container px-8 py-4 bg-white border-neutral/50"
+			on:m-click={handleOpen(listing.slug)}
+			class="border-[1px] h-20 tab-container px-8 py-4 bg-white border-base-300"
 		>
 			<p
 				use:unlink
-				class="transition-all text-neutral/70 group-hover:text-neutral line-clamp-2 text-md"
+				class="text-sm leading-loose transition-all text-neutral/50 group-hover:text-neutral line-clamp-2"
 			>
 				{@html marked(listing.description)}
 			</p>
 		</div>
 	</div>
 </li>
+
 <div
 	style="--bg-tab: {listing?.thumbnailColors?.dark ? listing.thumbnailColors.dark : '#2B2B2B'};"
 	class=""
@@ -64,7 +81,7 @@
 			  max-w-[650px] translate-x-[-50%] translate-y-[-50%] rounded-md bg-white
 			  p-6 shadow-lg"
 			transition:flyAndScale={{
-				duration: 150,
+				duration: 300,
 				y: 8,
 				start: 0.96
 			}}
@@ -83,14 +100,18 @@
 					{listing.title}
 				</h2>
 			</div>
-			<p use:melt={$description} class="mt-2 mb-5 leading-normal font-archivo text-zinc-600">
+			<p
+				tabindex="-1"
+				use:melt={$description}
+				class="mt-2 mb-5 leading-normal font-archivo text-zinc-600"
+			>
 				{@html marked(listing.description)}
 			</p>
 			<figure class="items-stretch w-full h-full image-container basis-3/6">
 				<img
 					src={listing.thumbnail}
 					alt={`Thumbnail for Viz of the Week: ${listing.title}`}
-					class="object-cover max-h-36 md:max-h-[20rem] w-full h-full"
+					class="object-cover min-h-36 md:max-h-[20rem] w-full h-full"
 				/>
 			</figure>
 			<div class="flex items-center justify-start gap-4 my-4 social-links">
@@ -171,7 +192,8 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: linear-gradient(to top, #ffffff 0%, #ffffff 20%, transparent 90%, transparent 100%);
+		background: linear-gradient(to top, #787878 0%, #787878 0%, transparent 15%, transparent 100%);
+		transition: background 10s cubic-bezier(0.075, 0.82, 0.165, 1);
 		z-index: 2;
 	}
 	.tab {
@@ -270,5 +292,14 @@
 		letter-spacing: -0.05em;
 		padding-top: 0.8em;
 		color: #2f2f2f;
+	}
+
+	.group:hover .tab-container::after {
+		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		background: linear-gradient(to top, #dbdbdb 0%, #dbdbdb 0%, transparent 15%, transparent 100%);
+		transition: background 10s cubic-bezier(0.075, 0.82, 0.165, 1);
+		-webkit-box-shadow: 0px -20px 23px -17px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0px -20px 23px -17px rgba(0, 0, 0, 0.75);
+		box-shadow: 0px -20px 23px -17px rgba(0, 0, 0, 0.75);
 	}
 </style>

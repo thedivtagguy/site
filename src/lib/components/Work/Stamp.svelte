@@ -21,7 +21,7 @@
 	on:keydown
 	{disabled}
 >
-	<div
+	<span
 		style="background-image: url({background});"
 		class="stamp-container relative border-[1px] noise-image flex justify-center items-end font-libre-caslon capitalize mx-2 my-1 border-base-300 w-full h-28"
 	>
@@ -31,7 +31,7 @@
 			</p>
 		{/if}
 		<p class="absolute bottom-0 font-bold text-neutral">{text}</p>
-	</div>
+	</span>
 </button>
 
 <style>

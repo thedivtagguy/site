@@ -6,6 +6,7 @@
 	import { filteredWorks } from '$lib/stores.js';
 	import { filterData, toggleItem, workFilters } from '$lib/components/Work/filterUtils.js';
 	import ToggleFormatting from '$lib/components/Primary/Toggle.svelte';
+	import ttImage from '$lib/assets/images/work/tt.webp';
 	import { X } from 'lucide-svelte';
 
 	export let data;
