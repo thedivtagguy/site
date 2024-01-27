@@ -1,5 +1,5 @@
 <script>
-	import { MapLibre } from 'svelte-maplibre';
+	import { MapLibre, VectorTileSource, LineLayer } from 'svelte-maplibre';
 	const bounds = [
 		[77.314911, 12.691253],
 		[77.858734, 13.214545]
@@ -15,7 +15,18 @@
 	pitch={40}
 	maxBounds={bounds}
 	style="https://amanbh.netlify.app/osm_liberty.json"
-/>
+>
+	<VectorTileSource url={'pmtiles://https://amanbh.netlify.app/historical.pmtiles'}>
+		<LineLayer
+			paint={{
+				'line-opacity': 0.6,
+				'line-color': 'rgb(53, 175, 109)',
+				'line-width': 2
+			}}
+			sourceLayer={'zcta'}
+		/>
+	</VectorTileSource>
+</MapLibre>
 
 <style>
 	:global(.map) {

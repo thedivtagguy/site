@@ -111,7 +111,7 @@
 				<img
 					src={listing.thumbnail}
 					alt={`Thumbnail for Viz of the Week: ${listing.title}`}
-					class="object-cover min-h-36 md:max-h-[20rem] w-full h-full"
+					class="object-cover h-[18rem] md:max-h-[20rem] w-full"
 				/>
 			</figure>
 			<div class="flex items-center justify-start gap-4 my-4 social-links">

@@ -15,7 +15,7 @@
 		<div
 			class="absolute text-4xl z-20 -left-[12%] md:-left-[6%] uppercase -top-3 font-libre-caslon"
 		>
-			<svg width="400" height="300">
+			<svg width="400" height="70">
 				<path
 					id="curve"
 					fill="transparent"

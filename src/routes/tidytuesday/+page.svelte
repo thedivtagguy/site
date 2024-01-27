@@ -53,12 +53,11 @@
 			~ What is Tidytuesday? ~
 		</h3>
 		<hr class="py-2 divide" />
-		<p class="text-md font-archivo text-neutral">
+		<p class="text-sm font-archivo text-neutral">
 			TidyTuesday is a weekly social data project from the R4DS online learning community where we
 			all crunch the same dataset. I'm usually on it every week, sometimes just noodling around,
-			sometimes dropping stuff for everyone to see. I've been trying to get better at data analysis
-			and this helps so much! This is my public catalogue of things I thought were good enough to
-			share.
+			sometimes dropping stuff for everyone to see. This is my public catalogue of things I thought
+			were good enough to share.
 			<br />
 		</p>
 		<hr class="my-2 divide" />
