@@ -31,7 +31,7 @@
 				{@html marked.parse(description)}
 			</p>
 		</main>
-		<aside class="flex flex-col justify-start gap-4 pb-12 md:flex-row">
+		<aside class="flex flex-col justify-start gap-4 pb-4 md:pb-12 md:flex-row">
 			<a
 				style="box-shadow: 0px 2px 0px 0px #2b2b2b;"
 				href={githubLink}
@@ -63,6 +63,14 @@
 		</footer>
 	</div>
 </article>
+<div class="relative w-full md:py-4">
+	<div class="absolute inset-0 flex items-center">
+		<div class="w-full h-2 border-b-[1px] border-double border-base-300"></div>
+	</div>
+	<div class="relative flex justify-center">
+		<a href="/tidytuesday" class="btn-primary bg-red"> Browse all </a>
+	</div>
+</div>
 
 <style>
 	:global(.week-description > p:first-child::before) {

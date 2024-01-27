@@ -1,12 +1,20 @@
 <script>
 	import Banner from '$lib/assets/svg/Banner.svelte';
 	import Traveller from '$lib/assets/images/traveller.webp';
+	import TravelMap from './TravelMap.svelte';
 </script>
 
 <div class="relative mt-[14rem]">
-	<img width="200" src={Traveller} alt="Watch me go" class="absolute left-[42%] -top-[13rem]" />
-	<header class="relative w-1/3 mx-auto h-60">
-		<div class="absolute text-4xl z-20 -left-[6%] uppercase -top-3 font-libre-caslon">
+	<img
+		width="200"
+		src={Traveller}
+		alt="Watch me go"
+		class="absolute left-[23%] md:left-[42%] -top-[13rem]"
+	/>
+	<header class="relative mx-auto md:w-1/3 h-60">
+		<div
+			class="absolute text-4xl z-20 -left-[12%] md:-left-[6%] uppercase -top-3 font-libre-caslon"
+		>
 			<svg width="400" height="300">
 				<path
 					id="curve"
@@ -25,12 +33,15 @@
 				<p class="text-3xl font-libre-caslon">as I know it</p>
 				<hr class="divide" />
 			</div>
-			<p class="w-3/5 mx-auto -mt-8 italic text-center text-md font-archivo">
+			<p
+				class="w-4/6 mx-auto -mt-8 text-sm italic text-center md:w-3/5 md:-mt-8 md:text-md font-archivo"
+			>
 				A map of everywhere I've travelled in the city, updated weekly.
 			</p>
 		</div>
 	</header>
 </div>
+<TravelMap />
 
 <style>
 	.banner::before {

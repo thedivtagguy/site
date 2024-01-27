@@ -28,7 +28,7 @@
 
 	<div class="relative w-full py-4">
 		<div class="absolute inset-0 flex items-center">
-			<div class="w-full border-b-2 border-neutral"></div>
+			<div class="w-full border-b-[1px] border-base-300"></div>
 		</div>
 		<div class="relative flex justify-center">
 			<a href="/work" class="btn-primary bg-purple"> See more </a>
@@ -38,7 +38,6 @@
 	<InTheNews data={data.data?.bylines} />
 	<TextDivider text="Just for fun" />
 	<VizOfTheWeek data={data.data?.tidytuesday} />
-	<hr class="py-[0.1rem] mt-4 divide" />
-	<hr class="mb-10 divide" />
+
 	<MapContainer />
 </main>

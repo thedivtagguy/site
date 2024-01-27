@@ -74,6 +74,7 @@
 		"@fontsource/roboto-condensed": "^5.0.13",
 		"@threlte/core": "^7.0.12",
 		"@threlte/extras": "^8.1.0",
+		"svelte-maplibre": "^0.7.6",
 		"tailwind-merge": "^2.1.0",
 		"three": "^0.160.0",
 		"tinacms": "^1.5.26"
