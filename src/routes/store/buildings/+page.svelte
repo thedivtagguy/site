@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import LeafletMap from '$lib/components/Store/Map/MainMap.svelte';
 	import { ChevronRight } from 'lucide-svelte';
 </script>
@@ -30,4 +30,4 @@
 			</div>
 		</div>
 	</div>
-</main>
+</main> -->
