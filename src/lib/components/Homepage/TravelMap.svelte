@@ -19,9 +19,9 @@
 	<VectorTileSource url={'pmtiles://https://amanbh.netlify.app/historical.pmtiles'}>
 		<LineLayer
 			paint={{
-				'line-opacity': 0.6,
-				'line-color': 'rgb(53, 175, 109)',
-				'line-width': 2
+				'line-opacity': 1,
+				'line-color': '#925442',
+				'line-width': 0.7
 			}}
 			sourceLayer={'zcta'}
 		/>
