@@ -7,7 +7,7 @@
 	maxZoom={12}
 	minZoom={12}
 	class="map"
-	style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+	style="https://amanbh.netlify.app/osm_liberty.json"
 />
 
 <style>
