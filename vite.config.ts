@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
 	return {
 		define: {
 			'process.env.BUILD_TIME': JSON.stringify(formatDate(new Date())),
-			__API_BASE_URL__:
+			VITE_API_BASE_URL:
 				isProduction && netlifyURL
 					? JSON.stringify(`${netlifyURL}/.netlify/functions`)
 					: JSON.stringify('http://localhost:8888/.netlify/functions')

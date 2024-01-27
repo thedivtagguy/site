@@ -1,7 +1,7 @@
 export const prerender = true;
 
 export async function load({ fetch }) {
-	const apiURL = `${__API_BASE_URL__}/fetchGPS`;
+	const apiURL = `${import.meta.env.VITE_API_BASE_URL}/fetchGPS`;
 	try {
 		const gpsData = await fetch(apiURL);
 		const data = await gpsData.json();

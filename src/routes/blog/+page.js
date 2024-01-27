@@ -1,6 +1,5 @@
 export async function load({ fetch }) {
 	const endpoints = ['blogposts'];
-	const excerptLength = 100; // Set desired length of th
 
 	async function fetchData(endpoint) {
 		const response = await fetch(`api/${endpoint}`);
