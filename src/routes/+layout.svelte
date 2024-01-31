@@ -1,7 +1,9 @@
 <script>
 	import '$lib/styles.css';
 	import Header from '$lib/components/Primary/Header.svelte';
-
+	import { batteryLevel } from '$lib/stores';
+	export let data;
+	batteryLevel.set(data.props.batt);
 	import { onNavigate } from '$app/navigation';
 	import Footer from '$lib/components/Primary/Footer.svelte';
 
@@ -15,12 +17,9 @@
 			});
 		});
 	});
-
-	export let data;
-	let gpsInfo = data.data;
 </script>
 
-<Header {gpsInfo} />
+<Header />
 
 <main
 	class="mx-auto scroll-smooth selection:bg-yellow flex px-4 flex-col max-w-[85rem] justify-center items-center"

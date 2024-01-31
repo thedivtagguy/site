@@ -31,7 +31,7 @@
 				{@html marked.parse(description)}
 			</p>
 		</main>
-		<aside class="flex flex-col justify-start gap-4 pb-4 md:pb-12 md:flex-row">
+		<aside class="flex flex-col justify-start gap-4 pb-4 md:pb-8 md:flex-row">
 			<a
 				style="box-shadow: 0px 2px 0px 0px #2b2b2b;"
 				href={githubLink}

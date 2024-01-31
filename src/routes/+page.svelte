@@ -6,6 +6,7 @@
 	import VizOfTheWeek from '$lib/components/Homepage/VizOfTheWeek.svelte';
 	import MapContainer from '$lib/components/Homepage/MapContainer.svelte';
 	export let data;
+
 	let works = data.data.works;
 </script>
 

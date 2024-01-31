@@ -1,6 +1,14 @@
+import { recentTracks, tiles as tileStore } from '$lib/stores.js';
+
 export const prerender = true;
 
-export async function load({ fetch }) {
+export async function load({ fetch, data }) {
+	let { tiles } = data;
+	let { songs } = data;
+
+	tileStore.set(tiles);
+	recentTracks.set(songs);
+
 	try {
 		const [tidytuesdayRes, bylinesRes, worksRes, blogRes] = await Promise.all([
 			fetch('api/tidytuesday'),

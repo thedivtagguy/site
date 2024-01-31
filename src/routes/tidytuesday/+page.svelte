@@ -1,7 +1,7 @@
 <script>
 	import TabListing from '$lib/components/TidyTuesday/TabListing.svelte';
 	// import headerImage from '$lib/components/TidyTuesday/traveller.webp';
-	import hits from '$lib/assets/images/hits.webp';
+	import hits from '$lib/assets/images/tidytuesday/working.webp';
 	import handle from '$lib/assets/images/tidytuesday/handle.png';
 	export let data;
 	const tidytuesday = data.data;
@@ -37,10 +37,9 @@
 		</h1>
 	</div>
 
-	<div class="items-end justify-end hidden bg-white lg:flex">
-		<figure class="font-fira noise-image">
-			<img width="150" class="h-full mx-auto" src={hits} alt="All the hits" />
-			<caption class=" text-xs italic text-center w-[9rem] font-fira">(and misses)</caption>
+	<div class="items-center justify-center hidden w-full col-span-1 bg-white lg:flex">
+		<figure class="mx-auto font-fira noise-image">
+			<img width="100" class="h-full py-4" src={hits} alt="All the hits" />
 		</figure>
 	</div>
 </header>
@@ -101,7 +100,17 @@
 		</div>
 	</section>
 	<aside class="hidden h-full col-span-1 lg:block">
-		<nav class="sticky flex flex-col w-full mt-2 top-2 font-fira"></nav>
+		<h3 class="py-2 text-sm font-semibold text-center uppercase font-fira">~ Highlights ~</h3>
+		<hr class="py-2 divide" />
+		<ul class="px-3 list-disc font-archivo">
+			<li>
+				<a
+					class="underline text-purple"
+					href="https://blog.datawrapper.de/data-vis-dispatch-october-24-2023/"
+					>My Taylor Swift viz was featured in DataWrapper's Data Dispatch!</a
+				>
+			</li>
+		</ul>
 	</aside>
 </main>
 

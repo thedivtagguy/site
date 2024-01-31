@@ -4,6 +4,8 @@
 	import Logo from '$lib/assets/svg/Logo.svelte';
 	import License from '$lib/assets/images/common/license.png';
 	import NotAi from '$lib/assets/svg/NotAi.svelte';
+	import Terminal from '$lib/components/Terminal/Terminal.svelte';
+	import Scrobble from './Scrobble.svelte';
 </script>
 
 <footer
@@ -26,6 +28,12 @@
 			<div class="flex flex-col text-white">
 				<Logo width={70} height={120} />
 				<img src={License} alt="CC-BY license" class="w-24 mt-4" />
+			</div>
+			<div class="basis-2/5">
+				<Terminal />
+			</div>
+			<div class="basis-2/5">
+				<Scrobble />
 			</div>
 		</div>
 		<div class="absolute top-0 left-0 w-full h-full bg-cover bg-noise z-5"></div>

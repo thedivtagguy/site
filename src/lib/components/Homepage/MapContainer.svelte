@@ -4,16 +4,16 @@
 	import TravelMap from './TravelMap.svelte';
 </script>
 
-<div class="relative mt-[14rem]">
+<div class="relative mt-[10rem]">
 	<img
-		width="200"
+		width="160"
 		src={Traveller}
 		alt="Watch me go"
-		class="absolute left-[23%] md:left-[42%] -top-[13rem]"
+		class="absolute left-[23%] md:left-[43.5%] -top-[10rem]"
 	/>
 	<header class="relative mx-auto md:w-1/3 h-60">
 		<div
-			class="absolute text-4xl z-20 -left-[12%] md:-left-[6%] uppercase -top-3 font-libre-caslon"
+			class="absolute text-4xl z-20 -left-[10%] md:-left-[7%] uppercase -top-3 font-libre-caslon"
 		>
 			<svg width="400" height="70">
 				<path
@@ -29,29 +29,17 @@
 
 		<div class="relative z-10 banner">
 			<Banner />
-			<div class="absolute left-[35%] top-[40%]">
+			<div class="absolute left-[36%] top-[43%]">
 				<p class="text-3xl font-libre-caslon">as I know it</p>
 				<hr class="divide" />
 			</div>
-			<p
-				class="w-4/6 mx-auto -mt-8 text-sm italic text-center md:w-3/5 md:-mt-8 md:text-md font-archivo"
-			>
-				A map of everywhere I've travelled in the city, updated weekly.
-			</p>
+			<div class="flex items-center justify-center ml-2 -mt-10">
+				<p class="w-4/6 px-2 text-sm italic text-center md:text-md font-archivo">
+					A map of (almost) everywhere <span class="text-[#F26D3D] font-bold">I've travelled</span> in
+					the city, updated weekly.
+				</p>
+			</div>
 		</div>
 	</header>
 </div>
 <TravelMap />
-
-<style>
-	.banner::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 60px;
-		background-color: white;
-		z-index: -1;
-	}
-</style>

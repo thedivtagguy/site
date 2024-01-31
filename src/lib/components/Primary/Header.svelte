@@ -4,8 +4,8 @@
 	import Logo from '$lib/assets/svg/Logo.svelte';
 	import Menu from './Menu.svelte';
 	const issueTime = process.env.BUILD_TIME;
-	export let gpsInfo;
-
+	import { batteryLevel } from '$lib/stores';
+	$: console.log($batteryLevel);
 	$: isHome = $page.url.pathname === '/';
 
 	const headline = "Aman's general mishmash of  design, data & code";
@@ -29,7 +29,7 @@
 			<p class="flex items-center justify-between w-full text-xs uppercase" class:notHome={!isHome}>
 				<span class="text-xs">&nbsp;</span>
 				<span>issue dated {issueTime} <i>Bangalore, India</i></span>
-				<BatteryPercentage percentage={gpsInfo?.batt} width="1.3em" class="hover:cursor-pointer" />
+				<BatteryPercentage percentage={$batteryLevel} width="1.3em" />
 			</p>
 			<h1 class="relative text-5xl font-bold text-center uppercase lg:text-7xl">
 				{@html headline}
