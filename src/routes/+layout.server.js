@@ -1,6 +1,6 @@
 import { PRIVATE_TILE_SERVER_URL } from '$env/static/private';
 import { LAST_FM_API_KEY } from '$env/static/private';
-
+export const prerender = true;
 async function fetchCurrentTrack() {
 	const apiKey = LAST_FM_API_KEY;
 	const user = 'thedivtagguy';
