@@ -2,6 +2,8 @@
 	import { MapLibre, VectorTileSource, LineLayer, Marker, Popup } from 'svelte-maplibre';
 	import { markers } from './map_pois';
 	import { tiles } from '$lib/stores';
+
+	const tileData = tiles();
 	let clickedName = '';
 	const bounds = [
 		[77.314911, 12.691253],
@@ -35,7 +37,7 @@
 			</Popup>
 		</Marker>
 	{/each}
-	<VectorTileSource url={$tiles.routes}>
+	<VectorTileSource url={$tileData.routes}>
 		<LineLayer
 			paint={{
 				'line-opacity': 0.8,

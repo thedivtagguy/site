@@ -1,10 +1,11 @@
 import { writable } from 'svelte/store';
-
-export const works = writable([]);
-export const bylines = writable([]);
-export const blogposts = writable([]);
-export const tidytuesday = writable([]);
-export const tiles = writable({});
-export const filteredWorks = writable([]);
-export const recentTracks = writable({});
-export const batteryLevel = writable(0);
+import { useWritable } from './use-shared-store';
+export const works = () => useWritable('works', []);
+export const bylines = () => useWritable('bylines', []);
+export const blogposts = () => useWritable('blogposts', []);
+export const tidytuesday = () => useWritable('tidytuesday', []);
+export const tiles = () => useWritable('tiles', {});
+export const filteredWorks = () => useWritable('filteredWorks', []);
+export const recentTracks = () => useWritable('recentTracks', {});
+export const batteryLevel = () => useWritable('batteryLevel', 0);
+export const isOnline = () => useWritable('isOnline', {});

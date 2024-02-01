@@ -3,7 +3,8 @@
 	import hits from '$lib/assets/images/hits.webp';
 	import Categories from '$lib/components/Work/Categories.svelte';
 	import WorkList from '$lib/components/Work/WorkList.svelte';
-	import { filteredWorks } from '$lib/stores.js';
+	import { filteredWorks as filterWorkStore } from '$lib/stores.js';
+	$: filteredWorks = filterWorkStore();
 	import { filterData, toggleItem, workFilters } from '$lib/components/Work/filterUtils.js';
 	import ToggleFormatting from '$lib/components/Primary/Toggle.svelte';
 	import ttImage from '$lib/assets/images/work/tt.webp';

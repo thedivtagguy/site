@@ -6,6 +6,7 @@
 	import NotAi from '$lib/assets/svg/NotAi.svelte';
 	import Terminal from '$lib/components/Terminal/Terminal.svelte';
 	import Scrobble from './Scrobble.svelte';
+	import Online from './Online.svelte';
 </script>
 
 <footer
@@ -32,8 +33,9 @@
 			<div class="basis-2/5">
 				<Terminal />
 			</div>
-			<div class="basis-2/5">
+			<div class="relative basis-2/5">
 				<Scrobble />
+				<Online />
 			</div>
 		</div>
 		<div class="absolute top-0 left-0 w-full h-full bg-cover bg-noise z-5"></div>

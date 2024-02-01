@@ -6,6 +6,11 @@
 	import VizOfTheWeek from '$lib/components/Homepage/VizOfTheWeek.svelte';
 	import MapContainer from '$lib/components/Homepage/MapContainer.svelte';
 	export let data;
+	import { tiles as tileStore } from '$lib/stores';
+
+	const tiles = tileStore();
+
+	tiles.set(data.data?.tiles);
 
 	let works = data.data.works;
 </script>
