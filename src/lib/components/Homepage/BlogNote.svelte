@@ -23,23 +23,40 @@
 					</p>
 				</a>
 			</div>
-			<img src={note} alt="background" width="355" class="pointer-events-none" />
+			<img src={note} alt="background" height="355" class="w-full pointer-events-none" />
 		</figure>
 	</div>
 
-	<div class="flex w-full basis-1/2">
-		<div class="flex flex-col justify-center gap-2 text-sm black-bento">
-			<div>
-				<p class="font-bold text-white uppercase font-roboto">Web dev?</p>
-				<p class="font-bold text-white uppercase font-roboto">Data viz?</p>
-				<p class="font-bold text-white uppercase font-roboto">Pen pal?</p>
+	<div class="flex w-full gap-2 basis-1/2">
+		<div class="flex flex-col justify-center w-1/2 gap-2 text-sm h-[13.5rem] black-bento">
+			<div class="py-2">
+				<p class="italic text-white normal font-roboto">Web dev?</p>
+				<p class="italic text-white normal font-roboto">Data viz?</p>
+				<p class="italic text-white normal font-roboto">Pen pal?</p>
 			</div>
-			<div class="flex items-center justify-between">
+			<div class="flex items-start justify-between">
 				<p class="font-bold uppercase text-green green-glow-100 font-fira">
-					I am Available for freelance work from Jan 2024
+					Available for freelance work from June 2024
+					<span class="inline ml-[0.1rem] -mt-2 text-xs text-green green-glow-200 animate-pulse"
+						>⬤</span
+					>
 				</p>
-				<div class="text-xs text-green green-glow-200 animate-pulse">⬤</div>
 			</div>
+		</div>
+		<div
+			class="flex flex-col items-center justify-center w-1/2 gap-2 text-sm h-[13.5rem] bg-base-200 border-[1px] border-base-300/50 rounded-xl"
+		>
+			<div>
+				<p class="text-center text-neutral/40">⏠</p>
+				<p class="w-2/3 py-2 mx-auto font-bold text-center uppercase text-neutral/40 font-roboto">
+					Print store coming soon
+				</p>
+				<p class="text-center text-neutral/40">⏡</p>
+			</div>
+
+			<span class="text-base-300 italic text-center w-2/3 text-[0.75rem]"
+				>Maps and fine-art photography</span
+			>
 		</div>
 	</div>
 </div>

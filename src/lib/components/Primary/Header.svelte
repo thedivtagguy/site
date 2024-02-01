@@ -7,7 +7,7 @@
 	import { batteryLevel } from '$lib/stores';
 
 	$: battery = batteryLevel();
-	$: console.log($battery);
+
 	$: isHome = $page.url.pathname === '/';
 
 	const headline = "Aman's general mishmash of  design, data & code";
@@ -33,7 +33,7 @@
 				<span>issue dated {issueTime} <i>Bangalore, India</i></span>
 				<BatteryPercentage percentage={$battery} width="1.3em" />
 			</p>
-			<h1 class="relative text-5xl font-bold text-center uppercase lg:text-7xl">
+			<h1 class="relative py-2 text-5xl font-bold text-center uppercase md:py-0 lg:text-7xl">
 				{@html headline}
 			</h1>
 		{:else}
@@ -43,7 +43,7 @@
 		{/if}
 
 		<p
-			class="md:w-full w-2/3 {isHome ? 'text-center text-xs' : 'text-left text-[0.7rem]'} uppercase"
+			class="md:w-full w-4/5 {isHome ? 'text-center text-xs' : 'text-left text-[0.7rem]'} uppercase"
 			class:notHome={!isHome}
 		>
 			{subtitle}

@@ -5,19 +5,27 @@
 </script>
 
 {#if currentTrack}
-	<div class="flex flex-col items-start justify-end max-w-[14rem] gap-1">
-		<div class="mt-1 text-sm font-roboto group text-base-200">
-			<span class="mr-1 text-md font-roboto text-base-200">Latest bop </span>
-			<span class="hidden group-hover:inline-block">〜(￣▽￣〜) </span>
-			<span class="inline-block group-hover:hidden">(〜￣▽￣)〜 </span>
+	<div class="flex flex-row items-start justify-start w-full h-full md:gap-2 md:flex-col">
+		<div class="py-1 font-roboto md:py-0 group text-base-200">
+			<!-- <span class="hidden text-sm group-hover:block">〜(￣▽￣〜) </span>
+			<span class="block group-hover:hidden">(〜￣▽￣)〜 </span> -->
+			<h3 class="hidden font-bold md:inline font-roboto text-base-200">Current bop</h3>
 		</div>
 
-		<div class="flex items-end justify-end gap-2 text-base-200">
+		<div class="flex justify-end h-full gap-2 md:items-end text-base-200">
 			{#if currentTrack.image[1]}
-				<img src={currentTrack.image[1]['#text']} class="w-16 h-16" alt=" Track cover" />
+				<figure class="w-full h-full max-w-16">
+					<img
+						src={currentTrack.image[2]['#text']}
+						class="object-cover h-full"
+						alt=" Track cover"
+					/>
+				</figure>
 			{/if}
 			<div>
-				<p class="text-lg font-bold font-roboto">{currentTrack.name}</p>
+				<h3 class="block font-bold md:hidden font-roboto text-base-200">Current bop</h3>
+
+				<p class="font-semibold text-md font-roboto">{currentTrack.name}</p>
 				<p class="p-0 m-0 text-sm font-roboto">by {currentTrack.artist['#text']}</p>
 			</div>
 		</div>

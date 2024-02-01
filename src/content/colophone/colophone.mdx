@@ -1,16 +1,28 @@
 ---
 title: About this website
-lastUpdated: 2024-01-02T17:39:57.039Z
+lastUpdated: 2024-02-01T21:12:17.197Z
 ---
 
-This website, with all its oddities and possible flaws, was "hand-made". There's many ways to make your website (and I'd argue all of them are hand-made to an extent), but this is mine. I like having a say over every little aspect of this space and that seems to be the only way of making sure I don't cede that control. \
-\
-In a gist, this space is built on the Sveltekit framework, styled using TailwindCSS (and good ol' vanilla CSS when necessary), uses TinaCMS for managing my content and is hosted on Netlify. 
+This website, with all its oddities and possible flaws, was "hand-made". There's many ways to make your website (and I'd argue all of them are hand-made to an extent), but this is mine. I like having a say over every little aspect of this space and that seems to be the only way of making sure I don't cede that control.
+
+In a gist, this space is built on the Sveltekit framework, styled using TailwindCSS (and good ol' vanilla CSS when necessary), uses TinaCMS for managing my content and is hosted on Netlify.
+
+## The stack
 
 Svelte, and Sveltekit by extension, is my go-to for all my projects. Svelte supercharges vanilla HTML, CSS and JS and it has never felt foreign to me in the way that React or other frameworks like Gatsby.js did. Where I can't be bothered to write vanilla CSS, Tailwind comes to the rescue. Every few weeks you'll see someone on Twitter bashing the framework but it works well! I write all my files in small, manageable components, so I don't have either hellishly long style blocks or ridiculously long classes. All the content, from the blog posts to Tidytuesday logs, are written in Markdown. I've built various schemas that help me manage similar 'templates' of content and TinaCMS makes it stupidly easy to have an interface to manage them within. Usually, I write in Obsidian first and copy from there into Tina. Once I'm done, Sveltekit transforms my website into a self-contained bundle of static HTML files which I can take anywhere. I take them to Netlify because it is quite simple and I don't have to pay anything to have it exist online.
 
-Not that it is some feat of engineering in any respect, but if you're interested in looking at the code, all of it is available [here](https://github.com/thedivtagguy/site/). \
-\
+Not that it is some feat of engineering in any respect, but if you're interested in looking at the code, all of it is available [here](https://github.com/thedivtagguy/site/).
+
+## Images
+
 Hopefully this website runs fast for you. I've taken a lot of care to make sure I don't waste your data, and I'm always trying to make it better. One of the biggest data-hogs are images. I make visuals so, unfortunately, I cannot avoid having a lot of images on the website but what I *can* do is have some restraint on what I serve you. Most of the images on this website are under \~30kb each (which might still be a lot). Each image, except those in the blog in some cases, is pre-processed to reduce the number of colors down to 5-6 and converted to webp or avif format. This cuts down their weight by around 70-80%, and results in a much faster experience. I use [Squoosh app](https://squoosh.app/) and the Svelte's image [plugin](https://kit.svelte.dev/docs/images#sveltejs-enhanced-img) to make this happen.
 
-I don't track anything. The hell do I care how long you spend on this website? No cookies, period. One less dashboard for me to waste my time over as well.
+## Live stats
+
+For the live stats such as battery percentage, online status, and my Bangalore map, I have set up a handful of scripts on a server that return this information via APIs. The battery status (homepage top-right) comes from Owntracks on my phone (which is sent to the server). I also use Owntracks to generate tracks and then map-match them using a self-hosted Valhalla instance, finally appending them to a PMTiles file which is served here using MapLibre. The online status is a simple 'heartbeat' script which runs periodically on my laptop pinging my server to notify that the laptop is active; if it doesn't receive a ping for a certain amount of time, it is assumed I am not working. 
+
+<div id="what-i-track" />
+
+## Tracking
+
+I don't track anything (on the contrary, you could probably track *me* more than I track you, with all the live stats here). The hell do I care how long you spend on this website? No cookies, period. One less dashboard for me to waste my time over as well. 

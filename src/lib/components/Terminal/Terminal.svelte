@@ -469,7 +469,7 @@
 	}
 	.history {
 		position: relative;
-		max-height: var(--max-height-log);
+		height: var(--max-height-log);
 		opacity: var(--history-opacity);
 		/* flex: 1; */
 		width: 100%;
@@ -500,7 +500,7 @@
 		border: 1px rgb(46, 46, 46) solid;
 		max-width: var(--terminal-max-width);
 		margin: auto;
-		max-height: var(--max-height-terminal);
+		max-height: 200px;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
@@ -559,6 +559,8 @@
 		left: 0;
 		color: var(--ghost-input-color);
 		pointer-events: none;
+		margin: 0;
+		padding: 0;
 	}
 
 	#command-input {
@@ -570,6 +572,8 @@
 		border: none;
 		z-index: 1;
 		caret-shape: block;
+		margin: 0;
+		padding: 0;
 	}
 	.command-line span[role='status']:first-child {
 		margin-right: 1em; /* Adjust the space as needed */
@@ -578,6 +582,7 @@
 		content: '';
 		position: absolute;
 		top: 50%;
+
 		left: 0;
 		width: 8px; /* Width of the block caret */
 		height: 100%;
@@ -659,8 +664,8 @@
 			--terminal-max-width: 600px;
 			--terminal-padding: 16px;
 			--terminal-font-size: 14px;
-			--max-height-terminal: 400px;
-			--max-height-log: 120px;
+			--max-height-terminal: 250px;
+			--max-height-log: 250px;
 		}
 	}
 
