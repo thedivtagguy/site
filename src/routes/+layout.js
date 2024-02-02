@@ -1,15 +1,24 @@
-export async function load({ fetch, data }) {
-	const songs = await fetch('/api/songs');
-	const gps = await fetch('/api/gps');
-	const online = await fetch('/api/online');
-	const gpsData = await gps.json();
-	const onlineData = await online.json();
-	// const songsData = await songs.json();
-	return {
-		props: {
-			batt: gpsData.batt,
-			online: onlineData
-			// songs: songsData
+export async function load({ fetch }) {
+	try {
+		const response = await fetch('/.netlify/functions/yourFunctionName');
+		if (!response.ok) {
+			throw new Error('Network response was not ok');
 		}
-	};
+		const data = await response.json();
+
+		return {
+			props: {
+				gps: data.gps,
+				online: data.online,
+				songs: data.songs
+			}
+		};
+	} catch (error) {
+		console.error('Error fetching data:', error);
+		return {
+			props: {
+				error: 'Failed to load data'
+			}
+		};
+	}
 }
