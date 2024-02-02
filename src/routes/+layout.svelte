@@ -5,6 +5,7 @@
 	import { onNavigate } from '$app/navigation';
 	import Footer from '$lib/components/Primary/Footer.svelte';
 	import { recentTracks, batteryLevel, isOnline } from '$lib/stores';
+	import { afterUpdate, onMount } from 'svelte';
 
 	export let data;
 
@@ -14,9 +15,11 @@
 	const listening = recentTracks();
 	const battery = batteryLevel();
 	const online = isOnline();
-	battery.set(data.props.gps.batt);
-	listening.set(data.props.songs);
-	online.set(data.props.online);
+	afterUpdate(() => {
+		battery.set(data.props.gps.batt);
+		listening.set(data.props.songs);
+		online.set(data.props.online);
+	});
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
