@@ -42,7 +42,7 @@
 			paint={{
 				'line-opacity': 0.8,
 				'line-color': '#F26D3D',
-				'line-width': 1.2
+				'line-width': 2.1
 			}}
 			sourceLayer={'zcta'}
 		/>
