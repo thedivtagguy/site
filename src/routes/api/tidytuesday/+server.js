@@ -48,7 +48,7 @@ async function getThumbnailData(thumbnailPath) {
 	if (!thumbnailPath) return null;
 	const fileName = path.basename(thumbnailPath, path.extname(thumbnailPath));
 	const jsonPath = path.join(thumbnailDataFolder, `${fileName}.json`);
-	console.log(jsonPath);
+
 	console.log(fs.existsSync(jsonPath));
 	if (fs.existsSync(jsonPath)) {
 		return JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));

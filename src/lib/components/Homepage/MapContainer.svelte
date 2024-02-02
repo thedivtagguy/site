@@ -5,12 +5,34 @@
 </script>
 
 <div class="relative mt-[10rem]">
+	<div class="select-none">
+		<pre class="absolute text-base-300 left-0 -top-[10rem]">
+		
+				,--.
+				(    )
+			   -   _'-.
+			  (       ) ),
+			_--            )-.
+		   (__________________)
+		
+		</pre>
+		<pre class="absolute text-base-300 text-xs right-0 -top-[10rem]">
+		
+		    	,--.
+		     	(    )
+		      -  _'-.
+		   _--            )-.
+		   (__________________)
+		
+		</pre>
+	</div>
 	<img
 		width="160"
 		src={Traveller}
 		alt="Watch me go"
 		class="absolute left-[23%] md:left-[43.5%] -top-[10rem]"
 	/>
+
 	<header class="relative mx-auto md:w-1/3 h-60">
 		<div
 			class="absolute text-4xl z-20 -left-[10%] md:-left-[7%] uppercase -top-3 font-libre-caslon"

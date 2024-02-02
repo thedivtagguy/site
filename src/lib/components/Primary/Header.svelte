@@ -8,6 +8,7 @@
 
 	$: battery = batteryLevel();
 
+	let isHome = true;
 	$: isHome = $page.url.pathname === '/';
 
 	const headline = "Aman's general mishmash of  design, data & code";

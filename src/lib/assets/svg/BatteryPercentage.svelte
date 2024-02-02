@@ -1,6 +1,5 @@
 <script>
 	export let percentage = 0;
-	console.log(percentage);
 	export let width = '1.6em';
 	export let height = width;
 

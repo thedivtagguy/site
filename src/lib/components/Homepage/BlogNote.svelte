@@ -4,7 +4,6 @@
 	export let latest = {};
 
 	let year = new Date(latest.date).getFullYear();
-	console.log(year);
 </script>
 
 <div class="flex flex-row flex-col w-full col-span-1 gap-2 md:col-span-2">
