@@ -1,9 +1,6 @@
 import { writable } from 'svelte/store';
 import { useWritable } from './use-shared-store';
-export const works = () => useWritable('works', []);
-export const bylines = () => useWritable('bylines', []);
-export const blogposts = () => useWritable('blogposts', []);
-export const tidytuesday = () => useWritable('tidytuesday', []);
+
 export const tiles = () => useWritable('tiles', {});
 export const filteredWorks = () => useWritable('filteredWorks', []);
 export const recentTracks = () =>
