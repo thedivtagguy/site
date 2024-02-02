@@ -18,9 +18,9 @@
 			}
 			const data = await response.json();
 
-			battery.set(data.props.gps.batt);
-			listening.set(data.props.songs);
-			online.set(data.props.online);
+			battery.set(data.gps.batt);
+			listening.set(data.songs);
+			online.set(data.online);
 		} catch (error) {
 			console.error('Failed to fetch stats:', error);
 		}

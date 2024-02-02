@@ -6,7 +6,9 @@
 	const issueTime = process.env.BUILD_TIME;
 	import { batteryLevel } from '$lib/stores';
 
-	$: battery = batteryLevel();
+	let battery = batteryLevel();
+
+	$: batteryPerc = $battery;
 
 	let isHome = true;
 	$: isHome = $page.url.pathname === '/';
@@ -32,7 +34,7 @@
 			<p class="flex items-center justify-between w-full text-xs uppercase" class:notHome={!isHome}>
 				<span class="text-xs">&nbsp;</span>
 				<span>issue dated {issueTime} <i>Bangalore, India</i></span>
-				<BatteryPercentage percentage={$battery} width="1.3em" />
+				<BatteryPercentage percentage={batteryPerc} width="1.3em" />
 			</p>
 			<h1 class="relative py-2 text-5xl font-bold text-center uppercase md:py-0 lg:text-7xl">
 				{@html headline}
