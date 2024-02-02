@@ -20,8 +20,8 @@
 	};
 
 	let open = false;
-	// let isAmanOnline = $online?.status === 'Online';
-	let isAmanOnline = false;
+	let isAmanOnline = $online?.status === 'Online';
+	// let isAmanOnline = false;
 	let text = {
 		offline: "I'm AFK and not at my desk right now. Probably doing better things for once",
 		online: "I'm working on something on my laptop right now. Yeah like at this moment."
