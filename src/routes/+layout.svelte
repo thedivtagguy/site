@@ -6,7 +6,9 @@
 	import { recentTracks, batteryLevel, isOnline } from '$lib/stores';
 	import { onMount } from 'svelte';
 
-	let listening, battery, online;
+	const listening = recentTracks();
+	const battery = batteryLevel();
+	const online = isOnline();
 
 	onMount(async () => {
 		try {
@@ -15,10 +17,6 @@
 				throw new Error('Network response was not ok');
 			}
 			const data = await response.json();
-
-			listening = recentTracks();
-			battery = batteryLevel();
-			online = isOnline();
 
 			battery.set(data.props.gps.batt);
 			listening.set(data.props.songs);
