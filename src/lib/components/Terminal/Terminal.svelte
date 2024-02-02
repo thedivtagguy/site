@@ -158,17 +158,7 @@
 					output = allCommands.find((cmd) => cmd.name === baseCommand)?.output || '';
 				}
 			} else {
-				console.log('Command Mapping Keys:', Object.keys(commandMapping));
-				const closestMatch = fuzzysort.go(baseCommand, Object.keys(commandMapping));
-				console.log('Closest match:', closestMatch); // Log here to debug
-				if (closestMatch && closestMatch.score > -1000) {
-					// Adjust score threshold as needed
-					throw new Error(
-						`Command not found: ${baseCommand}. Did you mean ${closestMatch.target}?`
-					);
-				} else {
-					throw new Error(`Command not found: ${baseCommand}`);
-				}
+				throw new Error(`Command not found: ${baseCommand}`);
 			}
 		} catch (error) {
 			errorMessage = error.message;
@@ -341,14 +331,14 @@
 	<div role="log" aria-live="polite" class="history" bind:this={terminalElement}>
 		{#if history.length === 0 && !errorMessage}
 			<div class="ascii-art">
-				<pre>
+				<pre class="overflow-hidden">
   Hellooo thereeeee		
       \ _   _
       /(. .)\    )
         (*)____/|
               /       |
        /   |--\ |
-      (_)(_)  (_) I'm a Terminal.
+      (_)(_)  (_) I'm a Terminal. (type help!)
                 </pre>
 			</div>
 		{/if}
@@ -460,7 +450,7 @@
 		text-align: center;
 	}
 	.ascii-art {
-		font-size: 8px;
+		font-size: 12px;
 		pointer-events: none;
 		color: var(--command-output-color);
 		display: flex;

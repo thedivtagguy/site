@@ -35,10 +35,9 @@
 			</div>
 			<div class="flex items-start justify-between">
 				<p class="font-bold uppercase text-green green-glow-100 font-fira">
-					Available for freelance work from June 2024
-					<span class="inline ml-[0.1rem] -mt-2 text-xs text-green green-glow-200 animate-pulse"
+					<span class="block m-2 ml-[0.1rem] -mt-2 text-xs text-green green-glow-200 animate-pulse"
 						>⬤</span
-					>
+					>Available for freelance work from June 2024
 				</p>
 			</div>
 		</div>
