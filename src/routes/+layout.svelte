@@ -15,7 +15,7 @@
 	const battery = batteryLevel();
 	const online = isOnline();
 	battery.set(data.props.batt);
-	// listening.set(data.props.songs);
+	listening.set(data.props.songs);
 	online.set(data.props.online);
 
 	onNavigate((navigation) => {

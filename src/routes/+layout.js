@@ -1,6 +1,6 @@
 export async function load({ fetch }) {
 	try {
-		const response = await fetch('/.netlify/functions/yourFunctionName');
+		const response = await fetch('/.netlify/functions/stats');
 		if (!response.ok) {
 			throw new Error('Network response was not ok');
 		}

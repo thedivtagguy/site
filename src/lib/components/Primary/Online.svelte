@@ -19,12 +19,12 @@
 	};
 
 	let open = false;
-	let isAmanOnline = $online.status === 'Online';
+	let isAmanOnline = $online?.status === 'Online';
 	let text = {
 		offline: "I'm AFK and not at my desk right now. Probably doing better things for once",
 		online: "I'm working on something on my laptop right now. Yeah like at this moment."
 	};
-	let textToShow = $online.status === 'Online' ? text.online : text.offline;
+	let textToShow = $online?.status === 'Online' ? text.online : text.offline;
 </script>
 
 <div class="inline-block w-full max-w-[11.5rem]">
@@ -33,7 +33,7 @@
 			class="p-2 text-xs font-medium rounded-sm shadow-sm text-neutral max-w-36 bg-base-100/80 font-archivo backdrop-blur-lg"
 		>
 			{textToShow}
-			<p>{formatTime($online.last_ping)}</p>
+			<p>{formatTime($online?.last_ping)}</p>
 		</div>
 	</Popover>
 	<button
