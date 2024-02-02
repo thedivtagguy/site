@@ -22,7 +22,8 @@
 </script>
 
 <div class={cn('mx-auto w-full', className)} {...$root}>
-	{#each data as { title, description, projectLink, type, client, favorite, label, date, thumbnail, tools }, i (i)}
+	{#each data as { title, description, link, projectLink, type, client, favorite, label, date, thumbnail, tools }, i (i)}
+		{@const readMoreLink = projectLink ? projectLink : link ? link : ''}
 		<article in:fade use:melt={$item(title)} class="overflow-hidden transition-colors">
 			<header class="flex text-2xl">
 				<button
@@ -91,7 +92,9 @@
 							<hr class="pb-2 border-base-300" />
 							<p class="pb-2 text-xl not-italic font-archivo">{description}</p>
 							<div
-								class="grid border-b-[1px] border-t-[1px] border-base-300 md:grid-cols-4 w-full md:divide-x-[1px] divide-base-300 py-4 gap-6"
+								class="grid {tools
+									? 'border-b-[1px]'
+									: ''} border-t-[1px] border-base-300 md:grid-cols-4 w-full md:divide-x-[1px] divide-base-300 py-4 gap-6"
 							>
 								{#if (type === 'bylines' && client.title) || (type === 'Client' && client.title)}
 									<div class="col-span-1">
@@ -122,7 +125,7 @@
 						</div>
 						<div class="cta">
 							<a
-								href={projectLink}
+								href={readMoreLink}
 								class="btn-primary w-80 bg-blue"
 								target="_blank"
 								rel="noopener noreferrer"
