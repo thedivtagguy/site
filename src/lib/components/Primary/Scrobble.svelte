@@ -3,7 +3,7 @@
 	let listening = recentTracks();
 
 	let currentTrack;
-	if ($listening?.track[0]) currentTrack = $listening.track[0];
+	if ($listening?[0]) currentTrack = $listening[0];
 </script>
 
 {#if currentTrack}

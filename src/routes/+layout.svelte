@@ -14,7 +14,7 @@
 	const listening = recentTracks();
 	const battery = batteryLevel();
 	const online = isOnline();
-	battery.set(data.props.batt);
+	battery.set(data.props.gps.batt);
 	listening.set(data.props.songs);
 	online.set(data.props.online);
 
