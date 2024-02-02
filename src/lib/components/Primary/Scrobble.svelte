@@ -2,8 +2,7 @@
 	import { recentTracks } from '$lib/stores';
 	let listening = recentTracks();
 
-	let currentTrack;
-	if ($listening[0]) currentTrack = $listening[0];
+	$: currentTrack = $listening.length > 0 ? $listening[0] : null;
 </script>
 
 {#if currentTrack}
