@@ -1,24 +1,31 @@
 <script>
 	import '$lib/styles.css';
 	import Header from '$lib/components/Primary/Header.svelte';
-
-	import { onNavigate } from '$app/navigation';
 	import Footer from '$lib/components/Primary/Footer.svelte';
+	import { onNavigate } from '$app/navigation';
 	import { recentTracks, batteryLevel, isOnline } from '$lib/stores';
-	import { afterUpdate, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
-	export let data;
+	let listening, battery, online;
 
-	recentTracks();
-	batteryLevel();
-	isOnline();
-	const listening = recentTracks();
-	const battery = batteryLevel();
-	const online = isOnline();
-	$: onMount(() => {
-		battery.set(data.props.gps.batt);
-		listening.set(data.props.songs);
-		online.set(data.props.online);
+	onMount(async () => {
+		try {
+			const response = await fetch('/.netlify/functions/stats');
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			const data = await response.json();
+
+			listening = recentTracks();
+			battery = batteryLevel();
+			online = isOnline();
+
+			battery.set(data.props.gps.batt);
+			listening.set(data.props.songs);
+			online.set(data.props.online);
+		} catch (error) {
+			console.error('Failed to fetch stats:', error);
+		}
 	});
 
 	onNavigate((navigation) => {
