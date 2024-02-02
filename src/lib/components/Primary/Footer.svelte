@@ -5,8 +5,8 @@
 	import License from '$lib/assets/images/common/license.png';
 	import NotAi from '$lib/assets/svg/NotAi.svelte';
 	import Terminal from '$lib/components/Terminal/Terminal.svelte';
-	import Scrobble from './Scrobble.svelte';
-	import Online from './Online.svelte';
+	// import Scrobble from './Scrobble.svelte';
+	// import Online from './Online.svelte';
 </script>
 
 <footer
@@ -62,8 +62,8 @@
 					<div
 						class="relative flex flex-col items-start w-full h-full col-span-2 md:hidden md:items-start place-content-start md:place-self-start"
 					>
-						<Scrobble />
-						<Online />
+						<!-- <Scrobble /> -->
+						<!-- <Online /> -->
 					</div>
 				</div>
 			</div>
@@ -74,8 +74,8 @@
 			<div
 				class="relative flex-col items-end hidden w-full h-full md:flex md:items-start place-content-end md:place-self-start basis-1/5"
 			>
-				<Scrobble />
-				<Online />
+				<!-- <Scrobble /> -->
+				<!-- <Online /> -->
 			</div>
 		</div>
 		<div class="absolute top-0 left-0 w-full h-full bg-cover bg-noise z-5"></div>

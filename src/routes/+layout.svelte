@@ -1,12 +1,13 @@
 <script>
 	import '$lib/styles.css';
 	import Header from '$lib/components/Primary/Header.svelte';
-	// import { batteryLevel } from '$lib/stores';
-	export let data;
-	// batteryLevel.set(data.props.batt);
+
 	import { onNavigate } from '$app/navigation';
 	import Footer from '$lib/components/Primary/Footer.svelte';
 	import { recentTracks, batteryLevel, isOnline } from '$lib/stores';
+
+	export let data;
+
 	recentTracks();
 	batteryLevel();
 	isOnline();
@@ -14,8 +15,9 @@
 	const battery = batteryLevel();
 	const online = isOnline();
 	battery.set(data.props.batt);
-	listening.set(data.props.songs);
+	// listening.set(data.props.songs);
 	online.set(data.props.online);
+
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
 

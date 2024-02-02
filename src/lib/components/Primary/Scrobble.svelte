@@ -1,7 +1,9 @@
 <script>
 	import { recentTracks } from '$lib/stores';
 	let listening = recentTracks();
-	let currentTrack = $listening.track[0];
+
+	let currentTrack;
+	if ($listening?.track[0]) currentTrack = $listening.track[0];
 </script>
 
 {#if currentTrack}

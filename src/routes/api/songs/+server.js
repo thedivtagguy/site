@@ -1,5 +1,5 @@
 import { LAST_FM_API_KEY } from '$env/static/private';
-export const prerender = true;
+// export const prerender = true;
 async function fetchCurrentTrack() {
 	const apiKey = LAST_FM_API_KEY;
 	const user = 'thedivtagguy';
@@ -14,19 +14,15 @@ async function fetchCurrentTrack() {
 	}
 }
 
-export async function load({ fetch }) {
+export async function GET() {
 	const response = await fetchCurrentTrack();
 
 	const songs = response.recenttracks;
-	const gps = await fetch('/api/gps');
-	const online = await fetch('/api/online');
-	const gpsData = await gps.json();
-	const onlineData = await online.json();
-	return {
-		props: {
-			batt: gpsData.batt,
-			online: onlineData,
-			songs
+	const selects = songs.track.slice(0, 2);
+	console.log(songs);
+	return new Response(JSON.stringify(songs), {
+		headers: {
+			'Content-Type': 'application/json'
 		}
-	};
+	});
 }
