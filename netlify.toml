@@ -3,3 +3,67 @@ for = "/*"
   [headers.values]
   Access-Control-Allow-Origin = "*"
   Access-Control-Allow-Headers = "Content-Type, Range"
+
+# Redirects 
+
+[[redirects]]
+  from = "/projects/food-apps"
+  to = "https://thedivtagguy.netlify.app/projects/food-apps/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/projects/bellybutton"
+  to = "https://thedivtagguy.netlify.app/projects/bellybutton/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/projects/manifesto"
+  to = "https://thedivtagguy.netlify.app/projects/manifesto/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/projects/whatsapp"
+  to = "https://thedivtagguy.netlify.app/projects/whatsapp/"
+  status = 200
+  force = true
+
+  [[redirects]]
+  from = "/projects/dance-of-dependence"
+  to = "https://danceofdependence.netlify.app"
+  status = 200
+  force = true
+
+  [[redirects]]
+  from = "/projects/wizard"
+  to = "https://harrypotteremails.netlify.app/"
+  status = 200
+  force = true
+
+# Resources
+
+[[redirects]]
+  from = "/web-dev/1"
+  to = "https://mellifluous-crumble-4fde67.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/web-dev/2"
+  to = "https://webdev-session2.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/qgis"
+  to = "https://qgismasterclass.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tidytuesday/taylor-swift/process"
+  to = "https://beautiful-begonia-731614.netlify.app/"
+  status = 200
+  force = true

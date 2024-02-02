@@ -4,6 +4,7 @@ export const routes = [
 	'colophon',
 	'tidytuesday',
 	'now',
+	'ai-policy',
 	'about',
 	'contact',
 	'blog'
