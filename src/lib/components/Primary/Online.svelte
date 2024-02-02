@@ -20,7 +20,8 @@
 	};
 
 	let open = false;
-	let isAmanOnline = $online?.status === 'Online';
+	// let isAmanOnline = $online?.status === 'Online';
+	let isAmanOnline = false;
 	let text = {
 		offline: "I'm AFK and not at my desk right now. Probably doing better things for once",
 		online: "I'm working on something on my laptop right now. Yeah like at this moment."
@@ -78,7 +79,7 @@
 	.offline {
 		color: #b56666 !important;
 		display: inline;
-		text-shadow: none;
+		text-shadow: none !important;
 	}
 
 	.status {
