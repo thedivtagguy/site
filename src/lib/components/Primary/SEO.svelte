@@ -72,7 +72,6 @@
 </script>
 
 <svelte:head>
-	<html {lang} />
 	<title>{title}</title>
 	<meta name="description" content={isBlogPost ? excerpt : description} />
 	<link rel="canonical" href={url} />

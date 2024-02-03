@@ -2,6 +2,7 @@ import { preprocessMeltUI, sequence } from '@melt-ui/pp';
 import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
+import sveltePreprocess from 'svelte-preprocess';
 const mdsvexOptions = {
 	extensions: ['.md', '.svx', '.mdx']
 };

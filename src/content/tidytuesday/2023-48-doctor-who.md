@@ -9,8 +9,10 @@ description: >
   week 48 and we looked at Doctor Who. I made a little nerd postcard from
   Gallifrey. I think I got the shape pretty close? eh?? Added the unstylized
   versions at the bottom. Except the title graphic, everything done in R.
-projectLink: 'https://aman.bh/drwho'
-githubLink: 'https://aman.bh/drwho'
+projectLink: >-
+  https://github.com/thedivtagguy/tidytuesday/tree/master/2023/week-48-nov-2023-doctor-who
+githubLink: >-
+  https://github.com/thedivtagguy/tidytuesday/tree/master/2023/week-48-nov-2023-doctor-who
 week: '48'
 social:
   twitter: 'https://twitter.com/thedivtagguy/status/1731323379171447048'

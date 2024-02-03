@@ -38,6 +38,10 @@
 	});
 </script>
 
+<svelte:head>
+	<link href="/light-favicon.png" rel="icon" media="(prefers-color-scheme: light)" />
+	<link href="/dark-favicon.png" rel="icon" media="(prefers-color-scheme: dark)" />
+</svelte:head>
 <Header />
 
 <main

@@ -11,10 +11,11 @@ description: >
   [#tidytuesday](https://twitter.com/hashtag/tidytuesday?src=hashtag_click)
   prompt to create a Shiny dashboard that tracks our daily plays, wins and win
   margins for the rest of the year. The game is on
-projectLink: 'https://aman.bh/nytdash'
-githubLink: 'https://aman.bh/nytdash'
+projectLink: 'https://github.com/thedivtagguy/word-game-dashboard'
+githubLink: 'https://github.com/thedivtagguy/word-game-dashboard'
 week: '1'
 social:
   twitter: 'https://twitter.com/thedivtagguy/status/1742603781328544024'
 slug: nyt-games
 ---
+
