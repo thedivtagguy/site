@@ -52,12 +52,22 @@
 </script>
 
 <div class="relative col-span-1 md:col-span-4 lg:ml-2">
-	<video tabindex="-1" autoplay muted loop playsinline preload="none" poster={slide1}>
+	<video
+		tabindex="-1"
+		height="500"
+		width="500"
+		autoplay
+		muted
+		loop
+		playsinline
+		preload="none"
+		poster={slide1}
+	>
 		<source src={Eymen} type="video/webm" />
 	</video>
 	<aside
-		in:fade={{ duration: 1000 }}
-		class="absolute top-[1.9rem] w-[6.5rem] h-60 px-4 text-xs leading-snug left-[6rem] text-center font-bold text-base-300 -skew-y-[17deg]"
+		in:fade={{ duration: 500 }}
+		class="absolute md:top-[6%] top-[4%] left-[14%] md:left-[16%] z-10 w-[4.8rem] md:w-[6rem] h-60 px-4 text-[0.6rem] leading-snug text-center font-bold text-base-300 -skew-y-[17deg]"
 	>
 		<p class="font-bold tracking-tighter uppercase text-base-300 font-fira">{greeting}</p>
 	</aside>

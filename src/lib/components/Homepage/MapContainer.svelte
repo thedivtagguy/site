@@ -28,6 +28,7 @@
 	</div>
 	<img
 		width="160"
+		height="200"
 		src={Traveller}
 		alt="Watch me go"
 		class="absolute left-[28%] md:left-[43.5%] -top-[9.2rem] md:-top-[10rem]"

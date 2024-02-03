@@ -70,19 +70,3 @@
      font-display: swap;
   }
   
-  @font-face {
-    font-family: 'LibreCaslonCondensed';
-    src: url('./fonts/LibreCaslonCondensed[wdth,wght].woff2') format('woff2');
-    font-weight: var(--font-weight); /* Variable weight */
-    font-style: normal;
-     font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'LibreCaslonCondensed';
-    src: url('./fonts/LibreCaslonCondensed[wght].woff2') format('woff2');
-    font-weight: var(--font-weight); /* Variable weight */
-    font-style: normal;
-     font-display: swap;
-  }
-  
