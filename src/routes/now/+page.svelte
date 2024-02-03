@@ -37,7 +37,6 @@
 		<figure class="flex items-center justify-center">
 			<img height="100" width="400" src={Now} alt="Now" class="bg-blend-lighten" />
 		</figure>
-		<p class="py-4 text-center text-md font-fira">Updated on {formatDate(now.lastUpdated)}</p>
 	</hgroup>
 	<div class="px-8 pt-12 pb-[9rem] md:pb-2 md:overflow-hidden overflow-y-hidden md:w-fit w-dvw">
 		<div class="mx-auto mb-8 prose prose-lg">
@@ -51,6 +50,12 @@
 					: 'not working at anything on my laptop right now'}. But I mean, what are you going to do
 				with that information tbh. I'll tell you other things.
 			</p>
+
+			<hr class="my-4 divider" />
+			<p class="py-4 text-center text-md font-fira">
+				Things below were updated on {formatDate(now.lastUpdated)}
+			</p>
+			<hr class="my-4 divider" />
 		</div>
 		<PostCard {content} />
 	</div>
