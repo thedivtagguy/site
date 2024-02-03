@@ -3,10 +3,11 @@
 	export let height = 49;
 	import { cn } from '$lib/utils';
 	let className = '';
+	export let linkClass = '';
 	export { className as class };
 </script>
 
-<a href="/" tabindex="-1">
+<a class={linkClass} href="/" tabindex="-1">
 	<svg
 		{width}
 		{height}
