@@ -45,5 +45,5 @@
 	<TextDivider text="Just for fun" />
 	<VizOfTheWeek data={data.data?.tidytuesday} />
 
-	<MapContainer />
+	<!-- <MapContainer /> -->
 </main>
