@@ -1,5 +1,5 @@
 <script>
-	import slide1 from '$lib/assets/images/common/eymen-1.webp';
+	import slide1 from '$lib/assets/eymen-1.webp';
 	import Eymen from '$lib/assets/eymen.webm';
 	import { onMount } from 'svelte';
 	import { localStorageStore } from 'fractils';

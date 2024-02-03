@@ -16,7 +16,7 @@
 </script>
 
 <svelte:head>
-	<title>Aman's Website</title>
+	<title>Aman Bhargava</title>
 </svelte:head>
 <header>
 	<Hero liveData={data.data?.latestBlog} />
