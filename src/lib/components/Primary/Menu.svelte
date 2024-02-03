@@ -22,9 +22,7 @@
 		let:toggle
 		let:NavContainer
 	>
-		<NavContainer
-			class="flex justify-between max-w-sm mx-auto mt-2 md:justify-center md:w-auto bg-none"
-		>
+		<NavContainer class="flex justify-between max-w-sm mx-auto md:justify-center md:w-auto bg-none">
 			<NavBrand class="block md:hidden" href="/">
 				<Logo class="p-1" />
 			</NavBrand>
@@ -38,7 +36,7 @@
 				<NavLi class="w-full md:w-24" href="/">Home</NavLi>
 				<NavLi class="w-full bg-purple md:w-24" href="/work">Work</NavLi>
 				<NavLi class="w-full bg-sage md:w-24" href="/blog">Blog</NavLi>
-				<NavLi class="w-full bg-blue md:w-24" href="/">Contact</NavLi>
+				<NavLi class="w-full bg-blue md:w-24" href="/contact">Contact</NavLi>
 				<NavLi class="w-full cursor-pointer md:w-10">
 					<MoreHorizontal class="inline w-6 h-6 text-primary-800" /></NavLi
 				>

@@ -1,8 +1,14 @@
 <script>
 	import Now from '$lib/assets/images/now.webp';
+	import BatteryPercentage from '$lib/assets/svg/BatteryPercentage.svelte';
 	import PostCard from '$lib/components/Now/PostCard.svelte';
 	import TableOfContents from '$lib/components/Primary/TableOfContents.svelte';
-
+	import { batteryLevel, recentTracks, isOnline } from '$lib/stores.js';
+	const battery = batteryLevel();
+	const listened = recentTracks();
+	const online = isOnline();
+	$: currentTrack = $listened.length > 0 ? $listened[0] : null;
+	let isAmanOnline = $online.status === 'Online';
 	import { formatDate } from '$lib/utils.ts';
 	import { ChevronRight } from 'lucide-svelte';
 	import { marked } from 'marked';
@@ -34,6 +40,18 @@
 		<p class="py-4 text-center text-md font-fira">Updated on {formatDate(now.lastUpdated)}</p>
 	</hgroup>
 	<div class="px-8 pt-12 pb-[9rem] md:pb-2 md:overflow-hidden overflow-y-hidden md:w-fit w-dvw">
+		<div class="mx-auto mb-8 prose prose-lg">
+			<p class="text-xl">
+				My <span class="inline-block">
+					<BatteryPercentage percentage={$battery} />
+				</span>
+				phone battery is at {$battery}% right now. I just listened to {currentTrack?.name} by {currentTrack
+					?.artist['#text']}. I'm {isAmanOnline
+					? 'currently working on my laptop'
+					: 'not working at anything on my laptop right now'}. But I mean, what are you going to do
+				with that information tbh. I'll tell you other things.
+			</p>
+		</div>
 		<PostCard {content} />
 	</div>
 	<div

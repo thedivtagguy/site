@@ -31,12 +31,15 @@
 			</p>
 		{/if}
 		{#if isHome}
-			<p class="flex items-center justify-between w-full text-xs uppercase" class:notHome={!isHome}>
+			<p
+				class="flex items-center justify-between w-full text-[0.7rem] md:text-xs uppercase"
+				class:notHome={!isHome}
+			>
 				<span class="text-xs">&nbsp;</span>
 				<span>issue dated {issueTime} <i>Bangalore, India</i></span>
 				<BatteryPercentage percentage={batteryPerc} width="1.3em" />
 			</p>
-			<h1 class="relative py-2 text-5xl font-bold text-center uppercase md:py-0 lg:text-7xl">
+			<h1 class="relative py-2 text-4xl font-bold text-center uppercase md:py-0 lg:text-7xl">
 				{@html headline}
 			</h1>
 		{:else}
@@ -56,7 +59,7 @@
 		{/if}
 	</div>
 	{#if isHome}
-		<div class="w-full -mt-2">
+		<div class="w-full">
 			<Menu />
 		</div>
 	{/if}

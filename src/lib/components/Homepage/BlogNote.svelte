@@ -27,11 +27,14 @@
 	</div>
 
 	<div class="flex w-full gap-2 basis-1/2">
-		<div class="flex flex-col justify-center w-1/2 gap-2 text-sm h-[13.5rem] black-bento">
+		<a
+			href="/contact"
+			class="flex flex-col justify-center w-1/2 gap-2 text-sm h-[13.5rem] black-bento"
+		>
 			<div class="py-2">
-				<p class="italic text-white normal font-roboto">Web dev?</p>
-				<p class="italic text-white normal font-roboto">Data viz?</p>
-				<p class="italic text-white normal font-roboto">Pen pal?</p>
+				<p class="text-sm font-bold uppercase text-base-200 normal font-roboto">Web dev?</p>
+				<p class="text-sm font-bold uppercase text-base-200 normal font-roboto">Data viz?</p>
+				<p class="text-sm font-bold uppercase text-base-200 normal font-roboto">Pen pal?</p>
 			</div>
 			<div class="flex items-start justify-between">
 				<p class="font-bold uppercase text-green green-glow-100 font-fira">
@@ -40,7 +43,7 @@
 					>Available for freelance work from June 2024
 				</p>
 			</div>
-		</div>
+		</a>
 		<div
 			class="flex flex-col items-center justify-center w-1/2 gap-2 text-sm h-[13.5rem] bg-base-200 border-[1px] border-base-300/50 rounded-xl"
 		>
