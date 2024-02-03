@@ -1,5 +1,6 @@
 <script>
 	import Hero from '$lib/components/Homepage/Hero.svelte';
+	import SEO from '$lib/components/Primary/SEO.svelte';
 	import WorkCard from '$lib/components/Primary/WorkCard.svelte';
 	import TextDivider from '$lib/components/Primary/TextDivider.svelte';
 	import InTheNews from '$lib/components/Homepage/InTheNews.svelte';
@@ -15,9 +16,22 @@
 	let works = data.data.works;
 </script>
 
-<svelte:head>
-	<title>Aman Bhargava</title>
-</svelte:head>
+<SEO
+	title="Aman Bhargava"
+	description="A general mishmash of design, data & code"
+	url="https://aman.bh"
+	image="https://aman.bh/sharecard.jpg"
+	name="Aman Bhargava"
+	jobTitle="Developer and designer"
+	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
+	sameAs={[
+		'https://www.linkedin.com/in/amnbh/',
+		'https://github.com/thedivtagguy',
+		'https://www.instagram.com/thedivtagguy',
+		'https://bsky.app/profile/aman.bh'
+	]}
+	lang="en"
+/>
 <header>
 	<Hero liveData={data.data?.latestBlog} />
 
@@ -45,5 +59,5 @@
 	<TextDivider text="Just for fun" />
 	<VizOfTheWeek data={data.data?.tidytuesday} />
 
-	<!-- <MapContainer /> -->
+	<MapContainer />
 </main>

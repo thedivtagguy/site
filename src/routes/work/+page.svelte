@@ -9,7 +9,7 @@
 	import ToggleFormatting from '$lib/components/Primary/Toggle.svelte';
 	import ttImage from '$lib/assets/images/work/tt.webp';
 	import { X } from 'lucide-svelte';
-
+	import SEO from '$lib/components/Primary/SEO.svelte';
 	export let data;
 
 	let works = data.data;
@@ -37,10 +37,22 @@
 	$: selectedTags = $workFilters.tags;
 </script>
 
-<svelte:head>
-	<title>Works | aman.bh</title>
-	<meta property="og:title" content="Works | aman.bh" />
-</svelte:head>
+<SEO
+	title="Work | Aman Bhargava"
+	description="Websites, visualizations, interactives and other mildly interesting stuff."
+	url="https://aman.bh"
+	image="https://aman.bh/sharecard.jpg"
+	name="Aman Bhargava"
+	jobTitle="Developer and designer"
+	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
+	sameAs={[
+		'https://www.linkedin.com/in/amnbh/',
+		'https://github.com/thedivtagguy',
+		'https://www.instagram.com/thedivtagguy',
+		'https://bsky.app/profile/aman.bh'
+	]}
+	lang="en"
+/>
 
 <header
 	class="grid-cols-1 grid w-full justify-center items-center md:px-6 md:grid-cols-1 lg:grid-cols-5 border-b-[1px] border-base-300"

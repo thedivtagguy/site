@@ -3,16 +3,28 @@
 	import TypeWriter from '$lib/assets/images/blog/typewriter.webp';
 	import Dunce from '$lib/assets/images/dunce.webp';
 	import { formatDate } from '$lib/utils.ts';
-
+	import SEO from '$lib/components/Primary/SEO.svelte';
 	export let data;
 
 	let posts = data.data;
 </script>
 
-<svelte:head>
-	<title>Aman's Blog</title>
-	<meta property="og:title" content="Aman's Blog" />
-</svelte:head>
+<SEO
+	title="Blog | Aman Bhargava"
+	description="A home of Aman's multiple interests, all disjointed and poorly run"
+	url="https://aman.bh"
+	image="https://aman.bh/sharecard.jpg"
+	name="Aman Bhargava"
+	jobTitle="Developer and designer"
+	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
+	sameAs={[
+		'https://www.linkedin.com/in/amnbh/',
+		'https://github.com/thedivtagguy',
+		'https://www.instagram.com/thedivtagguy',
+		'https://bsky.app/profile/aman.bh'
+	]}
+	lang="en"
+/>
 
 <div
 	class="grid items-center justify-center w-full grid-cols-1 gap-0 lg:grid-cols-5 border-base-300"

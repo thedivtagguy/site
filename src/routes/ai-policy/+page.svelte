@@ -1,6 +1,7 @@
 <script>
 	import Now from '$lib/assets/images/now.webp';
 	import PostCard from '$lib/components/Now/PostCard.svelte';
+	import Seo from '$lib/components/Primary/SEO.svelte';
 	import TableOfContents from '$lib/components/Primary/TableOfContents.svelte';
 
 	import { formatDate } from '$lib/utils.ts';
@@ -12,11 +13,22 @@
 	let content = data.content;
 </script>
 
-<svelte:head>
-	<title>{now.title} now? | aman.bh</title>
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="{now.title} | aman.bh" />
-</svelte:head>
+<Seo
+	title="AI Usage Policy | Aman Bhargava"
+	description="How I propose to use LLMs and AI in my work, going forward"
+	url="https://aman.bh"
+	image="https://aman.bh/sharecard.jpg"
+	name="Aman Bhargava"
+	jobTitle="Developer and designer"
+	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
+	sameAs={[
+		'https://www.linkedin.com/in/amnbh/',
+		'https://github.com/thedivtagguy',
+		'https://www.instagram.com/thedivtagguy',
+		'https://bsky.app/profile/aman.bh'
+	]}
+	lang="en"
+/>
 
 <!-- <TableOfContents /> -->
 <article class="relative py-8">

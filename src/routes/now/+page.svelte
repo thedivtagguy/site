@@ -2,6 +2,7 @@
 	import Now from '$lib/assets/images/now.webp';
 	import BatteryPercentage from '$lib/assets/svg/BatteryPercentage.svelte';
 	import PostCard from '$lib/components/Now/PostCard.svelte';
+	import SEO from '$lib/components/Primary/SEO.svelte';
 	import TableOfContents from '$lib/components/Primary/TableOfContents.svelte';
 	import { batteryLevel, recentTracks, isOnline } from '$lib/stores.js';
 	const battery = batteryLevel();
@@ -18,11 +19,22 @@
 	let content = data.content;
 </script>
 
-<svelte:head>
-	<title>{now.title} now? | aman.bh</title>
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="{now.title} | aman.bh" />
-</svelte:head>
+<SEO
+	title="Now | Aman Bhargava"
+	description="What is Aman doing right now. "
+	url="https://aman.bh"
+	image="https://aman.bh/sharecard.jpg"
+	name="Aman Bhargava"
+	jobTitle="Developer and designer"
+	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
+	sameAs={[
+		'https://www.linkedin.com/in/amnbh/',
+		'https://github.com/thedivtagguy',
+		'https://www.instagram.com/thedivtagguy',
+		'https://bsky.app/profile/aman.bh'
+	]}
+	lang="en"
+/>
 
 <!-- <TableOfContents /> -->
 <article class="relative py-8">

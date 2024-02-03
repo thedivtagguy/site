@@ -2,6 +2,7 @@
 	import Now from '$lib/assets/images/now.webp';
 	import Diver from '$lib/components/About/Diver.svelte';
 	import PostCard from '$lib/components/Now/PostCard.svelte';
+	import SEO from '$lib/components/Primary/SEO.svelte';
 	import TableOfContents from '$lib/components/Primary/TableOfContents.svelte';
 
 	import { formatDate } from '$lib/utils.ts';
@@ -14,11 +15,22 @@
 	const age = new Date().getFullYear() - 2001;
 </script>
 
-<svelte:head>
-	<title>About me | aman.bh</title>
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="{about.title} | aman.bh" />
-</svelte:head>
+<SEO
+	title="About | Aman Bhargava"
+	description="A general mishmash of design, data & code"
+	url="https://aman.bh"
+	image="https://aman.bh/sharecard.jpg"
+	name="Aman Bhargava"
+	jobTitle="Developer and designer"
+	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
+	sameAs={[
+		'https://www.linkedin.com/in/amnbh/',
+		'https://github.com/thedivtagguy',
+		'https://www.instagram.com/thedivtagguy',
+		'https://bsky.app/profile/aman.bh'
+	]}
+	lang="en"
+/>
 
 <!-- <TableOfContents /> -->
 <article class="relative flex flex-col w-full gap-4 py-8 md:flex-row">

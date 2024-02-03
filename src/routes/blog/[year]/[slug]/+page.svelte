@@ -1,14 +1,21 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils.ts';
+	import SEO from '$lib/components/Primary/SEO.svelte';
 	import { ChevronRight } from 'lucide-svelte';
 	export let data;
 </script>
 
-<svelte:head>
-	<title>{data.meta.title} | aman.bh</title>
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="{data.meta.title} | aman.bh" />
-</svelte:head>
+<SEO
+	title={data.meta.title}
+	excerpt={data.meta.excerpt}
+	description={data.meta.excerpt}
+	publishDate={data.meta.date}
+	category={data.meta.category}
+	tags={data.meta.tags}
+	url={`https://aman.bh/${data.meta.slug}`}
+	image="https://aman.bh/sharecard.jpg"
+	authorName="Aman Bhargava"
+/>
 
 <article class="pt-8">
 	<hgroup>

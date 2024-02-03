@@ -2,6 +2,7 @@
 	import { ChevronRight, ExternalLink, Mail } from 'lucide-svelte';
 	import toolsImage from '$lib/assets/images/contact/tools.png';
 	import Button from '$lib/components/Primary/Button.svelte';
+	import SEO from '$lib/components/Primary/SEO.svelte';
 	const tools = [
 		'Svelte',
 		'HTML',
@@ -20,11 +21,22 @@
 	];
 </script>
 
-<svelte:head>
-	<title>About me | aman.bh</title>
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Contact | aman.bh" />
-</svelte:head>
+<SEO
+	title="Contact | Aman Bhargava"
+	description="Reach out to me so I can make something for you!"
+	url="https://aman.bh"
+	image="https://aman.bh/sharecard.jpg"
+	name="Aman Bhargava"
+	jobTitle="Developer and designer"
+	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
+	sameAs={[
+		'https://www.linkedin.com/in/amnbh/',
+		'https://github.com/thedivtagguy',
+		'https://www.instagram.com/thedivtagguy',
+		'https://bsky.app/profile/aman.bh'
+	]}
+	lang="en"
+/>
 
 <!-- <TableOfContents /> -->
 <article class="relative flex flex-col justify-center w-full gap-4 py-8 md:flex-row">

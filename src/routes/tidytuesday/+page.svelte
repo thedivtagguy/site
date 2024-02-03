@@ -5,12 +5,25 @@
 	import handle from '$lib/assets/images/tidytuesday/handle.png';
 	export let data;
 	const tidytuesday = data.data;
+	import SEO from '$lib/components/Primary/SEO.svelte';
 </script>
 
-<svelte:head>
-	<title>Tidytuesday | aman.bh</title>
-	<meta property="og:title" content="Tidytuesday | aman.bh" />
-</svelte:head>
+<SEO
+	title="Tidytuesday | Aman Bhargava"
+	description="All of my public tidytuesday projects"
+	url="https://aman.bh"
+	image="https://aman.bh/sharecard.jpg"
+	name="Aman Bhargava"
+	jobTitle="Developer and designer"
+	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
+	sameAs={[
+		'https://www.linkedin.com/in/amnbh/',
+		'https://github.com/thedivtagguy',
+		'https://www.instagram.com/thedivtagguy',
+		'https://bsky.app/profile/aman.bh'
+	]}
+	lang="en"
+/>
 
 <header
 	class="grid-cols-1 grid w-full justify-center items-center md:px-6 md:grid-cols-1 lg:grid-cols-5 border-b-[1px] border-base-300"
