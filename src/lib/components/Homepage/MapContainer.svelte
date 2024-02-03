@@ -5,8 +5,8 @@
 </script>
 
 <div class="relative mt-[10rem]">
-	<div class="select-none">
-		<pre class="absolute text-base-300 left-0 -top-[10rem]">
+	<div class="hidden select-none md:block">
+		<pre class="absolute text-base-300 left-0 -top-[13rem]">
 		
 				,--.
 				(    )
@@ -30,7 +30,7 @@
 		width="160"
 		src={Traveller}
 		alt="Watch me go"
-		class="absolute left-[23%] md:left-[43.5%] -top-[10rem]"
+		class="absolute left-[28%] md:left-[43.5%] -top-[9.2rem] md:-top-[10rem]"
 	/>
 
 	<header class="relative mx-auto md:w-1/3 h-60">

@@ -33,7 +33,7 @@
 			<h1 class="text-5xl italic leading-normal text-left capitalize">{about.title} - {age}</h1>
 			<p class="py-4 text-xs text-left font-fira">Updated on {formatDate(about.lastUpdated)}</p>
 		</hgroup>
-		<div class="py-2 text-xl prose blog">
+		<div class="py-2 prose md:text-xl blog">
 			<svelte:component this={content} />
 			<h2 class="p-0 mt-0 mb-4">Thank yous</h2>
 			<p>{about.thanks}</p>

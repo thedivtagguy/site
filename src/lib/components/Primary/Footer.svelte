@@ -54,7 +54,7 @@
 							class="divide-y-[1px] divide-base-100 divide-opacity-15 *:py-1 first:*:pt-0 last:*:pb-0 text-base-200"
 						>
 							<li class="font-roboto"><a href="/colophon">Colophon</a></li>
-							<li class="font-roboto"><a href="/colophon#what-i-track">What I track</a></li>
+							<!-- <li class="font-roboto"><a href="/colophon#what-i-track">What I track</a></li> -->
 							<li class="font-roboto"><a href="/ai-policy">AI Policy</a></li>
 							<!-- <li class="font-roboto">RSS</li> -->
 						</ul>

@@ -33,14 +33,14 @@
 				<ChevronRight class="h-4 stroke-base-300" />
 			</li>
 		</ol>
-		<h1 class="text-5xl italic leading-normal text-center capitalize">{now.title}</h1>
-		<figure class="flex items-center justify-center">
-			<img height="100" width="400" src={Now} alt="Now" class="bg-blend-lighten" />
+		<h1 class="text-3xl italic leading-normal text-center capitalize md:text-5xl">{now.title}</h1>
+		<figure class="flex items-center md:w-[400px] mx-auto w-[300px] justify-center">
+			<img height="100" src={Now} alt="Now" class="bg-blend-lighten" />
 		</figure>
 	</hgroup>
 	<div class="px-8 pt-12 pb-[9rem] md:pb-2 md:overflow-hidden overflow-y-hidden md:w-fit w-dvw">
-		<div class="mx-auto mb-8 prose prose-lg">
-			<p class="text-xl">
+		<div class="mx-auto mb-8 prose md:prose-lg">
+			<p class="md:text-xl">
 				My <span class="inline-block">
 					<BatteryPercentage percentage={$battery} />
 				</span>
@@ -52,15 +52,16 @@
 			</p>
 
 			<hr class="my-4 divider" />
-			<p class="py-4 text-center text-md font-fira">
-				Things below were updated on {formatDate(now.lastUpdated)}
+			<p class="py-4 text-xs text-center md:text-md font-fira">
+				Things below were updated on <br class="block md:hidden" />
+				{formatDate(now.lastUpdated)}
 			</p>
 			<hr class="my-4 divider" />
 		</div>
 		<PostCard {content} />
 	</div>
 	<div
-		class="px-4 py-12 mx-auto text-xl prose text-wrap prose-h2:font-libre-caslon prose-h3:font-libre-caslon prose-p:text-neutral"
+		class="px-4 py-12 mx-auto prose md:text-xl text-wrap prose-h2:font-libre-caslon prose-h3:font-libre-caslon prose-p:text-neutral"
 	>
 		{@html marked(now.job)}
 		<h3>Where you at?</h3>

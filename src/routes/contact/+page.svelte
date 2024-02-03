@@ -31,13 +31,20 @@
 	<div>
 		<hgroup class="items-center justify-center w-full">
 			<div class="relative flex flex-col justify-center w-full my-2 text-center">
-				<article class="inline-block text-left text-effect">
+				<article class="hidden text-left md:inline-block text-effect">
 					<p class="line">If you like what you see here</p>
 					<p class="line">and are curious about how I can help you in</p>
 					<p class="line">data storytelling & visualization, design or web dev —</p>
 
 					<br />
 					<p class="line cta-line">It couldn't hurt to talk, could it?</p>
+				</article>
+				<article class="block text-left md:hidden text-effect">
+					<p class="line">
+						If you like what you see here and are curious about how I can help you in data
+						storytelling & visualization, design or web dev —
+					</p>
+					<p class="mt-4 line cta-line">It couldn't hurt to talk, could it?</p>
 				</article>
 			</div>
 		</hgroup>
@@ -190,21 +197,25 @@
 
 	@media (max-width: 768px) {
 		:root {
-			--contact-multiplier: 1.5;
+			--contact-multiplier: 1;
+		}
+		.text-effect .line {
+			font-size: 16px; /* Set a fixed font size for tablet and below */
 		}
 	}
 
 	@media (max-width: 480px) {
 		:root {
-			--contact-multiplier: 1.7;
+			--contact-multiplier: 1;
 		}
 
-		.line {
-			font-size: 0.9rem;
+		.cta-line::before {
+			width: 80%;
+			left: 40%;
 		}
-		.cta::before {
-			width: 100%;
-			left: 50%;
+
+		.text-effect .line {
+			font-size: 14px; /* Set a fixed font size for mobile */
 		}
 	}
 </style>

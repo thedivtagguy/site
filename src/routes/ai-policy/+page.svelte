@@ -32,7 +32,7 @@
 		<p class="py-4 text-center text-md font-fira">Updated on {formatDate(now.lastUpdated)}</p>
 	</hgroup>
 	<div
-		class="px-4 py-12 mx-auto text-xl prose text-wrap prose-h2:font-libre-caslon prose-h3:font-libre-caslon prose-p:text-neutral"
+		class="px-4 py-12 mx-auto prose md:text-xl text-wrap prose-h2:font-libre-caslon prose-h3:font-libre-caslon prose-p:text-neutral"
 	>
 		<svelte:component this={content} />
 	</div>
