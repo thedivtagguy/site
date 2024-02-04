@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "tinacms dev --datalayer-port 6504 -c \"vite dev --host\"",
+		"dev": "tinacms dev --datalayer-port 3453 -c \"vite dev --host\"",
 		"netlify": "netlify dev",
 		"build": "tinacms build && vite build && npm run postbuild",
 		"preview": "vite preview",

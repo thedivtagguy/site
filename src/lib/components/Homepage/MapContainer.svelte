@@ -36,7 +36,7 @@
 
 	<header class="relative mx-auto md:w-1/3 h-60">
 		<div
-			class="absolute text-4xl z-20 -left-[10%] md:-left-[7%] uppercase -top-3 font-libre-caslon"
+			class="absolute text-4xl z-20 -left-[25%] md:-left-[7%] uppercase -top-4 font-libre-caslon"
 		>
 			<svg width="400" height="70">
 				<path
@@ -52,11 +52,11 @@
 
 		<div class="relative z-10 banner">
 			<Banner />
-			<div class="absolute left-[36%] top-[43%]">
+			<div class="absolute left-[30%] md:left-[36%] top-[33%] md:top-[43%]">
 				<p class="text-3xl font-libre-caslon">as I know it</p>
 				<hr class="divide" />
 			</div>
-			<div class="flex items-center justify-center ml-2 -mt-10">
+			<div class="flex items-center justify-center -mt-3 md:ml-2 md:-mt-10">
 				<p class="w-4/6 px-2 text-sm italic text-center md:text-md font-archivo">
 					A map of (almost) everywhere <span class="text-[#F26D3D] font-bold">I've travelled</span> in
 					the city, updated weekly.

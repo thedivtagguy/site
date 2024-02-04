@@ -29,7 +29,7 @@
 	let textToShow = $online?.status === 'Online' ? text.online : text.offline;
 </script>
 
-<div class="inline-block w-full max-w-[11.5rem]">
+<div class="inline-block w-full md:max-w-[11.5rem]">
 	<Popover offset={5} bind:open>
 		<div
 			class="p-2 text-xs font-medium rounded-sm shadow-sm text-neutral max-w-36 bg-base-100/80 font-archivo backdrop-blur-lg"

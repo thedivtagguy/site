@@ -75,7 +75,7 @@
 				<Terminal />
 			</div>
 			<div
-				class="relative flex-col items-end hidden w-full h-full md:flex md:items-start place-content-end md:place-self-start basis-1/5"
+				class="relative flex flex-col items-end w-full h-full md:flex md:items-start place-content-end md:place-self-start basis-1/5"
 			>
 				<Scrobble />
 				<Online />
