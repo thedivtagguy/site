@@ -24,7 +24,11 @@
 				</figure>
 			{/if}
 			<div>
-				<h3 class="block font-bold md:hidden font-roboto text-base-200">Current bop</h3>
+				<h3
+					class="block text-xs font-bold border-gray-500 border-b-[0.5px] uppercase md:hidden font-roboto text-base-200"
+				>
+					Current bop
+				</h3>
 
 				<p class="font-semibold text-md font-roboto">{currentTrack.name}</p>
 				<p class="p-0 m-0 text-sm font-roboto">by {currentTrack.artist['#text']}</p>

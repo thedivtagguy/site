@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Plus from '$lib/assets/svg/Plus.svelte';
 	import Badge from '../Primary/Badge.svelte';
 	import Heart from '$lib/assets/svg/Heart.svelte';
@@ -6,28 +6,56 @@
 	import { cn } from '$lib/utils';
 	import { createAccordion, melt } from '@melt-ui/svelte';
 	import { fade, slide } from 'svelte/transition';
-	import { formatDate } from '$lib/utils';
-	import { flip } from 'svelte/animate';
+	import { scrollIntoView, scrollFade, scrollShadow } from 'svelte-ux';
+	import { formatDate, slugify } from '$lib/utils';
+	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
+	import { writable } from 'svelte/store';
+	import { isWorkBeingFiltered } from '$lib/stores';
 
-	let className = '';
 	export { className as class };
 	export let data;
 
+	let className = '';
+	let openProjectParam = writable('');
+	const setProjectParam = (slug: string) => () => {
+		goto(`/work/?project=${slug}`, { noScroll: true });
+	};
+	const filtered = isWorkBeingFiltered();
+
 	const {
 		elements: { content, item, trigger, root },
-		helpers: { isSelected }
+		helpers: { isSelected },
+		states: { value }
 	} = createAccordion({
-		defaultValue: data.find((item) => item.favorite)?.title
+		value: openProjectParam
 	});
+
+	$: if ($page.url.searchParams.get('project') && !$filtered) {
+		$openProjectParam = data.find(
+			(item) => item.slug === $page.url.searchParams.get('project')
+		).title;
+	} else if (!$page.url.searchParams.get('project') && !$filtered) {
+		$openProjectParam = data.find((item) => item.favorite).title;
+	}
 </script>
 
-<div class={cn('mx-auto w-full', className)} {...$root}>
-	{#each data as { title, description, link, projectLink, type, client, favorite, label, date, thumbnail, tools }, i (i)}
+<div class={cn('h-screen overflow-y-auto', className)} {...$root}>
+	{#each data as { title, description, link, projectLink, type, client, favorite, label, date, slug, thumbnail, tools }, i (i)}
 		{@const readMoreLink = projectLink ? projectLink : link ? link : ''}
-		<article in:fade use:melt={$item(title)} class="overflow-hidden transition-colors">
+		<article
+			id={slugify(slug)}
+			use:scrollIntoView={{
+				condition: slug === $page.url.searchParams.get('project')
+			}}
+			use:melt={$item(title)}
+			class="overflow-hidden transition-colors"
+		>
 			<header class="flex text-2xl">
 				<button
 					use:melt={$trigger(title)}
+					on:click={setProjectParam(slug)}
 					class={cn(
 						'flex flex-1 cursor-pointer text-left text-2xl md:text-3xl items-start md:items-center justify-between ',
 						'px-5 py-4 gap-4 font-medium leading-none',
@@ -80,7 +108,7 @@
 						<figure class="basis-2/6">
 							<img
 								class="w-[230px] h-[300px] rounded-xl border-neutral border-[1px] object-cover noise-image"
-								loading="lazy"
+								loading="eager"
 								src={thumbnail}
 								alt={`Thumbnail for ${title}`}
 							/>
@@ -98,9 +126,7 @@
 							>
 								{#if (type === 'bylines' && client.title) || (type === 'Client' && client.title)}
 									<div class="col-span-1">
-										<p class="pb-2 text-xs font-medium tracking-widest uppercase font-fira">
-											Made for
-										</p>
+										<p class="pb-2 text-xs font-medium tracking-widest uppercase font-fira">for</p>
 										<img
 											width="80"
 											height="20"

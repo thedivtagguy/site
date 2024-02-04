@@ -4,7 +4,6 @@
 	import { timeFormat } from 'd3';
 
 	const online = isOnline();
-	console.log($online);
 
 	const convertToIST = (time) => {
 		let date = new Date(time);

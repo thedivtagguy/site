@@ -1,4 +1,5 @@
 ---
+slug: afghanistan-earthquake
 title: ' Earthquake devastates Afghanistan'
 description: >-
   First byline at Reuters Graphics (and my first breaking news story!). I

@@ -7,10 +7,13 @@
 	$: filteredWorks = filterWorkStore();
 	import { filterData, toggleItem, workFilters } from '$lib/components/Work/filterUtils.js';
 	import ToggleFormatting from '$lib/components/Primary/Toggle.svelte';
-	import ttImage from '$lib/assets/images/work/tt.webp';
+	import { isWorkBeingFiltered } from '$lib/stores.js';
+	import { goto } from '$app/navigation';
 	import { X } from 'lucide-svelte';
 	import SEO from '$lib/components/Primary/SEO.svelte';
 	export let data;
+
+	const filtered = isWorkBeingFiltered();
 
 	let works = data.data;
 	let types = data?.meta?.types;
@@ -19,6 +22,7 @@
 	let showFilters = true;
 
 	function filterWork(filterBy, value) {
+		goto('/work', { noScroll: true });
 		$workFilters = toggleItem($workFilters, filterBy, value);
 	}
 
@@ -35,6 +39,12 @@
 	$: filteredTags = tagsByType($workFilters.type, works);
 
 	$: selectedTags = $workFilters.tags;
+
+	$: if (selectedTags.size > 0) {
+		filtered.set(true);
+	} else {
+		filtered.set(false);
+	}
 </script>
 
 <SEO

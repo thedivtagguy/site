@@ -25,6 +25,7 @@ export const random = {
 			},
 			type: 'boolean'
 		},
+
 		{
 			type: 'string',
 			name: 'label',

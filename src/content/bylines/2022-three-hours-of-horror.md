@@ -1,5 +1,6 @@
 ---
 featured: true
+slug: thailand-massacre
 title: Three hours of horror
 description: >-
   Worked remotely with on-ground reporters to help illustrate visuals for a
@@ -10,6 +11,6 @@ tags:
   - news
 projectLink: 'https://www.reuters.com/graphics/THAILAND-SHOOTING/RECONSTRUCTION/zdpxolwrwvx/'
 platform: content/clients/reuters.mdx
-thumbnail: /publication/thailand-massacre.jpg
+thumbnail: /publication/thailand.webp
 ---
 

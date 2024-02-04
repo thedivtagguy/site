@@ -5,16 +5,26 @@
 	import hat from '$lib/assets/images/stamps/hat.webp';
 	import book from '$lib/assets/images/stamps/book.webp';
 	import { toggleItem, workFilters } from '$lib/components/Work/filterUtils.js';
+	import { goto, beforeNavigate, onNavigate } from '$app/navigation';
+	import { isWorkBeingFiltered } from '$lib/stores';
 
+	const filtered = isWorkBeingFiltered();
 	export let types;
 	const categories = Object.entries(types).sort((a, b) => b[1] - a[1]);
 
 	function handleTypeClick(type) {
+		goto('/work', { noScroll: true });
 		workFilters.update((currentFilters) => toggleItem(currentFilters, 'type', type));
 	}
 
 	$: isTypeSelected = (type) => $workFilters.type.has(type) || $workFilters.type.size === 0;
 	$: isAnythingSelected = $workFilters.type.size > 0;
+
+	$: if (isAnythingSelected) {
+		filtered.set(true);
+	} else {
+		filtered.set(false);
+	}
 </script>
 
 <div class="mt-4 ml-4 categories">

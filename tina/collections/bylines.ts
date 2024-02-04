@@ -25,6 +25,12 @@ export const bylines = {
 			type: 'boolean'
 		},
 		{
+			type: 'string',
+			name: 'slug',
+			label: 'Slug',
+			required: true
+		},
+		{
 			name: 'favorite',
 			component: 'toggle',
 			label: 'Favorite this post',

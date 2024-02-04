@@ -46,29 +46,29 @@
 			</li>
 		</ol>
 		<h1 class="text-3xl italic leading-normal text-center capitalize md:text-5xl">{now.title}</h1>
-		<figure class="flex items-center md:w-[400px] mx-auto w-[300px] justify-center">
+		<figure class="flex items-center md:mt-2 md:w-[400px] mx-auto w-[300px] justify-center">
 			<img height="100" src={Now} alt="Now" class="bg-blend-lighten" />
 		</figure>
 	</hgroup>
 	<div class="px-8 pt-12 pb-[9rem] md:pb-2 md:overflow-hidden overflow-y-hidden md:w-fit w-dvw">
-		<div class="mx-auto mb-8 prose md:prose-lg">
+		<div class="mx-auto mb-8 prose prose-hr:my-2 prose-hr:pb-2 md:prose-lg">
 			<p class="md:text-xl">
-				My <span class="inline-block">
+				My phone battery is at <span class="inline-block">
 					<BatteryPercentage percentage={$battery} />
 				</span>
-				phone battery is at {$battery}% right now. I just listened to {currentTrack?.name} by {currentTrack
-					?.artist['#text']}. I'm {isAmanOnline
+				{$battery}% right now. I just listened to {currentTrack?.name} by {currentTrack?.artist[
+					'#text'
+				]}. I'm {isAmanOnline
 					? 'currently working on my laptop'
-					: 'not working at anything on my laptop right now'}. But I mean, what are you going to do
-				with that information tbh. I'll tell you other things.
+					: 'not working at anything on my laptop right now'}.
 			</p>
 
-			<hr class="my-4 divider" />
-			<p class="py-4 text-xs text-center md:text-md font-fira">
+			<hr class="my-2 divider" />
+			<p class="text-xs text-center md:text-md font-fira">
 				Things below were updated on <br class="block md:hidden" />
 				{formatDate(now.lastUpdated)}
 			</p>
-			<hr class="my-4 divider" />
+			<hr class="my-2 divider" />
 		</div>
 		<PostCard {content} />
 	</div>

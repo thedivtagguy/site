@@ -1,5 +1,6 @@
 ---
 featured: true
+slug: interactive-sewage-spills-map
 favorite: true
 title: Sewage spills near you
 description: >-

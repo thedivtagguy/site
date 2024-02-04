@@ -1,5 +1,6 @@
 ---
 featured: false
+slug: deforestation-in-brazil
 title: Deforestation in Brazil
 description: >-
   Contributed a small animated and interactive visualization showing the loss of

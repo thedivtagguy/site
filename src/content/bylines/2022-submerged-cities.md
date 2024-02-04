@@ -1,5 +1,6 @@
 ---
 featured: true
+slug: submerged-cities
 favorite: true
 label: Lead
 title: Submerged Cities

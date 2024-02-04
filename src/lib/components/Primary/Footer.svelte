@@ -1,5 +1,5 @@
 <script>
-	import Video from '$lib/assets/anfscd-small.mp4';
+	import Video from '$lib/assets/anfscd.mp4';
 	import VideoPoster from '$lib/assets/images/common/poster-footer.webp';
 	import Logo from '$lib/assets/svg/Logo.svelte';
 	import License from '$lib/assets/images/common/license.png';
@@ -84,7 +84,7 @@
 		<div class="absolute top-0 left-0 w-full h-full bg-cover bg-noise z-5"></div>
 	</div>
 
-	<aside class="py-2 -mb-2 text-xs italic tracking-tighter text-center font-fira">
+	<aside class="py-2 -mb-2 text-[0.6rem] md:text-xs italic tracking-tighter text-center font-fira">
 		· ✤ ٠ —– ٠ If you have been, thanks for reading —– ✤ ٠ ·
 	</aside>
 </footer>
