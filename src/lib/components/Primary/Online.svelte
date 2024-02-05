@@ -19,7 +19,8 @@
 	};
 
 	let open = false;
-	let isAmanOnline = $online.status === 'Online';
+	$: isAmanOnline = $online.status === 'Online';
+	$: console.log(isAmanOnline);
 	// let isAmanOnline = false;
 	let text = {
 		offline: "I'm AFK and not at my desk right now. Probably doing better things for once",

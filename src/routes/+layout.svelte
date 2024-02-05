@@ -14,14 +14,16 @@
 	let retryCount = 0;
 	const maxRetries = 3;
 	const retryDelay = 2000;
-
+	let lastFetchTime = null;
+	const fetchInterval = 500000;
 	// Determine the base URL based on the environment
 	const baseUrl = process.env.NODE_ENV === 'development' ? 'https://aman.bh' : '';
 
 	const fetchStats = async () => {
-		if (!online) return;
+		if (!online || Date.now() - lastFetchTime < fetchInterval) return;
 
 		const url = `${baseUrl}/.netlify/functions/stats`;
+		lastFetchTime = Date.now();
 
 		try {
 			const response = await fetch(url);
@@ -38,6 +40,9 @@
 			if (retryCount < maxRetries) {
 				setTimeout(fetchStats, retryDelay);
 				retryCount++;
+			} else {
+				// Reset retry count after max retries reached
+				retryCount = 0;
 			}
 		}
 	};
@@ -47,7 +52,7 @@
 	});
 
 	// Reactive statement to re-fetch stats when online status changes
-	$: if ($online && retryCount < maxRetries) {
+	$: if ($online) {
 		fetchStats();
 	}
 
