@@ -67,7 +67,7 @@
 	</video>
 	<aside
 		in:fade={{ duration: 500 }}
-		class="absolute md:top-[6%] top-[4%] left-[14%] md:left-[16%] z-10 w-[4.8rem] md:w-[6rem] h-60 px-4 text-[0.6rem] leading-snug text-center font-bold text-base-300 -skew-y-[17deg]"
+		class="absolute md:top-[6%] top-[4%] left-[14%] md:left-[16%] z-10 w-[4.8rem] md:w-[6rem] h-60 px-4 text-[0.5rem] leading-snug text-center font-bold text-base-300 -skew-y-[17deg]"
 	>
 		<p class="font-bold tracking-tighter uppercase text-base-300 font-fira">{greeting}</p>
 	</aside>

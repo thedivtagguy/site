@@ -15,7 +15,7 @@
 	const maxRetries = 3;
 	const retryDelay = 2000;
 	let lastFetchTime = null;
-	const fetchInterval = 500000;
+	const fetchInterval = 180000;
 	// Determine the base URL based on the environment
 	const baseUrl = process.env.NODE_ENV === 'development' ? 'https://aman.bh' : '';
 
