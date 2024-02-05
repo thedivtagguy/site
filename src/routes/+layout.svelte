@@ -31,6 +31,7 @@
 			battery.set(data.gps.batt);
 			listening.set(data.songs);
 			online.set(data.online);
+			console.log($online);
 			retryCount = 0; // reset retry count on success
 		} catch (error) {
 			console.error('Failed to fetch stats:', error);
