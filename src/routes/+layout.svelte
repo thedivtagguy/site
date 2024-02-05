@@ -5,26 +5,50 @@
 	import { onNavigate } from '$app/navigation';
 	import { recentTracks, batteryLevel, isOnline } from '$lib/stores';
 	import { onMount } from 'svelte';
+	import { dev } from '$app/environment';
 
 	const listening = recentTracks();
 	const battery = batteryLevel();
 	const online = isOnline();
 
-	onMount(async () => {
+	let retryCount = 0;
+	const maxRetries = 3;
+	const retryDelay = 2000;
+
+	// Determine the base URL based on the environment
+	const baseUrl = process.env.NODE_ENV === 'development' ? 'https://aman.bh' : '';
+
+	const fetchStats = async () => {
+		if (!online) return;
+
+		const url = `${baseUrl}/.netlify/functions/stats`;
+
 		try {
-			const response = await fetch('/.netlify/functions/stats');
-			if (!response.ok) {
-				throw new Error('Network response was not ok');
-			}
+			const response = await fetch(url);
+			if (!response.ok) throw new Error('Network response was not ok');
 			const data = await response.json();
 
 			battery.set(data.gps.batt);
 			listening.set(data.songs);
 			online.set(data.online);
+			retryCount = 0; // reset retry count on success
 		} catch (error) {
 			console.error('Failed to fetch stats:', error);
+			if (retryCount < maxRetries) {
+				setTimeout(fetchStats, retryDelay);
+				retryCount++;
+			}
 		}
+	};
+
+	onMount(() => {
+		fetchStats();
 	});
+
+	// Reactive statement to re-fetch stats when online status changes
+	$: if ($online && retryCount < maxRetries) {
+		fetchStats();
+	}
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;

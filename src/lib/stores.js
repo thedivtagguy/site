@@ -8,7 +8,7 @@ export const recentTracks = () => useWritable('recentTracks', defaultSong);
 export const batteryLevel = () => useWritable('batteryLevel', 0);
 export const isOnline = () =>
 	useWritable('isOnline', {
-		status: 'Online',
-		last_ping: '2024-02-02T15:13:01.654709'
+		status: null,
+		last_ping: null
 	});
 export const isWorkBeingFiltered = () => useWritable('filterMode', false);
