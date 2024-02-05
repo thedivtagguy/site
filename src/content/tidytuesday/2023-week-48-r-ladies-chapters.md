@@ -16,7 +16,7 @@ description: >
   with Sveltekit. I used the OpenAI APIs to extract keywords for tagging and to
   'recommend' chapters based on the kind of events they host. It cost me
   \~$0.90.
-projectLink: 'https://rladies-explore.netlify.app/'
+projectLink: /tidytuesday/r-ladies
 githubLink: >-
   https://github.com/thedivtagguy/tidytuesday/tree/master/2023/week-47-nov-2023-r-ladies/
 week: '47'

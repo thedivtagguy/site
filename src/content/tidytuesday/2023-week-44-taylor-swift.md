@@ -12,12 +12,13 @@ description: >
   I analyzed repetition of lyrics in Taylor Swift songs. If you take away
   similar phrases and words from the 1989 album, how many songs can be reduced
   by at least 60%? All of them! The repetitions make them catchy as heck.
-projectLink: 'https://silly-raindrop-178eeb.netlify.app/'
+projectLink: /tidytuesday/taylor-swift
 githubLink: >-
   https://github.com/thedivtagguy/tidytuesday/tree/master/2023/week-42-oct-2023-taylor-swift
 week: '44'
 social:
   twitter: 'https://twitter.com/thedivtagguy/status/1716083485268406486'
+  blog: /tidytuesday/taylor-swift/process
 slug: taylor-swift
 ---
 
