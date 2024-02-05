@@ -2,6 +2,9 @@
 	import { Popover } from 'svelte-ux';
 	import { isOnline } from '$lib/stores';
 	import { timeFormat } from 'd3';
+	import { HelpCircle } from 'lucide-svelte';
+	import { slide } from 'svelte/transition';
+	import { sineInOut } from 'svelte/easing';
 
 	const online = isOnline();
 
@@ -23,25 +26,29 @@
 
 	// let isAmanOnline = false;
 	let text = {
-		offline: "I'm AFK and not at my desk right now. Probably doing better things for once",
-		online: "I'm working on something on my laptop right now. Yeah like at this moment."
+		offline: "I'm AFK and not at my desk right now. Probably doing better things for once.",
+		online: "I'm working on something on my laptop right now. Who knows what I'm up to?"
 	};
-	let textToShow = $online?.status === 'Online' ? text.online : text.offline;
+	$: textToShow = $online.status === 'Online' ? text.online : text.offline;
 </script>
 
 <div class="inline-block w-full md:max-w-[11.5rem]">
 	<Popover offset={5} bind:open>
 		<div
-			class="p-2 text-xs font-medium rounded-sm shadow-sm text-neutral max-w-36 bg-base-100/80 font-archivo backdrop-blur-lg"
+			in:slide={{ axis: 'y', duration: 100, easing: sineInOut }}
+			out:slide={{ axis: 'y', duration: 100, easing: sineInOut }}
+			class="p-2 text-xs font-medium rounded-sm shadow-sm text-neutral max-w-44 bg-base-100/80 font-archivo backdrop-blur-lg"
 		>
 			{textToShow}
 			<p>{formatTime($online?.last_ping)}</p>
+			<hr class="border-b-[1px] border-t-0 my-1 border-neutral/50" />
+			<a class="text-[0.7rem] font-roboto hover:underline" href="/colophon#stats">Read more</a>
 		</div>
 	</Popover>
 	<button
 		tabindex="-1"
 		on:click={() => (open = !open)}
-		class="w-full px-8 py-1 min-w-40 online-box"
+		class="w-full px-2 py-1 min-w-40 online-box"
 		style="margin-top: 10px"
 	>
 		<span class="text-sm font-bold font-roboto">I am</span>
@@ -61,6 +68,7 @@
 						: 'bg-red'}"
 				></span>
 			</span>{isAmanOnline ? 'ONLINE' : 'OFFLINE'}
+			<HelpCircle class="inline text-white size-[0.9rem]" />
 		</h4>
 	</button>
 </div>
