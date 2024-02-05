@@ -51,11 +51,6 @@
 		fetchStats();
 	});
 
-	// Reactive statement to re-fetch stats when online status changes
-	$: if ($online) {
-		fetchStats();
-	}
-
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
 
