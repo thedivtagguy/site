@@ -116,7 +116,7 @@
 			<h3 class="pb-2 text-sm font-semibold text-center uppercase font-fira">~ by tag ~</h3>
 			<hr class="pb-2 divide" />
 
-			<ul>
+			<ul class="pb-2">
 				{#each Object.entries(tags).sort((a, b) => b[1] - a[1]) as [tag, count]}
 					<li class="py-1.5 h-6">
 						<button
