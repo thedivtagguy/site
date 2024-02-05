@@ -4,7 +4,7 @@
 	export let height = 600;
 </script>
 
-<a href="/work?project={data.slug}">
+<a href="/work#{data.slug}">
 	<div
 		class="border-2 card-cover w-fit border-neutral hover:outline-dashed outline-3 outline-offset-4 outline-neutral rounded-3xl"
 	>

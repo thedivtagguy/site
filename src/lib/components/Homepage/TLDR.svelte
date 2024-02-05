@@ -1,7 +1,7 @@
 <div
 	class="relative col-span-full md:col-span-2 w-full text-left flex flex-col justify-around outline my-2 outline-1 outline-base-300 outline-offset-8 bg-base-200 p-8 rounded-xl border-[1px] border-base-300"
 >
-	<h3 class="font-black text-center text-7xl font-libre-caslon">tl;dr</h3>
+	<h3 class="text-5xl font-black text-center md:text-7xl font-libre-caslon">tl;dr</h3>
 	<article class="text-left text-effect">
 		<p class="line">Nifty clicky-click stuff,</p>
 		<p class="line">map-alicious eye-candy stuff,</p>
@@ -62,5 +62,27 @@
 	.text-effect .line:nth-child(6) {
 		width: 80%;
 		font-size: calc(0.8em * var(--multiplier));
+	}
+
+	@media (max-width: 768px) {
+		:root {
+			--multiplier: 1.2;
+		}
+		.text-effect .line {
+			font-size: 16px; /* Set a fixed font size for tablet and below */
+		}
+
+		h3::before {
+			content: '';
+			display: block;
+			width: 50%;
+			height: 30px;
+			position: absolute;
+			transform: translate(-50%, -50%) rotate(-2deg);
+			top: 50%;
+			left: 50%;
+			z-index: -1;
+			@apply bg-yellow;
+		}
 	}
 </style>

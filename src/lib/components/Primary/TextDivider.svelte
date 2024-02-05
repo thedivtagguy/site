@@ -8,9 +8,9 @@
 
 <div
 	id={slugify(text, trim, slugLength)}
-	class="w-full bg-neutral text-3xl text-white text-center my-4 rounded-md font-roboto capitalize italic px-4 py-2"
+	class="w-full px-4 py-2 my-4 text-3xl italic text-center text-white capitalize rounded-md bg-neutral font-roboto"
 >
-	<h2 class="text-white text-2xl font-roboto tracking-wide font-semibold">
+	<h2 class="text-lg font-semibold tracking-wide text-white md:text-2xl font-roboto">
 		{text}
 	</h2>
 </div>

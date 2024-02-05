@@ -49,7 +49,9 @@
 		{/if}
 
 		<p
-			class="md:w-full w-4/5 {isHome ? 'text-center text-xs' : 'text-left text-[0.7rem]'} uppercase"
+			class="md:w-full w-4/5 {isHome
+				? 'text-center text-[0.7rem] md:text-xs'
+				: 'text-left text-[0.7rem]'} uppercase"
 			class:notHome={!isHome}
 		>
 			{subtitle}

@@ -107,7 +107,7 @@
 		</nav>
 	</aside>
 	<section
-		class="col-span-3 min-h-screen border-l-[1px] border-r-[1px] border-base-300 lg:mx-[0.9rem]"
+		class="col-span-3 min-h-screen mb-2 border-l-[1px] border-r-[1px] border-base-300 lg:mx-[0.9rem]"
 	>
 		<WorkList data={$filteredWorks} />
 	</section>

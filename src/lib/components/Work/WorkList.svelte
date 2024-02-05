@@ -13,23 +13,36 @@
 	import { goto } from '$app/navigation';
 	import { writable } from 'svelte/store';
 	import { isWorkBeingFiltered } from '$lib/stores';
+	import { onMount } from 'svelte';
 
-	export { className as class };
 	export let data;
 
-	let className = '';
 	let openProjectParam = writable('');
+
 	const setProjectParam = (slug: string) => () => {
 		goto(`/work/?project=${slug}`, { noScroll: true });
 	};
 	const filtered = isWorkBeingFiltered();
-
+	function updateUrlWithProjectParam() {
+		const urlHash = window.location.hash.substring(1);
+		if (urlHash) {
+			setTimeout(() => {
+				goto(`/work/?project=${urlHash}`, { noScroll: true });
+			}, 200);
+		}
+	}
 	const {
 		elements: { content, item, trigger, root },
 		helpers: { isSelected },
 		states: { value }
 	} = createAccordion({
 		value: openProjectParam
+	});
+
+	onMount(() => {
+		if (browser) {
+			updateUrlWithProjectParam();
+		}
 	});
 
 	$: if ($page.url.searchParams.get('project') && !$filtered) {
@@ -41,7 +54,7 @@
 	}
 </script>
 
-<div class={cn('h-screen overflow-y-auto', className)} {...$root}>
+<div class="overflow-y-auto md:h-screen" {...$root}>
 	{#each data as { title, description, link, projectLink, type, client, favorite, label, date, slug, thumbnail, tools }, i (i)}
 		{@const readMoreLink = projectLink ? projectLink : link ? link : ''}
 		<article
@@ -118,7 +131,7 @@
 						<div>
 							<span class="text-sm text-gray-600 date font-fira">{formatDate(date)}</span>
 							<hr class="pb-2 border-base-300" />
-							<p class="pb-2 text-xl not-italic font-archivo">{description}</p>
+							<p class="pb-2 not-italic md:text-xl font-archivo">{description}</p>
 							<div
 								class="grid {tools
 									? 'border-b-[1px]'
