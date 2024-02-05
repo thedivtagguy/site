@@ -35,8 +35,8 @@
 <div class="inline-block w-full md:max-w-[11.5rem]">
 	<Popover offset={5} bind:open>
 		<div
-			in:slide={{ axis: 'y', duration: 100, easing: sineInOut }}
-			out:slide={{ axis: 'y', duration: 100, easing: sineInOut }}
+			in:slide={{ axis: 'y', duration: 400, easing: sineInOut }}
+			out:slide={{ axis: 'y', duration: 400, easing: sineInOut }}
 			class="p-2 text-xs font-medium rounded-sm shadow-sm text-neutral max-w-44 bg-base-100/80 font-archivo backdrop-blur-lg"
 		>
 			{textToShow}
