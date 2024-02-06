@@ -1,5 +1,6 @@
 <script>
-	import { onMount } from 'svelte';
+	import { afterUpdate, onMount } from 'svelte';
+
 	function loadMap() {
 		// Create a new map.
 		const map = new mapboxgl.Map({
@@ -50,7 +51,9 @@
 		});
 	}
 
-	onMount(loadMap);
+	onMount(() => {
+		setTimeout(loadMap, 3000); // Delay map loading by 5000ms (5 seconds)
+	});
 </script>
 
 <svelte:head>
