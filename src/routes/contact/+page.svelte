@@ -106,8 +106,9 @@
 				</h3>
 				<p class="max-w-3xl">
 					But with me, you just might. If you're interested in talking to me about a project, the
-					best way is to send me an email <a href="mailto:hi@aman.bh">hi@aman.bh</a>! I look forward
-					to hearing from you. Here's my resume as well, if it helps.
+					best way is to send me an email at <a href="mailto:amanbhargava2001@gmail.com"
+						>amanbhargava2001@gmail.com</a
+					>! I look forward to hearing from you. Here's my resume as well, if it helps.
 				</p>
 				<div class="flex flex-col gap-4 md:flex-row">
 					<div class="cta">
@@ -123,7 +124,7 @@
 					</div>
 					<div class="cta">
 						<a
-							href="mailto@hi@aman.bh"
+							href="mailto@amanbhargava2001@gmail.com"
 							class="btn-primary decoration-transparent w-80 bg-blue"
 							target="_blank"
 							rel="noopener noreferrer"
