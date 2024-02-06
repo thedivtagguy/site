@@ -2,6 +2,7 @@
 	import { formatDate } from '$lib/utils.ts';
 	import SEO from '$lib/components/Primary/SEO.svelte';
 	import { ChevronRight } from 'lucide-svelte';
+	import '$lib/prism.css';
 	export let data;
 </script>
 
@@ -17,7 +18,7 @@
 	authorName="Aman Bhargava"
 />
 
-<article class="pt-8">
+<article class="py-8">
 	<hgroup>
 		<ol class="flex items-center whitespace-nowrap font-roboto" aria-label="Links">
 			<li class="inline-flex items-center">
@@ -29,11 +30,11 @@
 				<ChevronRight class="h-4 stroke-base-300" />
 			</li>
 		</ol>
-		<h1 class="max-w-xl text-6xl leading-normal capitalize">{data.meta.title}</h1>
+		<h1 class="max-w-xl text-6xl leading-snug capitalize font-libre-caslon">{data.meta.title}</h1>
 		<p class="py-4 text-sm font-fira">Published on {formatDate(data.meta.date)}</p>
 	</hgroup>
 
-	<div class="text-lg leading-relaxed prose blog prose-p:font-archivo">
+	<div class="leading-relaxed prose prose-xl blog prose-p:font-archivo">
 		<svelte:component this={data.content} />
 	</div>
 	<div class="flex gap-3 pt-4 tags">
@@ -42,4 +43,4 @@
 		{/each}
 	</div>
 </article>
-<hr class="my-12 divide" />
+<!-- <hr class="my-12 divide" /> -->
