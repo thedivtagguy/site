@@ -29,9 +29,6 @@
 				}
 			});
 
-			// When a click event occurs on a feature in the states layer,
-			// open a popup at the location of the click, with description
-			// HTML from the click event's properties.
 			map.on('click', 'states-layer', (e) => {
 				new mapboxgl.Popup()
 					.setLngLat(e.lngLat)
