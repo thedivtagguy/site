@@ -28,9 +28,9 @@
 		forceVisible: true
 	});
 
-	$: if (!$open) {
-		if (browser) goto(`/tidytuesday/`, { noScroll: true });
-	}
+	// $: if (!$open) {
+	// 	if (browser) goto(`/tidytuesday`, { noScroll: true });
+	// }
 
 	$: if ($page.url.searchParams.get('tt') === listing.slug) {
 		open.set(true);
