@@ -123,10 +123,10 @@
 					</div>
 					<div class="cta">
 						<a
-							href="mailto@hi@aman.bh"
+							href="mailto:hi@aman.bh"
 							class="btn-primary decoration-transparent w-80 bg-blue"
 							target="_blank"
-							rel="noopener noreferrer"
+							
 						>
 							Shoot me an email
 							<Mail size={22} />
