@@ -70,7 +70,7 @@
 					<span
 						class="px-2 inline-block border-[1px] border-gray-20 py-1 md:text-[1rem] text-xs font-bold uppercase rounded-md text-green green-glow-100 font-fira bg-neutral"
 					>
-						<span class="animate-pulse green-glow-200">⬤ </span>June 2024</span
+						<span class="animate-pulse green-glow-200">⬤ </span>August 2024</span
 					>. <br />In the meantime, I would still love to chat!
 				</p>
 				<p>
@@ -126,7 +126,6 @@
 							href="mailto:hi@aman.bh"
 							class="btn-primary decoration-transparent w-80 bg-blue"
 							target="_blank"
-							
 						>
 							Shoot me an email
 							<Mail size={22} />
