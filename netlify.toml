@@ -1,3 +1,14 @@
+[build]
+  ignore = """
+    if git log -1 --pretty=%B | grep -E "TinaCMS content update|Update from TinaCMS"; then
+      echo "TinaCMS update detected. Skipping build."
+      exit 0
+    else
+      echo "Proceeding with build."
+      exit 1
+    fi
+  """
+
 [[headers]]
 for = "/*"
   [headers.values]
