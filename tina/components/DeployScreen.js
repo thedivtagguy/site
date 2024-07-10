@@ -1,6 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { FiRefreshCw, FiCheckCircle, FiAlertCircle, FiClock, FiChevronRight } from 'react-icons/fi';
 
+const formatDate = (dateString) => {
+	const date = new Date(dateString);
+	const now = new Date();
+	const diffInHours = (now - date) / (1000 * 60 * 60);
+
+	if (diffInHours < 24) {
+		// If less than 24 hours ago, show relative time
+		if (diffInHours < 1) {
+			return `${Math.round(diffInHours * 60)} min ago`;
+		}
+		return `${Math.round(diffInHours)} hours ago`;
+	} else if (date.getFullYear() === now.getFullYear()) {
+		// If this year, show month and day
+		return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+	} else {
+		// If not this year, show month, day, and year
+		return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+	}
+};
+
 const DeployScreen = ({
 	// Customizable props
 	maxWidth = '600px',
@@ -159,19 +179,12 @@ const DeployScreen = ({
 			display: 'flex',
 			alignItems: 'center'
 		},
-		deployHistory: {
-			marginTop: padding.large
-		},
 		deployHistoryTitle: {
 			fontSize: fontSize.large,
 			fontWeight: '600',
 			marginBottom: padding.medium,
+			marginTop: padding.medium,
 			color: '#333'
-		},
-		deployHistoryList: {
-			listStyle: 'none',
-			padding: 0,
-			margin: 0
 		},
 		deployHistoryItem: {
 			display: 'flex',
@@ -186,7 +199,8 @@ const DeployScreen = ({
 			display: 'flex',
 			alignItems: 'center',
 			fontSize: fontSize.small,
-			fontWeight: '500'
+			fontWeight: '500',
+			flex: 1
 		},
 		deployHistoryStatusSuccess: {
 			color: successColor
@@ -196,7 +210,9 @@ const DeployScreen = ({
 		},
 		deployHistoryDate: {
 			fontSize: fontSize.small,
-			color: secondaryColor
+			color: secondaryColor,
+			textAlign: 'right',
+			minWidth: '80px'
 		}
 	};
 
@@ -256,10 +272,7 @@ const DeployScreen = ({
 									)}
 									{deploy.state === 'ready' ? 'Published' : deploy.state}
 								</span>
-								<span style={styles.deployHistoryDate}>
-									{new Date(deploy.created_at).toLocaleString()}
-								</span>
-								<FiChevronRight size={iconSize} color={secondaryColor} />
+								<span style={styles.deployHistoryDate}>{formatDate(deploy.created_at)}</span>
 							</li>
 						))}
 					</ul>
