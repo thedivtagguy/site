@@ -26,6 +26,9 @@ dependencies:
   '@threlte/extras':
     specifier: ^8.1.0
     version: 8.1.0(svelte@4.2.7)(three@0.160.0)
+  react-icons:
+    specifier: ^5.2.1
+    version: 5.2.1(react@18.3.1)
   svelte-maplibre:
     specifier: ^0.7.6
     version: 0.7.6(svelte@4.2.7)
@@ -837,7 +840,7 @@ packages:
     resolution: {integrity: sha512-Txumi3td7J4A/xTTwlssKieHKTGl3j4A1tglBx72auZ49YK7ePY6XZricgIg9mnZT4xPfA+UPCUdnhRuEFDL+w==}
     requiresBuild: true
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
     optional: true
 
@@ -2591,7 +2594,7 @@ packages:
       '@motionone/easing': 10.16.3
       '@motionone/types': 10.16.3
       '@motionone/utils': 10.16.3
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /@motionone/dom@10.12.0:
@@ -2602,14 +2605,14 @@ packages:
       '@motionone/types': 10.16.3
       '@motionone/utils': 10.16.3
       hey-listen: 1.0.8
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /@motionone/easing@10.16.3:
     resolution: {integrity: sha512-HWTMZbTmZojzwEuKT/xCdvoMPXjYSyQvuVM6jmM0yoGU6BWzsmYMeB4bn38UFf618fJCNtP9XeC/zxtKWfbr0w==}
     dependencies:
       '@motionone/utils': 10.16.3
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /@motionone/generators@10.16.4:
@@ -2617,7 +2620,7 @@ packages:
     dependencies:
       '@motionone/types': 10.16.3
       '@motionone/utils': 10.16.3
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /@motionone/types@10.16.3:
@@ -2629,7 +2632,7 @@ packages:
     dependencies:
       '@motionone/types': 10.16.3
       hey-listen: 1.0.8
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /@n1ru4l/push-pull-async-iterable-iterator@3.2.0:
@@ -8683,7 +8686,7 @@ packages:
     resolution: {integrity: sha512-gxGWBrTT1JuMx6R+o5PTXMmUnhnVzLQ9SNutD4YqKtI6ap897t3tKECYla6gCWEkplXnlNybEkZg9GEGxKFCgw==}
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /camelcase-css@2.0.1:
@@ -8712,7 +8715,7 @@ packages:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.0
+      tslib: 2.6.3
       upper-case-first: 2.0.2
     dev: true
 
@@ -8982,7 +8985,7 @@ packages:
     resolution: {integrity: sha512-I2hSBi7Vvs7BEuJDr5dDHfzb/Ruj3FyvFyh7KLilAjNQw3Be+xgqUBA2W6scVEcL0hL1dwPRtIqEPVUCKkSsyQ==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.0
+      tslib: 2.6.3
       upper-case: 2.0.2
     dev: true
 
@@ -9545,7 +9548,7 @@ packages:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /dotenv@16.3.1:
@@ -10263,7 +10266,7 @@ packages:
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
       style-value-types: 5.0.0
-      tslib: 2.5.0
+      tslib: 2.6.3
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
     dev: true
@@ -10271,7 +10274,7 @@ packages:
   /framesync@6.0.1:
     resolution: {integrity: sha512-fUY88kXvGiIItgNC7wcTOl0SNRCVXMKSWW2Yzfmn7EKNc+MpCzcz9DhdHcdjbrtN3c6R4H5dTY2jiCpPdysEjA==}
     dependencies:
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /fresh@0.5.2:
@@ -10578,7 +10581,7 @@ packages:
     resolution: {integrity: sha512-H/vuk5TEEVZwrR0lp2zed9OCo1uAILMlx0JEMgC26rzyJJ3N1v6XkwHHXJQdR2doSjcGPM6OKPYoJgf0plJ11Q==}
     dependencies:
       capital-case: 1.0.4
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /hey-listen@1.0.8:
@@ -12197,7 +12200,7 @@ packages:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /node-abi@3.51.0:
@@ -12401,7 +12404,7 @@ packages:
     resolution: {integrity: sha512-RXlj7zCYokReqWpOPH9oYivUzLYZ5vAPIfEmCTNViosC78F8F0H9y7T7gG2M39ymgutxF5gcFEsyZQSph9Bp3A==}
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /parent-module@1.0.1:
@@ -12480,14 +12483,14 @@ packages:
     resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /path-case@3.0.4:
     resolution: {integrity: sha512-qO4qCFjXqVTrcbPt/hQfhTQ+VhFsqNKOPtytgNKkKxSoEp3XPUQ8ObFuePylOIok5gjn69ry8XiULxCwot3Wfg==}
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /path-exists@4.0.0:
@@ -12603,7 +12606,7 @@ packages:
       framesync: 6.0.1
       hey-listen: 1.0.8
       style-value-types: 5.0.0
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /postcss-import@15.1.0(postcss@8.4.31):
@@ -13143,6 +13146,14 @@ packages:
       react: '*'
     dependencies:
       react: 18.3.1
+
+  /react-icons@5.2.1(react@18.3.1):
+    resolution: {integrity: sha512-zdbW5GstTzXaVKvGSyTaBalt7HSfuK5ovrzlpyiWHAFXndXTdd/1hdDHI4xBM1Mn7YriT6aqESucFl9kEXzrdw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.3.1
+    dev: false
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -13861,7 +13872,7 @@ packages:
     resolution: {integrity: sha512-8LS0JInaQMCRoQ7YUytAo/xUu5W2XnQxV2HI/6uM6U7CITS1RqPElr30V6uIqyMKM9lJGRVFy5/4CuzcixNYSg==}
     dependencies:
       no-case: 3.0.4
-      tslib: 2.5.0
+      tslib: 2.6.3
       upper-case-first: 2.0.2
     dev: true
 
@@ -14085,7 +14096,7 @@ packages:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /sorcery@0.11.0:
@@ -14252,7 +14263,7 @@ packages:
     resolution: {integrity: sha512-08yq36Ikn4kx4YU6RD7jWEv27v4V+PUsOGa4n/as8Et3CuODMJQ00ENeAVXAeydX4Z2j1XHZF1K2sX4mGl18fA==}
     dependencies:
       hey-listen: 1.0.8
-      tslib: 2.5.0
+      tslib: 2.6.3
     dev: true
 
   /sucrase@3.34.0:

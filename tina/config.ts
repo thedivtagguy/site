@@ -1,6 +1,5 @@
 import { defineConfig } from 'tinacms';
 import { collections } from './collections';
-import React from 'react';
 import DeployScreen from './components/DeployScreen';
 
 const branch =
