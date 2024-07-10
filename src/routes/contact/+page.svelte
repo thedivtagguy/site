@@ -19,6 +19,18 @@
 		'Tidyverse',
 		'NodeJS'
 	];
+
+	import { timeFormat } from 'd3';
+	import { onMount } from 'svelte';
+
+	const formatMonthYear = timeFormat('%B, %Y');
+	const FREELANCE_API = '/api/common?file=now/now.mdx&keys=takingFreelanceFrom';
+	let freelance = 'August 2024';
+	onMount(async () => {
+		const res = await fetch(FREELANCE_API);
+		const data = await res.json();
+		freelance = formatMonthYear(new Date(data.takingFreelanceFrom));
+	});
 </script>
 
 <SEO
@@ -70,7 +82,7 @@
 					<span
 						class="px-2 inline-block border-[1px] border-gray-20 py-1 md:text-[1rem] text-xs font-bold uppercase rounded-md text-green green-glow-100 font-fira bg-neutral"
 					>
-						<span class="animate-pulse green-glow-200">⬤ </span>August 2024</span
+						<span class="animate-pulse green-glow-200">⬤ </span>{freelance}</span
 					>. <br />In the meantime, I would still love to chat!
 				</p>
 				<p>

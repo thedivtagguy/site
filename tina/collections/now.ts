@@ -19,6 +19,13 @@ export const now = {
 	},
 	fields: [
 		{
+			name: 'takingFreelanceFrom',
+			label: 'When are you taking freelance work from?',
+			type: 'datetime',
+			dateFormat: 'MMMM DD YYYY',
+			component: 'date'
+		},
+		{
 			type: 'string',
 			name: 'title',
 			label: 'Title',

@@ -1,7 +1,18 @@
 <script>
 	import note from '$lib/assets/images/common/orange-note.webp';
 	import { formatDate } from '$lib/utils';
+	import { onMount } from 'svelte';
+	import { timeFormat } from 'd3';
 	export let latest = {};
+
+	const formatMonthYear = timeFormat('%B, %Y');
+	const FREELANCE_API = '/api/common?file=now/now.mdx&keys=takingFreelanceFrom';
+	let freelance = 'August 2024';
+	onMount(async () => {
+		const res = await fetch(FREELANCE_API);
+		const data = await res.json();
+		freelance = formatMonthYear(new Date(data.takingFreelanceFrom));
+	});
 
 	let year = new Date(latest.date).getFullYear();
 </script>
@@ -37,10 +48,9 @@
 				<p class="text-sm font-bold uppercase text-base-200 normal font-roboto">Pen pal?</p>
 			</div>
 			<div class="flex items-start justify-between">
-				<p class="font-bold uppercase text-green green-glow-100 font-fira">
-					<span class="block m-2 ml-[0.1rem] -mt-2 text-xs text-green green-glow-200 animate-pulse"
-						>⬤</span
-					>Available for freelance work from August 2024
+				<p class="text-xs font-bold uppercase text-green green-glow-100 font-fira">
+					<span class="block m-2 ml-[0.1rem] -mt-2 text-green green-glow-200 animate-pulse">⬤</span
+					>Available for freelance work from {freelance}
 				</p>
 			</div>
 		</a>

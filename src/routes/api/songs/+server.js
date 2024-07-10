@@ -19,7 +19,7 @@ export async function GET() {
 
 	const songs = response.recenttracks;
 	const selects = songs.track.slice(0, 2);
-	console.log(songs);
+
 	return new Response(JSON.stringify(songs), {
 		headers: {
 			'Content-Type': 'application/json'
