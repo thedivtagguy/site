@@ -6,8 +6,11 @@ const LAST_FM_USER = 'thedivtagguy';
 exports.handler = async function (event, context) {
 	try {
 		// Fetch GPS data
-		const gpsResponse = await fetch(GPS_LAST_LOCATION_API);
-		const gpsData = await gpsResponse.json();
+		const response = await fetch(GPS_LAST_LOCATION_API);
+		const data = await response.json();
+
+		// Filter for device 5894
+		const device = data.find((item) => item.device === '5894');
 
 		// Fetch Online data
 		const onlineResponse = await fetch(ONLINE_TRACKER);
@@ -21,7 +24,7 @@ exports.handler = async function (event, context) {
 		// Aggregate data
 		const aggregatedData = {
 			gps: {
-				batt: gpsData?.batt
+				batt: device.batt
 			},
 			online: onlineData,
 			songs: songsData.recenttracks.track.slice(0, 2)
