@@ -5,9 +5,9 @@ export async function GET() {
 	const data = await response.json();
 
 	// Filter for device 5894
-	const device = data.find((item) => item.device === '5894');
+	const device5894Data = data.find((item) => item.device === '5894');
 
-	if (!device) {
+	if (!device5894Data) {
 		return new Response(JSON.stringify({ error: 'Device 5894 not found' }), {
 			status: 404,
 			headers: {
@@ -17,10 +17,10 @@ export async function GET() {
 	}
 
 	const selectedData = {
-		batt: device.batt,
-		// lat: device.lat,
-		// lon: device.lon,
-		tst: device.tst
+		batt: device5894Data.batt,
+		lat: device5894Data.lat,
+		lon: device5894Data.lon,
+		tst: device5894Data.tst
 	};
 
 	return new Response(JSON.stringify(selectedData), {
