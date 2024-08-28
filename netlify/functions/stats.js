@@ -21,7 +21,7 @@ exports.handler = async function (event, context) {
 		// Aggregate data
 		const aggregatedData = {
 			gps: {
-				batt: gpsData[0]?.batt
+				batt: gpsData?.batt
 			},
 			online: onlineData,
 			songs: songsData.recenttracks.track.slice(0, 2)
