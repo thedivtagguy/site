@@ -10,14 +10,13 @@
 
 	const convertToIST = (time) => {
 		let date = new Date(time);
-		const offset = date.getTimezoneOffset() * 60000; // Convert offset to milliseconds
-		const ISTOffset = 5.5 * 3600000; // 5 hours and 30 minutes in milliseconds
-		let ISTTime = new Date(date.getTime() + ISTOffset - offset);
-		return ISTTime;
+		const ISTOffset = 5.5 * 60; // 5 hours and 30 minutes in minutes
+		date.setMinutes(date.getMinutes() + ISTOffset);
+		return date;
 	};
 
 	const formatTime = (time) => {
-		const format = timeFormat('It is %-I %p at my end.');
+		const format = timeFormat('It is %-I:%m %p IST at my end.');
 		return format(convertToIST(time));
 	};
 

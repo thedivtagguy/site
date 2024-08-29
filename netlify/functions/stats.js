@@ -2,11 +2,16 @@ const GPS_LAST_LOCATION_API = process.env.GPS_LAST_LOCATION_API;
 const ONLINE_TRACKER = process.env.ONLINE_TRACKER;
 const LAST_FM_API_KEY = process.env.LAST_FM_API_KEY;
 const LAST_FM_USER = 'thedivtagguy';
+const GPS_AUTH_HEADER = process.env.GPS_AUTH_HEADER;
 
 exports.handler = async function (event, context) {
 	try {
 		// Fetch GPS data
-		const response = await fetch(GPS_LAST_LOCATION_API);
+		const response = await fetch(GPS_LAST_LOCATION_API, {
+			headers: {
+				Authorization: GPS_AUTH_HEADER
+			}
+		});
 		if (!response.ok) throw new Error(`GPS API responded with status: ${response.status}`);
 		const data = await response.json();
 
