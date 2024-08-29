@@ -16,7 +16,7 @@
 	};
 
 	const formatTime = (time) => {
-		const format = timeFormat('It is %-I:%m %p IST at my end.');
+		const format = timeFormat('It is %-I:%m %p at my end.');
 		return format(convertToIST(time));
 	};
 
@@ -39,7 +39,7 @@
 			class="p-2 text-xs font-medium rounded-sm shadow-sm text-neutral max-w-44 bg-base-100/80 font-archivo backdrop-blur-lg"
 		>
 			{textToShow}
-			<p>{formatTime($online?.last_ping)}</p>
+			<!-- <p>{formatTime($online?.last_ping)}</p> -->
 			<hr class="border-b-[1px] border-t-0 my-1 border-neutral/50" />
 			<a class="text-[0.7rem] font-roboto hover:underline" href="/colophon#stats">Read more</a>
 		</div>
