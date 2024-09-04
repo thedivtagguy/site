@@ -1,5 +1,9 @@
-library(tidyverse)
+library(readr)
+library(dplyr)
+library(tidyr)
+library(stringr)
 library(jsonlite)
+
 
 data <-
   read_csv(

@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          R -e 'install.packages(c("tidyverse", "jsonlite"), repos = "https://cloud.r-project.org")'
+          R -e 'install.packages(c("dplyr", "tidyr", "stringr", "readr", "jsonlite"), repos = "https://cloud.r-project.org")'
 
       - name: Run R script
         run: Rscript scripts/generate-game-results.r
