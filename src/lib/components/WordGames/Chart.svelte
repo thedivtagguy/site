@@ -81,28 +81,32 @@
 		}
 	}
 
-	let tooltipX = 0;
-
-	function handleTooltipMove(event) {
-		tooltipX = event.detail.x;
-	}
+	let yAxisLabel = {
+		Wordle: 'moves',
+		Mini: 'mins',
+		Connections: 'moves'
+	};
 </script>
 
 <div class="h-[330px] w-full">
 	<h3
-		class="flex items-center justify-center gap-2 mb-6 text-2xl font-bold text-center font-libre-caslon"
+		class="flex items-center justify-center gap-2 text-2xl font-bold text-center font-libre-caslon"
 	>
 		<span class="inline-block size-5">
 			<img src={logo} alt={gameType} />
 		</span>
 		{gameType}
 	</h3>
+	<p class="text-xs mb-6 text-center w-full text-neutral/80">
+		({yAxisLabel[gameType]})
+	</p>
 	<Chart
 		data={processedData.jitteredData}
 		x="date"
 		xScale={scaleTime()}
 		y="jitteredMargin"
 		{yDomain}
+		yNice={true}
 		r="winner"
 		rScale={scaleOrdinal()}
 		rDomain={Object.keys(playerColors)}
@@ -112,7 +116,6 @@
 		let:rScale
 		let:width
 		let:height
-		let:padding
 		let:tooltip
 	>
 		<Svg>
@@ -131,11 +134,18 @@
 				tickLabelProps={{ class: 'font-semi font-mono', dy: 10 }}
 				format={(d) => d.toLocaleDateString('en-US', { month: 'short' })}
 			/>
+
 			{#each processedData.dataByPlayer as [player, playerData]}
 				{@const color = rScale(player)}
 				<Points r={2} fill-opacity={0.4} stroke-width={0.2} stroke={color} stroke-opacity={0.5} />
 
-				<RectClipPath x={0} y={0} width={tooltip.data ? tooltip.x - 17 : width} {height} spring>
+				<RectClipPath
+					x={0}
+					y={0}
+					width={tooltip.data ? tooltip.x - 17 : width + 100}
+					{height}
+					spring
+				>
 					<Spline
 						data={regressionLines.find((line) => line.player === player).data}
 						x="date"
