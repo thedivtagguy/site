@@ -4,11 +4,12 @@
 		Svg,
 		Axis,
 		Spline,
-		Text,
 		Highlight,
 		Tooltip,
+		Text,
 		TooltipItem,
-		Points
+		Points,
+		RectClipPath
 	} from 'layerchart';
 	import { scaleOrdinal, scaleTime, flatGroup, curveCatmullRom, randomNormal } from 'd3';
 	import { regressionLoess } from 'd3-regression';
@@ -79,6 +80,12 @@
 			return `${value}${isLast ? ' (moves)' : ''}`;
 		}
 	}
+
+	let tooltipX = 0;
+
+	function handleTooltipMove(event) {
+		tooltipX = event.detail.x;
+	}
 </script>
 
 <div class="h-[330px] w-full">
@@ -97,13 +104,16 @@
 		y="jitteredMargin"
 		{yDomain}
 		r="winner"
-		yTicks={10}
 		rScale={scaleOrdinal()}
 		rDomain={Object.keys(playerColors)}
 		rRange={Object.values(playerColors)}
 		padding={{ left: 16, bottom: 80, right: 20 }}
 		tooltip={{ mode: 'bisect-x' }}
 		let:rScale
+		let:width
+		let:height
+		let:padding
+		let:tooltip
 	>
 		<Svg>
 			<Axis
@@ -114,6 +124,7 @@
 				tickLength={4}
 				format={(value) => formatAxisLabel(value)}
 			/>
+
 			<Axis
 				placement="bottom"
 				grid={{ class: 'stroke-neutral/10' }}
@@ -123,28 +134,48 @@
 			{#each processedData.dataByPlayer as [player, playerData]}
 				{@const color = rScale(player)}
 				<Points r={2} fill-opacity={0.4} stroke-width={0.2} stroke={color} stroke-opacity={0.5} />
+
+				<RectClipPath x={0} y={0} width={tooltip.data ? tooltip.x - 17 : width} {height} spring>
+					<Spline
+						data={regressionLines.find((line) => line.player === player).data}
+						x="date"
+						y="margin"
+						curve={curveCatmullRom}
+						class="stroke-2"
+						stroke={color}
+					>
+						<svelte:fragment slot="end">
+							{#if gameType === 'Connections'}
+								<circle r={4} fill={color} />
+								<Text
+									value={player}
+									verticalAnchor="middle"
+									dx={6}
+									dy={-2}
+									class="text-sm font-semibold text-neutral drop-shadow-sm"
+									fill={color}
+								/>
+							{/if}
+						</svelte:fragment>
+					</Spline>
+				</RectClipPath>
 				<Spline
 					data={regressionLines.find((line) => line.player === player).data}
 					x="date"
 					y="margin"
 					curve={curveCatmullRom}
-					class="stroke-2"
+					class="stroke-2 opacity-10"
 					stroke={color}
-				>
-					<svelte:fragment slot="end">
-						{#if gameType === 'Connections'}
-							<circle r={4} fill={color} />
-							<Text
-								value={player}
-								verticalAnchor="middle"
-								dx={6}
-								dy={-2}
-								class="text-sm font-semibold text-neutral drop-shadow-sm"
-								fill={color}
-							/>
-						{/if}
-					</svelte:fragment>
-				</Spline>
+				></Spline>
+				{#if player === 'Aman' && gameType === 'Mini'}
+					<Text
+						value={`My largest losses tend to happen on Saturdays`}
+						x={100}
+						y={60}
+						class="text-xs leading-none font-semibold fill-neutral/40 drop-shadow-sm"
+						width={140}
+					/>
+				{/if}
 			{/each}
 			<Highlight points lines={{ class: 'stroke-neutral stroke-1' }} />
 			{#each regressionLines as line}
@@ -152,7 +183,7 @@
 			{/each}
 		</Svg>
 		<Tooltip
-			y={100}
+			y={20}
 			xOffset={10}
 			classes={{
 				root: 'bg-white rounded-md border border-neutral/10'
