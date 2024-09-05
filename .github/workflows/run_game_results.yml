@@ -1,14 +1,14 @@
 name: Generate Game Results
 on:
   schedule:
-    - cron: '0 0 */2 * *' # Runs at 00:00 every 2 days
+    - cron: '0 0 */1 * *' # Runs at 00:00 every day
   workflow_dispatch: # Allows manual triggering
 
 jobs:
   run-r-script:
     runs-on: ubuntu-latest
     container:
-      image: rocker/tidyverse:4.1.0 # Pre-built R image with tidyverse
+      image: rocker/tidyverse:4.1.0 # Using the pre-built R image with tidyverse
 
     steps:
       - name: Check out repository
@@ -22,9 +22,12 @@ jobs:
       - name: Run R script
         run: Rscript scripts/generate-game-results.r
 
+      - name: Set up Git
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
       - name: Commit and push if changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
           git add .
           git diff --staged --quiet || (git commit -m "Update data" && git push)
