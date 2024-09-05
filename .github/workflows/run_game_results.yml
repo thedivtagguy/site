@@ -24,10 +24,11 @@ jobs:
 
       - name: Set up Git
         run: |
+          git config --global --add safe.directory /__w/site/site
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
 
       - name: Commit and push if changes
         run: |
           git add .
-          git diff --staged --quiet || (git commit -m "Update data" && git push)
+          git diff --staged --quiet || (git commit -m "Update word game data" && git push)
