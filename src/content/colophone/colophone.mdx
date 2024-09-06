@@ -1,6 +1,6 @@
 ---
 title: About this website
-lastUpdated: 2024-09-01T12:59:40.533Z
+lastUpdated: 2024-09-06T14:23:44.439Z
 ---
 
 This website, with all its oddities and possible flaws, was "hand-made". There's many ways to make your website (and I'd argue all of them are hand-made to an extent), but this is mine. I like having a say over every little aspect of this space and that seems to be the only way of making sure I don't cede that control.
@@ -29,8 +29,15 @@ Hopefully this website runs fast for you. I've taken a lot of care to make sure 
 
 For the live stats such as battery percentage, online status, and my Bangalore map, I have set up a handful of scripts on a server that return this information via APIs. The battery status (homepage top-right) comes from Owntracks on my phone (which is sent to a private server hosted on Racknerd). I also use Owntracks to generate tracks and then map-match them using a self-hosted Valhalla instance, finally appending them to a PMTiles file which is served here using MapLibre. The online status is a simple 'heartbeat' script which runs periodically on my laptop pinging my server to notify that the laptop is active; if it doesn't receive a ping for a certain amount of time, it is assumed I am not working.
 
+<div id="word-games" />
+
+## Word games tracking
+
+Rhea and I log in our NYT word games into a private dashboard made with Shiny and R that is stored in a Google Sheet. An R script also calculates the "winner" for that day, that is, the person who finished the game in the least number of moves (or for the Mini, least amount of time). Everday at midnight, a Github Action pulls that data, restructures it for use by the visualization and spits out a JSON. The code for the chart is available [here](https://github.com/thedivtagguy/site/blob/master/src/lib/components/WordGames/Chart.svelte). The R script for calculating winners is also available [here](https://github.com/thedivtagguy/word-game-dashboard/tree/master/helpers), in a very messy way.
+
 <div id="what-i-track" />
 
 ## Tracking
 
-I don't track anything (on the contrary, you could probably track *me* more than I track you, with all the live stats here). The hell do I care how long you spend on this website? No cookies, period. One less dashboard for me to waste my time over as well.
+I don't track anything (on the contrary, you could probably track *me* more than I track you, with all the live stats here). The hell do I care how long you spend on this website? No cookies, period. One less dashboard for me to waste my time over as well.\
+\\

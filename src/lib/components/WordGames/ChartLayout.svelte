@@ -6,6 +6,7 @@
 	import gameData from '../../../data/game-results.json';
 	import { slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
+	import { Info } from 'lucide-svelte';
 
 	$: wordleData = gameData.filter((game) => game.game === 'Wordle');
 	$: connectionsData = gameData.filter((game) => game.game === 'Connections');
@@ -29,8 +30,9 @@
 			>
 			and
 			<span class="px-1 text-lg font-bold text-white rounded-md font-libre-caslon bg-purple">I</span
-			> have been tracking our NYT word games and we're pretty competitive about it. Who's winning and
-			by what margin?
+			>
+			have been tracking our NYT word games and we're pretty competitive about it. Who's winning and
+			<span class="font-bold">by what margin?</span>
 		</p>
 	</div>
 
@@ -86,4 +88,14 @@
 			></div>
 		{/key}
 	</div>
+
+	<a
+		href="/colophon/#word-games"
+		class="mt-2 z-10 w-fit mx-auto hover:underline underline-offset-4 decoration-dashed text-neutral/50 transition-all duration-100 ease-out hover:text-neutral"
+	>
+		<p class="text-center flex justify-center items-center gap-1 text-xs">
+			<Info class="inline-block size-3" />
+			Last updated on {process.env.BUILD_TIME}
+		</p>
+	</a>
 </section>
