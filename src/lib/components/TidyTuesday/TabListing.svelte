@@ -28,10 +28,6 @@
 		forceVisible: true
 	});
 
-	// $: if (!$open) {
-	// 	if (browser) goto(`/tidytuesday`, { noScroll: true });
-	// }
-
 	$: if ($page.url.searchParams.get('tt') === listing.slug) {
 		open.set(true);
 	}
@@ -78,7 +74,7 @@
 		/>
 		<div
 			class="fixed left-[50%] top-[50%] z-[101] max-h-[85vh] w-[90vw]
-			  max-w-[650px] translate-x-[-50%] translate-y-[-50%] rounded-md bg-white
+			  max-w-[650px] translate-x-[-50%] translate-y-[-50%] overflow-y-scroll rounded-md bg-white
 			  p-6 shadow-lg"
 			transition:flyAndScale={{
 				duration: 300,
