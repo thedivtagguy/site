@@ -17,11 +17,13 @@
 	<div class="self-end hidden image-container md:block basis-1/7">
 		<img src={Label} alt="Viz of the Week label" width="150" height="320" />
 	</div>
-	<figure class="items-stretch w-full h-full image-container basis-3/6">
+	<figure
+		class="items-stretch p-2 border border-base-300 bg-white rounded-lg w-full h-full image-container basis-4/6"
+	>
 		<img
 			src={thumbnail}
 			alt={`Thumbnail for Viz of the Week: ${title}`}
-			class="object-cover max-h-[24rem] w-full h-full"
+			class="object-cover w-full h-full"
 		/>
 	</figure>
 	<div class="flex flex-col justify-between h-full content">
