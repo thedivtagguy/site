@@ -23,7 +23,7 @@
 		<img
 			src={thumbnail}
 			alt={`Thumbnail for Viz of the Week: ${title}`}
-			class="object-cover w-full h-full"
+			class="object-cover w-full border rounded-sm border-base-300 h-full"
 		/>
 	</figure>
 	<div class="flex flex-col justify-between h-full content">
@@ -52,12 +52,14 @@
 			>
 				Project
 			</a>
-			<div class="flex items-center justify-start gap-4 social-links">
-				<span class="text-xs font-bold tracking-tighter font-fira">Also shared on</span>
-				{#each Object.entries(social) as [type, link]}
-					<SocialIcons {type} {link} class="w-6 h-6 text-neutral hover:text-purple" />
-				{/each}
-			</div>
+			{#if social}
+				<div class="flex items-center justify-start gap-4 social-links">
+					<span class="text-xs font-bold tracking-tighter font-fira">Also shared on</span>
+					{#each Object.entries(social) as [type, link]}
+						<SocialIcons {type} {link} class="w-6 h-6 text-neutral hover:text-purple" />
+					{/each}
+				</div>
+			{/if}
 		</aside>
 		<hr class="py-1 divide" />
 		<footer class="meta">

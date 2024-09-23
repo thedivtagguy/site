@@ -110,12 +110,14 @@
 					class="object-cover h-[18rem] md:max-h-[20rem] w-full"
 				/>
 			</figure>
-			<div class="flex items-center justify-start gap-4 my-4 social-links">
-				<span class="text-xs font-bold tracking-tighter font-fira">Also shared on</span>
-				{#each Object.entries(listing.social) as [type, link]}
-					<SocialIcons {type} {link} class="w-6 h-6 text-neutral hover:text-purple" />
-				{/each}
-			</div>
+			{#if listing.social}
+				<div class="flex items-center justify-start gap-4 my-4 social-links">
+					<span class="text-xs font-bold tracking-tighter font-fira">Also shared on</span>
+					{#each Object.entries(listing.social) as [type, link]}
+						<SocialIcons {type} {link} class="w-6 h-6 text-neutral hover:text-purple" />
+					{/each}
+				</div>
+			{/if}
 			<div class="flex justify-start gap-4">
 				<aside class="flex flex-row justify-start gap-4">
 					<a

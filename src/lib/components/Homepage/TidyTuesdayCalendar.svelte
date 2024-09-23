@@ -43,7 +43,7 @@
 		<h3 class="w-2/3 text-sm font-bold uppercase font-roboto">LONGEST STREAK this year</h3>
 		<p class="text-2xl font-bold uppercase font-roboto">
 			{longestStreakThisYear}
-			{longestStreakThisYear >= 1 ? 'week' : 'weeks'}
+			{longestStreakThisYear > 1 ? 'weeks' : 'week'}
 		</p>
 	</div>
 </div>
