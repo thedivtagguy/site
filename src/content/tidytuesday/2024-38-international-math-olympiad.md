@@ -6,7 +6,7 @@ tags:
   - ranking
   - bump chart
   - ggplot
-thumbnail: /tidytuesday/ttimo.webp
+thumbnail: /tidytuesday/tt-imo.webp
 description: >
   This week's dataset was on every country's scores and medals in the
   International Math Olympiad. I wanted to visualize both overall medal count
