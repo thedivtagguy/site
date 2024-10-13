@@ -82,6 +82,7 @@
 		"@threlte/core": "^7.0.12",
 		"@threlte/extras": "^8.1.0",
 		"layerchart": "^0.44.0",
+		"leaflet-draw": "^1.0.4",
 		"react-icons": "^5.2.1",
 		"svelte-maplibre": "^0.7.6",
 		"svelte-ux": "^0.74.6",

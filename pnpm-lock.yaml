@@ -29,6 +29,9 @@ dependencies:
   layerchart:
     specifier: ^0.44.0
     version: 0.44.0(@babel/core@7.23.3)(postcss@8.4.31)(svelte@4.2.7)(typescript@5.0.2)
+  leaflet-draw:
+    specifier: ^1.0.4
+    version: 1.0.4
   react-icons:
     specifier: ^5.2.1
     version: 5.2.1(react@18.3.1)
@@ -11313,6 +11316,10 @@ packages:
       - stylus
       - sugarss
       - typescript
+    dev: false
+
+  /leaflet-draw@1.0.4:
+    resolution: {integrity: sha512-rsQ6saQO5ST5Aj6XRFylr5zvarWgzWnrg46zQ1MEOEIHsppdC/8hnN8qMoFvACsPvTioAuysya/TVtog15tyAQ==}
     dev: false
 
   /leaflet@1.9.4:
