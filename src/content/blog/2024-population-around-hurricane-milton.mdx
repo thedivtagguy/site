@@ -10,7 +10,39 @@ category:
 slug: population-around-hurricane-milton
 excerpt: >-
   For the past few weeks, I've been shilling R and tidyverse to Vivek. Some of
-  that has recently started paying off
+  that has recently started paying off because it introduced him to the
+  tidycensus package which we used last week to quickly do a small article as
+  Hurricane Milton was about to make landfall. Vivek put a message in our Signal
+  group asking if I was interested in visualizing the population and housing
+  group in Florida; specifically, around those areas which the hurricane was
+  bound to hit. Of course I said yes. Any chance to make something with a fellow
+  enthusiast must be snatched. The last time I had worked on a hurricane-based
+  visualization was during my internship at Reuters. We did a breaking news
+  piece on Hurricane Ian and I made a one of the maps that tracked the
+  hurricane's path over a population density layer.
+
+  Within an evening, he had analyzed the data in R, generated shapefiles of
+  census tracts with all the data that I needed to execute my end of the deal
+  baked in. I don't remember going from a conversation to execution so fast in
+  recent memory. We then quickly laid out what the story might look like (just a
+  bunch of rectangles drawn in Obsidian).
 ---
 
-For the past few weeks, I've been shilling R and tidyverse to Vivek. Some of that has recently started paying off
+For the past few weeks, I've been shilling R and `tidyverse` to Vivek. Some of that has recently started paying off because it introduced him to the `tidycensus` package which we used last week to quickly do a small article as Hurricane Milton was about to make landfall. Vivek put a message in our Signal group asking if I was interested in visualizing the population and housing group in Florida; specifically, around those areas which the hurricane was bound to hit. \
+\
+Of course I said yes. Any chance to make something with a fellow enthusiast must be snatched. The last time I had worked on a hurricane-based visualization was during my internship at Reuters. We did a breaking news piece on Hurricane Ian and I made a one of the maps that tracked the hurricane's path over a population density layer.
+\
+Within an evening, he had analyzed the data in R, generated shapefiles of census tracts with all the data that I needed to execute my end of the deal baked in. I don't remember going from a conversation to execution so fast in recent memory. We then quickly laid out what the story might look like (just a bunch of rectangles drawn in Obsidian).
+
+## The hex maps
+
+This was to be a static page so I had to find a way to summarize the data so that smaller urban areas in Florida, around where most of the explosive growth has happened, could still be visible (otherwise only the largest visible areas on the choropleth would be what the reader saw). I'd been wanting to make a hex map so this was my chance. \
+\
+What I did was generate points for each county and then aggregate them into a hexagonal grid. So each hex might be an aggregation of the tracts that it contains, or if the tract is big enough then it is, well, just that.\
+\
+![](/blog/milton/grid-process.jpg)\
+Simple enough, nothing too complicated! I also happened upon a
+
+I also knew where to find the data I'd need for the hurricane tracks so adding that layer of information was quite simple. Unfortunately, by the time we got to publishing the article, Milton had crossed Florida and was well on its way into the Atlantic. This was unlucky because I had already spent a lotttttt of time styling the cone of uncertainity and creating artboards for it in ai2html. Now that the hurricane was past, there was no uncertainity! I needed to show something else.
+
+Apart from great GIS products, the National Hurricane Center also publishes graphics for such events, which are regularly updated (and )
