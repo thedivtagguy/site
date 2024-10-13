@@ -34,7 +34,7 @@
 		<p class="py-4 text-sm font-fira">Published on {formatDate(data.meta.date)}</p>
 	</hgroup>
 
-	<div class="leading-relaxed prose prose-xl blog prose-p:font-archivo">
+	<div class="leading-relaxed prose prose-xl blog prose-h3:font-libre-caslon prose-p:font-archivo">
 		<svelte:component this={data.content} />
 	</div>
 	<div class="flex gap-3 pt-4 tags">
