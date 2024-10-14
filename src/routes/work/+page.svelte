@@ -51,7 +51,7 @@
 	title="Work | Aman Bhargava"
 	description="Websites, visualizations, interactives and other mildly interesting stuff."
 	url="https://aman.bh"
-	image="https://aman.bh/sharecard.jpg"
+	ogImage="sharecard.jpg"
 	name="Aman Bhargava"
 	jobTitle="Developer and designer"
 	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}

@@ -17,13 +17,13 @@
 	category={data.meta.category}
 	tags={data.meta.tags}
 	url={`https://aman.bh/${data.meta.slug}`}
-	image={`https://aman.bh/og?title=${encodeTitle(data.meta.title)}&date=${encodeURIComponent(
+	ogImage={`og?title=${encodeURIComponent(data.meta.title)}&date=${encodeURIComponent(
 		data.meta.date
 	)}`}
 	authorName="Aman Bhargava"
 	isBlogPost={true}
+	twitterHandle="@your_twitter_handle"
 />
-
 <article class="py-8">
 	<hgroup>
 		<ol class="flex items-center whitespace-nowrap font-roboto" aria-label="Links">

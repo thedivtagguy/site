@@ -13,7 +13,7 @@
 	title="Blog | Aman Bhargava"
 	description="A home of Aman's multiple interests, all disjointed and poorly run"
 	url="https://aman.bh"
-	image="https://aman.bh/sharecard.jpg"
+	ogImage="sharecard.jpg"
 	name="Aman Bhargava"
 	jobTitle="Developer and designer"
 	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
