@@ -4,7 +4,7 @@
 	export let date = new Date().toISOString();
 </script>
 
-<div class="flex w-full py-12 px-44">
+<div style="background-color: #E1E1E1;" class="flex w-full py-12 px-44">
 	<div class="border-2 relative max-h-[535px] px-6 rounded-md border-black/50 py-4">
 		<figure class="flex justify-center items-center max-w-sm">
 			<div
@@ -27,6 +27,12 @@
 				class="w-[400px] h-[500px] rotate-12 pointer-events-none"
 			/>
 		</figure>
+		<img
+			src="https://aman.bh/sharecard-assets/stamp.png"
+			alt="background"
+			style="mix-blend-mode: multiply;"
+			class="w-[200px] absolute opacity-70 right-0.5 top-2 h-[180px] rotate-12 pointer-events-none"
+		/>
 		<p class="text-sm self-end text-black/40 -mb-0 pl-6 break-words">
 			Published via https://aman.bh, an otherwise general mishmash of the varied interests of Aman
 			Bhargava (also known as @thedivtagguy)
