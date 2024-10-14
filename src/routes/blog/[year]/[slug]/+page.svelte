@@ -4,6 +4,9 @@
 	import { ChevronRight } from 'lucide-svelte';
 	import '$lib/prism.css';
 	export let data;
+	function encodeTitle(title: string): string {
+		return encodeURIComponent(title).replace(/'/g, '%27').replace(/"/g, '%22');
+	}
 </script>
 
 <SEO
@@ -14,7 +17,9 @@
 	category={data.meta.category}
 	tags={data.meta.tags}
 	url={`https://aman.bh/${data.meta.slug}`}
-	image={`https://aman.bh/og?title=${data.meta.title}&date=${data.meta.date}`}
+	image={`https://aman.bh/og?title=${encodeTitle(data.meta.title)}&date=${encodeURIComponent(
+		data.meta.date
+	)}`}
 	authorName="Aman Bhargava"
 />
 
