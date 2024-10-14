@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex w-full py-12 px-44">
-	<div class="border-2 max-h-[535px] px-6 rounded-md border-black/50 py-4">
+	<div class="border-2 relative max-h-[535px] px-6 rounded-md border-black/50 py-4">
 		<figure class="flex justify-center items-center max-w-sm">
 			<div
 				style="transform: rotate(-16deg);"
@@ -27,6 +27,10 @@
 				class="w-[400px] h-[500px] rotate-12 pointer-events-none"
 			/>
 		</figure>
+		<p class="text-sm self-end text-black/40 -mb-0 pl-6 break-words">
+			Published via https://aman.bh, an otherwise general mishmash of the varied interests of Aman
+			Bhargava (also known as @thedivtagguy)
+		</p>
 	</div>
 </div>
 
@@ -34,7 +38,7 @@
 	div {
 		font-family: 'Libre Caslon Condensed';
 		display: flex;
-		flex-direction: column;
+
 		margin: auto;
 		height: 100%;
 		width: 100%;
