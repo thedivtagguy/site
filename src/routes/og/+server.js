@@ -1,19 +1,22 @@
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
-import LibreSans from '../../lib/fonts/LibreCaslonCondensed-Bold.ttf';
 import { html as toReactNode } from 'satori-html';
 import Card from '$lib/components/Primary/ShareCard.svelte';
-import { read } from '$app/server';
-
-const fontData = read(LibreSans).arrayBuffer();
 
 const height = 830;
 const width = 1200;
 
 /** @type {import('./$types').RequestHandler} */
-export const GET = async ({ url }) => {
+export const GET = async ({ url, fetch }) => {
 	const title = url.searchParams.get('title') ?? 'A new post';
 	const date = url.searchParams.get('date') ?? new Date().toISOString();
+
+	// Fetch the remote font
+	const fontUrl =
+		'https://github.com/ertekinno/libre-caslon-condensed/raw/refs/heads/main/fonts/ttf/LibreCaslonCondensed-Bold.ttf';
+	const fontResponse = await fetch(fontUrl);
+	const fontData = await fontResponse.arrayBuffer();
+
 	const result = Card.render({ title, date });
 	const element = toReactNode(`${result.html}<style>${result.css.code}</style>`);
 
@@ -21,7 +24,7 @@ export const GET = async ({ url }) => {
 		fonts: [
 			{
 				name: 'Libre Caslon Condensed',
-				data: await fontData,
+				data: fontData,
 				style: 'normal'
 			}
 		],
@@ -37,7 +40,6 @@ export const GET = async ({ url }) => {
 	});
 
 	const image = resvg.render();
-
 	return new Response(image.asPng(), {
 		headers: {
 			'content-type': 'image/png'
