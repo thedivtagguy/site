@@ -14,7 +14,7 @@
 	category={data.meta.category}
 	tags={data.meta.tags}
 	url={`https://aman.bh/${data.meta.slug}`}
-	image="https://aman.bh/sharecard.jpg"
+	image={`https://aman.bh/og?title=${data.meta.title}&date=${data.meta.date}`}
 	authorName="Aman Bhargava"
 />
 
