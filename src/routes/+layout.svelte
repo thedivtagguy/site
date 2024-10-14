@@ -5,7 +5,6 @@
 	import { onNavigate } from '$app/navigation';
 	import { recentTracks, batteryLevel, isOnline } from '$lib/stores';
 	import { onMount } from 'svelte';
-	import { dev } from '$app/environment';
 
 	const listening = recentTracks();
 	const battery = batteryLevel();

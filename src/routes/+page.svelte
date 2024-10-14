@@ -31,7 +31,6 @@
 		'https://www.instagram.com/thedivtagguy',
 		'https://bsky.app/profile/aman.bh'
 	]}
-	lang="en"
 />
 <header>
 	<Hero liveData={data.data?.latestBlog} />

@@ -21,6 +21,7 @@
 		data.meta.date
 	)}`}
 	authorName="Aman Bhargava"
+	isBlogPost={true}
 />
 
 <article class="py-8">

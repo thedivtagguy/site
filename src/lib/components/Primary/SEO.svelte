@@ -1,10 +1,9 @@
 <script lang="ts">
 	export let title: string;
-	export let description: string; // Used for normal pages
+	export let description: string;
 	export let url: string;
 	export let image: string;
 	export let isBlogPost: boolean = false;
-	export let lang: string = 'en';
 
 	// Blog post specific props
 	export let excerpt: string = '';
@@ -24,12 +23,10 @@
 		'@type': string;
 		url: string;
 		image?: string;
-		// Normal page specific fields
 		name?: string;
 		jobTitle?: string;
 		knowsAbout?: string[];
 		sameAs?: string[];
-		// Blog post specific fields
 		headline?: string;
 		description?: string;
 		datePublished?: string;
@@ -69,20 +66,57 @@
 	};
 
 	let jsonSchema = generateJsonLd();
+
+	// Function to ensure the image URL is absolute
+	const getAbsoluteImageUrl = (imageUrl: string): string => {
+		if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+			return imageUrl;
+		}
+		return new URL(imageUrl, url).toString();
+	};
+
+	// Ensure image URL is absolute
+	image = getAbsoluteImageUrl(image);
+
+	// Encode title and date for dynamic OG images
+	const encodeTitle = (title: string): string =>
+		encodeURIComponent(title.replace(/\s+/g, '-').toLowerCase());
+	const encodedTitle = encodeTitle(title);
+	const encodedDate = encodeURIComponent(publishDate);
+
+	// Use a fallback image if the dynamic one fails
+	const fallbackImage = 'https://aman.bh/sharecard.jpg';
 </script>
 
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={isBlogPost ? excerpt : description} />
 	<link rel="canonical" href={url} />
+
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={isBlogPost ? excerpt : description} />
 	<meta property="og:url" content={url} />
 	<meta property="og:image" content={image} />
+	<meta property="og:image:secure_url" content={image} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	<meta property="og:type" content={isBlogPost ? 'article' : 'website'} />
+
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={isBlogPost ? excerpt : description} />
 	<meta name="twitter:image" content={image} />
+
 	{@html `<script type="application/ld+json">${JSON.stringify(jsonSchema)}</script>`}
+
+	{#if isBlogPost}
+		<meta property="article:published_time" content={publishDate} />
+		<meta property="article:author" content={authorName} />
+		{#each category as cat}
+			<meta property="article:section" content={cat} />
+		{/each}
+		{#each tags as tag}
+			<meta property="article:tag" content={tag} />
+		{/each}
+	{/if}
 </svelte:head>
