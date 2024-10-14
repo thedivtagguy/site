@@ -43,4 +43,4 @@
 		{/each}
 	</div>
 </article>
-<hr class="my-12 divide another one" />
+<!-- <hr class="my-12 divide another one" /> -->
