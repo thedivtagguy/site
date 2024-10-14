@@ -16,6 +16,7 @@
 	title="Colophon | Aman Bhargava"
 	description="How I made my website"
 	url="https://aman.bh"
+	isBlogPost={false}
 	ogImage="sharecard.jpg"
 	name="Aman Bhargava"
 	jobTitle="Developer and designer"
@@ -26,7 +27,6 @@
 		'https://www.instagram.com/thedivtagguy',
 		'https://bsky.app/profile/aman.bh'
 	]}
-	lang="en"
 />
 
 <!-- <TableOfContents /> -->

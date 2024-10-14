@@ -54,6 +54,7 @@
 	ogImage="sharecard.jpg"
 	name="Aman Bhargava"
 	jobTitle="Developer and designer"
+	isBlogPost={false}
 	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
 	sameAs={[
 		'https://www.linkedin.com/in/amnbh/',
@@ -61,7 +62,6 @@
 		'https://www.instagram.com/thedivtagguy',
 		'https://bsky.app/profile/aman.bh'
 	]}
-	lang="en"
 />
 
 <header

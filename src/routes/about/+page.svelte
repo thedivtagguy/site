@@ -20,6 +20,7 @@
 	description="A general mishmash of design, data & code"
 	url="https://aman.bh"
 	ogImage="sharecard.jpg"
+	isBlogPost={false}
 	name="Aman Bhargava"
 	jobTitle="Developer and designer"
 	skills={['JavaScript', 'Svelte', 'D3.js', 'Data visualization', 'Design']}
@@ -29,7 +30,6 @@
 		'https://www.instagram.com/thedivtagguy',
 		'https://bsky.app/profile/aman.bh'
 	]}
-	lang="en"
 />
 
 <!-- <TableOfContents /> -->
