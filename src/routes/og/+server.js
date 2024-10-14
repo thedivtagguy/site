@@ -1,19 +1,20 @@
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
-import NotoSans from '$lib/fonts/LibreCaslonCondensed-Bold.ttf';
+import LibreSans from '$lib/fonts/LibreCaslonCondensed-Bold.ttf';
 import { html as toReactNode } from 'satori-html';
 import Card from '$lib/components/Primary/ShareCard.svelte';
 import { read } from '$app/server';
 
-const fontData = read(NotoSans).arrayBuffer();
+const fontData = read(LibreSans).arrayBuffer();
 
-const height = 630;
+const height = 830;
 const width = 1200;
 
 /** @type {import('./$types').RequestHandler} */
 export const GET = async ({ url }) => {
-	const message = url.searchParams.get('message') ?? undefined;
-	const result = Card.render({ message });
+	const title = url.searchParams.get('title') ?? 'A new post';
+	const date = url.searchParams.get('date') ?? new Date().toISOString();
+	const result = Card.render({ title, date });
 	const element = toReactNode(`${result.html}<style>${result.css.code}</style>`);
 
 	const svg = await satori(element, {
