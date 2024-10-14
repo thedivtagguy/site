@@ -1,6 +1,6 @@
 ---
 title: Mapping The New Residents in Hurricane Milton's Path
-date: 2024-10-09T18:30:00.000Z
+date: 2024-10-12T18:30:00.000Z
 tags:
   - united states
   - story
@@ -10,21 +10,21 @@ category:
   - story
 slug: population-around-hurricane-milton
 excerpt: >-
-  This is a small behind-the-scenes of how we went about mapping the population
-  and housing growth that fell in the path of Hurricane Milton
+  This is a small behind-the-scenes look at how we went about mapping the
+  population and housing growth that fell in the path of Hurricane Milton.
 ---
 
 This is a small behind-the-scenes look at how we went about mapping the population and housing growth that fell in the path of Hurricane Milton.
 
 For the past few weeks, I've been shilling R and `tidyverse` to my friend [Vivek](https://x.com/Vonterinon). Some of that has recently started paying off because it introduced him to the `tidycensus` package, which we used last week to quickly do a small article as Hurricane Milton was about to make landfall. Vivek put a message in our Signal group asking if I was interested in visualizing the population and housing group in Florida, specifically around those areas that the hurricane was bound to hit. Of course I said yes. Any chance to make something with a fellow enthusiast must be snatched.
 
-
+![Screenshot showing how Vivek sent a text proposing the ideas](/blog/milton/chat.jpg)
 
 The last time I had worked on a hurricane-based visualization was during my internship at Reuters. We did [a breaking news piece on Hurricane Ian](https://www.reuters.com/graphics/STORM-IAN/gkvlgrxldpb/) and I made one of the maps that tracked the hurricane's path over a population density layer.
 
-I also really liked the premise of what he was suggesting: a lot of the neighborhoods that would face the hurricane had come up within the last decade. Imagine moving into a new house 5 years ago, only to have 15 feet of storm surge inundate everything and wash away everything you owned. There might be a chance that these houses survived, obviously, but it was still worth illustrating the magnitude of change that had happened along this strip.
+I also really liked the premise of what he was suggesting: a lot of the neighborhoods that would face the hurricane had come up within the last decade. Imagine moving into a new house 5 years ago, only to have 15 feet of storm surge inundate everything and wash away everything you owned. There might be a chance that these houses survived, obviously, but it was still worth illustrating the magnitude of change that had happened along this area.
 
-Within an evening, he had analyzed the data in R and generated shapefiles of census tracts with all the data that I needed to execute my end of the deal baked in. I don't remember going from a conversation to execution so fast in recent memory. We then quickly laid out what the story might look like (just a bunch of rectangles drawn in Obsidian).
+Within an evening, he had analyzed the data in R and generated shapefiles of census tracts with all the data that I needed to execute my end of the deal baked in. I don't remember going from a conversation to execution so fast in recent memory.
 
 ### The maps
 
@@ -34,9 +34,9 @@ What I did was generate points for each county and then aggregate them into a he
 
 ![](/blog/milton/grid-process.jpg)
 
-Simple enough, nothing too complicated! While aggregating the points, you can also choose to do something like sum up a variable, calculate medians, and so on. For my purposes, I only cared about the increase in total population and housing units, and I summed these variables up. I also knew where to find the data I'd need for the hurricane tracks, so adding that layer of information was quite easy. 
+Simple enough, nothing too complicated! While aggregating the points, you can also choose to do something like sum up a variable, calculate medians, and so on. For my purposes, I only cared about the increase in total population and housing units, and I summed these variables up. I also knew where to find the data I'd need for the hurricane tracks (I also maintain [an open spreadsheet of datasets I use often](https://docs.google.com/spreadsheets/d/1jCc6nM720fRHvMBXHbDt1HAdVqyAOYD-mr0qidaZVuk/edit?usp=sharing), originally made by my friend [Manas](https://man-shar.github.io/)) and adding that layer of information was quite easy. 
 
-This was done pretty fast, and I didn't have time to look at a lot of style references. For me, that is usually the longest part of the process—finding the perfect color scheme that is not in the defaults. I didn't have a lot of time for this though, since we really wanted to finish this in an evening or two at most. I started off with a preset color scale and accidentally flipped some blend mode on a polygon to find this scheme. Good accidents! I've done this in Photoshop all the time (stacking blend modes) but never thought about applying the same design ideas to QGIS. 
+This needed to be done pretty fast, and I didn't have time to look at a lot of style references. For me, that is usually the longest part of the process—finding the perfect color scheme that is not in the defaults. There was no idea that jumped out to me this time and I started off with a preset color scale from  `colorbrewer`. While moving around layers, I accidentally flipped some blend mode on a polygon to find that the otherwise-boring standard color scheme had become inverted and looked _much_ more interesting. Good accidents! I've done this in Photoshop all the time (stacking blend modes) but never thought about applying the same design ideas to QGIS. 
 
 ![](/blog/milton/blend-modes.gif)
 
@@ -58,4 +58,6 @@ And that's pretty much it! You can check out the final story [here](https://diag
 
 ### Diagram chasing
 
-So what site is this? Him and I have been toying with the idea of having our own dataviz/data exploration blog for a few months now. We've decided to call it Diagram Chasing, and [we now have a website](https://diagramchasing.fun) where you can see all the projects we have published and are *going* to work on. I'm excited about the idea of what this space can become for me. More to come soon!
+So what 'site' do I refer to above? Vivek and I have been toying with the idea of having our own dataviz/data exploration blog for a few months now. We've decided to call it Diagram Chasing, and [we now have a website](https://diagramchasing.fun) where you can see all the projects we have published and are *going* to work on. 
+
+I'm excited about the idea of what this space can become for me. More to come soon!
