@@ -28,12 +28,17 @@
 			/>
 		</figure>
 		<img
-			src="https://aman.bh/sharecard-assets/stamp.png"
+			src="https://aman.bh/sharecard-assets/stamp.png?34345"
 			alt="background"
-			style="mix-blend-mode: multiply;"
-			class="w-[200px] absolute opacity-70 right-0.5 top-2 h-[180px] rotate-12 pointer-events-none"
+			class="w-[200px] absolute right-8 top-2 h-[180px] rotate-12 pointer-events-none"
 		/>
-		<p class="text-sm self-end text-black/40 -mb-0 pl-6 break-words">
+
+		<div class="top-48 right-[5.6rem] mx-28 pl-[31.5rem] flex flex-col gap-[4rem] absolute">
+			{#each Array(5) as line}
+				<hr class="w-84 mt-5 text-black border-t border-black/20" />
+			{/each}
+		</div>
+		<p class="text-sm w-full max-w-[22rem] self-end text-black/40 -mb-0 pl-[3.2rem] break-words">
 			Published via https://aman.bh, an otherwise general mishmash of the varied interests of Aman
 			Bhargava (also known as @thedivtagguy)
 		</p>
