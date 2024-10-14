@@ -1,6 +1,6 @@
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
-import LibreSans from '$lib/fonts/LibreCaslonCondensed-Bold.ttf';
+import LibreSans from '../../lib/fonts/LibreCaslonCondensed-Bold.ttf';
 import { html as toReactNode } from 'satori-html';
 import Card from '$lib/components/Primary/ShareCard.svelte';
 import { read } from '$app/server';
