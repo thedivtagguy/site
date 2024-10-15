@@ -3,10 +3,8 @@
 	import SEO from '$lib/components/Primary/SEO.svelte';
 	import { ChevronRight } from 'lucide-svelte';
 	import '$lib/prism.css';
+	import PostNavigation from '$lib/components/Blog/PostNavigation.svelte';
 	export let data;
-	function encodeTitle(title: string): string {
-		return encodeURIComponent(title).replace(/'/g, '%27').replace(/"/g, '%22');
-	}
 </script>
 
 <SEO
@@ -24,7 +22,7 @@
 	isBlogPost={true}
 	twitterHandle="@thedivtagguy"
 />
-<article class="py-8">
+<article class="py-8 leading-royal">
 	<hgroup>
 		<ol class="flex items-center whitespace-nowrap font-roboto" aria-label="Links">
 			<li class="inline-flex items-center">
@@ -36,7 +34,7 @@
 				<ChevronRight class="h-4 stroke-black/70" />
 			</li>
 		</ol>
-		<h1 class="max-w-xl text-4xl md:text-6xl leading-snug capitalize font-libre-caslon">
+		<h1 class="max-w-xl pt-2 text-4xl md:text-6xl leading-royal capitalize font-libre-caslon">
 			{data.meta.title}
 		</h1>
 		<p class="py-4 text-xs sm:text-sm font-fira">Published on {formatDate(data.meta.date)}</p>
@@ -48,6 +46,7 @@
 		<svelte:component this={data.content} />
 	</div>
 </article>
+<PostNavigation previousPost={data.previousPost} nextPost={data.nextPost} />
 
 <style>
 	:global(.footnotes > hr) {
@@ -61,5 +60,9 @@
 	:global(.footnote-ref) {
 		padding-left: 0.2rem;
 		font-style: bold;
+	}
+
+	h1 {
+		line-height: 1.2;
 	}
 </style>
