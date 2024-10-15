@@ -115,12 +115,19 @@
 	<aside class="hidden h-full col-span-1 lg:block">
 		<h3 class="py-2 text-sm font-semibold text-center uppercase font-fira">~ Highlights ~</h3>
 		<hr class="py-2 divide" />
-		<ul class="px-3 list-disc font-archivo">
+		<ul class="px-3 flex flex-col gap-2 list-disc font-archivo">
 			<li>
 				<a
 					class="underline text-purple"
 					href="https://blog.datawrapper.de/data-vis-dispatch-october-24-2023/"
-					>My Taylor Swift viz was featured in DataWrapper's Data Dispatch!</a
+					>My Taylor Swift viz was featured in DataWrapper's Data Viz Dispatch! (Oct 2023)</a
+				>
+			</li>
+			<li>
+				<a
+					class="underline text-purple"
+					href="https://blog.datawrapper.de/data-vis-dispatch-october-1-2024/"
+					>Math Olympiads visualization in Datawrapper's Data Viz Dispatch (Oct 2024)</a
 				>
 			</li>
 		</ul>

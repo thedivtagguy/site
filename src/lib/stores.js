@@ -1,4 +1,3 @@
-import { writable } from 'svelte/store';
 import { useWritable } from './use-shared-store';
 import { defaultSong } from './data/defaultData';
 
