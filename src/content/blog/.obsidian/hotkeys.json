@@ -1,0 +1,18 @@
+{
+  "templater-obsidian:create-/blog-post-template": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "B"
+    }
+  ],
+  "templater-obsidian:create-/blog-post-template.mdx": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "B"
+    }
+  ]
+}
