@@ -11,4 +11,4 @@ vite.config.ts.timestamp-*
 
 # Local Netlify folder
 .netlify
-.obsidian
+/src/content/blog/.obsidian
