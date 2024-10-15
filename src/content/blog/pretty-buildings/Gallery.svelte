@@ -18,9 +18,13 @@
 <style>
 	.gallery {
 		display: grid;
-		grid-template-columns: repeat(2, 2fr);
+		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 1rem;
-		margin: 0 0;
+		margin: 0;
+		width: 100%;
+		max-width: 100vw;
+		padding: 0 1rem;
+		box-sizing: border-box;
 	}
 
 	.gallery img:first-child {
@@ -29,13 +33,19 @@
 
 	.gallery img {
 		width: 100%;
-		height: 100%;
+		height: auto;
 		object-fit: cover;
+		max-width: 100%;
 	}
 
 	@media (max-width: 600px) {
 		.gallery {
-			grid-template-columns: repeat(1, 1fr);
+			grid-template-columns: 1fr;
+			grid-gap: 0.5rem;
+		}
+
+		.gallery img:first-child {
+			grid-column: span 1;
 		}
 	}
 </style>

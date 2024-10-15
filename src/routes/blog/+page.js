@@ -33,7 +33,10 @@ export async function load({ fetch }) {
 				return acc;
 			}, {});
 
-		return { data: combinedData, meta: { tags: tagCounts, years: yearCounts } };
+		return {
+			data: combinedData,
+			meta: { tags: tagCounts, years: yearCounts }
+		};
 	} catch (error) {
 		console.error('Error fetching data:', error);
 		return { data: null };

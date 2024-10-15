@@ -22,11 +22,13 @@
 		let:toggle
 		let:NavContainer
 	>
-		<NavContainer class="flex justify-between max-w-sm mx-auto md:justify-center md:w-auto bg-none">
+		<NavContainer
+			class="flex fill-black/90  justify-between max-w-sm mx-auto md:justify-center md:w-auto bg-none"
+		>
 			<div class="block md:hidden">
 				<Logo class="p-1" />
 			</div>
-			<NavHamburger on:click={toggle} />
+			<NavHamburger menuClass="text-black stroke-black" on:click={toggle} />
 			<NavUl
 				divClass="w-full  md:block md:w-auto z-[100]"
 				{hidden}

@@ -1,7 +1,7 @@
 <script>
 	import BlogImage from '$lib/assets/images/disjoined.webp';
 	import TypeWriter from '$lib/assets/images/blog/typewriter.webp';
-	import Dunce from '$lib/assets/images/dunce.webp';
+
 	import { formatDate } from '$lib/utils.ts';
 	import SEO from '$lib/components/Primary/SEO.svelte';
 	export let data;
@@ -56,7 +56,7 @@
 				{@const year = new Date(post.date).getFullYear()}
 
 				<li
-					class="w-full px-4 py-4 sm:py-8 sm:px-8 outline-2 hover:outline-dashed outline-neutral/30 -outline-offset-8 group"
+					class="w-full px-0 py-4 sm:py-8 sm:px-8 outline-2 hover:outline-dashed outline-neutral/30 -outline-offset-8 group"
 				>
 					<a
 						href="/blog/{year}/{post.slug}"
@@ -64,16 +64,18 @@
 					>
 						<article>
 							<h3
-								class="pb-2 text-xl font-bold tracking-wide font-libre-caslon sm:text-3xl text-neutral"
+								class="pb-2 text-2xl font-bold tracking-wide font-libre-caslon sm:text-3xl text-neutral"
 							>
 								{post.title}
 							</h3>
-							<p class="font-normal leading-relaxed text-gray-600 saturate-0 text-md">
+							<p class="font-normal leading-relaxed text-gray-600 saturate-0 text-sm sm:text-md">
 								{post.excerpt}
 							</p>
 						</article>
 						<aside class="flex flex-col items-end justify-end w-full sm:w-40">
-							<p class="w-full text-xs font-semibold text-left sm:w-3/5 text-neutral/80 font-fira">
+							<p
+								class="w-full text-xs font-semibold text-left sm:pt-0 pt-4 sm:w-3/5 text-neutral/80 font-fira"
+							>
 								{formatDate(post.date)}
 							</p>
 						</aside>

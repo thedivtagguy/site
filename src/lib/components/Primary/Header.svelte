@@ -21,7 +21,7 @@
 	class="flex selection:bg-yellow max-w-[85rem] mx-auto w-full px-4 flex-col justify-center items-center mt-1"
 >
 	<div
-		class="flex border-b-[1px] border-t-[1px] border-base-300 flex-col items-center justify-start w-full mt-2 text-center"
+		class="flex border-b-[1px] fill-black/80 border-t-[1px] border-base-300 flex-col items-center justify-start w-full mt-2 text-center"
 		class:row={!isHome}
 	>
 		{#if !isHome}
@@ -57,7 +57,7 @@
 			{subtitle}
 		</p>
 		{#if !isHome}
-			<Logo class="hidden mx-4 size-12 md:block" />
+			<Logo class="hidden  mx-4 size-12 md:block" />
 		{/if}
 	</div>
 	{#if isHome}
