@@ -1,7 +1,7 @@
 name: Generate Game Results
 on:
   schedule:
-    - cron: '0 0 */1 * *' # Runs at 00:00 every day
+    - cron: '0 0 */3 * *' # Runs at 00:00 every three days
   workflow_dispatch: # Allows manual triggering
 
 jobs:
