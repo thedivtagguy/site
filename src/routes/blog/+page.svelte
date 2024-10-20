@@ -74,7 +74,7 @@
 						</article>
 						<aside class="flex flex-col items-end justify-end w-full sm:w-40">
 							<p
-								class="w-full text-xs font-semibold text-left sm:pt-0 pt-4 sm:w-3/5 text-neutral/80 font-fira"
+								class="w-full text-xs font-semibold text-righthttps://aman.bh/web-dev/2 sm:pt-0 pt-4 text-neutral/80 font-fira"
 							>
 								{formatDate(post.date)}
 							</p>

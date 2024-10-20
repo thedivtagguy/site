@@ -1,7 +1,7 @@
 name: Generate Game Results
 on:
   schedule:
-    - cron: '0 0 */3 * *' # Runs at 00:00 every three days
+    - cron: '0 0 * * *' # Runs at 00:00 every day
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -31,4 +31,8 @@ jobs:
       - name: Commit and push if changes
         run: |
           git add .
-          git diff --staged --quiet || (git commit -m "Update word game data" && git push)
+          if [[ $(date +\%j) -eq $(( ($(date +\%j) / 3) * 3 )) ]]; then
+            git diff --staged --quiet || (git commit -m "Update word game data" && git push)
+          else
+            git diff --staged --quiet || (git commit -m "Update word game data [skip ci]" && git push)
+          fi

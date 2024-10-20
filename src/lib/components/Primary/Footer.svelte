@@ -30,7 +30,7 @@
 		>
 			<div class="flex flex-row w-full text-white md:basis-6/12">
 				<div class="basis-2/5 md:basis-1/5">
-					<Logo width={60} height={120} />
+					<Logo width={60} class="fill-white" height={120} />
 					<img src={License} alt="CC-BY license" class="w-20 mt-4" />
 				</div>
 				<div class="grid w-full grid-cols-2 gap-4 basis-4/5">
@@ -39,13 +39,14 @@
 						<ul
 							class="divide-y-[1px] divide-base-100 divide-opacity-15 *:py-1 first:*:pt-0 last:*:pb-0 text-base-200"
 						>
-							<li class="font-roboto"><a href="https://twitter.com/thedivtagguy">Twitter</a></li>
+							<li class="font-roboto"><a href="https://bsky.app/profile/aman.bh">Bluesky</a></li>
+
+							<li class="font-roboto"><a href="mailto:amanbhargava2001@gmail.com">Email</a></li>
+
 							<li class="font-roboto">
 								<a href="https://instagram.com/thedivtagguy">Instagram</a>
 							</li>
-							<li class="font-roboto"><a href="https://bsky.app/profile/aman.bh">Bluesky</a></li>
-							<li class="font-roboto"><a href="https://fosstodon.org/@amnbh">Mastodon</a></li>
-							<li class="font-roboto"><a href="mailto:amanbhargava2001@gmail.com">Email</a></li>
+							<li class="font-roboto"><a href="https://twitter.com/thedivtagguy">Twitter</a></li>
 						</ul>
 					</div>
 					<div class="grid grid-cols-1 md:basis-1/2 md:grid-cols-2 basis-full">

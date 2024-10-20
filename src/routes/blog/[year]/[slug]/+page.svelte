@@ -34,7 +34,7 @@
 				<ChevronRight class="h-4 stroke-black/70" />
 			</li>
 		</ol>
-		<h1 class="max-w-xl pt-2 text-4xl md:text-6xl leading-royal capitalize font-libre-caslon">
+		<h1 class="max-w-2xl pt-2 text-4xl md:text-6xl leading-relaxed capitalize font-libre-caslon">
 			{data.meta.title}
 		</h1>
 		<p class="py-4 text-xs sm:text-sm font-fira">Published on {formatDate(data.meta.date)}</p>
@@ -63,6 +63,6 @@
 	}
 
 	h1 {
-		line-height: 1.2;
+		line-height: 1.3;
 	}
 </style>
