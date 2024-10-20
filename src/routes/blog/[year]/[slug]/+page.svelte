@@ -22,7 +22,7 @@
 	isBlogPost={true}
 	twitterHandle="@thedivtagguy"
 />
-<article class="py-8 leading-royal">
+<article class="py-8 leading-royal max-w-full">
 	<hgroup>
 		<ol class="flex items-center whitespace-nowrap font-roboto" aria-label="Links">
 			<li class="inline-flex items-center">
@@ -34,7 +34,7 @@
 				<ChevronRight class="h-4 stroke-black/70" />
 			</li>
 		</ol>
-		<h1 class="max-w-2xl pt-2 text-4xl md:text-6xl leading-relaxed capitalize font-libre-caslon">
+		<h1 class="md:max-w-2xl pt-2 text-4xl md:text-6xl leading-relaxed capitalize font-libre-caslon">
 			{data.meta.title}
 		</h1>
 		<p class="py-4 text-xs sm:text-sm font-fira">Published on {formatDate(data.meta.date)}</p>
@@ -64,5 +64,27 @@
 
 	h1 {
 		line-height: 1.3;
+	}
+	:global(.prose) {
+		max-width: 100%;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		word-break: break-word;
+	}
+
+	:global(.prose img) {
+		max-width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
+
+	:global(.prose p) {
+		max-width: 100%;
+	}
+
+	@media (max-width: 640px) {
+		:global(.prose img, .prose p) {
+			width: 100%;
+		}
 	}
 </style>
