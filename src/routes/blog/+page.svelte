@@ -64,7 +64,7 @@
 					>
 						<article>
 							<h3
-								class="pb-2 text-2xl font-bold tracking-wide font-libre-caslon sm:text-3xl text-neutral"
+								class="pb-2 text-2xl max-w-xl font-bold tracking-wide leading-royal font-libre-caslon sm:text-3xl text-neutral"
 							>
 								{post.title}
 							</h3>
@@ -74,7 +74,7 @@
 						</article>
 						<aside class="flex flex-col items-end justify-end w-full sm:w-40">
 							<p
-								class="w-full text-xs font-semibold text-righthttps://aman.bh/web-dev/2 sm:pt-0 pt-4 text-neutral/80 font-fira"
+								class="w-full text-xs font-semibold text-right sm:pt-0 pt-4 text-neutral/80 font-fira"
 							>
 								{formatDate(post.date)}
 							</p>
