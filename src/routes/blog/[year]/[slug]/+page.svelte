@@ -22,7 +22,7 @@
 	isBlogPost={true}
 	twitterHandle="@thedivtagguy"
 />
-<article class="py-8 leading-royal max-w-full">
+<article class="py-8 leading-royal w-full max-w-4xl">
 	<hgroup>
 		<ol class="flex items-center whitespace-nowrap font-roboto" aria-label="Links">
 			<li class="inline-flex items-center">
