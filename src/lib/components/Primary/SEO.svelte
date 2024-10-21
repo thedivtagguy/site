@@ -31,7 +31,9 @@
 		currentUrl = window.location.href;
 	});
 
-	$: fullOgImageUrl = ogImage ? new URL(ogImage, 'https://aman.bh/').toString() : null;
+	$: fullOgImageUrl = ogImage
+		? `https://wsrv.nl/?url=${new URL(ogImage, 'https://aman.bh/').toString()}&output=jpg`
+		: '';
 
 	type JsonLdSchema = {
 		'@context': string;
