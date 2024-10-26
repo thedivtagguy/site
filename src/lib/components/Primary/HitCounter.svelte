@@ -21,13 +21,13 @@
 	});
 </script>
 
-<div class="py-4 text-base-100 font-mono">
+<div class="py-4 text-base-100 text-xs font-mono">
 	{#if loading}
 		<div class="">Loading...</div>
 	{:else if error}
 		<div class="error text-red-500">{error}</div>
 	{:else}
-		<div class="hit-counter">
+		<div class="hit-counter text-white whitespace-nowrap">
 			👁️‍🗨️ {hits} views
 		</div>
 	{/if}
@@ -35,7 +35,6 @@
 
 <style>
 	.hit-counter {
-		font-size: 0.9rem;
 		color: #666;
 		display: flex;
 		align-items: center;
@@ -44,6 +43,5 @@
 
 	.error {
 		color: #e74c3c;
-		font-size: 0.9rem;
 	}
 </style>
