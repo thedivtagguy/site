@@ -35,7 +35,6 @@
 
 <style>
 	.hit-counter {
-		color: #666;
 		display: flex;
 		align-items: center;
 		gap: 0.25rem;
