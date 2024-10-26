@@ -7,6 +7,7 @@
 	import Terminal from '$lib/components/Terminal/Terminal.svelte';
 	import Scrobble from './Scrobble.svelte';
 	import Online from './Online.svelte';
+	import HitCounter from './HitCounter.svelte';
 </script>
 
 <footer
@@ -80,6 +81,7 @@
 			>
 				<Scrobble />
 				<Online />
+				<HitCounter />
 			</div>
 		</div>
 		<div class="absolute top-0 left-0 w-full h-full bg-cover bg-noise z-5"></div>
