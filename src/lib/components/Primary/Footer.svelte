@@ -33,6 +33,7 @@
 				<div class="basis-2/5 md:basis-1/5">
 					<Logo width={60} class="fill-white" height={120} />
 					<img src={License} alt="CC-BY license" class="w-20 mt-4" />
+					<HitCounter />
 				</div>
 				<div class="grid w-full grid-cols-2 gap-4 basis-4/5">
 					<div class="grid grid-cols-1 md:basis-2/5 md:grid-cols-2 basis-full">
@@ -81,7 +82,6 @@
 			>
 				<Scrobble />
 				<Online />
-				<HitCounter />
 			</div>
 		</div>
 		<div class="absolute top-0 left-0 w-full h-full bg-cover bg-noise z-5"></div>
