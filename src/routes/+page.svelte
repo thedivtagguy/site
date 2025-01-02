@@ -4,7 +4,7 @@
 	import WorkCard from '$lib/components/Primary/WorkCard.svelte';
 	import TextDivider from '$lib/components/Primary/TextDivider.svelte';
 	import InTheNews from '$lib/components/Homepage/InTheNews.svelte';
-	import VizOfTheWeek from '$lib/components/Homepage/VizOfTheWeek.svelte';
+	// import VizOfTheWeek from '$lib/components/Homepage/VizOfTheWeek.svelte';
 	import MapContainer from '$lib/components/Homepage/MapContainer.svelte';
 	import WordGames from '$lib/components/WordGames/ChartLayout.svelte';
 	export let data;
@@ -59,7 +59,7 @@
 	<InTheNews data={data.data?.bylines} />
 	<TextDivider text="Just for fun" />
 	<WordGames />
-	<VizOfTheWeek data={data.data?.tidytuesday} />
+	<!-- <VizOfTheWeek data={data.data?.tidytuesday} /> -->
 
 	<MapContainer />
 </main>

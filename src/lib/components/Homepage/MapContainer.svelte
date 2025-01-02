@@ -4,7 +4,7 @@
 	import TravelMap from './TravelMap.svelte';
 </script>
 
-<div class="relative mt-[10rem]">
+<div class="relative mt-[15rem]">
 	<div class="hidden select-none md:block">
 		<pre class="absolute text-base-300 left-0 -top-[13rem]">
 		
