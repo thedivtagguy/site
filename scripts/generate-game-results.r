@@ -11,7 +11,6 @@ data <-
   )
 
 data_tidy <- data %>%
-  rename(crossword_margin = "crossword_win_margin") %>%
   pivot_longer(
     cols = ends_with("won_by"),
     names_to = "game",
