@@ -31,7 +31,7 @@ jobs:
       - name: Commit and push if changes
         run: |
           git add .
-          if [[ $(date +\%j) -eq $(( ($(date +\%j) / 3) * 3 )) ]]; then
+          if [[ $(date +\%d) -eq $(( ($(date +\%d) / 3) * 3 )) ]]; then
             git diff --staged --quiet || (git commit -m "Update word game data" && git push)
           else
             git diff --staged --quiet || (git commit -m "Update word game data [skip ci]" && git push)
