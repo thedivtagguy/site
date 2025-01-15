@@ -40,6 +40,12 @@
 </script>
 
 <section class="grid grid-cols-1 md:grid-cols-7 mb-4 w-full gap-4">
+	<div class="md:col-span-1 order-first md:order-last">
+		<img src={NewsImage} alt="I've made stuff for the news" class="w-[180px] h-auto mx-auto" />
+		<aside class="font-libre-caslon text-sm text-center italic text-neutral">
+			(and I'd do it for you too)
+		</aside>
+	</div>
 	{#each Object.entries(groupedPosts) as [clientName, { posts, logo }]}
 		<article class="md:col-span-2 flex flex-col gap-4">
 			<div class="h-10">
@@ -89,12 +95,6 @@
 			</ul>
 		</article>
 	{/each}
-	<div class="md:col-span-1">
-		<img src={NewsImage} alt="I've made stuff for the news" class="w-[180px] h-auto mx-auto" />
-		<aside class="font-libre-caslon text-sm text-center italic text-neutral">
-			(and I'd do it for you too)
-		</aside>
-	</div>
 </section>
 
 <style>
