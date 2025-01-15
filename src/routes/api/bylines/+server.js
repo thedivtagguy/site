@@ -31,8 +31,12 @@ async function getSortedPosts(paths, clients = []) {
 			const { metadata } = file;
 
 			if (metadata.platform) {
-				const platformName = metadata.platform.split('/').pop().split('.')[0].toLowerCase();
-				const clientDetails = clients.find((client) => client.title.toLowerCase() === platformName);
+				const platformPath = metadata.platform.replace(/^src\//, '');
+				const platformName = platformPath.split('/').pop().split('.')[0].toLowerCase();
+
+				const clientDetails = clients.find(
+					(client) => client.title.toLowerCase() === platformName.replace(/-/g, ' ')
+				);
 
 				if (clientDetails) {
 					metadata.client = clientDetails;
