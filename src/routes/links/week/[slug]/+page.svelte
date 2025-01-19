@@ -1,16 +1,12 @@
 <script>
 	import SEO from '$lib/components/Primary/SEO.svelte';
 	import LinkPostCard from '$lib/components/Links/LinkPostCard.svelte';
+	import Button from '$lib/components/Primary/Button.svelte';
 	export let data;
 
 	let posts = data.data;
-
-	// Format date range for the title
-	const now = new Date();
-	const startOfWeek = new Date(now);
-	startOfWeek.setDate(now.getDate() - now.getDay());
-	const endOfWeek = new Date(now);
-	endOfWeek.setDate(now.getDate() + (6 - now.getDay()));
+	const startOfWeek = data.startDate;
+	const endOfWeek = data.endDate;
 
 	const dateRange = `${startOfWeek.toLocaleDateString('en-US', {
 		month: 'short',
@@ -24,7 +20,7 @@
 
 <SEO
 	title="This Week's Links | Aman Bhargava"
-	description="Links and finds from this week"
+	description="Links and finds from {dateRange}"
 	url="https://aman.bh/links/week"
 	ogImage="sharecard.jpg"
 	name="Aman Bhargava"
@@ -53,11 +49,19 @@
 		{#if posts.length === 0}
 			<p class="text-center text-base-content/60">No links found for this week.</p>
 		{:else}
-			<div class="grid gap-6 md:gap-8">
+			<div class="grid divide-y divide-base-300 [&>*:first-child]:border-none">
 				{#each posts as post}
 					<LinkPostCard {post} />
 				{/each}
 			</div>
 		{/if}
+	</div>
+</div>
+<div class="relative mx-auto mb-8 w-full py-4">
+	<div class="absolute inset-0 flex items-center">
+		<div class="w-full border-b-[1px] border-base-300"></div>
+	</div>
+	<div class="relative flex justify-center">
+		<a href="/links" class="btn-primary bg-purple"> Back to full archive </a>
 	</div>
 </div>

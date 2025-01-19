@@ -22,7 +22,9 @@ const PAGES = {
   "/links/[year]/[slug]": (params: { year: (string | number), slug: (string | number) }) => {
     return `/links/${params.year}/${params.slug}`
   },
-  "/links/week": `/links/week`,
+  "/links/week/[slug]": (params: { slug: (string | number) }) => {
+    return `/links/week/${params.slug}`
+  },
   "/now": `/now`,
   "/store": `/store`,
   "/store/buildings": `/store/buildings`,
@@ -151,7 +153,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 * ```
 */
 export type KIT_ROUTES = {
-  PAGES: { '/': never, '/about': never, '/ai-policy': never, '/blog': never, '/blog/[year]/[slug]': 'year' | 'slug', '/colophon': never, '/contact': never, '/links': never, '/links/[year]/[slug]': 'year' | 'slug', '/links/week': never, '/now': never, '/store': never, '/store/buildings': never, '/tidytuesday': never, '/work': never }
+  PAGES: { '/': never, '/about': never, '/ai-policy': never, '/blog': never, '/blog/[year]/[slug]': 'year' | 'slug', '/colophon': never, '/contact': never, '/links': never, '/links/[year]/[slug]': 'year' | 'slug', '/links/week/[slug]': 'slug', '/now': never, '/store': never, '/store/buildings': never, '/tidytuesday': never, '/work': never }
   SERVERS: Record<string, never>
   ACTIONS: Record<string, never>
   LINKS: Record<string, never>

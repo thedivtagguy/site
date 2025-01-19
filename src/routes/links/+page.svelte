@@ -31,7 +31,7 @@
 	</header>
 
 	<div class="col-span-5 mx-auto py-8">
-		<div class="grid gap-6 md:gap-8">
+		<div class="grid divide-y divide-base-300 [&>*:first-child]:border-none">
 			{#each posts as post}
 				<LinkPostCard {post} />
 			{/each}

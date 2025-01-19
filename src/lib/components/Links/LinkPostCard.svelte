@@ -9,9 +9,7 @@
 	$: year = new Date(post.date).getFullYear();
 </script>
 
-<article
-	class="w-full px-2 max-w-2xl py-4 border-b border-base-300 transition-all hover:border-primary"
->
+<article class="w-full px-2 max-w-2xl py-4 transition-all hover:border-primary">
 	<header class="mb-2">
 		<div class="flex flex-wrap items-center justify-between my-2">
 			<time datetime={post.date} class="text-lg font-bold text-base-content/60">
