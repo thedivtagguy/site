@@ -36,19 +36,13 @@
 	</div>
 	<footer class="my-4 flex items-center justify-start gap-2">
 		<div class="inline-block">
-			<Popover bind:open>
-				<div class="px-2 py-1 text-xs border shadow">Copied!</div>
-			</Popover>
-			<button
+			<a
 				class="text-sm inline-flex items-center gap-1 text-primary hover:underline"
-				on:click={() => {
-					navigator.clipboard.writeText(`https://aman.bh/links/${year}/${post.slug}`);
-					open = true;
-				}}
+				href={`/links/${year}/${post.slug}`}
 			>
 				<Link class="w-4 h-4" />
 				<span>Permalink</span>
-			</button>
+			</a>
 		</div>
 		{#if post.tags && post.tags.length > 0}
 			<div class="flex gap-2">
