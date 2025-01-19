@@ -20,7 +20,7 @@
 >
 	<header class="col-span-5 w-full grid grid-cols-1 md:grid-cols-5 border-b-[1px] border-base-300">
 		<div class="flex items-center justify-center h-full col-span-5 py-6 border-base-300">
-			<h1 class="text-5xl leading-tight text-center lg:text-6xl text-neutral">
+			<h1 class="text-3xl leading-tight text-center lg:text-6xl text-neutral">
 				<span class="hidden md:inline-block">════╡</span>
 				<span class="inline-block md:hidden"> ✱ </span>
 				<span class="inline-block highlight md:px-8"> Links & finds</span>
