@@ -17,16 +17,17 @@ async function getSortedPosts(paths) {
 		const file = paths[path];
 
 		if (file && typeof file === 'object' && 'metadata' in file) {
-			const { metadata } = file;
+			const { metadata, default: content } = file;
 			// Ignore posts where published === false in frontmatter
 			if (metadata.published === false) continue;
 
 			// Extract the filename from the path
 			const filename = path.split('/').pop();
 
-			const post = { 
+			const post = {
 				...metadata,
-				filename 
+				filename,
+				content: content.render().html
 			};
 			posts.push(post);
 		}

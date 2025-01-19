@@ -4,9 +4,8 @@
 	import Logo from '$lib/assets/svg/Logo.svelte';
 	let menu = [
 		// { name: '🗃️⠀ Store', href: '/store' },
-
-		// { name: 'Links', href: '/' },
 		// { name: 'RSS', href: '/' },
+		{ name: '🔗⠀ Links', href: '/links' },
 		{ name: '📆⠀ Tidytuesday', href: '/tidytuesday' },
 		{ name: '🆎⠀ About me', href: '/about' },
 		{ name: '👇🏽⠀ Now', href: '/now' }
