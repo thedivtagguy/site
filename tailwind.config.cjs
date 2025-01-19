@@ -31,9 +31,5 @@ module.exports = {
 			}
 		}
 	},
-	plugins: [
-		require('@tailwindcss/typography'),
-		require('flowbite/plugin'),
-		require('./tailwind-utilities/notches')
-	]
+	plugins: [require('@tailwindcss/typography'), require('flowbite/plugin')]
 };
