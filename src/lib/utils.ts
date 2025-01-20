@@ -52,20 +52,14 @@ export const formatDate = (date: string | number | Date): string => {
 	return new Date(date).toLocaleDateString('en-US', options);
 };
 
-export function getWeekNumber(date: Date) {
+export function getWeekNumber(date: Date): string {
 	const d = new Date(date);
 	d.setHours(0, 0, 0, 0);
-	// Get to the nearest Sunday
-	const day = d.getDay();
-	d.setDate(d.getDate() - day);
+	d.setDate(d.getDate() + 3 - ((d.getDay() + 6) % 7));
 
-	// Get first day of year
-	const yearStart = new Date(d.getFullYear(), 0, 1);
-	// Adjust year start to previous Sunday if needed
-	const yearStartDay = yearStart.getDay();
-	yearStart.setDate(yearStart.getDate() - yearStartDay);
+	const yearStart = new Date(d.getFullYear(), 0, 4);
+	const weekNum = Math.ceil(((d.getTime() - yearStart.getTime()) / 86400000 + 1) / 7);
 
-	const weekNum = Math.ceil((d.getTime() - yearStart.getTime()) / (7 * 86400000));
 	return `${d.getFullYear()}-${weekNum.toString().padStart(2, '0')}`;
 }
 

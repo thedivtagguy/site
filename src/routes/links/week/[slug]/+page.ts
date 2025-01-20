@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { getWeekDates } from '$lib/utils';
+import { getWeekDates, getWeekNumber } from '$lib/utils';
 
 export const prerender = true;
 
@@ -24,12 +24,7 @@ export async function load({ params, fetch }) {
 
 		// Get all weeks that have posts
 		const allWeeks = [
-			...new Set(
-				result.content.map((post) => {
-					const date = new Date(post.date);
-					return date.getFullYear() + String(getWeekNumber(date)).padStart(2, '0');
-				})
-			)
+			...new Set(result.content.map((post) => getWeekNumber(new Date(post.date))))
 		].sort();
 
 		const weekPosts = result.content.filter((post) => {
@@ -68,12 +63,4 @@ export async function load({ params, fetch }) {
 			error: e
 		});
 	}
-}
-
-function getWeekNumber(date) {
-	const d = new Date(date);
-	d.setHours(0, 0, 0, 0);
-	d.setDate(d.getDate() + 3 - ((d.getDay() + 6) % 7));
-	const week1 = new Date(d.getFullYear(), 0, 4);
-	return 1 + Math.round(((d - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7);
 }
