@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { getWeekDates, getWeekNumber } from '$lib/utils';
 
-export const prerender = true;
+export const prerender = false;
 
 function isValidWeekFormat(slug: string) {
 	return /^\d{4}-\d{2}$/.test(slug);
