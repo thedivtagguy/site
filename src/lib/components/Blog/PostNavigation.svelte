@@ -10,6 +10,7 @@
 <nav class="flex justify-between gap-4 items-start w-full my-12 border-t border-base-300 pt-8">
 	{#if nextPost}
 		<a
+			data-sveltekit-reload
 			href="/{type}/{nextPost.year}/{nextPost.slug}"
 			class="flex items-center text-left text-md font-medium text-neutral-500 hover:text-neutral-700"
 			><ChevronLeft class="sm:mr-2 stroke-base-300 size-12" />
@@ -26,6 +27,7 @@
 	{/if}
 	{#if previousPost}
 		<a
+			data-sveltekit-reload
 			href="/{type}/{previousPost.year}/{previousPost.slug}"
 			class="flex items-center text-md text-right font-medium text-neutral-500 hover:text-neutral-700"
 		>
