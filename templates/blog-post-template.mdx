@@ -1,0 +1,18 @@
+<%*
+// Prompt 
+const title = await tp.system.prompt("Enter the title for your blog post");
+const slug = title.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '-');
+const date = tp.date.now("YYYY-MM-DD");
+const year = tp.date.now("YYYY")
+// Rename the file
+await tp.file.rename(`${year}-${slug}`);
+_%>
+---
+title: <% title %>
+date: <% date %>
+tags: 
+category:
+published: false
+slug: <% slug %>
+excerpt:
+---

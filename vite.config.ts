@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => {
 		ssr: {
 			noExternal: ['three']
 		},
-		plugins: [enhancedImages(), sveltekit(), kitRoutes(), purgeCss()]
+		plugins: [enhancedImages(), sveltekit(), kitRoutes(), purgeCss()],
+		exclude: ['**/blog-post-template.mdx']
 	};
 });
