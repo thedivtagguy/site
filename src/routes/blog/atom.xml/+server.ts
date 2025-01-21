@@ -8,7 +8,7 @@ export async function GET() {
 	const feed = `<?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Aman Bhargava's Blog</title>
-    <subtitle>Writing about software, design, and the web</subtitle>
+    <subtitle>Writing about dataviz, design, and the web</subtitle>
     <link href="https://aman.bh/blog/atom.xml" rel="self"/>
     <link href="https://aman.bh/blog"/>
     <updated>${new Date().toISOString()}</updated>
@@ -21,8 +21,8 @@ export async function GET() {
 				(post) => `
       <entry>
         <title>${escapeXml(post.title)}</title>
-        <link href="https://aman.bh/blog/${post.slug}"/>
-        <id>https://aman.bh/blog/${post.slug}</id>
+        <link href="https://aman.bh/blog/${new Date(post.date).getFullYear()}/${post.slug}"/>
+        <id>https://aman.bh/blog/${new Date(post.date).getFullYear()}/${post.slug}</id>
         <updated>${new Date(post.date).toISOString()}</updated>
         <summary>${escapeXml(post.excerpt || '')}</summary>
         <content type="html">
