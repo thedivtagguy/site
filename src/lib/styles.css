@@ -149,3 +149,10 @@ html {
 }
 
 
+
+
+:target {
+    scroll-margin-top: 2rem;
+    animation: target-highlight 3s ease-out;
+}
+

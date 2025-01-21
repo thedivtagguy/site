@@ -4,8 +4,12 @@
 	import { ChevronRight } from 'lucide-svelte';
 	import '$lib/prism.css';
 	import PostNavigation from '$lib/components/Blog/PostNavigation.svelte';
+	import HighlightAnchor from '$lib/components/Blog/HighlightAnchor.svelte';
+
 	export let data;
 </script>
+
+<HighlightAnchor />
 
 <SEO
 	title={data.meta.title}
@@ -22,7 +26,7 @@
 	isBlogPost={true}
 	twitterHandle="@thedivtagguy"
 />
-<article class="py-8 leading-royal w-full max-w-4xl">
+<article class="py-8 blog-post leading-royal w-full max-w-4xl">
 	<hgroup>
 		<ol class="flex items-center whitespace-nowrap font-roboto" aria-label="Links">
 			<li class="inline-flex items-center">
