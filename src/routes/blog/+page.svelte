@@ -68,7 +68,9 @@
 							>
 								{post.title}
 							</h3>
-							<p class="font-normal leading-relaxed text-gray-600 saturate-0 text-sm sm:text-md">
+							<p
+								class="font-normal text-wrap leading-relaxed text-gray-600 saturate-0 text-sm sm:text-md"
+							>
 								{post.excerpt}
 							</p>
 						</article>
@@ -84,13 +86,15 @@
 			{/each}
 		</ul>
 	</main>
-	<aside class="flex-col items-center justify-start hidden min-h-screen col-span-1 md:flex listing">
+	<aside
+		class="flex-col isolate items-center justify-start hidden min-h-screen col-span-1 md:flex listing"
+	>
 		<div
-			class="flex flex-col gap-4 divide-y-[1px] divide-neutral/40 mb-4 mx-auto w-full py-2 border-b border-base-300 [&>*:not(:first-child)]:pt-4 [&>*:not(:first-child)]:pb-3 [&>*:first-child]:pt-2"
+			class="flex flex-col gap-4 divide-y-[1px] divide-neutral/40 mb-4 mx-auto w-full py-2 border-b border-base-300 [&>*:not(:first-child)]:pt-4 [&>*:not(:first-child)]:pb-3 [&>*:first-child]:pt-4"
 		>
 			<a
 				href="/blog/atom.xml"
-				class="flex items-center gap-2 px-4 text-sm text-center w-full text-base-content/60 hover:text-base-content"
+				class="flex items-center gap-2 px-4 text-sm text-center border-t border-base-300 w-full text-base-content/60 hover:text-base-content"
 				title="RSS Feed"
 			>
 				<RssIcon class="w-4 h-4" />
@@ -127,7 +131,7 @@
 
 <style>
 	article > p {
-		max-width: 100ch;
+		max-width: 80ch;
 	}
 
 	article {
