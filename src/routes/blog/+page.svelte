@@ -1,7 +1,7 @@
 <script>
 	import BlogImage from '$lib/assets/images/disjoined.webp';
 	import TypeWriter from '$lib/assets/images/blog/typewriter.webp';
-	import { RssIcon } from 'lucide-svelte';
+	import { RssIcon, LinkIcon } from 'lucide-svelte';
 	import { formatDate } from '$lib/utils.ts';
 	import SEO from '$lib/components/Primary/SEO.svelte';
 	export let data;
@@ -85,14 +85,24 @@
 		</ul>
 	</main>
 	<aside class="flex-col items-center justify-start hidden min-h-screen col-span-1 md:flex listing">
-		<div class="flex mb-4 mx-auto w-full px-4 py-2 border-b border-base-300">
+		<div
+			class="flex flex-col gap-4 divide-y-[1px] divide-neutral/40 mb-4 mx-auto w-full py-2 border-b border-base-300 [&>*:not(:first-child)]:pt-4 [&>*:not(:first-child)]:pb-3 [&>*:first-child]:pt-2"
+		>
 			<a
 				href="/blog/atom.xml"
-				class="flex items-center justify-center gap-2 text-sm text-center w-full text-base-content/60 hover:text-base-content"
+				class="flex items-center gap-2 px-4 text-sm text-center w-full text-base-content/60 hover:text-base-content"
 				title="RSS Feed"
 			>
 				<RssIcon class="w-4 h-4" />
 				RSS Feed
+			</a>
+			<a
+				href="/links"
+				class="flex items-center gap-2 px-4 text-sm text-center w-full text-base-content/60 hover:text-base-content"
+				title="Links and finds"
+			>
+				<LinkIcon class="w-4 h-4" />
+				Links and finds
 			</a>
 		</div>
 		<div class="w-[56%] leading-3 border-[1px] border-base-300 border-b-0 px-3 pt-4 text-gray-700">
