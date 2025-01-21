@@ -1,9 +1,6 @@
-<!-- HighlightAnchor.svelte -->
 <script>
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 
-	// Store for currently highlighted element
 	let highlightedElement = null;
 	let timeoutId = null;
 
@@ -28,7 +25,10 @@
 				const targetElement = document.getElementById(hash);
 
 				if (targetElement) {
-					// Add anchorHighlight class
+					// Remove and re-add the class to trigger animation
+					targetElement.classList.remove('anchorHighlight');
+					// Force a reflow to ensure the animation triggers again
+					void targetElement.offsetWidth;
 					targetElement.classList.add('anchorHighlight');
 					highlightedElement = targetElement;
 
@@ -36,18 +36,18 @@
 					timeoutId = setTimeout(() => {
 						targetElement.classList.remove('anchorHighlight');
 						highlightedElement = null;
-					}, 2000); // Adjust timing as needed
+					}, 2000);
 				}
 			}
 		};
 
-		// Listen for hash changes and anchor clicks
+		// Listen for both hash changes and clicks on anchor links
 		window.addEventListener('hashchange', handleAnchorClick);
-
-		// Handle initial load if there's a hash
-		if (window.location.hash) {
-			handleAnchorClick();
-		}
+		document.addEventListener('click', (e) => {
+			if (e.target.matches('a[href^="#"]')) {
+				handleAnchorClick();
+			}
+		});
 
 		// Cleanup
 		return () => {
