@@ -36,7 +36,8 @@ const PAGES = {
  * SERVERS
  */
 const SERVERS = {
-  
+  "prerender /links/atom.xml": `/links/atom.xml`,
+  "GET /links/atom.xml": `/links/atom.xml`
 }
 
 /**
@@ -154,7 +155,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 */
 export type KIT_ROUTES = {
   PAGES: { '/': never, '/about': never, '/ai-policy': never, '/blog': never, '/blog/[year]/[slug]': 'year' | 'slug', '/colophon': never, '/contact': never, '/links': never, '/links/[year]/[slug]': 'year' | 'slug', '/links/week/[slug]': 'slug', '/now': never, '/store': never, '/store/buildings': never, '/tidytuesday': never, '/work': never }
-  SERVERS: Record<string, never>
+  SERVERS: { 'prerender /links/atom.xml': never, 'GET /links/atom.xml': never }
   ACTIONS: Record<string, never>
   LINKS: Record<string, never>
   Params: { year: never, slug: never }

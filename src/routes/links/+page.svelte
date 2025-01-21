@@ -1,6 +1,7 @@
 <script>
 	import SEO from '$lib/components/Primary/SEO.svelte';
 	import LinkPostCard from '$lib/components/Links/LinkPostCard.svelte';
+	import { RssIcon, CalendarIcon } from 'lucide-svelte';
 	export let data;
 
 	let posts = data.data;
@@ -15,9 +16,7 @@
 	isBlogPost={false}
 />
 
-<div
-	class="grid items-center justify-center w-full grid-cols-1 gap-0 lg:grid-cols-5 border-base-300"
->
+<div class="  w-full border-base-300">
 	<header class="col-span-5 w-full grid grid-cols-1 md:grid-cols-5 border-b-[1px] border-base-300">
 		<div class="flex items-center justify-center h-full col-span-5 py-6 border-base-300">
 			<h1 class="text-3xl leading-tight text-center lg:text-6xl text-neutral">
@@ -29,12 +28,35 @@
 			</h1>
 		</div>
 	</header>
+	<div class="relative w-full grid-cols-1 gap-0 lg:grid-cols-5 border-base-300 grid">
+		<div
+			class="flex absolute top-0 justify-between items-center mx-auto w-full px-4 py-2 border-b border-base-300"
+		>
+			<a
+				href="/links/atom.xml"
+				class="flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content"
+				title="RSS Feed"
+			>
+				<RssIcon class="w-4 h-4" />
 
-	<div class="col-span-5 mx-auto py-8">
-		<div class="grid divide-y divide-base-300 [&>*:first-child]:border-none">
-			{#each posts as post}
-				<LinkPostCard {post} />
-			{/each}
+				RSS Feed
+			</a>
+
+			<a
+				href="/links/week"
+				class="flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content"
+				title="View this week's links"
+			>
+				<CalendarIcon class="w-4 h-4" />
+				This week
+			</a>
+		</div>
+		<div class="col-span-5 mx-auto py-8">
+			<div class="grid divide-y divide-base-300 [&>*:first-child]:border-none">
+				{#each posts as post}
+					<LinkPostCard {post} />
+				{/each}
+			</div>
 		</div>
 	</div>
 </div>
