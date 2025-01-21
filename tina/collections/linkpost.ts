@@ -92,6 +92,11 @@ export const linkpost = {
 			const currentDate = new Date().toISOString();
 			const date = values.date ? new Date(values.date).toISOString() : currentDate;
 
+			// Process content to replace escaped newlines with proper paragraphs
+			if (values.content) {
+				values.content = values.content.replace(/\\\s*\\/g, '\n\n');
+			}
+
 			return {
 				...values,
 				slug,

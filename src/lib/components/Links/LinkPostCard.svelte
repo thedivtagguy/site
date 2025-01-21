@@ -37,7 +37,7 @@
 		</h2>
 	</header>
 	<div class="prose prose-md max-w-none prose-neutral break-words">
-		{@html post.content}
+		{@html post.content.replace(/\\\s*\\/g, '</p><p>')}
 	</div>
 	<footer class="my-4 flex flex-wrap items-center gap-2">
 		<div class="inline-block">

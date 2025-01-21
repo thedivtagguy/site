@@ -67,15 +67,19 @@ export function getWeekDates(weekSlug: string) {
 	const [year, weekPart] = weekSlug.split('-');
 	const week = parseInt(weekPart);
 
-	// Get first day of year
+	// Start with January 1st
 	const yearStart = new Date(parseInt(year), 0, 1);
-	// Adjust to previous Sunday
-	const yearStartDay = yearStart.getDay();
-	yearStart.setDate(yearStart.getDate() - yearStartDay);
 
-	// Get to the start of the requested week
-	const startOfWeek = new Date(yearStart);
-	startOfWeek.setDate(yearStart.getDate() + (week - 1) * 7);
+	// Get to first Monday of the year
+	const firstMonday = new Date(yearStart);
+	while (firstMonday.getDay() !== 1) {
+		firstMonday.setDate(firstMonday.getDate() + 1);
+	}
+
+	// Get to the start of our target week
+	const startOfWeek = new Date(firstMonday);
+	startOfWeek.setDate(firstMonday.getDate() + (week - 1) * 7);
+	startOfWeek.setHours(0, 0, 0, 0);
 
 	const endOfWeek = new Date(startOfWeek);
 	endOfWeek.setDate(startOfWeek.getDate() + 6);

@@ -29,6 +29,12 @@ export async function load({ params, fetch }) {
 
 		const weekPosts = result.content.filter((post) => {
 			const postDate = new Date(post.date);
+			console.log({
+				postDate,
+				startOfWeek,
+				endOfWeek,
+				isInRange: postDate >= startOfWeek && postDate <= endOfWeek
+			});
 			return postDate >= startOfWeek && postDate <= endOfWeek;
 		});
 
