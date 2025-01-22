@@ -9,6 +9,9 @@ published: false
 slug: keeping-in-touch
 excerpt: I don't know if Twitter is where I want to be for much longer. If you're someone who has followed my work and would like to keep in touch, here's what I will be trying for the rest of this year.
 ---
+<script>
+let subscribeToDiagramChasing = true;
+</script>
 
 <strong><a href="#tldr"> ☛ Skip to the main point</a></strong>
 
@@ -27,6 +30,9 @@ You'll start seeing less of me on Twitter as I shift my energy to other spaces. 
 Once every month, perhaps even more rarely, I'll send write up a little email newsletter with things I've been working on and other things of interest related to dataviz, web dev, maps and more. I have never restricted myself to talking about one thing so I can't promise you that it will be about XYZ, but hopefully this feels like a friend just talking to you about things they've been engaging with and felt like sharing. 
 
 Subscribing here also lets you subscribe to Diagram Chasing, my other platform for dataviz shenanigans. Feel free to uncheck that if you want.
+
+
+<form action="https://buttondown.com/api/emails/embed-subscribe/amanbh" method="post" target="popupwindow" on:submit={() => { window.open( `https://buttondown.com/amanbh${subscribeToDiagramChasing ? '?tag=dc' : ''}`, 'popupwindow' ); }} class="flex flex-col gap-4" > <div class="flex items-center gap-3"> <input type="email" name="email" id="bd-email" placeholder="you@example.com" required class="flex-1 px-3 py-2 bg-white dark:bg-zinc-800 rounded border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500" /> <button type="submit" class="btn-primary bg-purple" > Subscribe </button> </div> <label class="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400"> <input type="checkbox" bind:checked={subscribeToDiagramChasing} class="w-4 h-4 rounded border-zinc-300 dark:border-zinc-600 text-blue-600 focus:ring-blue-500" /> Also subscribe to Diagram Chasing </label> </form>
 
 These will be syndicated on this website as well.
 ## Bluesky
