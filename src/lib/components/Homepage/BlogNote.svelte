@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import { timeFormat } from 'd3';
 	export let latest = {};
-
+	let subscribeToDiagramChasing = true;
 	const formatMonthYear = timeFormat('%B, %Y');
 	const FREELANCE_API = '/api/common?file=now/now.mdx&keys=takingFreelanceFrom';
 	let freelance = 'August 2024';
@@ -17,7 +17,7 @@
 	let year = new Date(latest.date).getFullYear();
 </script>
 
-<div class="flex flex-row flex-col w-full col-span-1 gap-2 md:col-span-2">
+<div class="flex flex-col w-full col-span-1 gap-2 md:col-span-2">
 	<div class="note basis-1/2">
 		<figure class="relative max-w-sm">
 			<div
@@ -37,37 +37,65 @@
 		</figure>
 	</div>
 
-	<div class="flex w-full gap-2 basis-1/2">
-		<a
-			href="/contact"
-			class="flex flex-col justify-center w-1/2 gap-2 text-sm h-[13.5rem] black-bento"
-		>
-			<div class="py-2">
-				<p class="text-sm font-bold uppercase text-base-200 normal font-roboto">Web dev?</p>
-				<p class="text-sm font-bold uppercase text-base-200 normal font-roboto">Data viz?</p>
-				<p class="text-sm font-bold uppercase text-base-200 normal font-roboto">Pen pal?</p>
+	<div class="flex w-full flex-col basis-1/2">
+		<a href="/contact" class="flex justify-center items-center text-sm black-bento">
+			<div class="py-1 basis-1/2">
+				<p class="text-xs font-bold uppercase text-base-200 normal font-roboto">Web dev?</p>
+				<p class="text-xs font-bold uppercase text-base-200 normal font-roboto">Data viz?</p>
+				<p class="text-xs font-bold uppercase text-base-200 normal font-roboto">Pen pal?</p>
 			</div>
-			<div class="flex items-start justify-between">
+			<div class="flex items-center justify-between">
+				<span class=" m-2 ml-[0.1rem] text-green green-glow-200 animate-pulse">⬤</span>
 				<p class="text-xs font-bold uppercase text-green green-glow-100 font-fira">
-					<span class="block m-2 ml-[0.1rem] -mt-2 text-green green-glow-200 animate-pulse">⬤</span
-					>Available for freelance work from {freelance}
+					Available for freelance work from {freelance}
 				</p>
 			</div>
 		</a>
-		<div
-			class="flex flex-col items-center justify-center w-1/2 gap-2 text-sm h-[13.5rem] bg-base-200 border-[1px] border-base-300/50 rounded-xl"
-		>
-			<div>
-				<p class="text-center text-neutral/40">⏠</p>
-				<p class="w-2/3 py-2 mx-auto font-bold text-center uppercase text-neutral/40 font-roboto">
-					Print store coming soon
-				</p>
-				<p class="text-center text-neutral/40">⏡</p>
-			</div>
+	</div>
 
-			<span class="text-base-300 italic text-center w-2/3 text-[0.75rem]"
-				>Maps and fine-art photography</span
-			>
-		</div>
+	<div class="flex flex-col gap-1 bg-base-200 border-2 border-base-200/80 py-2 px-4 rounded-xl">
+		<h3 class="text-sm text-neutral font-roboto font-bold">Yet another guy with a newsletter</h3>
+		<form
+			action="https://buttondown.com/api/emails/embed-subscribe/amanbh"
+			method="post"
+			target="popupwindow"
+			onSubmit={() => {
+				window.open('https://buttondown.com/amanbh', 'popupwindow');
+			}}
+			class="flex flex-col gap-4"
+		>
+			<div class="flex flex-col md:items-center gap-3">
+				<input
+					type="email"
+					name="email"
+					id="bd-email"
+					placeholder="Email"
+					required
+					class="flex-1 w-full px-3 py-2 placeholder:text-base-300 bg-white rounded border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+				/>
+			</div>
+			<div class="flex justify-between">
+				<label class="flex items-center gap-2 text-sm text-neutral/50">
+					<input
+						type="checkbox"
+						bind:checked={subscribeToDiagramChasing}
+						class="w-4 h-4 rounded border-zinc-300 dark:border-zinc-600 text-blue-600 focus:ring-blue-500"
+					/>
+					<span>
+						Also subscribe to
+						<a
+							href="https://diagramchasing.fun"
+							target="_blank"
+							class="underline inline"
+							rel="noopener noreferrer">Diagram Chasing</a
+						>
+					</span>
+				</label>
+				{#if subscribeToDiagramChasing}
+					<input type="hidden" name="tag" value="diagramChasing" />
+				{/if}
+				<button type="submit" class="btn-primary bg-purple"> Subscribe </button>
+			</div>
+		</form>
 	</div>
 </div>
