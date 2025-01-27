@@ -2,6 +2,7 @@
 	import note from '$lib/assets/images/common/orange-note.webp';
 	import { formatDate } from '$lib/utils';
 	import { onMount } from 'svelte';
+	import { ArrowRight } from 'lucide-svelte';
 	import { timeFormat } from 'd3';
 	export let latest = {};
 	let subscribeToDiagramChasing = true;
@@ -15,6 +16,20 @@
 	});
 
 	let year = new Date(latest.date).getFullYear();
+
+	let emails = [
+		'coconuts@migratorybirdscience.org',
+		'doriangray@portrait.art',
+		'bilbo.baggins@shire.org',
+		'gandalf@middleearth.com',
+		'frodo@shire.org',
+		'samwise@shire.org',
+		'heathcliff@wuthering.com',
+		'doc@canneryrowsardines.fish',
+		'deerstalker@whodunit.com',
+		'vogon@poetrycritique.agency',
+		'fordprefect@galactictravelguides.org'
+	];
 </script>
 
 <div class="flex flex-col w-full col-span-1 gap-2 md:col-span-2">
@@ -53,8 +68,18 @@
 		</a>
 	</div>
 
-	<div class="flex flex-col gap-1 bg-base-200 border-2 border-base-200/80 py-2 px-4 rounded-xl">
-		<h3 class="text-sm text-neutral font-roboto font-bold">Yet another guy with a newsletter</h3>
+	<div
+		class="flex flex-col gap-1 outline my-2 outline-1 outline-base-300/50 outline-offset-4 bg-base-200 py-2 px-2 rounded-2xl"
+	>
+		<h3
+			class="text-sm text-neutral/80 font-roboto inline-flex items-center justify-center font-bold"
+		>
+			<a
+				href="/blog/2025/keeping-in-touch#email"
+				class="underline underline-offset-4 decoration-dashed hover:text-neutral"
+				>My newsletter on dataviz and more <ArrowRight class="inline size-4" /></a
+			>
+		</h3>
 		<form
 			action="https://buttondown.com/api/emails/embed-subscribe/amanbh"
 			method="post"
@@ -62,20 +87,20 @@
 			onSubmit={() => {
 				window.open('https://buttondown.com/amanbh', 'popupwindow');
 			}}
-			class="flex flex-col gap-4"
+			class="flex flex-col gap-2"
 		>
 			<div class="flex flex-col md:items-center gap-3">
 				<input
 					type="email"
 					name="email"
 					id="bd-email"
-					placeholder="Email"
+					placeholder={emails[Math.floor(Math.random() * emails.length)]}
 					required
-					class="flex-1 w-full px-3 py-2 placeholder:text-base-300 bg-white rounded border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+					class="flex-1 w-full px-3 py-2 placeholder:text-neutral/70 placeholder:text-xs bg-white rounded border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
 				/>
 			</div>
 			<div class="flex justify-between">
-				<label class="flex items-center gap-2 text-sm text-neutral/50">
+				<label class="flex items-center gap-2 text-xs text-neutral/80">
 					<input
 						type="checkbox"
 						bind:checked={subscribeToDiagramChasing}
@@ -86,7 +111,7 @@
 						<a
 							href="https://diagramchasing.fun"
 							target="_blank"
-							class="underline inline"
+							class="underline block"
 							rel="noopener noreferrer">Diagram Chasing</a
 						>
 					</span>
