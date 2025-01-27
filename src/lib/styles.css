@@ -156,3 +156,19 @@ html {
     animation: target-highlight 3s ease-out;
 }
 
+.prose .bluesky-embed {
+    @apply mb-8 p-4 pt-0 mt-0 rounded-lg border border-zinc-200 bg-white text-sm;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.prose .bluesky-embed p {
+    @apply mb-2 text-lg not-italic;
+}
+
+.prose .bluesky-embed a {
+    @apply text-indigo-500 no-underline hover:underline;
+}
+
+.prose .bluesky-embed img {
+    @apply rounded-lg mt-2 max-w-full;
+}
