@@ -9,17 +9,21 @@ export const handler = async function (event, context) {
 	}
 
 	try {
-		// Call Buttondown API to check subscription status
-		const response = await fetch('https://api.buttondown.email/v1/subscribers', {
-			headers: {
-				Authorization: `Token ${process.env.BUTTONDOWN_API_KEY}`
+		// Call Buttondown API to check subscription status with email_address filter
+		const response = await fetch(
+			`https://api.buttondown.email/v1/subscribers?email_address=${encodeURIComponent(
+				email_address
+			)}`,
+			{
+				headers: {
+					Authorization: `Token ${process.env.BUTTONDOWN_API_KEY}`
+				}
 			}
-		});
+		);
 
 		const subscribers = await response.json();
-		const subscriber = subscribers.results.find(
-			(sub) => sub.email.toLowerCase() === email_address.toLowerCase()
-		);
+		// Since we're filtering by exact email, we can take the first result if it exists
+		const subscriber = subscribers.results[0];
 
 		let status = 'unknown';
 		if (subscriber) {
