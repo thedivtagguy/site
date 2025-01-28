@@ -1,11 +1,7 @@
 <script>
 	import NewsletterImage from '$lib/assets/images/newsletter-image.webp';
-	import NewsletterForm from '$lib/components/Primary/NewsletterForm.svelte';
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
 
-	const status = $page.url.searchParams.get('status');
-	const isNewsletterFlow = status === 'confirmed' || status === 'unconfirmed';
+	export let data;
 
 	const buttons = [
 		{
@@ -24,15 +20,11 @@
 			bg: 'bg-blue'
 		}
 	];
-
-	$: if (!isNewsletterFlow) {
-		goto('/blog/2025/keeping-in-touch#email');
-	}
 </script>
 
 <section class="py-6 px-4 flex md:flex-row justify-center items-center flex-col gap-8">
-	<div class="{isNewsletterFlow ? 'basis-1/2' : 'w-full'} space-y-4">
-		{#if status === 'confirmed'}
+	<div class="{data.isNewsletterFlow ? 'basis-1/2' : 'w-full'} space-y-4">
+		{#if data.status === 'confirmed'}
 			<h1 class="text-4xl font-bold border-b border-gray-300 pb-4">Thanks for subscribing!</h1>
 
 			<p class="text-lg">
@@ -49,7 +41,7 @@
 				>! Come on over and talk about data, design, and other nerdy stuff if you're into that sort
 				of thing.
 			</p>
-		{:else if status === 'unconfirmed'}
+		{:else if data.status === 'unconfirmed'}
 			<h1 class="text-4xl font-bold border-b border-gray-300 pb-4">Thanks for subscribing!</h1>
 
 			<p class="text-lg">
@@ -76,7 +68,7 @@
 			</p>
 		{/if}
 
-		{#if isNewsletterFlow}
+		{#if data.isNewsletterFlow}
 			<hr class="border-gray-300" />
 			<div class="flex flex-col gap-2">
 				<h3 class="text-2xl font-bold font-libre-caslon">
@@ -90,7 +82,7 @@
 			</div>
 		{/if}
 	</div>
-	{#if isNewsletterFlow}
+	{#if data.isNewsletterFlow}
 		<img
 			class="rounded-3xl w-1/3 outline my-2 outline-1 outline-base-300 outline-offset-4 border-[1px] border-base-300"
 			alt="Graphic showing Aman sitting with his laptop writing a newsletter"
