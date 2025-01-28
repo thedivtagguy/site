@@ -25,7 +25,7 @@
 <section class="py-6 px-4 flex md:flex-row justify-center items-center flex-col gap-8">
 	<div class="{data.isNewsletterFlow ? 'basis-1/2' : 'w-full'} space-y-4">
 		{#if data.status === 'confirmed'}
-			<h1 class="text-4xl font-bold border-b border-gray-300 pb-4">Thanks for subscribing!</h1>
+			<h1 class="text-4xl font-bold border-b border-gray-300 pb-4">Yay, you're in!</h1>
 
 			<p class="text-lg">
 				You've successfully confirmed your subscription. Welcome aboard! I'll be writing to you very
@@ -43,6 +43,12 @@
 			</p>
 		{:else if data.status === 'unconfirmed'}
 			<h1 class="text-4xl font-bold border-b border-gray-300 pb-4">Thanks for subscribing!</h1>
+			<hr class="border-gray-300" />
+			<p class="text-lg">
+				Remember to <strong>confirm your subscription</strong> by clicking the link in the email you'll
+				receive in a bit.
+			</p>
+			<hr class="border-gray-300" />
 
 			<p class="text-lg">
 				You're one of the first to subscribe and I'm excited to have you! I know, I know. Another
@@ -60,11 +66,6 @@
 			</p>
 			<p class="text-lg">
 				So, welcome aboard! You're officially part of this experiment. I'll be writing to you soon.
-			</p>
-			<hr class="border-gray-300" />
-			<p class="text-lg">
-				PS: Remember to <strong>confirm your subscription</strong> by clicking the link in the email
-				you'll receive in a bit.
 			</p>
 		{/if}
 
@@ -84,7 +85,7 @@
 	</div>
 	{#if data.isNewsletterFlow}
 		<img
-			class="rounded-3xl w-1/3 outline my-2 outline-1 outline-base-300 outline-offset-4 border-[1px] border-base-300"
+			class="rounded-3xl md:w-1/3 outline my-2 outline-1 outline-base-300 outline-offset-4 border-[1px] border-base-300"
 			alt="Graphic showing Aman sitting with his laptop writing a newsletter"
 			src={NewsletterImage}
 		/>
