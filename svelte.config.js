@@ -22,7 +22,13 @@ const config = {
 	},
 	kit: {
 		prerender: {
-			handleHttpError: 'ignore'
+			handleHttpError: 'ignore',
+			entries: [
+				'*',
+				'/newsletter',
+				'/newsletter?status=confirmed',
+				'/newsletter?status=unconfirmed'
+			]
 		},
 		adapter: adapter({
 			edge: false
