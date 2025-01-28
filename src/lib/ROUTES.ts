@@ -25,6 +25,7 @@ const PAGES = {
   "/links/week/[slug]": (params: { slug: (string | number) }) => {
     return `/links/week/${params.slug}`
   },
+  "/newsletter": `/newsletter`,
   "/now": `/now`,
   "/store": `/store`,
   "/store/buildings": `/store/buildings`,
@@ -156,7 +157,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 * ```
 */
 export type KIT_ROUTES = {
-  PAGES: { '/': never, '/about': never, '/ai-policy': never, '/blog': never, '/blog/[year]/[slug]': 'year' | 'slug', '/colophon': never, '/contact': never, '/links': never, '/links/[year]/[slug]': 'year' | 'slug', '/links/week/[slug]': 'slug', '/now': never, '/store': never, '/store/buildings': never, '/tidytuesday': never, '/work': never }
+  PAGES: { '/': never, '/about': never, '/ai-policy': never, '/blog': never, '/blog/[year]/[slug]': 'year' | 'slug', '/colophon': never, '/contact': never, '/links': never, '/links/[year]/[slug]': 'year' | 'slug', '/links/week/[slug]': 'slug', '/newsletter': never, '/now': never, '/store': never, '/store/buildings': never, '/tidytuesday': never, '/work': never }
   SERVERS: { 'prerender /blog/atom.xml': never, 'GET /blog/atom.xml': never, 'prerender /links/atom.xml': never, 'GET /links/atom.xml': never }
   ACTIONS: Record<string, never>
   LINKS: Record<string, never>
