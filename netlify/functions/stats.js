@@ -16,7 +16,7 @@ exports.handler = async function (event, context) {
 		const data = await response.json();
 
 		// Filter for device 5894
-		const device = data.find((item) => item.device === '5894');
+		const device = data.find((item) => item.username === 'owntracks' && item.device === 'm54x');
 		if (!device) throw new Error('Device 5894 not found in GPS data');
 
 		// Fetch Online data
