@@ -1,30 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
 
-	// Use DOM position detection instead of counters
-	let isSecondInstance = false;
-
-	onMount(() => {
-		// Only run in browser
-		if (typeof document !== 'undefined') {
-			// Find all newsletter components on the page
-			const allNewsletters = document.querySelectorAll('.newsletter-signup-component');
-
-			// If this is not the first one, set it as a second instance
-			if (allNewsletters.length > 1) {
-				// Check if this particular component isn't the first one
-				const currentIndex = Array.from(allNewsletters).indexOf(
-					allNewsletters[allNewsletters.length - 1]
-				);
-				isSecondInstance = currentIndex > 0;
-			}
-		}
-	});
-
 	let subscribeToDiagramChasing = true;
 
-	// First instance text variations
-	const firstInstanceTexts = [
+	// Text variations for the newsletter
+	const textVariations = [
 		'I also write a newsletter on data visualization, my side projects and stuff like this. Consider subscribing if you like what you see!',
 		'Want to stay updated on my latest data viz projects and ideas? Subscribe to my newsletter!',
 		'Join my newsletter for updates on data visualization, coding projects, and more cool stuff.',
@@ -37,23 +17,8 @@
 		'My newsletter is where I share data visualization techniques, side projects, and thoughts on tech.'
 	];
 
-	// Second instance text variations
-	const secondInstanceTexts = [
-		"Enjoyed the content? There's more where that came from. Subscribe to get it directly in your inbox!",
-		'Want to dive deeper? My newsletter covers extended topics not found on the site.',
-		'Thanks for reading this far! Consider subscribing for exclusive content and early access.',
-		'Still here? You might enjoy my regular newsletter with behind-the-scenes content.',
-		'One more thing: subscribe to my newsletter for follow-ups on topics covered here.',
-		"Since you've read this far, you might enjoy my newsletter where I explore these ideas in greater depth.",
-		'Still reading? My newsletter features similar deep dives and experiments without the Twitter algorithm getting in the way.',
-		'If you found this useful, my newsletter has more coding experiments and data adventures worth checking out.',
-		'Made it to the end? My newsletter is for folks like you who actually read things thoroughly.',
-		"Before you go - I write about these topics more extensively in my newsletter. No pressure, but it's there if you want it."
-	];
-
-	// Select a random text based on instance
-	$: textOptions = isSecondInstance ? secondInstanceTexts : firstInstanceTexts;
-	$: selectedText = textOptions[Math.floor(Math.random() * textOptions.length)];
+	// Select a random text
+	let selectedText = textVariations[Math.floor(Math.random() * textVariations.length)];
 
 	let emails = [
 		'coconuts@migratorybirdscience.org',
