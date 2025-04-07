@@ -6,7 +6,20 @@
 	import PostNavigation from '$lib/components/Blog/PostNavigation.svelte';
 	import HighlightAnchor from '$lib/components/Blog/HighlightAnchor.svelte';
 	import TableOfContents from '$lib/components/Primary/TableOfContents.svelte';
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 	export let data;
+
+	let isFirefox = false;
+	let showToc = false;
+
+	onMount(() => {
+		// Firefox detection
+		isFirefox = navigator.userAgent.includes('Firefox');
+
+		// Only show ToC if the post has a ToC and the browser is not Firefox
+		showToc = data.meta.toc && !isFirefox;
+	});
 </script>
 
 <HighlightAnchor />
@@ -18,9 +31,10 @@
 	category={data.meta.category}
 	tags={data.meta.tags}
 	url={`https://aman.bh/${data.meta.slug}`}
-	ogImage={`og?title=${encodeURIComponent(data.meta.title)}&date=${encodeURIComponent(
-		data.meta.date
-	)}`}
+	sharecard={data.meta.sharecard || ''}
+	ogImage={!data.meta.sharecard
+		? `og?title=${encodeURIComponent(data.meta.title)}&date=${encodeURIComponent(data.meta.date)}`
+		: ''}
 	authorName="Aman Bhargava"
 	isBlogPost={true}
 	twitterHandle="@thedivtagguy"
@@ -54,7 +68,7 @@
 		</div>
 	</article>
 
-	{#if data.meta.toc}
+	{#if showToc}
 		<div class="table-of-contents-container">
 			<TableOfContents selector="article#content" />
 		</div>

@@ -8,6 +8,7 @@
 	export let author: string = 'Your Name';
 	export let canonicalUrl: string = '';
 	export let ogImage: string = '';
+	export let sharecard: string = '';
 	export let twitterHandle: string = '@yourtwitterhandle';
 	export let twitterCardType: 'summary' | 'summary_large_image' = 'summary_large_image';
 
@@ -16,7 +17,7 @@
 	export let isBlogPost: boolean = false;
 	export let excerpt: string = '';
 	export let publishDate: string = '';
-	export let category: string[] = [];
+	export let category: string | string[] = [];
 	export let tags: string[] = [];
 	export let authorName: string = '';
 	export let name: string = '';
@@ -31,7 +32,9 @@
 		currentUrl = window.location.href;
 	});
 
-	$: fullOgImageUrl = ogImage
+	$: fullOgImageUrl = sharecard
+		? `https://aman.bh/${sharecard}`
+		: ogImage
 		? `https://wsrv.nl/?url=${new URL(ogImage, 'https://aman.bh/').toString()}&output=jpg`
 		: '';
 
@@ -52,8 +55,8 @@
 			'@type': string;
 			name: string;
 		};
-		articleSection?: string[];
-		keywords?: string[];
+		articleSection?: string | string[];
+		keywords?: string;
 	};
 
 	const generateJsonLd = (): JsonLdSchema => {
@@ -123,9 +126,13 @@
 	{#if isBlogPost}
 		<meta property="article:published_time" content={publishDate} />
 		<meta property="article:author" content={authorName || author} />
-		{#each category as cat}
-			<meta property="article:section" content={cat} />
-		{/each}
+		{#if Array.isArray(category)}
+			{#each category as cat}
+				<meta property="article:section" content={cat} />
+			{/each}
+		{:else if category}
+			<meta property="article:section" content={category} />
+		{/if}
 		{#each tags as tag}
 			<meta property="article:tag" content={tag} />
 		{/each}

@@ -9,6 +9,7 @@ published: true
 slug: visual-programming-with-orange
 excerpt: No-code data visualization courses often default to teaching Excel for data wrangling and analysis. There is a better way with Orange!
 toc: true
+sharecard: /blog/orange.jpg
 ---
 
 <style>
@@ -54,7 +55,7 @@ It works as a node-based visual interface with 'widgets' that perform operations
 
 In this post, I'm going to use the [iris dataset](https://www.kaggle.com/datasets/uciml/iris) (which comes in-built with Orange) to show you how Orange can be used for data manipulation and exploratory analysis, as well as the equivalent dplyr functions it replaces. 
 
-If you'd like to follow along, download Orange and then the workflow file to play with this yourself. 
+If you'd like to follow along, <a href="https://orangedatamining.com/download/" download>download Orange</a> and then download the workflow file to play with this yourself. <a class="bg-blue mt-2 inline no-underline rounded-sm btn-primary" href="/blog/orange_dplyr.ows" download>download the workflow file</a> 
 
 Here's a non-definitive list of extremely common things I find myself reaching for R/dplyr for:
 
@@ -346,3 +347,11 @@ write_csv(data, "final_analysis.csv")
 Orange is great, but I'll be real - it has its quirks. The main limitation I found while teaching is that some operations that are straightforward in R can be a bit roundabout in Orange. The pivot functions are the most obvious example. While they work, they're not as flexible as their R counterparts. The learning curve is also variable; it's definitely easier than coding for beginners, but I found it's still a cognitive leap for students who've only used Excel. That said, once students got the hang of it, they could perform surprisingly complex operations that would've taken me much longer to teach in Excel.
 
 This has been a long post, but I hope you see why I'm so enthusiastic about Orange! For teaching data wrangling in a no-code context, it's been invaluable. My students, despite having zero prior data experience, were able to handle datasets with thousands of rows, perform operations, and create visualizations by the end of our 10-day course. And who knows, it might just make your students curious enough to dip their toes into actual coding later on (which happened with a few of mine haha)!
+
+## Practice Worksheet
+
+if you'd like to take Orange out for a run, I have a sample worksheet for you! We used a dataset of Scooby Doo episodes from tidytuesday to practice our Orange chops in my class. I created a small 'worksheet' with questions, annotations and demo workflows for each problem to show how common data questions can be approached through Orange. Each section contains a question and the answer, but also a 'Your Turn' section which challenges you to build on the previous workflow and modify it a little. 
+
+![](https://teaching.aman.bh/orange-scooby.png)
+
+You can learn more and download the worksheet at my course site [here](https://teaching.aman.bh/cdv2025/day-3). All the best! If you need any help, I'm available on my socials and email (in the footer). 

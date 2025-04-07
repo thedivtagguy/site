@@ -2,9 +2,11 @@
 	import Tree from './TableOfContentsTree.svelte';
 	import { createTableOfContents } from '@melt-ui/svelte';
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 
 	export let selector = 'article';
 	let visible = false;
+	let isFirefox = false;
 
 	const {
 		elements: { item },
@@ -15,6 +17,8 @@
 	});
 
 	onMount(() => {
+		// Check if the browser is Firefox
+
 		// Ensure the DOM is fully loaded before initializing the observer
 		setTimeout(() => {
 			const observer = new IntersectionObserver(
@@ -53,16 +57,18 @@
 	});
 </script>
 
-<aside class="toc-container">
-	<p class="pb-2 text-sm font-semibold uppercase font-fira border-b border-base-300 mb-2">
-		Contents
-	</p>
-	<nav class="toc-nav">
-		{#key $headingsTree}
-			<Tree tree={$headingsTree} activeHeadingIdxs={$activeHeadingIdxs} {item} />
-		{/key}
-	</nav>
-</aside>
+{#if !isFirefox}
+	<aside class="toc-container">
+		<p class="pb-2 text-sm font-semibold uppercase font-fira border-b border-base-300 mb-2">
+			Contents
+		</p>
+		<nav class="toc-nav">
+			{#key $headingsTree}
+				<Tree tree={$headingsTree} activeHeadingIdxs={$activeHeadingIdxs} {item} />
+			{/key}
+		</nav>
+	</aside>
+{/if}
 
 <style>
 	.toc-container {
