@@ -35,23 +35,23 @@ import WidgetIcon from '$lib/components/Blog/WidgetIcon.svelte';
 </script>
 ![](./images/images/2025-orange/20250404_155858.jpg)
 
-I recently taught a 10-day data visualization class to 2nd year design students at Chitkara University. This was my first teaching experience in any real sense (I've "taught" groups of students informally at Srishti), and an exciting opportunity! It became a learning experience as much for me as it was for the students because the code-brained, R-pilled person that I am, I had to adapt my explanations to a no-code context (which, in my opinion, is a lot harder than just doing some R!).
+I recently taught a 10-day data visualization class to 2nd year design students at Chitkara University. This was my first teaching experience in any real sense (I've “taught” groups of students informally at Srishti), and an exciting opportunity! It became a learning experience as much for me as it was for the students because the code-brained, R-pilled person that I am, I had to adapt my explanations to a no-code context (which, in my opinion, is a lot harder than just doing some R!).
 
-When I started planning the course, few options immediately jump out for visualization. Datawrapper, RawGraphs, and Flourish are incredible and don't need much elaboration (well, at least here). No-code viz sorted.
+When I started planning the course, few options immediately jumped out for visualization. Datawrapper, RAWGraphs, and Flourish are incredible and don't need much elaboration (well, at least here). No-code viz sorted.
 
 _But what about data wrangling and analysis?_ You need practical data skills too! Charts are sometimes the easier part. The information _you_ care about is rarely going to come in the form of a neat summary ready to be plugged into Datawrapper. In any real-world scenario, you're met with anywhere from 100-30,000 rows of data (which, by the way, my no-code students handled too!) and you need to summarise it to a manageable amount of information. In R, this is usually done through the `dplyr` package.
 
 If you're unfamiliar with R or tidyverse, dplyr functions essentially create a grammar for data manipulation that makes complex operations straightforward. Each function does one specific task well, and when combined, they transform raw data into analysis-ready formats. If you're a Python person, `pandas` helps you do the same (but dplyr has superior syntax by far, sorry). The code approach makes your analysis both readable and reproducible, and the challenge was finding a tool that offered these same benefits without requiring students to learn programming syntax. 
 
-So this was a big stumbling block. Visualization is alright, but how do I do _that_? One _could_ do this in Excel or Google Sheets but, lord, it is hard. I think it is harder than writing R code. And more importantly, it is _destructive_ (modifies the original data) and not replicable. I had ~80 students in my class and it is not feasible to show them step-by-step Excel operations, and the steps aren't self-documenting. Writing code for analysis means your operations are replicable, reviewable and reusable (what if the data is updated?), Excel is none of those things and therefore not an option.
+So this was a big stumbling block. Visualization is alright, but how do I do _that_? One _could_ do this in Excel or Google Sheets but, lord, it is hard. I think it is harder than writing R code. And more importantly, it is _destructive_ (modifies the original data) and not replicable. I had ~80 students in my class, and it is not feasible to show them step-by-step Excel operations, and the steps aren't self-documenting. Writing code for analysis means your operations are replicable, reviewable and reusable (what if the data is updated?), Excel is none of those things and therefore not an option.
 
 ## 🍊 What is Orange? 
 
-[Orange](https://orangedatamining.com/) is a wonderful visual programming tool for data analysis. This was introduced to me by my former professor, [Arvind Venkatadri](https://arvindvenkatadri.com/). He is a brilliant teacher and even has an extensive[ 'Data Science with No-Code'](https://av-quarto.netlify.app/content/courses/nocode/listing) public course where he uses Orange, which I also learnt from.
+[Orange](https://orangedatamining.com/) is a wonderful visual programming tool for data analysis. This was introduced to me by my former professor, [Arvind Venkatadri](https://arvindvenkatadri.com/). He is a brilliant teacher who even has an extensive ['Data Science with No-Code'](https://av-quarto.netlify.app/content/courses/nocode/listing) public course where he uses Orange, which I also learnt from.
 
 ![](./images/images/2025-orange/IMG-20250406231106329.png)
 
-It works as a node-based visual interface with 'widgets' that perform operations that range from analysis to simple visualization. Orange files can contain workflows with annotations that can be shared, and are entirely replicable and non-destructive. That is, the source data is never modified but just _transformed_ from one step to another and can be shared with others (unlike Excel shenanigans). Each widget represents a specific data operation, and connecting them creates a visible data pipeline. This helps students understand not just what transformation happened, but how and why. When someone asks "where did these numbers come from?" the entire workflow provides the answer.
+It works as a node-based visual interface with 'widgets' that perform operations that range from analysis to simple visualization. Orange files can contain workflows with annotations that can be shared, and are entirely replicable and non-destructive. That is, the source data is never modified but just _transformed_ from one step to another and can be shared with others (unlike Excel shenanigans). Each widget represents a specific data operation, and connecting them creates a visible data pipeline. This helps students understand not just what transformation happened, but how and why. When someone asks “where did these numbers come from?” the entire workflow provides the answer.
 
 In this post, I'm going to use the [iris dataset](https://www.kaggle.com/datasets/uciml/iris) (which comes in-built with Orange) to show you how Orange can be used for data manipulation and exploratory analysis, as well as the equivalent dplyr functions it replaces. 
 
@@ -77,7 +77,7 @@ For the last two, I have created a separate tool called [Pivotteer](https://pivo
 
 ## Common data operations with Orange
 
-The idea behind Orange is quite simple. It is node-based, which means that operations are represented as visual blocks (called widgets) that can be connected together to create a data flow. Think of each widget as a specialized tool that does one specific job - filtering rows, selecting columns, or calculating statistics.
+The idea behind Orange is simple. It is node-based, which means that operations are represented as visual blocks (called widgets) that can be connected to create a data flow. Think of each widget as a specialized tool that does one specific job: filtering rows, selecting columns, or calculating statistics.
 When you connect these widgets with lines, you're essentially building a pipeline where data flows from one operation to the next. The output of one widget becomes the input for the next, creating a visual representation of your data transformation process. Here's a typical pipeline:
 
 ![](./images/images/2025-orange/2025-04-07_10-00.png)
@@ -85,11 +85,11 @@ When you connect these widgets with lines, you're essentially building a pipelin
 Throughout this post, I provide the R/dplyr equivalents for each Orange operation. This is helpful if you're already familiar with R and want to understand Orange in terms you know, or if you're teaching students who might eventually transition to coding.
 ### summary(), glimpse() → <span class="widget-name">Feature Statistics<WidgetIcon widgetName="Feature Statistics" /></span>
 
-You've loaded in your dataset and you'd like a very high-level overview of all variables, their data types and some other numeric summaries. No need to code anything, just plug your dataset into the <span class="widget-name">Feature Statistics<WidgetIcon widgetName="Feature Statistics" /></span> widget and open it (click on the widget) to see clean summaries and histograms pop up immediately.
+You've loaded in your dataset, and you'd like a very high-level overview of all variables, their data types and some other numeric summaries. No need to code anything, just plug your dataset into the <span class="widget-name">Feature Statistics<WidgetIcon widgetName="Feature Statistics" /></span> widget and open it (click on the widget) to see clean summaries and histograms pop up immediately.
 
 ![](./images/images/2025-orange/IMG-20250406222936234.png)
 
-This is useful stuff! Right away, we know the central tendencies of each variable (mean, median, mode), their dispersion around the center, the range of values (min and max) as well as if any data points are missing (none here). You could _also_ color these histograms by a categorical variable at this point just to get a feel of the data. 
+This is useful stuff! Right away, we know the central tendencies of each variable (mean, median, mode), their dispersion around the center, the range of values (min and max) as well as if any data points are missing (none here). You could _also_ colour these histograms by a categorical variable at this point just to get a feel of the data. 
 
 ![](./images/images/2025-orange/IMG-20250406223204608.png)
 
@@ -108,7 +108,7 @@ Filtering is done through the <span class="widget-name">Select Rows<WidgetIcon w
 
 ![](./images/images/2025-orange/IMG-20250406163208786.png)
 
-Another tip to see the before/after for any widget: On the bottom-left corner, you'll notice `150` followed by `30`. This means we took _in_ 150 rows and after this process are _sending out_ only 30 rows. 
+Another tip to see the before/after for any widget: In the bottom-left corner, you'll notice `150` followed by `30`. This means we took _in_ 150 rows and after this process are _sending out_ only 30 rows. 
 
 ```r
 # R equivalent
@@ -139,7 +139,7 @@ data %>%
 	arrange(-sepal.length)
 ```
 
-You can also make selections that are arbitrary and manual, or sort by a column and then select the 'top N' rows you'd want. For example, I want to select top 10 flowers by `sepal length`. Easy! Sort by the relevant column and hold `Shift` as you select from the first to the 10th column. 
+You can also make selections that are arbitrary and manual, or sort by a column and then select the 'top N' rows you'd want. For example, I want to select the top 10 flowers by `sepal length`. Easy! Sort by the relevant column and hold `Shift` as you select from the first to the 10th row. 
 
 ![](./images/images/2025-orange/IMG-20250406171641148.gif)
 Connecting to another <span class="widget-name">Data Table<WidgetIcon widgetName="Data Table" /></span> shows that the sorting and the selection has been retained. 
@@ -152,13 +152,13 @@ data %>%
 
 ### mutate() → <span class="widget-name">Formula<WidgetIcon widgetName="Formula" /></span>
 
-`mutate()` is a function I reach for the most in R. It helps in creating a new column or a column 'based on something' that references another variable. Orange makes this available through the <span class="widget-name">Formula<WidgetIcon widgetName="Formula" /></span> widget which lets you create a new type of variable (numeric, temporal, categorical) by operating on some existing variable or any condition. 
+`mutate()` is a function I reach for the most in R. It helps in creating a new column or a column 'based on something' that references another variable. Orange makes this available through the <span class="widget-name">Formula<WidgetIcon widgetName="Formula" /></span> widget, which lets you create a new type of variable (numeric, temporal, categorical) by operating on some existing variable or any condition. 
 
 If we want to convert only `sepal length` to millimetres, then we can create a new numeric column that multiplies it by 100. 
 
 ![](./images/images/2025-orange/IMG-20250406172436270.png)
 
-Or perhaps, you want to create a new categorical variable at the same time that checks if a species is `Iris-setosa` and if yes, write `TRUE`. Add another formula in the same widget and write a conditional: 
+Or perhaps, you want to create a new categorical variable while checks if a species is `Iris-setosa` and if yes, write `TRUE`. Add another formula in the same widget and write a conditional: 
 
 ```python
 "TRUE" if iris == "Iris-setosa" else "FALSE"
@@ -175,7 +175,7 @@ data %>%
 		   is_setosa = if(species == "Iris-setosa", TRUE, FALSE))
 ```
 
-You could also created nested conditions! Classify sepals into big, medium, small categories maybe?
+You could also create nested conditions! Classify sepals into big, medium, small categories maybe?
 
 ```python
 "Big" if sepal_length > 6 else "Medium" if sepal_length > 4 else "Small"
@@ -194,7 +194,7 @@ data %>%
 ```
 ### group_by() → <span class="widget-name">Group By<WidgetIcon widgetName="Group By" /></span>
 
-`group_by()` in dplyr is the starting point for almost any data summarization task. It takes your data frame and essentially says "treat these rows that share the same values as distinct groups." Once you've grouped your data, any operations you perform afterward (like calculating averages or counts) happen separately within each group rather than across the entire dataset.
+`group_by()` in, dplyr is the starting point for almost any data summarization task. It takes your data frame and essentially says, “treat these rows that share the same values as distinct groups.” Once you've grouped your data, any operations you perform afterward (like calculating averages or counts) happen separately within each group, rather than across the entire dataset.
 
 Orange provides this interface with the <span class="widget-name">Group By<WidgetIcon widgetName="Group By" /></span> widget that has various options for aggregations (operations you want to do within the groups). For example, suppose we want to calculate the average petal length for each species. 
 
@@ -204,7 +204,7 @@ Orange provides this interface with the <span class="widget-name">Group By<Widge
 
 To select multiple categorical groups, hold `CTRL` as you make selections in the left pane to do operations within multiple groups. 
 
-When you connect a <span class="widget-name">Group By<WidgetIcon widgetName="Group By" /></span> for the first time, all aggregations might be selected. To unselect, select anything in the right pane and press `CTRL+A` to select all, and then manually uncheck everything till no aggregations show up (this might take a few clicks). In the image above, I've unselected everything but only selected 'Mean' for petal length.
+When you connect a <span class="widget-name">Group By<WidgetIcon widgetName="Group By" /></span> for the first time, all aggregations might be selected. To unselect, select anything in the right pane and press `CTRL+A` to select all, and then manually uncheck everything until no aggregations show up (this might take a few clicks). In the image above, I've unselected everything but only selected 'Mean' for petal length.
 
 </ProTip>
 
@@ -228,13 +228,13 @@ The various joins in dplyr (right_join, left_join, inner_join etc.) help in comb
 
 ![](./images/images/2025-orange/IMG-20250406213451075.png)
 
-In this example, I'm going to create a dummy complementary dataset which only has the flower species and a `sepal_petal_ratio` and I need to join it into the main dataset. Plus both into <span class="widget-name">Merge Data<WidgetIcon widgetName="Merge Data" /></span> (which takes only two at a time) and select 'Find Matching Pairs of Rows' and voila!
+In this example, I'm going to create a dummy complementary dataset which only has the flower species and a `sepal_petal_ratio` and I need to join it into the main dataset. Plus both into <span class="widget-name">Merge Data<WidgetIcon widgetName="Merge Data" /></span> (which takes only two at a time) and select 'Find Matching Pairs of Rows' and voilà!
 
 ![](./images/images/2025-orange/IMG-20250406213621478.png)
 
 Here, we matched only by 'Row Index' since I know that the order of the data in both datasets is the same, but if it isn't, you can choose to match by any other 'ID' column! This column will usually be categorical or a unique numeric ID. 
 
-This is pretty useful also for when you separate your workflows and work on various branches individually and want to join it back into one consolidated dataset. 
+This is also pretty useful for when you separate your workflows and work on various branches individually and want to join it back into one consolidated dataset. 
 
 ```r
 # R equivalent
@@ -246,7 +246,7 @@ data %>%
 
 The other alternative to joining datasets horizontally: stacking them vertically! You have two separate datasets with the same column names and want to combine them, plug 'em into this! Unlike <span class="widget-name">Merge Data<WidgetIcon widgetName="Merge Data" /></span>, this can take in numerous inputs, just be sure that the number of columns and their names match. 
 
-I have two separate datasets, one for each species and I'd like to combine them into one:
+I have two separate datasets, one for each species, and I'd like to combine them into one:
 
 ![](./images/images/2025-orange/IMG-20250406215014045.png)
 
@@ -260,7 +260,7 @@ bind_rows(setosa_data, versicolor_data)
 ```
 ### rename() → <span class="widget-name">Edit Domain<WidgetIcon widgetName="Edit Domain" /></span>
 
-Sometimes, you might want to clean up unsightly column names. Or Orange might not have interpreted your variable type correctly (date showing up as categorical). For these needs, plug your dataset into <span class="widget-name">Edit Domain<WidgetIcon widgetName="Edit Domain" /></span> and make your modifications. Here I add underscores instead of spaces.
+Occasionally, you might want to clean up unsightly column names. Or Orange might not have interpreted your variable type correctly (date showing up as categorical). For these needs, plug your dataset into <span class="widget-name">Edit Domain<WidgetIcon widgetName="Edit Domain" /></span> and make your modifications. Here, I add underscores instead of spaces.
 
 ![](./images/images/2025-orange/IMG-20250406222255816.png)
 
@@ -281,18 +281,18 @@ data %>%
 ```
 ## The pivots
 
-`pivot_longer()` and `pivot_wider()` are crucial functions for visualizations. Tools like RawGraphs expect data in the long, tidy format but if you want to visualize comparisons in Datawrapper, you need the wide format, with a column for each comparison (for instance, two separate lines for men and women for a life expectancy over time chart)
+`pivot_longer()` and `pivot_wider()` are crucial functions for visualizations. Tools like RAWGraphs expect data in the long, tidy format, but if you want to visualize comparisons in Datawrapper, you need the wide format, with a column for each comparison (for instance, two separate lines for men and women for a life expectancy over time chart)
 
-There are ways to do this in Orange which I will show below, but things can get limiting fast if your dataset is complex. The dplyr functions are one of the cleanest implementations of this operation I've seen so far, so much so that I built a UI for them called [Pivotteer](https://pivotteer.netlify.app) which I recommend students use instead in case Orange gets too difficult. But in the spirit of adventure, here is how to do it within the software.
+There are ways to do this in Orange, which I will show below, but things can get limiting fast if your dataset is complex. The dplyr functions are one of the cleanest implementations of this operation I've seen so far, so much so that I built a UI for them called [Pivotteer](https://pivotteer.netlify.app) which I recommend students use instead in case Orange gets too difficult. But in the spirit of adventure, here is how to do it within the software.
 
-I will need to switch datasets for this so I am going to use the 'Naughty or Nice' dataset that Orange has built in. 
+I will need to switch datasets for this, so I am going to use the 'Naughty or Nice' dataset that Orange has built in. 
 ### pivot_longer() → <span class="widget-name">Melt<WidgetIcon widgetName="Melt" /></span>
 
 This is our original dataset, currently in a wide format. We want to have only one observation per row (score, name, value) and therefore need to make it longer.
 
 ![](./images/images/2025-orange/IMG-20250406224328979.png)
 
-Plug this into 'Melt'. We want to create a combined column for all chores called `task` and note their value in another column called `times`. We select `Name` as our unique column since that represents each individual. The widget offers only columns without duplicated values so we cannot keep the Santa's score column.
+Plug this into 'Melt'. We want to create a combined column for all chores called `task` and note their value in another column called `times`. We select `Name` as our unique column since that represents each individual. The widget offers only columns without duplicated values, so we cannot keep the Santa's score column.
 
 ![](./images/images/2025-orange/IMG-20250406225009575.png)
 
@@ -322,7 +322,7 @@ Instead of having each chore as a column, maybe I want to have chores are indivi
 
 ![](./images/images/2025-orange/IMG-20250406225727056.png)
 
-Bring out your <span class="widget-name">Transpose<WidgetIcon widgetName="Transpose" /></span> widget and plug it into the dataset. We want to create columns from `Name`. Looking at the in vs. out at the bottom-left corner, we see that we've gone from 30 to 6 rows only (now our data is _wider_ than it is longer). 
+Bring out your <span class="widget-name">Transpose<WidgetIcon widgetName="Transpose" /></span> widget and plug it into the dataset. We want to create columns from `Name`. Looking at the in vs. out in the bottom-left corner, we see that we've gone from 30 to 6 rows only (now our data is _wider_ than it is longer). 
 
 ![](./images/images/2025-orange/IMG-20250406225928014.png)
 
@@ -332,7 +332,7 @@ Awesome, now we have a column for each name! But again, we will lose the 'Santa'
 
 ## write_csv() → <span class="widget-name">Save Data<WidgetIcon widgetName="Save Data" /></span>
 
-Lastly, you can save data from the pipeline at any point by plugging the output of a widget into the <span class="widget-name">Save Data<WidgetIcon widgetName="Save Data" /></span> widget and write it to a CSV. 
+Lastly, you can save data from the pipeline at any point by plugging the output of a widget into the <span class="widget-name">Save Data<WidgetIcon widgetName="Save Data" /></span> widget and writing it to a CSV. 
 
 ![](./images/images/2025-orange/IMG-20250406230509437.png)
 
@@ -344,13 +344,13 @@ write_csv(data, "final_analysis.csv")
 ```
 ## Orange you glad this exists
 
-Orange is great, but I'll be real - it has its quirks. The main limitation I found while teaching is that some operations that are straightforward in R can be a bit roundabout in Orange. The pivot functions are the most obvious example. While they work, they're not as flexible as their R counterparts. The learning curve is also variable; it's definitely easier than coding for beginners, but I found it's still a cognitive leap for students who've only used Excel. That said, once students got the hang of it, they could perform surprisingly complex operations that would've taken me much longer to teach in Excel.
+Orange is great, but it has its quirks. The main limitation I found while teaching is that some operations that are straightforward in R can be a bit roundabout in Orange. The pivot functions are the most obvious example. While they work, they're not as flexible as their R counterparts. The learning curve is also variable; it's definitely easier than coding for beginners, but I found it's still a cognitive leap for students who've only used Excel. That said, once students got the hang of it, they could perform surprisingly complex operations that would've taken me much longer to teach in Excel.
 
 This has been a long post, but I hope you see why I'm so enthusiastic about Orange! For teaching data wrangling in a no-code context, it's been invaluable. My students, despite having zero prior data experience, were able to handle datasets with thousands of rows, perform operations, and create visualizations by the end of our 10-day course. And who knows, it might just make your students curious enough to dip their toes into actual coding later on (which happened with a few of mine haha)!
 
 ## Practice Worksheet
 
-if you'd like to take Orange out for a run, I have a sample worksheet for you! We used a dataset of Scooby Doo episodes from tidytuesday to practice our Orange chops in my class. I created a small 'worksheet' with questions, annotations and demo workflows for each problem to show how common data questions can be approached through Orange. Each section contains a question and the answer, but also a 'Your Turn' section which challenges you to build on the previous workflow and modify it a little. 
+if you'd like to take Orange out for a run, I have a sample worksheet for you! We used a dataset of Scooby-Doo episodes from tidytuesday to practice our Orange chops in my class. I created a small 'worksheet' with questions, annotations, and demo workflows for each problem to show how common data questions can be approached through Orange. Each section contains a question and the answer, but also a 'Your Turn' section which challenges you to build on the previous workflow and modify it a little. 
 
 ![](https://teaching.aman.bh/orange-scooby.png)
 
