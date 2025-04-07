@@ -32,10 +32,11 @@ sharecard: /blog/orange.jpg
 <script>
 import ProTip from '$lib/components/Blog/ProTip.svelte';
 import WidgetIcon from '$lib/components/Blog/WidgetIcon.svelte';
+import NewsletterSignup from '$lib/components/Blog/NewsletterSignup.svelte';
 </script>
 ![](./images/images/2025-orange/20250404_155858.jpg)
 
-I recently taught a 10-day data visualization class to 2nd year design students at Chitkara University. This was my first teaching experience in any real sense (I've “taught” groups of students informally at Srishti), and an exciting opportunity! It became a learning experience as much for me as it was for the students because the code-brained, R-pilled person that I am, I had to adapt my explanations to a no-code context (which, in my opinion, is a lot harder than just doing some R!).
+I recently taught a 10-day data visualization class to 2nd year design students at Chitkara University. This was my first teaching experience in any real sense (I've "taught" groups of students informally at Srishti), and an exciting opportunity! It became a learning experience as much for me as it was for the students because the code-brained, R-pilled person that I am, I had to adapt my explanations to a no-code context (which, in my opinion, is a lot harder than just doing some R!).
 
 When I started planning the course, few options immediately jumped out for visualization. Datawrapper, RAWGraphs, and Flourish are incredible and don't need much elaboration (well, at least here). No-code viz sorted.
 
@@ -51,7 +52,7 @@ So this was a big stumbling block. Visualization is alright, but how do I do _th
 
 ![](./images/images/2025-orange/IMG-20250406231106329.png)
 
-It works as a node-based visual interface with 'widgets' that perform operations that range from analysis to simple visualization. Orange files can contain workflows with annotations that can be shared, and are entirely replicable and non-destructive. That is, the source data is never modified but just _transformed_ from one step to another and can be shared with others (unlike Excel shenanigans). Each widget represents a specific data operation, and connecting them creates a visible data pipeline. This helps students understand not just what transformation happened, but how and why. When someone asks “where did these numbers come from?” the entire workflow provides the answer.
+It works as a node-based visual interface with 'widgets' that perform operations that range from analysis to simple visualization. Orange files can contain workflows with annotations that can be shared, and are entirely replicable and non-destructive. That is, the source data is never modified but just _transformed_ from one step to another and can be shared with others (unlike Excel shenanigans). Each widget represents a specific data operation, and connecting them creates a visible data pipeline. This helps students understand not just what transformation happened, but how and why. When someone asks "where did these numbers come from?" the entire workflow provides the answer.
 
 In this post, I'm going to use the [iris dataset](https://www.kaggle.com/datasets/uciml/iris) (which comes in-built with Orange) to show you how Orange can be used for data manipulation and exploratory analysis, as well as the equivalent dplyr functions it replaces. 
 
@@ -74,6 +75,8 @@ Here's a non-definitive list of extremely common things I find myself reaching f
 | `pivot_wider()`             | <span class="widget-name"><WidgetIcon widgetName="Pivot" />Pivot</span> | Reshape data from long to wide format                    |
 | `pivot_longer()`            | <span class="widget-name"><WidgetIcon widgetName="Transpose" />Transpose</span> | Reshape data from wide to long format                    |
 For the last two, I have created a separate tool called [Pivotteer](https://pivotteer.netlify.app) as well, which I will explain in another post.
+
+<NewsletterSignup />
 
 ## Common data operations with Orange
 
@@ -194,7 +197,7 @@ data %>%
 ```
 ### group_by() → <span class="widget-name">Group By<WidgetIcon widgetName="Group By" /></span>
 
-`group_by()` in, dplyr is the starting point for almost any data summarization task. It takes your data frame and essentially says, “treat these rows that share the same values as distinct groups.” Once you've grouped your data, any operations you perform afterward (like calculating averages or counts) happen separately within each group, rather than across the entire dataset.
+`group_by()` in, dplyr is the starting point for almost any data summarization task. It takes your data frame and essentially says, "treat these rows that share the same values as distinct groups." Once you've grouped your data, any operations you perform afterward (like calculating averages or counts) happen separately within each group, rather than across the entire dataset.
 
 Orange provides this interface with the <span class="widget-name">Group By<WidgetIcon widgetName="Group By" /></span> widget that has various options for aggregations (operations you want to do within the groups). For example, suppose we want to calculate the average petal length for each species. 
 
@@ -348,6 +351,7 @@ Orange is great, but it has its quirks. The main limitation I found while teachi
 
 This has been a long post, but I hope you see why I'm so enthusiastic about Orange! For teaching data wrangling in a no-code context, it's been invaluable. My students, despite having zero prior data experience, were able to handle datasets with thousands of rows, perform operations, and create visualizations by the end of our 10-day course. And who knows, it might just make your students curious enough to dip their toes into actual coding later on (which happened with a few of mine haha)!
 
+
 ## Practice Worksheet
 
 if you'd like to take Orange out for a run, I have a sample worksheet for you! We used a dataset of Scooby-Doo episodes from tidytuesday to practice our Orange chops in my class. I created a small 'worksheet' with questions, annotations, and demo workflows for each problem to show how common data questions can be approached through Orange. Each section contains a question and the answer, but also a 'Your Turn' section which challenges you to build on the previous workflow and modify it a little. 
@@ -355,3 +359,5 @@ if you'd like to take Orange out for a run, I have a sample worksheet for you! W
 ![](https://teaching.aman.bh/orange-scooby.png)
 
 You can learn more and download the worksheet at my course site [here](https://teaching.aman.bh/cdv2025/day-3). All the best! If you need any help, I'm available on my socials and email (in the footer). 
+
+<NewsletterSignup />
