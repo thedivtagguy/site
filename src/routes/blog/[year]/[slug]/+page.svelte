@@ -5,12 +5,11 @@
 	import '$lib/prism.css';
 	import PostNavigation from '$lib/components/Blog/PostNavigation.svelte';
 	import HighlightAnchor from '$lib/components/Blog/HighlightAnchor.svelte';
-
+	import TableOfContents from '$lib/components/Primary/TableOfContents.svelte';
 	export let data;
 </script>
 
 <HighlightAnchor />
-
 <SEO
 	title={data.meta.title}
 	excerpt={data.meta.excerpt}
@@ -26,7 +25,11 @@
 	isBlogPost={true}
 	twitterHandle="@thedivtagguy"
 />
-<article class="py-8 blog-post leading-royal w-full max-w-4xl">
+
+<article id="content" class="py-8 blog-post leading-royal w-full max-w-4xl mx-auto">
+	{#if data.meta.toc}
+		<TableOfContents selector="#content" />
+	{/if}
 	<hgroup>
 		<ol class="flex items-center whitespace-nowrap font-roboto" aria-label="Links">
 			<li class="inline-flex items-center">
@@ -69,6 +72,7 @@
 	h1 {
 		line-height: 1.3;
 	}
+
 	:global(.prose) {
 		max-width: 100%;
 		overflow-wrap: break-word;
@@ -78,7 +82,6 @@
 
 	:global(.prose img) {
 		max-width: 100%;
-
 		height: auto;
 		object-fit: contain;
 		border: 1px solid #e5e5e5;

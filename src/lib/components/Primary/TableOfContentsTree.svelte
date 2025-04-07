@@ -7,22 +7,22 @@
 	export let level = 1;
 </script>
 
-<ul class="m-0 w-full py-2 list-none {level !== 1 ? 'pl-4' : ''}">
+<ul class="m-0 w-full py-1 list-none {level !== 1 ? 'pl-4' : ''}">
 	{#if tree && tree.length}
 		{#each tree as heading, i (i)}
-			<li class="w-full px-4 transition-all has-[:a:data-[active]]:bg-red">
+			<li class="w-full transition-all">
 				<a
 					use:melt={$item(heading.id)}
 					href="#{heading.id}"
-					class="inline-flex items-center font-semibold text-neutral/50 text-sm font-fira justify-center p-0 m-0 text-neutral-500 no-underline transition-all
-             hover:!text-purple data-[active]:text-red"
+					class="inline-flex items-center py-1 text-xs font-archivo text-neutral-500 no-underline transition-all
+                    hover:text-orange data-[active]:text-orange text-gray-500"
 				>
 					<!--
               Along with the heading title, the original heading node
               is also passed down, so you can display headings
               however you want.
             -->
-					{@html heading.node.innerHTML}
+					{heading.node.textContent}
 				</a>
 				{#if heading.children && heading.children.length}
 					<svelte:self tree={heading.children} level={level + 1} {activeHeadingIdxs} {item} />
