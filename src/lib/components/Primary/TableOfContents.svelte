@@ -10,7 +10,7 @@
 		elements: { item },
 		states: { activeHeadingIdxs, headingsTree }
 	} = createTableOfContents({
-		activeType: 'all',
+		activeType: 'lowest',
 		selector: selector
 	});
 

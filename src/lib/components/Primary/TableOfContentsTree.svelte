@@ -14,15 +14,10 @@
 				<a
 					use:melt={$item(heading.id)}
 					href="#{heading.id}"
-					class="inline-flex items-center py-1 text-xs font-archivo text-neutral-500 no-underline transition-all
-                    hover:text-orange data-[active]:text-orange text-gray-500"
+					class="inline-flex items-center py-1 text-xs font-archivo text-neutral no-underline transition-all
+                    hover:text-orange data-[active]:text-orange data-[active]:font-medium relative"
 				>
-					<!--
-              Along with the heading title, the original heading node
-              is also passed down, so you can display headings
-              however you want.
-            -->
-					{heading.node.textContent}
+					<span class="toc-item-text">{heading.node.textContent}</span>
 				</a>
 				{#if heading.children && heading.children.length}
 					<svelte:self tree={heading.children} level={level + 1} {activeHeadingIdxs} {item} />
@@ -31,3 +26,56 @@
 		{/each}
 	{/if}
 </ul>
+
+<style>
+	li {
+		position: relative;
+	}
+
+	a {
+		display: flex;
+		width: 100%;
+		position: relative;
+		padding-left: 0.25rem;
+	}
+
+	a:hover::before {
+		content: '';
+		position: absolute;
+		left: -0.25rem;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 4px;
+		height: 0.75rem;
+		background-color: #ffa94d;
+		border-radius: 1px;
+	}
+
+	a[data-active]::before {
+		content: '';
+		position: absolute;
+		left: -0.25rem;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 4px;
+		height: 100%;
+		background-color: #ffa94d;
+		border-radius: 1px;
+	}
+
+	.toc-item-text {
+		position: relative;
+		z-index: 1;
+	}
+
+	/* a[data-active] .toc-item-text::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #ffa94d;
+		opacity: 0.2;
+	} */
+</style>
