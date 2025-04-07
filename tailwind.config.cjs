@@ -6,6 +6,7 @@ module.exports = {
 		'./node_modules/layerchart/**/*.{svelte,js}'
 	],
 	theme: {
+
 		extend: {
 			fontFamily: {
 				'libre-caslon': ['LibreCaslonCondensed', 'serif'],
