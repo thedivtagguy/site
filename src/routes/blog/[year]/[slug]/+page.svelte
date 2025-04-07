@@ -28,7 +28,7 @@
 
 <article id="content" class="py-8 blog-post leading-royal w-full max-w-4xl mx-auto">
 	{#if data.meta.toc}
-		<TableOfContents selector="#content" />
+		<TableOfContents selector="article#content" />
 	{/if}
 	<hgroup>
 		<ol class="flex items-center whitespace-nowrap font-roboto" aria-label="Links">

@@ -15,32 +15,41 @@
 	});
 
 	onMount(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				// Find any heading that's in view
-				const isHeadingVisible = entries.some(
-					(entry) => entry.isIntersecting && entry.target.tagName.match(/^H[1-6]$/i)
-				);
+		// Ensure the DOM is fully loaded before initializing the observer
+		setTimeout(() => {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					// Find any heading that's in view
+					const isHeadingVisible = entries.some(
+						(entry) => entry.isIntersecting && entry.target.tagName.match(/^H[1-6]$/i)
+					);
 
-				if (isHeadingVisible) {
-					visible = true;
-				} else if (entries[0]?.boundingClientRect.top > 0) {
-					// If we're above all headings
-					visible = false;
+					if (isHeadingVisible) {
+						visible = true;
+					} else if (entries[0]?.boundingClientRect.top > 0) {
+						// If we're above all headings
+						visible = false;
+					}
+				},
+				{
+					rootMargin: '0px 0px -80% 0px',
+					threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 				}
-			},
-			{ rootMargin: '0px 0px -80% 0px' }
-		);
+			);
 
-		// Observe all headings in the article
-		const headings = document.querySelectorAll(
-			`${selector} h1, ${selector} h2, ${selector} h3, ${selector} h4, ${selector} h5, ${selector} h6`
-		);
-		headings.forEach((heading) => observer.observe(heading));
+			// Use a more specific selector to ensure we get all headings
+			const headings = document.querySelectorAll(
+				`${selector} h1, ${selector} h2, ${selector} h3, ${selector} h4, ${selector} h5, ${selector} h6`
+			);
 
-		return () => {
-			headings.forEach((heading) => observer.unobserve(heading));
-		};
+			if (headings.length > 0) {
+				headings.forEach((heading) => observer.observe(heading));
+			}
+
+			return () => {
+				headings.forEach((heading) => observer.unobserve(heading));
+			};
+		}, 100); // Small delay to ensure DOM is ready
 	});
 </script>
 

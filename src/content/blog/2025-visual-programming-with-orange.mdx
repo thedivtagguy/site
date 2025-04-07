@@ -64,12 +64,12 @@ Here's a non-definitive list of extremely common things I find myself reaching f
 | `select()`                  | <span class="widget-name"><WidgetIcon widgetName="Select Columns" />Select Columns</span> | Choose specific columns to keep                          |
 | `arrange()`, `slice()`      | <span class="widget-name"><WidgetIcon widgetName="Select Rows" />Sort, Select Rows</span> | Order rows by values of columns, Select rows by position |
 | `mutate()`                  | <span class="widget-name"><WidgetIcon widgetName="Formula" />Formula</span> | Create new variables/columns                             |
-| `summarise()`, `group_by()` | <span class="widget-name"><WidgetIcon widgetName="Group By" />Group By + Aggregate </span> | Summarize data with statistics                           |
+| `group_by()` | <span class="widget-name"><WidgetIcon widgetName="Group By" />Group By + Aggregate </span> | Summarize data with statistics                           |
 | `join()`                    | <span class="widget-name"><WidgetIcon widgetName="Merge Data" />Merge Data</span> | Combine datasets (left, right, inner joins)              |
 | `bind_rows()`               | <span class="widget-name"><WidgetIcon widgetName="Concatenate" />Concatenate</span> | Stack datasets vertically                                |
 | `distinct()`                | <span class="widget-name"><WidgetIcon widgetName="Unique" />Unique</span> | Keep only unique/distinct rows                           |
 | `rename()`                  | <span class="widget-name"><WidgetIcon widgetName="Edit Domain" />Edit Domain</span> | Rename variables/attributes                              |
-| `count()`                   | <span class="widget-name"><WidgetIcon widgetName="Group By" />Group By Aggregate (Count) </span>| Count occurrences by group                               |
+| `count()`                   | <span class="widget-name"><WidgetIcon widgetName="Group By" />Group By + Aggregate (Count) </span>| Count occurrences by group                               |
 | `pivot_wider()`             | <span class="widget-name"><WidgetIcon widgetName="Pivot" />Pivot</span> | Reshape data from long to wide format                    |
 | `pivot_longer()`            | <span class="widget-name"><WidgetIcon widgetName="Transpose" />Transpose</span> | Reshape data from wide to long format                    |
 For the last two, I have created a separate tool called [Pivotteer](https://pivotteer.netlify.app) as well, which I will explain in another post.
@@ -100,10 +100,6 @@ summary(iris)
 glimpse(iris)
 ```
 
-<ProTip>
-
-When you connect a <span class="widget-name">Group By<WidgetIcon widgetName="Group By" /></span> for the first time, all aggregations might be selected. To unselect, select anything in the right pane and press `CTRL+A` to select all, and then manually uncheck everything till no aggregations show up (this might take a few clicks). In the image above, I've unselected everything but only selected 'Mean' for petal length.
-</ProTip>
 
 ### filter() → <span class="widget-name">Select Rows<WidgetIcon widgetName="Select Rows" /></span>
 
@@ -195,7 +191,7 @@ data %>%
     TRUE ~ "Small"
   ))
 ```
-### group_by(), summarise() → <span class="widget-name">Group By<WidgetIcon widgetName="Group By" /></span>
+### group_by() → <span class="widget-name">Group By<WidgetIcon widgetName="Group By" /></span>
 
 `group_by()` in dplyr is the starting point for almost any data summarization task. It takes your data frame and essentially says "treat these rows that share the same values as distinct groups." Once you've grouped your data, any operations you perform afterward (like calculating averages or counts) happen separately within each group rather than across the entire dataset.
 
@@ -206,6 +202,9 @@ Orange provides this interface with the <span class="widget-name">Group By<Widge
 <ProTip>
 
 To select multiple categorical groups, hold `CTRL` as you make selections in the left pane to do operations within multiple groups. 
+
+When you connect a <span class="widget-name">Group By<WidgetIcon widgetName="Group By" /></span> for the first time, all aggregations might be selected. To unselect, select anything in the right pane and press `CTRL+A` to select all, and then manually uncheck everything till no aggregations show up (this might take a few clicks). In the image above, I've unselected everything but only selected 'Mean' for petal length.
+
 </ProTip>
 
 Select a categorical variable (marked with a green C in Orange) and then select `petal length` and check `Mean`. Notice the bottom-left again? We've summarised our data from 150 rows to only 3! 
@@ -214,12 +213,14 @@ Select a categorical variable (marked with a green C in Orange) and then select 
 
 `Group By` is incredibly, incredibly powerful. Most of your EDA needs will be taken care of over here. 
 
+
 ```r
 # R equivalent
 data %>%
 	group_by(species) %>%
 	summarise(mean_petal_length = mean(petal_length))
 ```
+
 ### join() → <span class="widget-name">Merge Data<WidgetIcon widgetName="Merge Data" /></span>
 
 The various joins in dplyr (right_join, left_join, inner_join etc.) help in combining data **horizontally**. Maybe you have two different datasets with a common column that you wish to merge into one, this widget is your friend. 
@@ -266,7 +267,7 @@ Remember to click 'Apply' to actually save your changes.
 
 <ProTip>
 
-While examining your dataset initially, ensure that Orange has not left any variable in a black `T` (random text) and it is either a green C for categorical, red N for numeric or blue `T` for Time. 
+While examining your dataset initially, ensure that Orange has not left any variable in a <span style="background-color: black; color: white; padding: 0.1rem 0.3rem; border: 1px solid #333; border-radius: 0.2rem">T</span> (random text) and it is either a <span style="background-color: #16a34a; color: white; padding: 0.1rem 0.3rem; border: 1px solid #16a34a; border-radius: 0.2rem">C</span> for categorical, <span style="background-color: #dc2626; color: white; padding: 0.1rem 0.3rem; border: 1px solid #dc2626; border-radius: 0.2rem">N</span> for numeric or <span style="background-color: #2563eb; color: white; padding: 0.1rem 0.3rem; border: 1px solid #2563eb; border-radius: 0.2rem">T</span> for Time.
 </ProTip>
 
 ```r
