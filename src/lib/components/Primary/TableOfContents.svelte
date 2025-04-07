@@ -53,7 +53,7 @@
 	});
 </script>
 
-<aside class="toc-container float-right translate-x-[87%]">
+<aside class="toc-container">
 	<p class="pb-2 text-sm font-semibold uppercase font-fira border-b border-base-300 mb-2">
 		Contents
 	</p>
@@ -66,26 +66,22 @@
 
 <style>
 	.toc-container {
-		position: sticky;
-		top: 2rem;
-
-		width: 250px;
-		max-height: calc(100vh - 4rem);
+		position: relative;
+		width: 220px;
+		max-height: calc(100vh - 8rem);
 		overflow-y: auto;
 		background-color: white;
 		border-radius: 0.5rem;
 		border: 1px solid #e5e5e5;
-		padding: 1rem;
+		padding: 0.75rem;
 		box-shadow: 0 2px 0 0 #2b2b2b;
 		z-index: 10;
-
 		transition:
 			opacity 0.3s ease-in-out,
 			visibility 0.3s ease-in-out;
-		margin-left: -270px;
 	}
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1023px) {
 		.toc-container {
 			display: none;
 		}

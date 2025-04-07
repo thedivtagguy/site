@@ -26,33 +26,41 @@
 	twitterHandle="@thedivtagguy"
 />
 
-<article id="content" class="py-8 blog-post leading-royal w-full max-w-4xl mx-auto">
-	{#if data.meta.toc}
-		<TableOfContents selector="article#content" />
-	{/if}
-	<hgroup>
-		<ol class="flex items-center whitespace-nowrap font-roboto" aria-label="Links">
-			<li class="inline-flex items-center">
-				<a class="flex items-center text-sm text-black/70 hover:underline" href="/"> Home </a>
-				<ChevronRight class="h-4 stroke-black/70" />
-			</li>
-			<li class="inline-flex items-center">
-				<a class="flex items-center text-sm text-black/70 hover:underline" href="/blog"> Blog </a>
-				<ChevronRight class="h-4 stroke-black/70" />
-			</li>
-		</ol>
-		<h1 class="md:max-w-2xl pt-2 text-4xl md:text-6xl leading-relaxed capitalize font-libre-caslon">
-			{data.meta.title}
-		</h1>
-		<p class="py-4 text-xs sm:text-sm font-fira">Published on {formatDate(data.meta.date)}</p>
-	</hgroup>
+<div
+	class="py-8 blog-container w-full px-4 sm:px-6 lg:px-8 mx-auto max-w-full sm:max-w-4xl lg:max-w-5xl relative lg:grid lg:grid-cols-[1fr_220px] lg:gap-8"
+>
+	<article id="content" class="blog-post leading-royal w-full">
+		<hgroup>
+			<ol class="flex items-center whitespace-nowrap font-roboto" aria-label="Links">
+				<li class="inline-flex items-center">
+					<a class="flex items-center text-sm text-black/70 hover:underline" href="/"> Home </a>
+					<ChevronRight class="h-4 stroke-black/70" />
+				</li>
+				<li class="inline-flex items-center">
+					<a class="flex items-center text-sm text-black/70 hover:underline" href="/blog"> Blog </a>
+					<ChevronRight class="h-4 stroke-black/70" />
+				</li>
+			</ol>
+			<h1 class="pt-2 text-4xl md:text-6xl leading-relaxed capitalize font-libre-caslon">
+				{data.meta.title}
+			</h1>
+			<p class="py-4 text-xs sm:text-sm font-fira">Published on {formatDate(data.meta.date)}</p>
+		</hgroup>
 
-	<div
-		class="leading-relaxed prose-code:before:content-none prose-code:after:content-none prose prose-base sm:prose-base lg:prose-xl blog prose-h3:font-libre-caslon prose-p:font-archivo"
-	>
-		<svelte:component this={data.content} />
-	</div>
-</article>
+		<div
+			class="leading-relaxed prose-code:before:content-none prose-code:after:content-none prose prose-base sm:prose-base lg:prose-xl blog prose-h3:font-libre-caslon prose-p:font-archivo max-w-none"
+		>
+			<svelte:component this={data.content} />
+		</div>
+	</article>
+
+	{#if data.meta.toc}
+		<div class="table-of-contents-container">
+			<TableOfContents selector="article#content" />
+		</div>
+	{/if}
+</div>
+
 <PostNavigation previousPost={data.previousPost} nextPost={data.nextPost} />
 
 <style>
@@ -71,6 +79,20 @@
 
 	h1 {
 		line-height: 1.3;
+	}
+
+	.table-of-contents-container {
+		position: sticky;
+		top: 2rem;
+		height: calc(100vh - 4rem);
+		align-self: start;
+		width: 220px;
+	}
+
+	@media (max-width: 1023px) {
+		.table-of-contents-container {
+			display: none;
+		}
 	}
 
 	:global(.prose) {
