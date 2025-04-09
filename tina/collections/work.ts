@@ -26,6 +26,18 @@ export const work = {
 			type: 'boolean'
 		},
 		{
+			name: 'showOnHomepage',
+			component: 'toggle',
+			label: 'Show on Homepage',
+			description: 'Toggle to show/hide this work on the homepage',
+			toggleLabels: {
+				true: 'Show',
+				false: 'Hide'
+			},
+			type: 'boolean',
+			defaultValue: true
+		},
+		{
 			type: 'string',
 			name: 'label',
 			label: 'Label'

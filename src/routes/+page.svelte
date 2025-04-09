@@ -12,9 +12,14 @@
 
 	const tiles = tileStore();
 
-	tiles.set(data.data?.tiles);
+	// Only set tiles if data.data?.tiles exists
+	if (data.data?.tiles) {
+		tiles.set(data.data.tiles);
+	}
 
-	let works = data.data.works;
+	let works = data.data?.works || [];
+	// Filter works to only show those with showOnHomepage not explicitly set to false
+	let homepageWorks = works.filter((work) => work.showOnHomepage !== false);
 </script>
 
 <SEO
@@ -42,7 +47,7 @@
 <!-- Works -->
 <main>
 	<section class="flex flex-col items-center justify-between w-full gap-4 py-2 md:flex-row">
-		{#each works.slice(0, 3) as work}
+		{#each homepageWorks.slice(0, 3) as work}
 			<WorkCard data={work} />
 		{/each}
 	</section>
