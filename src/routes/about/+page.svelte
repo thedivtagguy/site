@@ -42,7 +42,7 @@
 					<ChevronRight class="h-4 stroke-base-300" />
 				</li>
 			</ol>
-			<h1 class="text-5xl italic leading-normal text-left capitalize">{about.title} - {age}</h1>
+			<h1 class="text-5xl italic leading-normal text-left capitalize">{about.title}</h1>
 			<p class="py-4 text-xs text-left font-fira">Updated on {formatDate(about.lastUpdated)}</p>
 		</hgroup>
 		<div class="py-2 prose md:text-xl blog">
