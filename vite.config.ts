@@ -1,9 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import { enhancedImages } from '@sveltejs/enhanced-img';
 import { formatDate } from './src/lib/utils';
 import { purgeCss } from 'vite-plugin-tailwind-purgecss';
-import { kitRoutes } from 'vite-plugin-kit-routes';
 export default defineConfig(({ mode }) => {
 	const isProduction = mode === 'production';
 	const netlifyURL = process.env.URL;
@@ -19,7 +17,7 @@ export default defineConfig(({ mode }) => {
 		ssr: {
 			noExternal: ['three']
 		},
-		plugins: [enhancedImages(), sveltekit(), kitRoutes(), purgeCss()],
+		plugins: [sveltekit(), purgeCss()],
 		exclude: ['**/blog-post-template.mdx']
 	};
 });

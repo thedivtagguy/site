@@ -12,4 +12,4 @@
 /tidytuesday/r-ladies https://rladies-explore.netlify.app/ 200!
 /to/* https://to.aman.bh/:splat 302!
 /projects/walkability-wiki https://walkabilitywiki.netlify.app/ 200!
-/micro/* https://cms.aman.bh/:splat 200!
+/notes/* https://cms.aman.bh/:splat 200!
