@@ -8,9 +8,17 @@
 	<script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 
 	%sveltekit.head%
+	<!-- Micropub endpoints -->
 	<link rel="authorization_endpoint" href="https://micropub.aman.bh/auth">
 	<link rel="token_endpoint" href="https://micropub.aman.bh/auth/token">
 	<link rel="indieauth-metadata" href="https://micropub.aman.bh/.well-known/oauth-authorization-server">
+
+	<!-- JSON Feed -->
+	<link rel="alternate" type="application/feed+json" title="JSON Feed" href="https://micropub.aman.bh/feed.json">
+
+	<!-- Webmention endpoints -->
+	<link rel="webmention" href="https://webmention.io/aman.bh/webmention">
+	<link rel="pingback" href="https://webmention.io/aman.bh/xmlrpc">
 
 </head>
 
