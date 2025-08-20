@@ -15,24 +15,27 @@
 
 @layer utilities {
     .btn-drop-shadow {
-      box-shadow: 0 2px 0 0 #2b2b2b; 
+        box-shadow: 0 2px 0 0 #2b2b2b;
     }
-  }
+}
 
-  caption {
+caption {
     @apply font-fira;
-  }
+}
 
-  caption > p{
+caption>p {
     @apply font-semibold font-fira;
-  }
+}
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Libre Caslon Text', serif;
 }
 
 
-p, li {
+p,
+li {
     @apply font-archivo;
 }
 
@@ -42,7 +45,8 @@ p, li {
     @apply border-base-300 border-t-[1px] w-full z-0;
 }
 
-h1, h2 {
+h1,
+h2 {
     @apply font-bold font-libre-caslon text-neutral;
 }
 
@@ -63,28 +67,28 @@ html {
 @layer utilities {
     .green-glow-100 {
         text-shadow:
-			0 0 3px #92de8618,
-			0 0 3px #92de8618,
-			0 0 3px #92de8618,
-			0 0 3px #92de8618,
-			0 0 2px #57785218,
-			0 0 2px #92de8618,
-			0 0 2px #465e4218;
+            0 0 3px #92de8618,
+            0 0 3px #92de8618,
+            0 0 3px #92de8618,
+            0 0 3px #92de8618,
+            0 0 2px #57785218,
+            0 0 2px #92de8618,
+            0 0 2px #465e4218;
     }
 
     .green-glow-200 {
         text-shadow:
-        0 0 3px #92de8641,
-        0 0 3px #92de8641,
-        0 0 3px #92de8641,
-        0 0 3px #92de8641,
-        0 0 2px #57785241,
-        0 0 2px #92de8641,
-        0 0 2px #465e4241;
+            0 0 3px #92de8641,
+            0 0 3px #92de8641,
+            0 0 3px #92de8641,
+            0 0 3px #92de8641,
+            0 0 2px #57785241,
+            0 0 2px #92de8641,
+            0 0 2px #465e4241;
     }
 
     .black-bento {
-       @apply  px-4 py-1 rounded-2xl bg-neutral; 
+        @apply px-4 py-1 rounded-2xl bg-neutral;
     }
 }
 
@@ -113,6 +117,7 @@ html {
     position: relative;
     z-index: 1;
 }
+
 .highlight::before {
     content: '';
     display: block;
@@ -145,7 +150,7 @@ html {
 }
 
 .btn-primary:focus {
-    @apply outline-dashed outline-2 outline-offset-2 outline-neutral; 
+    @apply outline-dashed outline-2 outline-offset-2 outline-neutral;
 }
 
 
@@ -171,4 +176,82 @@ html {
 
 .prose .bluesky-embed img {
     @apply rounded-lg mt-2 max-w-full;
+}
+
+
+#webmentions {
+    margin: 0;
+    position: relative;
+    z-index: 100;
+    line-height: 1.2em;
+}
+
+#webmentions .comments {
+    max-height: 20em;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-size: 80%;
+}
+
+#webmentions h2 {
+    font-size: medium;
+    margin: 0;
+    padding: 2px;
+    background: #ccc;
+}
+
+#webmentions .reacts img {
+    margin: 3px -1ex 1px 0;
+}
+
+#webmentions img.missing {
+    background: white;
+    border: dashed black 1px;
+}
+
+#webmentions ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 4px;
+}
+
+#webmentions li {
+    text-indent: -1em;
+    padding-left: 1em;
+}
+
+#webmentions a.reaction {
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0px 0px 3px white;
+    margin-right: 0;
+    letter-spacing: -1ex;
+    margin-right: 1ex;
+}
+
+#webmentions a.reaction img {
+    max-height: 1.3em;
+    width: auto;
+    margin-right: -1ex;
+    border-radius: 25%;
+}
+
+#webmentions a.reaction sub {
+    font-size: 50%;
+}
+
+#webmentions .comments li {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#webmentions .comments li .text {
+    color: #555;
+    font-style: italic;
+    text-decoration: none;
+}
+
+#webmentions .comments li .name {
+    color: #111;
 }

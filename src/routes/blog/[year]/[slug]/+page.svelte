@@ -74,7 +74,7 @@
 		</div>
 	{/if}
 </div>
-
+<div id="webmentions"></div>
 <PostNavigation previousPost={data.previousPost} nextPost={data.nextPost} />
 
 <style>
